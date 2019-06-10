@@ -1,0 +1,48 @@
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta name="twitter:description" content="{{ page.description }}" />
+    {% else %}
+    {% if page.excerpt %}
+    <meta name="description" content="{{ page.excerpt| strip_html }}" />
+    <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+    <meta name="twitter:description" content="{{ page.excerpt| strip_html }}" />
+    {% else %}
+    <meta name="description" content="Blog chia sẻ một số điều nhỏ nhặt trong cuộc sống mà mình cảm thấy yêu thích, rất mong nhận được nhiều sự ủng hộ và góp ý từ mọi người.">
+    <meta property="og:description" content="Blog chia sẻ một số điều nhỏ nhặt trong cuộc sống mà mình cảm thấy yêu thích, rất mong nhận được nhiều sự ủng hộ và góp ý từ mọi người." />
+    <meta name="twitter:description" content="Blog chia sẻ một số điều nhỏ nhặt trong cuộc sống mà mình cảm thấy yêu thích, rất mong nhận được nhiều sự ủng hộ và góp ý từ mọi người." />
+    {% endif %}
+    {% endif %}
+
+    <meta name="author" content="{{ site.name }}" />
+
+    {% if page.title %}
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="twitter:title" content="{{ page.title }}" />
+    {% endif %}
+    
+    {% if page.keywords %}
+    <meta name="keywords" content="{{ page.keywords }}"/>
+    {% else %}
+    <meta name="keywords" content="Nguyễn Trường Long, khoa học, lập trình, toán học, lịch sử, trận đánh"/>
+    {% endif %}
+    
+    <meta name="twitter:card" content="summary" />
+    {% if page.thumbnail %}
+    <meta property="og:image" content="{{ page.thumbnail }}" />
+    <meta name="twitter:image" content="{{ page.thumbnail }}" />
+    {% else %}
+    <meta property="og:image" content="https://nguyentruonglong.net/images/nguyentruonglong-wallpaper.png" />
+    <meta name="twitter:image" content="https://nguyentruonglong.net/images/nguyentruonglong-wallpaper.png" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    {% endif %}
+
+    

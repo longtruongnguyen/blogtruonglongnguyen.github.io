@@ -1,0 +1,10 @@
+{% assign author = site[page.author] %}
+{% if author %}
+  <span style="float: right; font-style: italic; font-weight: bold; color: #000;">
+    Written by {{ author.name }}
+  </span>
+{% else %}
+  <span style="float: right; font-style: italic; font-weight: bold; color: #000;">
+    Written by Nguyen Truong Long
+  </span>
+{% endif %}
