@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tìm hiểu chi tiết về hệ thống mật mã khóa công khai RSA
+title: Hệ thống mật mã khóa công khai RSA
 keywords: "khóa công khai RSA, hệ thống mật mã RSA, mã hóa công khai RSA, mã hóa RSA"
 ---
 
