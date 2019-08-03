@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Giải thuật Gradient Descent
-description: Trong toán học, gradient là một trường hợp tổng quát của đạo hàm. Trong khi đạo hàm được định nghĩa trên các hàm số đơn biến và có giá trị vô hướng, gradient có giá trị là một vector.
+description: Ý tưởng của giải thuật gradient descent là chúng ta sẽ bắt đầu tại một điểm tùy ý, sau đó di chuyển dọc theo hướng ngược lại của gradient tại điểm đó, tiếp tục lặp lại quá trình này cho đến khi hy vọng có thể hội tụ tại điểm dừng.
 thumbnail: https://nguyentruonglong.net/images/understanding-gradient-descent.png
 keywords: "gradient descent, giải thuật gradient descent, gradient"
 author: Nguyễn Trường Long
