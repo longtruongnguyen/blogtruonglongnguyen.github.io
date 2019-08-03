@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Hệ thống mật mã khóa công khai RSA
-keywords: "khóa công khai RSA, hệ thống mật mã RSA, mã hóa công khai RSA, mã hóa RSA"
+description: RSA được đặt tên dựa theo tên của những người phát minh ra nó là Ronald L. Rivest, Adi Shamir và Leonard M. Adleman. Những người này đã tạo ra hệ thống mật mã khóa công khai RSA khi họ còn đang làm việc tại Viện Công nghệ Massachusetts (MIT).
+keywords: "khóa công khai RSA, hệ thống mật mã RSA, mã hóa công khai RSA, mã hóa RSA, hệ thống mật mã khóa công khai RSA, khóa RSA"
 ---
 
 RSA được đặt tên dựa theo tên của những người phát minh ra nó là Ronald L. Rivest, Adi Shamir và Leonard M. Adleman. Những người này đã tạo ra hệ thống mật mã khóa công khai RSA khi họ còn đang làm việc tại Viện Công nghệ Massachusetts (MIT). Trong phạm vi của bài viết này, mình sẽ trình bày về ý tưởng cơ chế hoạt động của hệ thống mật mã khóa công khai RSA, các cơ sở lý thuyết toán học trong quá trình mã hóa và giải mã thông điệp cùng với ví dụ minh họa cụ thể.
