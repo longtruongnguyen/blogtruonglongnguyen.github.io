@@ -23,7 +23,7 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-Điều này có nghĩa là xác suất xuất hiện tiếp theo của token ${{w_t }}$ với chuỗi token cho trước {% raw %}
+Điều này có nghĩa là xác suất xuất hiện tiếp theo của token {% raw %}$${{w_t }}$${% endraw %} với chuỗi token cho trước {% raw %}
 $${{w_1},{w_2},...,{w_{t  - 1}}}$${% endraw %} chỉ phụ thuộc vào $n$ token đứng liền trước nó với $n$ vừa đủ nhỏ $\left( {n < t } \right)$ thay vì toàn bộ chuỗi token {% raw %}$${{w_1},{w_2},...,{w_{t  - 1}}}$${% endraw %}. Do đó phân phối xác suất của chuỗi {% raw %}$$\left( {{w_1},{w_2},...,{w_\tau }} \right)$${% endraw %} sẽ được tính bằng công thức:
 {% raw %}
 $$\begin{align}
