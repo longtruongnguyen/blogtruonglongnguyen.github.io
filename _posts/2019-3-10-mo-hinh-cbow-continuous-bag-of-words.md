@@ -6,9 +6,9 @@ keywords: mô hình CBOW, Continuous Bag of Words, mô hình Word2Vec, nhúng t�
 author: Nguyễn Trường Long
 ---
 
-Ý tưởng chính của mô hình CBOW là dự đoán từ mục tiêu dựa vào các từ ngữ cảnh xung quanh nó trong một phạm vi nhất định. Cho từ mục tiêu $${w_c}$$ tại vị trí $c$, khi đó đầu vào là các từ ngữ cảnh {% raw %}$$\left( {{w_{c - m}},...,{w_{c - 1}},{w_{c + 1}},...{w_{c + m}}} \right)$${% endraw %} xung quanh từ $${w_c}$$ trong phạm vi $$m$$.
+Ý tưởng chính của [mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) là dự đoán từ mục tiêu dựa vào các từ ngữ cảnh xung quanh nó trong một phạm vi nhất định. Cho từ mục tiêu $${w_c}$$ tại vị trí $c$, khi đó đầu vào là các từ ngữ cảnh {% raw %}$$\left( {{w_{c - m}},...,{w_{c - 1}},{w_{c + 1}},...{w_{c + m}}} \right)$${% endraw %} xung quanh từ $${w_c}$$ trong phạm vi $$m$$.
 
-Mô hình CBOW tổng quát được thể hiện trong hình bên dưới với kích thước đầu vào gồm $C$ từ ngữ cảnh, $V$ là kích thước của tập từ vựng và hyper-parameter $N$ là kích thước của hidden layer. Các unit thuộc các layer kế cận nhau được kết nối theo kiểu fully connected. Mỗi từ đầu vào ở vị trí thứ $k$ trong tập từ vựng được biểu diễn bằng một one-hot vector có dạng:
+[Mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) tổng quát được thể hiện trong hình bên dưới với kích thước đầu vào gồm $C$ từ ngữ cảnh, $V$ là kích thước của tập từ vựng và hyperparameter $N$ là kích thước của hidden layer. Các unit thuộc các layer kế cận nhau được kết nối theo kiểu fully connected. Mỗi từ đầu vào ở vị trí thứ $k$ trong tập từ vựng được biểu diễn bằng một one-hot vector có dạng:
 {% raw %}
 $$\begin{align}
 	{x^{\left( k \right)}} = \left[ {\begin{array}{*{20}{c}}
