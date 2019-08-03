@@ -120,7 +120,7 @@ v{_{{{w_j}}^{'}}^{\left( {new} \right)}} = v{_{{{w_j}}^{'}}^{\left( {old} \right
 Phương trình cập nhật các trọng số từ input layer đến hidden layer:
 {% raw %}
 $$\begin{align}
-{v_{{w_c}}}^{\left( {new} \right)} = {v_{{w_c}}}^{\left( {old} \right)} - \frac{1}{C} \cdot \eta  \cdot \frac{{\partial E}}{{\partial {u_j}}} \cdot {\left( {\frac{{\partial E}}{{\partial {h_i}}}} \right)^T} \text{  với  } c = 1,2,...,C
+{v_{{w_c}}}^{\left( {new} \right)} = {v_{{w_c}}}^{\left( {old} \right)} - \frac{1}{C} \cdot \eta \cdot {\left( {\frac{{\partial E}}{{\partial {h_i}}}} \right)^T} \text{  với  } c = 1,2,...,C
 \end{align}$$
 {% endraw %}
 Trong đó {% raw %}$${v_{{w_c}}}$${% endraw %} là input vector tương ứng với từ thứ $c$ trong $C$ từ ngữ cảnh đầu vào và $\eta$ là learning rate.
