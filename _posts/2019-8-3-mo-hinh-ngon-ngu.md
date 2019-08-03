@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Mô hình ngôn ngữ (language model)
-description: Mô hình ngôn ngữ (language model) là mô hình mà sẽ tính toán phân phối xác suất của một chuỗi các token trong các ngôn ngữ tự nhiên của con người.
+description: Mô hình ngôn ngữ là mô hình mà sẽ tính toán phân phối xác suất của một chuỗi các token trong các ngôn ngữ tự nhiên của con người.
 keywords: mô hình ngôn ngữ, language model, xử lý ngôn ngữ tự nhiên, mô hình ngôn ngữ n-grams
 author: Nguyễn Trường Long
 ---
 
-Mô hình ngôn ngữ (language model) là mô hình mà sẽ tính toán phân phối xác suất của một chuỗi các token trong ngôn ngữ tự nhiên {% raw %}
+[Mô hình ngôn ngữ](https://nguyentruonglong.net/mo-hinh-ngon-ngu.html) là mô hình mà sẽ tính toán phân phối xác suất của một chuỗi các token trong ngôn ngữ tự nhiên {% raw %}
 $$P\left( {{w_1},{w_2},{w_3},...,{w_\tau }} \right)$${% endraw %}. Điều này có nghĩa là mô hình cho phép dự đoán khả năng xuất hiện của chuỗi token này trong ngôn ngữ của nó. Tùy thuộc vào cách thức mô hình được thiết kế, các token này có thể là các từ, các ký tự hoặc thậm chí là các byte. Để tính xác suất của một chuỗi các token liên tiếp, chúng ta áp dụng quy tắc xác suất dây chuyền (chain rule of probability) tổng quát để phân tách như sau:
 {% raw %}
 $$\begin{align}
