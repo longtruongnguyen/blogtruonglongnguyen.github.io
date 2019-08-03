@@ -6,7 +6,7 @@ keywords: mô hình Skip-gram, Skip-gram Model, mô hình Word2Vec, nhúng từ 
 author: Nguyễn Trường Long
 ---
 
-Ý tưởng của Skip-gram đối lập với mô hình [CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html), các từ mục tiêu bây giờ trở thành đầu vào và các từ ngữ cảnh trong câu trở thành đầu ra. Gọi ${v_{{w_I}}}$ là vector đầu vào đại diện cho từ đầu vào duy nhất ${w_I}$.
+Ý tưởng của Skip-gram đối lập với mô hình [CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html), các từ mục tiêu bây giờ trở thành đầu vào và các từ ngữ cảnh trong câu trở thành đầu ra. Gọi {% raw %}$${v_{{w_I}}}$${% endraw %} là vector đầu vào đại diện cho từ đầu vào duy nhất ${w_I}$.
 
 Các từ trong câu đầu vào của mô hình được chuyển về dưới dạng vector one-hot ${x^{\left( k \right)}}$. Ma trận $W$ với kích thước $V\times N$ là ma trận trọng số từ lớp đầu vào đến lớp ẩn, trong đó hàng thứ $i$ của ma trận chính là vector của từ thứ $i$ trong tập từ vựng. Ma trận này thu được sau khi huấn luyện là kết quả cần quan tâm do chứa các vector đại diện cho các từ trong tập từ vựng. Ma trận $h$ của lớp ẩn kích thước là $N\times 1$ với $N$ do chúng ta định nghĩa. Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra. Trong đầu ra thay vì chỉ có một phân phối, chúng ta tạo ra $C$ phân phối. Gọi $y_{c, j}$ là phần tử thứ $j$ trong vector đầu ra thứ $c$ với $c = 1, 2,... C$. Do ${x^{\left( k \right)}}$ là vector one-hot đầu vào duy nhất nên $h$ được tính như sau:
 {% raw %}
@@ -26,7 +26,7 @@ $$\begin{align}
 {u_{c,j}} = {u_j} = {v{_{{w_j}}^{'}}^T} \cdot h \text{  với  } c = 1,2,...,C
 \end{align}$$
 {% endraw %}
-Trong đó $v{_{{w_j}}^{'}}$ là vector đầu ra của từ thứ $j$ trong tập từ vựng ${w_j}$ và lấy từ cột tương ứng của ma trận trọng số $W'$. Hàm mất mát $E$ được cho bởi công thức sau:
+Trong đó {% raw %}$$v{_{{w_j}}^{'}}$${% endraw %} là vector đầu ra của từ thứ $j$ trong tập từ vựng ${w_j}$ và lấy từ cột tương ứng của ma trận trọng số $W'$. Hàm mất mát $E$ được cho bởi công thức sau:
 {% raw %}
 $$\begin{align}
 E &=  - \log p\left( {{w_{O,1}},{w_{O,2}},...,{w_{O,C}}|{w_I}} \right)\\
