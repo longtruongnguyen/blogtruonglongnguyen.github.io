@@ -20,7 +20,7 @@ $$\begin{equation}
 p\left( {{w_{c,j}} = {w_{O,c}}|{w_I}} \right) = {y_{c,j}} = \frac{{\exp \left( {{u_{c,j}}} \right)}}{{\sum\limits_{j' = 1}^V {\exp \left( {{u_{j'}}} \right)} }}
 \end{equation}$$
 {% endraw %}
-\noindent Trong đó ${w_{c,j}}$ là từ thứ $j$ trong tập từ vựng gồm $V$ từ tương ứng ở đầu ra thứ $c$ và ${w_{O,c}}$ là từ ngữ cảnh đầu ra thứ $c$ hiện tại. Do các đầu ra đều sử dụng chung các trọng số nên $u_{c, j}$ được tính bằng công thức sau:
+Trong đó ${w_{c,j}}$ là từ thứ $j$ trong tập từ vựng gồm $V$ từ tương ứng ở đầu ra thứ $c$ và ${w_{O,c}}$ là từ ngữ cảnh đầu ra thứ $c$ hiện tại. Do các đầu ra đều sử dụng chung các trọng số nên $u_{c, j}$ được tính bằng công thức sau:
 {% raw %}
 $$\begin{align}
 {u_{c,j}} = {u_j} = {v{_{{w_j}}^{'}}^T} \cdot h \text{  với  } c = 1,2,...,C
