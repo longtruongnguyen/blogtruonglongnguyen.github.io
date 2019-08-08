@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Mô hình Skip-gram (Skip-gram Model)
+title: Mô hình Skip-gram (Continuous Skip-gram Model)
 description: Ý tưởng chính của mô hình Skip-gram là dự đoán từ các từ ngữ cảnh xung quanh dựa vào từ mục tiêu đầu vào trong một phạm vi nhất định.
-keywords: mô hình Skip-gram, Skip-gram Model, mô hình Word2Vec, nhúng từ Skip-gram
+keywords: mô hình Skip-gram, Skip-gram Model, mô hình Word2Vec, nhúng từ Skip-gram, Continuous Skip-gram Model
 author: Nguyễn Trường Long
 ---
 
