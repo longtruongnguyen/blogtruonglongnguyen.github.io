@@ -27,17 +27,11 @@ Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết v�
 	\item Một hàm kích hoạt (activation function) dùng để đưa các tín hiệu đầu ra của nơ-ron vào một miền giá trị nhất định hoặc vào một tập hợp các giá trị cố định.
 \end{itemize}
 
-	\begin{center}
-		\begin{figure}[H]
-			\begin{center}
-				\includegraphics[scale=.4]{images/neuronModel}
-			\end{center}
-			\caption{Mô hình của một nơ-ron nhân tạo được gán nhãn $k$ \cite{haykin2009neural}}
-			\label{Hinh32}
-		\end{figure}
-	\end{center}
-
-\noindent Chúng ta có thể mô tả hoạt động của nơ-ron có nhãn $k$ trong hình ~\ref{Hinh32} bằng các phương trình toán học như sau:
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/neuronModel.png" alt="Mô hình của một nơ-ron nhân tạo">
+  <figcaption><center><i>Mô hình của một nơ-ron nhân tạo được gán nhãn $k$</i></center></figcaption>
+</figure>
+Chúng ta có thể mô tả hoạt động của nơ-ron có nhãn $k$ trong hình trên bằng các phương trình toán học như sau:
 	
 {% raw %}
 $$\begin{align}
@@ -85,15 +79,10 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-\begin{center}
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=.35]{images/ThresholdFunctionGraph}
-		\end{center}
-		\caption{Đồ thị của hàm ngưỡng \cite{haykin2009neural}}
-		\label{Hinh33}
-	\end{figure}
-\end{center}
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/ThresholdFunctionGraph.png" alt="Đồ thị của hàm ngưỡng">
+  <figcaption><center><i>Đồ thị của hàm ngưỡng</i></center></figcaption>
+</figure>
 
 Trong thực tế, hiện nay hàm ngưỡng ít được sử dụng do hàm này không có đạo hàm tại điểm $0$ và đạo hàm tại các điểm còn lại đều bằng $0$, các thuật toán dựa trên gradient đều không phù hợp khi sử dụng hàm ngưỡng làm hàm kích hoạt.
 
@@ -111,19 +100,13 @@ $$\begin{align}
 	{0\,\,\,if\,\,v \le 0}\\
 	{v\,\,\,if\,\,v > 0}
 	\end{array}} \right.
-\end{align}
-
-{% raw %}
-$$\begin{center}
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=0.26]{images/ReLUFunctionGraph}
-		\end{center}
-		\caption{Đồ thị của hàm ReLU}
-		\label{Hinh34}
-	\end{figure}
-\end{center}$$
+\end{align}$$
 {% endraw %}
+
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/ReLUFunctionGraph.png" alt="Đồ thị của hàm ReLU">
+  <figcaption><center><i>Đồ thị của hàm ReLU</i></center></figcaption>
+</figure>
 
 Vào năm 2011, lần đầu tiên người ta đã chứng minh được rằng hàm ReLU giúp cho việc huấn luyện các mạng nơ-ron trở nên tốt hơn so với các hàm kích hoạt khác được sử dụng rộng rãi trước năm 2011. Do đó đây là một hàm được sử dụng làm hàm kích hoạt phổ biến rộng rãi nhất trong các mạng nơ-ron cho đến hiện nay.
 
@@ -161,17 +144,10 @@ $$\begin{align}
 
 Hàm hyperbolic tangent cũng là một hàm liên tục, có miền xác định là $\left( { - \infty , + \infty } \right)$ và có miền giá trị là {% raw %}$$\left( { - 1,1} \right)$${% endraw %}.
 
-{% raw %}
-$$\begin{center}
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=.27]{images/HyperbolicTangentGraph}
-		\end{center}
-		\caption{Đồ thị của hàm hyperbolic tangent}
-		\label{Hinh36}
-	\end{figure}
-\end{center}$$
-{% endraw %}
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/HyperbolicTangentGraph.png" alt="Đồ thị của hàm hyperbolic tangent">
+  <figcaption><center><i>Đồ thị của hàm hyperbolic tangent</i></center></figcaption>
+</figure>
 
 Tương tự như hàm logistic sigmoid, đồ thị của hàm hyperbolic tangent cũng có đồ thị hình chữ S như trong hình \ref{Hinh36}. Mối liên hệ giữa hàm logistic sigmoid và hàm hyperbolic tangent được biểu diễn qua công thức sau:
 
@@ -192,9 +168,7 @@ a_{j} = \frac{exp(z_{j})}{\sum^K_{k=1} exp(z_{k})},\quad j = 1, ..., K
 {% endraw %}
 Mỗi giá trị $a_{j}$ là xác suất mà dữ liệu đầu vào sẽ thuộc vào lớp $j$ tương ứng và tổng của các giá trị này sẽ bằng $1$. Chúng ta phân lớp cho dữ liệu đầu vào bằng cách chọn lớp có giá trị xác suất $a_{j}$ lớn nhất.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.12]{images/softmaxEX}
-	\caption{Một số ví dụ minh họa về giá trị đầu vào và đầu ra của hàm softmax}
-	\label{HinhsoftmaxEX}
-\end{figure}
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/softmaxEX.png" alt="Một số ví dụ minh họa về giá trị đầu vào và đầu ra của hàm softmax">
+  <figcaption><center><i>Một số ví dụ minh họa về giá trị đầu vào và đầu ra của hàm softmax</i></center></figcaption>
+</figure>
