@@ -136,6 +136,7 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
+{% raw %}
 $$\begin{center}
 	\begin{figure}[H]
 		\begin{center}
