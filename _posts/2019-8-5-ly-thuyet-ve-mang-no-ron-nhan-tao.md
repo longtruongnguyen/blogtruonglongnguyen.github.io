@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lý thuyết về mạng nơ-ron nhân tạo (Artificial Neural Network}
+title: Lý thuyết về mạng nơ-ron nhân tạo (Artificial Neural Network)
 description: Những ý tưởng xây dựng các mô hình mạng nơ-ron nhân tạo bắt nguồn từ việc khám phá ra các cơ chế hoạt động đơn giản của mạng nơ-ron sinh học. Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết về cách thức hoạt động của các tế bào thần kinh sinh học thành các mô hình mạng nơ-ron nhân tạo.
 keywords: mạng nơ-ron nhân tạo, artificial neural Network, neural network, trí tuệ nhân tạo, mô hình mạng nơ-ron
 author: Nguyễn Trường Long
