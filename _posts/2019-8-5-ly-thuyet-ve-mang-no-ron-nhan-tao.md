@@ -5,9 +5,8 @@ description: Những ý tưởng xây dựng các mô hình mạng nơ-ron nhân
 keywords: mạng nơ-ron nhân tạo, artificial neural Network, neural network, trí tuệ nhân tạo, mô hình mạng nơ-ron
 author: Nguyễn Trường Long
 ---
-### Lý thuyết về mạng nơ-ron nhân tạo
 
-#### Biological Neural Network
+### Biological Neural Network
 
 \begin{center}
 	\begin{figure}[H]
@@ -22,7 +21,7 @@ Những ý tưởng xây dựng các mô hình mạng nơ-ron nhân tạo bắt 
 
 Bộ não của con người lưu trữ thông tin trong những tế bào thần kinh và những khớp thần kinh giữa các tế bào này với nhau. Mỗi khái niệm trong não có thể được tượng trưng bằng một mạng của các kết nối khác nhau giữa những tế bào thần kinh. Sự hình thành các kiến thức mới (learning) xảy ra khi các khớp kết nối giữa nhiều nơ-ron trở nên mạnh hơn và liên kết giữa một cụm tế bào mới được hình thành. Cụ thể hơn là những thông tin này được hình thành từ khả năng thay đổi cường độ liên kết giữa các khớp thần kinh hay còn được gọi là sự mềm dẻo của khớp thần kinh (synaptic plasticity). Giả thuyết này được đưa ra bởi Hebb vào năm 1949, người cho rằng sự mềm dẻo của khớp thần kinh được tạo ra từ những kích thích lặp đi lặp lại và kéo dài giữa khớp tế bào trước (presynaptic terminal) và khớp tế bào sau (postsynaptic terminal). Điều này có nghĩa là khi hai nơ-ron được kích hoạt cùng lúc, các khớp thần kinh giữa hai tế bào sẽ trở nên mạnh hơn và hai tế bào này sẽ có thể kích hoạt lẫn nhau hiệu quả hơn. Các quá trình kích hoạt tạo sự liên kết này lâu dần sẽ tạo ra mạng lưới của các kết nối và nó sẽ đại diện cho một khái niệm nào đó.
 
-#### Artificial Neural Network
+### Artificial Neural Network
 
 Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết về cách thức hoạt động của các tế bào thần kinh sinh học thành các mô hình mạng nơ-ron nhân tạo (Artificial Neural Network - \glsdisp{ANN}{ANN}) có thể hoạt động được trên máy tính. Hình ~\ref{Hinh32} cho thấy mô hình của một nơ-ron đơn lẻ, được xem như đơn vị xử lý thông tin cơ bản của một mạng nơ-ron. Các nơ-ron này được sử dụng để xây dựng thành các mạng nơ-ron có kiến trúc phức tạp hơn sẽ được trình bày trong các phần sau. Chúng ta sẽ xem xét 3 thành phần cơ bản của một mạng nơ-ron:
 
