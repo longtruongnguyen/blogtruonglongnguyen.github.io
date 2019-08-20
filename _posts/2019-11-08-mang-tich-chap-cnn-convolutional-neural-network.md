@@ -12,7 +12,7 @@ Lấy ví dụ, câu đầu vào được chuyển thành một ma trận $d \ti
 
 Đây là kiến trúc của một bộ mã hóa CNN:
 <figure class="image">
-  <img src="https://nguyentruonglong.net/images/CNNEncoder.NPG" alt="Kiến trúc của bộ mã hóa CNN">
+  <img src="https://nguyentruonglong.net/images/CNNEncoder.PNG" alt="Kiến trúc của bộ mã hóa CNN">
   <figcaption><center><i>Kiến trúc của bộ mã hóa CNN</i></center></figcaption>
 </figure>
 
