@@ -6,7 +6,7 @@ keywords: mạng tích chập cnn, mạng cnn, Convolutional Neural Network, m�
 author: Nguyễn Trường Long
 ---
 
-Convolutional Neural Network (CNN) khá giống một mạng neural thông thường, bao gồm các nơ-ron có khả năng tự tối ưu hóa bằng quá trình học. Tuy nhiên, CNN được sử dụng chủ yếu trong việc xử lý ảnh, vì nếu sử dụng mạng nơ-ron thông thường sẽ cần rất nhiều trọng số (một hình kích thước 28x28x1 cần 784 trọng số). Vì vậy, các lớp trong CNN có nơ-ron được sắp xếp theo 3 chiều: width, height, depth. Ngoài ra, các nơ-ron trong một lớp chỉ liên kết với 1 vùng nhỏ trong lớp trước nó. Trong xử lý ngôn ngữ tự nhiên, ta có thể thay hình ảnh bằng một ma trận, mỗi hàng của ma trận là một vector đại diện một từ trong câu.
+Convolutional Neural Network (CNN) khá giống một mạng nơ-ron thông thường, bao gồm các nơ-ron có khả năng tự tối ưu hóa bằng quá trình học. Tuy nhiên, CNN được sử dụng chủ yếu trong việc xử lý ảnh, vì nếu sử dụng mạng nơ-ron thông thường sẽ cần rất nhiều trọng số (một hình kích thước 28x28x1 cần 784 trọng số). Vì vậy, các lớp trong CNN có nơ-ron được sắp xếp theo 3 chiều: width, height, depth. Ngoài ra, các nơ-ron trong một lớp chỉ liên kết với 1 vùng nhỏ trong lớp trước nó. Trong xử lý ngôn ngữ tự nhiên, ta có thể thay hình ảnh bằng một ma trận, mỗi hàng của ma trận là một vector đại diện một từ trong câu.
 
 Lấy ví dụ, câu đầu vào được chuyển thành một ma trận $d \times k$ với $d$ là độ dài vector đại diện từ và $k$ là một số cố định quyết định chiều dài tối đa của câu. Ta chèn số 0 (zero-pad) cho ma trận câu để đạt được chiều dài $k$, nếu câu có chiều dài ngắn hơn. Với những câu có chiều dài lớn hơn $k$, ta có thể bỏ hoặc cắt ra thành các câu nhỏ hơn.   
 
@@ -29,9 +29,9 @@ Trong Convolution Layer, ta có $n$ filter (bộ lọc) $W$ được dùng để
 
 Để thực hiện tích chập, ta trượt (slide) từng $W$ quanh toàn bộ $X$ và tại mỗi lần trượt, ta nhân từng giá trị phần tử trong vùng mà $X$ khớp $W$ với giá trị phần tử có vị trí tương ứng trong $W$, sau đó tổng các số lại. Kết quả là giá trị một phần tử của mảng feature map $Y$. Với $n$ filter, ta có được $n$ feature map $Y$.
 
-Ngoài ra, ta còn có 2 tham số ảnh hưởng đến quá trình tích chập: \textbf{stride} và \textbf{zero-padding}. Stride $S$ quyết định đơn vị di chuyển cho từng lần trượt. Với ví dụ trong hình (\ref{HinhCNNSlide}), stride = 1. Nếu stride = 2 thì với mỗi lần trượt, Filter sẽ di chuyển qua 2 cột hoặc 2 hàng trên Data. Zero-padding $Z$ quyết định số lần đệm thêm số 0 bao quanh toàn bộ dữ liệu. 
+Ngoài ra, ta còn có 2 tham số ảnh hưởng đến quá trình tích chập: \textbf{stride} và \textbf{zero-padding}. Stride $S$ quyết định đơn vị di chuyển cho từng lần trượt. Với ví dụ trong hình bên trên có stride = 1. Nếu stride = 2 thì với mỗi lần trượt, Filter sẽ di chuyển qua 2 cột hoặc 2 hàng trên Data. Zero-padding $Z$ quyết định số lần đệm thêm số 0 bao quanh toàn bộ dữ liệu. 
 
-Tóm lại, khi Convolution Layer nhận dữ liệu kích thước $Width_{1} \times Height_{1} \times Depth_{1}$, với $n$ filter kích thước $F \times F \times Depth_{1}$ và các tham số $S$ và $Z$, sẽ tạo đầu ra với kích thước $Width_{2} \times Height_{2} \times Depth_{2}$, kích thước này được tính như sau:
+Tóm lại, khi Convolution Layer nhận dữ liệu kích thước $Width_{1} \times Height_{1} \times Depth_{1}$, với $n$ filter kích thước $F \times F \times Depth_{1}$ và các tham số $S$ và $Z$, sẽ tạo đầu ra với kích thước {% raw %}$$Width_{2} \times Height_{2} \times Depth_{2}$${% endraw %}, kích thước này được tính như sau:
 {% raw %}
 $$\begin{equation}
 Width_{2} = (Width_{1} - F + 2Z)/S + 1
@@ -46,7 +46,7 @@ Depth_{2} = n
 
 #### Pooling Layer
 
-Pooling Layer có nhiệm vụ làm giảm không gian của các feature map, từ đó làm giảm các tham số và độ phức tạp tính toán. Có nhiều cách thực hiện việc này, một cách thường dùng là Max Pooling. Max Pooling được minh họa qua hình (\ref{HinhCNNMaxPool}).
+Pooling Layer có nhiệm vụ làm giảm không gian của các feature map, từ đó làm giảm các tham số và độ phức tạp tính toán. Có nhiều cách thực hiện việc này, một cách thường dùng là Max Pooling. Max Pooling được minh họa qua hình.
 
 <figure class="image">
   <img src="https://nguyentruonglong.net/images/maxpool.jpeg" alt="Ví dụ về Max Pooling">
@@ -70,4 +70,4 @@ Depth_{3} = Depth_{2}
 
 #### Non-linear Layer
 
-Cuối cùng, trong Non-linear Layer, ta áp dụng hàm phi tuyến lên từng phần tử của các activation map, hàm phi tuyến thường được chọn là ReLU. Từ đây, ta có thể thực hiện lại các lớp Convolution Layer, Pooling Layer và Non-linear Layer để thu nhỏ thêm không gian kết quả hoặc đưa vào một Fully-Connected network, là mạng neural truyền thẳng thông thường, để xây dựng kết quả đại diện cho đầu vào.
+Cuối cùng, trong Non-linear Layer, ta áp dụng hàm phi tuyến lên từng phần tử của các activation map, hàm phi tuyến thường được chọn là ReLU. Từ đây, ta có thể thực hiện lại các lớp Convolution Layer, Pooling Layer và Non-linear Layer để thu nhỏ thêm không gian kết quả hoặc đưa vào một Fully-Connected network, là mạng nơ-ron truyền thẳng thông thường, để xây dựng kết quả đại diện cho đầu vào.
