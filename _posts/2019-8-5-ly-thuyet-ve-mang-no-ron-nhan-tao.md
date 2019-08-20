@@ -138,7 +138,7 @@ Hàm hyperbolic tangent cũng là một hàm liên tục, có miền xác địn
   <figcaption><center><i>Đồ thị của hàm hyperbolic tangent</i></center></figcaption>
 </figure>
 
-Tương tự như hàm logistic sigmoid, đồ thị của hàm hyperbolic tangent cũng có đồ thị hình chữ S như trong hình \ref{Hinh36}. Mối liên hệ giữa hàm logistic sigmoid và hàm hyperbolic tangent được biểu diễn qua công thức sau:
+Tương tự như hàm logistic sigmoid, đồ thị của hàm hyperbolic tangent cũng có đồ thị hình chữ S như trong hình trên. Mối liên hệ giữa hàm logistic sigmoid và hàm hyperbolic tangent được biểu diễn qua công thức sau:
 
 {% raw %}
 $$\begin{align}
