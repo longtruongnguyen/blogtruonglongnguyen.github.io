@@ -42,7 +42,7 @@ $$\begin{align}
 	
 Trong đó {% raw %}$${x_1},{x_2},...,{x_m}$${% endraw %} là giá trị của các tín hiệu đầu vào, {% raw %}$${w_{k1}},{w_{k2}},...,{w_{km}}$${% endraw %} là các trọng số tương ứng với các khớp thần kinh liên kết đến nơ-ron có nhãn {% raw %}$$k, {{u_k}}$${% endraw %} là bộ tổ hợp tuyến tính đầu ra (linear combiner output) từ các tín hiệu đầu vào, ${b_k}$ là độ lệch (bias), {% raw %}$$\varphi \left( . \right)$${% endraw %} là hàm kích hoạt (activation function) và ${y_k}$ là tín hiệu đầu ra từ nơ-ron có nhãn $k$.
 
-#### Các hàm kích hoạt phổ biến
+### Các hàm kích hoạt phổ biến
 
 **Hàm ngưỡng**
 
