@@ -129,7 +129,6 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-
 **Hàm Hyperbolic Tangent**
 
 Hàm hyperbolic tangent cũng là một hàm liên tục, có miền xác định là $\left( { - \infty , + \infty } \right)$ và có miền giá trị là {% raw %}$$\left( { - 1,1} \right)$${% endraw %}.
