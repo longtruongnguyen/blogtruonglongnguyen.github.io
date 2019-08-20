@@ -31,7 +31,7 @@ Trong Convolution Layer, ta có $n$ filter (bộ lọc) $W$ được dùng để
 
 Ngoài ra, ta còn có 2 tham số ảnh hưởng đến quá trình tích chập: \textbf{stride} và \textbf{zero-padding}. Stride $S$ quyết định đơn vị di chuyển cho từng lần trượt. Với ví dụ trong hình bên trên có stride = 1. Nếu stride = 2 thì với mỗi lần trượt, Filter sẽ di chuyển qua 2 cột hoặc 2 hàng trên Data. Zero-padding $Z$ quyết định số lần đệm thêm số 0 bao quanh toàn bộ dữ liệu. 
 
-Tóm lại, khi Convolution Layer nhận dữ liệu kích thước {% raw %}$$Width_{1} \times Height_{1} \times Depth_{1}$${% endraw %}, với $n$ filter kích thước $F \times F \times Depth_{1}$ và các tham số $S$ và $Z$, sẽ tạo đầu ra với kích thước {% raw %}$$Width_{2} \times Height_{2} \times Depth_{2}$${% endraw %}, kích thước này được tính như sau:
+Tóm lại, khi Convolution Layer nhận dữ liệu kích thước {% raw %}$$Width_{1} \times Height_{1} \times Depth_{1}$${% endraw %}, với $n$ filter kích thước {% raw %}$$F \times F \times Depth_{1}$${% endraw %} và các tham số $S$ và $Z$, sẽ tạo đầu ra với kích thước {% raw %}$$Width_{2} \times Height_{2} \times Depth_{2}$${% endraw %}, kích thước này được tính như sau:
 {% raw %}
 $$\begin{equation}
 Width_{2} = (Width_{1} - F + 2Z)/S + 1
