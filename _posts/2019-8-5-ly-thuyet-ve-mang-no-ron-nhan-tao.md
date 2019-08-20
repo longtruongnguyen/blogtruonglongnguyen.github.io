@@ -9,7 +9,7 @@ author: Nguyễn Trường Long
 ### Biological Neural Network
 
 <figure class="image">
-  <img src="https://nguyentruonglong.net/images/Multipolarneuron.png" alt="Mạng thần kinh sinh học">
+  <img src="https://nguyentruonglong.net/images/MultipolarNeuron.png" alt="Mạng thần kinh sinh học">
   <figcaption>Cấu trúc của một tế bào nơ-ron sinh học</figcaption>
 </figure>
 
