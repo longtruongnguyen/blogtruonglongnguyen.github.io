@@ -12,7 +12,7 @@ Lấy ví dụ, câu đầu vào được chuyển thành một ma trận $d \ti
 
 Đây là kiến trúc của một bộ mã hóa CNN:
 <figure class="image">
-  <img src="https://nguyentruonglong.net/images/CNNEncoder.png" alt="Kiến trúc của bộ mã hóa CNN">
+  <img src="https://nguyentruonglong.net/images/CNNEncoder.NPG" alt="Kiến trúc của bộ mã hóa CNN">
   <figcaption><center><i>Kiến trúc của bộ mã hóa CNN</i></center></figcaption>
 </figure>
 
@@ -23,7 +23,7 @@ Tiếp theo, sẽ giới thiệu về các lớp của CNN: Convolution Layer, P
 Trong Convolution Layer, ta có $n$ filter (bộ lọc) $W$ được dùng để xác định các đặc trưng (feature) trên mảng dữ liệu $X$, ta sử dụng tích chập (convolution) trên mảng dữ liệu $X$ và các filter $W$ cho việc này. Quá trình tích chập được minh họa qua hình bên dưới.
 
 <figure class="image">
-  <img src="https://nguyentruonglong.net/images/CNNSlide.png" alt="Ví dụ tích chập 2D qua 2 lần trượt Filter quanh mảng data">
+  <img src="https://nguyentruonglong.net/images/CNNSlide.jpg" alt="Ví dụ tích chập 2D qua 2 lần trượt Filter quanh mảng data">
   <figcaption><center><i>Một ví dụ tích chập 2D qua 2 lần trượt Filter quanh mảng Data. Tại mỗi lần trượt Filter, đối với mảng Data màu xanh trùng với Filter, ta sẽ nhân từng giá trị phần tử trong mảng Data đó với giá trị phần tử có vị trí tương ứng trong Filter, sau đó tổng các số lại. Kết quả là giá trị một phần tử màu xanh tương ứng của mảng Convolved Feature.</i></center></figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ Trong Convolution Layer, ta có $n$ filter (bộ lọc) $W$ được dùng để
 
 Ngoài ra, ta còn có 2 tham số ảnh hưởng đến quá trình tích chập: \textbf{stride} và \textbf{zero-padding}. Stride $S$ quyết định đơn vị di chuyển cho từng lần trượt. Với ví dụ trong hình bên trên có stride = 1. Nếu stride = 2 thì với mỗi lần trượt, Filter sẽ di chuyển qua 2 cột hoặc 2 hàng trên Data. Zero-padding $Z$ quyết định số lần đệm thêm số 0 bao quanh toàn bộ dữ liệu. 
 
-Tóm lại, khi Convolution Layer nhận dữ liệu kích thước $Width_{1} \times Height_{1} \times Depth_{1}$, với $n$ filter kích thước $F \times F \times Depth_{1}$ và các tham số $S$ và $Z$, sẽ tạo đầu ra với kích thước {% raw %}$$Width_{2} \times Height_{2} \times Depth_{2}$${% endraw %}, kích thước này được tính như sau:
+Tóm lại, khi Convolution Layer nhận dữ liệu kích thước {% raw %}$$Width_{1} \times Height_{1} \times Depth_{1}$${% endraw %}, với $n$ filter kích thước $F \times F \times Depth_{1}$ và các tham số $S$ và $Z$, sẽ tạo đầu ra với kích thước {% raw %}$$Width_{2} \times Height_{2} \times Depth_{2}$${% endraw %}, kích thước này được tính như sau:
 {% raw %}
 $$\begin{equation}
 Width_{2} = (Width_{1} - F + 2Z)/S + 1
