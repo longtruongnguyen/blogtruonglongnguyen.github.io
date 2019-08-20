@@ -33,15 +33,11 @@ Ngoài ra, ta còn có 2 tham số ảnh hưởng đến quá trình tích chậ
 
 Tóm lại, khi Convolution Layer nhận dữ liệu kích thước {% raw %}$$Width_{1} \times Height_{1} \times Depth_{1}$${% endraw %}, với $n$ filter kích thước {% raw %}$$F \times F \times Depth_{1}$${% endraw %} và các tham số $S$ và $Z$, sẽ tạo đầu ra với kích thước {% raw %}$$Width_{2} \times Height_{2} \times Depth_{2}$${% endraw %}, kích thước này được tính như sau:
 {% raw %}
-$$\begin{equation}
+$$\begin{align}
 Width_{2} = (Width_{1} - F + 2Z)/S + 1
-\end{equation}
-\begin{equation}
 Height_{2} = (Height_{1} - F + 2Z)/S + 1
-\end{equation}
-\begin{equation}
 Depth_{2} = n
-\end{equation}$$
+\end{align}$$
 {% endraw %}
 
 #### Pooling Layer
@@ -57,15 +53,11 @@ Với Max Pooling, ta tìm số lớn nhất trong một vùng nhất định tr
 
 Tóm lại, khi Pooling Layer nhận tập feature map kích thước $Width_{2} \times Height_{2} \times Depth_{2}$, với vùng để xét có kích thước $F' \times F'$ và tham số $S'$, sẽ tạo tập feature map mới với kích thước $Width_{3} \times Height_{3} \times Depth_{3}$, kích thước này được tính như sau:
 {% raw %}
-$$\begin{equation}
+$$\begin{align}
 Width_{3} = (Width_{2} - F')/S' + 1
-\end{equation}
-\begin{equation}
 Height_{3} = (Height_{2} - F')/S' + 1
-\end{equation}
-\begin{equation}
 Depth_{3} = Depth_{2}
-\end{equation}$$
+\end{align}$$
 {% endraw %}
 
 #### Non-linear Layer
