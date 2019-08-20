@@ -21,7 +21,7 @@ Bộ não của con người lưu trữ thông tin trong những tế bào thầ
 
 Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết về cách thức hoạt động của các tế bào thần kinh sinh học thành các mô hình mạng nơ-ron nhân tạo (Artificial Neural Network) có thể hoạt động được trên máy tính. Hình trên cho thấy mô hình của một nơ-ron đơn lẻ, được xem như đơn vị xử lý thông tin cơ bản của một mạng nơ-ron. Các nơ-ron này được sử dụng để xây dựng thành các mạng nơ-ron có kiến trúc phức tạp hơn sẽ được trình bày trong các phần sau. Chúng ta sẽ xem xét 3 thành phần cơ bản của một mạng nơ-ron:
 
-- Một tập hợp các khớp thần kinh (synapse) hoặc còn được gọi là connecting link dùng để kết nối các nơ-ron lại với nhau. Mỗi khớp thần kinh được đặc trưng bởi cường độ liên kết của nó. Cụ thể hơn, một khớp thần kinh dùng để chuyển tín hiệu từ nơ-ron có nhãn $j$ sang nơ-ron có nhãn $k$ với trọng số là ${{w_{kj}}}$. Không giống như trọng số của một khớp thần kinh trong hệ thần kinh sinh học, trọng số của một khớp thần kinh nhân tạo có thể mang giá trị âm hoặc dương.
+- Một tập hợp các khớp thần kinh (synapse) hoặc còn được gọi là connecting link dùng để kết nối các nơ-ron lại với nhau. Mỗi khớp thần kinh được đặc trưng bởi cường độ liên kết của nó. Cụ thể hơn, một khớp thần kinh dùng để chuyển tín hiệu từ nơ-ron có nhãn $j$ sang nơ-ron có nhãn $k$ với trọng số là {% raw %}$${{w_{kj}}}$${% endraw %}. Không giống như trọng số của một khớp thần kinh trong hệ thần kinh sinh học, trọng số của một khớp thần kinh nhân tạo có thể mang giá trị âm hoặc dương.
 - Một bộ cộng (adder) dùng để tổng hợp các tín hiệu đầu vào tại mỗi nơ-ron và gửi kết quả đi tiếp.
 - Một hàm kích hoạt (activation function) dùng để đưa các tín hiệu đầu ra của nơ-ron vào một miền giá trị nhất định hoặc vào một tập hợp các giá trị cố định.
 
@@ -39,7 +39,7 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 	
-Trong đó {% raw %}$${x_1},{x_2},...,{x_m}$${% endraw %} là giá trị của các tín hiệu đầu vào, {% raw %}$${w_{k1}},{w_{k2}},...,{w_{km}}$${% endraw %} là các trọng số tương ứng với các khớp thần kinh liên kết đến nơ-ron có nhãn {% raw %}$$k, {{u_k}}$${% endraw %} là bộ tổ hợp tuyến tính đầu ra (linear combiner output) từ các tín hiệu đầu vào, ${{b_k}}$ là độ lệch (bias), {% raw %}$$\varphi \left( . \right)$${% endraw %} là hàm kích hoạt (activation function) và ${{y_k}}$ là tín hiệu đầu ra từ nơ-ron có nhãn $k$.
+Trong đó {% raw %}$${x_1},{x_2},...,{x_m}$${% endraw %} là giá trị của các tín hiệu đầu vào, {% raw %}$${w_{k1}},{w_{k2}},...,{w_{km}}$${% endraw %} là các trọng số tương ứng với các khớp thần kinh liên kết đến nơ-ron có nhãn {% raw %}$$k, {{u_k}}$${% endraw %} là bộ tổ hợp tuyến tính đầu ra (linear combiner output) từ các tín hiệu đầu vào, ${b_k}$ là độ lệch (bias), {% raw %}$$\varphi \left( . \right)$${% endraw %} là hàm kích hoạt (activation function) và ${y_k}$ là tín hiệu đầu ra từ nơ-ron có nhãn $k$.
 
 #### Các hàm kích hoạt phổ biến
 
