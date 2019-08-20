@@ -10,7 +10,7 @@ author: Nguyễn Trường Long
 
 <figure class="image">
   <img src="https://nguyentruonglong.net/images/MultipolarNeuron.png" alt="Mạng thần kinh sinh học">
-  <figcaption>Cấu trúc của một tế bào nơ-ron sinh học</figcaption>
+  <figcaption><center>Cấu trúc của một tế bào nơ-ron sinh học</center></figcaption>
 </figure>
 
 Những ý tưởng xây dựng các mô hình mạng nơ-ron nhân tạo bắt nguồn từ việc khám phá ra các cơ chế hoạt động đơn giản của mạng nơ-ron sinh học (biological neural network). Trong hệ thống thần kinh sinh học, nơ-ron là tế bào sống và còn là đơn vị lưu trữ cơ bản trong bộ não của con người. Có khoảng 200 tỉ nơ-ron trong bộ não con người. Mỗi nơ-ron được liên kết với khoảng từ 1.000 đến 10.000 nơ-ron khác thông qua các khớp thần kinh (synapse). Các tín hiệu xung điện được truyền từ tế bào nơ-ron này sang tế bào nơ-ron khác thông qua các khớp thần kinh. Có tất cả khoảng 125 nghìn tỉ khớp thần kinh trong bộ não của con người.
