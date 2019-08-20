@@ -115,17 +115,11 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-{% raw %}
-$$\begin{center}
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=.32]{images/LogisticSigmoidGraph}
-		\end{center}
-		\caption{Đồ thị của hàm logistic sigmoid}
-		\label{Hinh35}
-	\end{figure}
-\end{center}$$
 {% endraw %}
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/LogisticSigmoidGraph.png" alt="Đồ thị của hàm logistic sigmoid">
+  <figcaption><center><i>Đồ thị của hàm logistic sigmoid</i></center></figcaption>
+</figure>
 
 Hàm logistic sigmoid là hàm liên tục, có miền xác định là {% raw %}$$\left( { - \infty , + \infty } \right)$${% endraw %} và có miền giá trị là {% raw %}$$\left( { - 1,1} \right)$${% endraw %}. Nhìn vào đồ thị của hàm ở hình ~\ref{Hinh35}, chúng ta có thể thấy rằng nếu đầu vào của hàm này càng lớn, giá trị đầu ra sẽ càng tiến gần đến 1. Với đầu vào có giá trị càng âm thì giá trị đầu ra của hàm càng tiến gần đến 0. Trước đây, hàm logistic sigmoid thường được ưu tiên sử dụng làm hàm kích hoạt trong các mạng nơ-ron do tính chất khả vi và có một đạo hàm đẹp có thể được tính toán khá dễ dàng:
 
