@@ -149,6 +149,7 @@ $$\begin{align}
 Mặc dù hàm logistic sigmoid là một hàm đẹp, nhưng đôi khi cũng gặp một số vấn đề. Nếu đầu vào có giá trị càng âm thì giá trị đầu ra của hàm logistic sigmoid càng gần $0$, điều đó sẽ làm cho quá trình huấn luyện mạng nơ-ron trở nên chậm chạp, các trọng số được cập nhật với sự thay đổi giá trị rất ít. Trong trường hợp này, hàm hyperbolic tangent là một sự lựa chọn thay thế tốt cho hàm logistic sigmoid.
 
 **Hàm Softmax**
+
 Trong bài toán phân loại nhiều lớp với $K$ lớp cụ thể, hàm softmax được dùng để tính phân bố xác suất của dữ liệu đầu vào trên mỗi lớp cho trước. Hàm softmax sẽ chuyển đổi một vector $K$ chiều chứa các phần tử có giá trị là một số thực bất kỳ $z_{j}$ thành một vector $K$ chiều chứa các phần tử $a_{j}$ có giá trị trong miền {% raw %}$$\left( {0,1} \right)$${% endraw %}:
 {% raw %}
 $$\begin{equation}
