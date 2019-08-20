@@ -115,7 +115,6 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-{% endraw %}
 <figure class="image">
   <img src="https://nguyentruonglong.net/images/LogisticSigmoidGraph.png" alt="Đồ thị của hàm logistic sigmoid">
   <figcaption><center><i>Đồ thị của hàm logistic sigmoid</i></center></figcaption>
