@@ -26,7 +26,7 @@ Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết v�
 - Một hàm kích hoạt (activation function) dùng để đưa các tín hiệu đầu ra của nơ-ron vào một miền giá trị nhất định hoặc vào một tập hợp các giá trị cố định.
 
 <figure class="image">
-  <img src="https://nguyentruonglong.net/images/neuronModel.png" alt="Mô hình của một nơ-ron nhân tạo">
+  <img src="https://nguyentruonglong.net/images/NeuronModel.png" alt="Mô hình của một nơ-ron nhân tạo">
   <figcaption><center><i>Mô hình của một nơ-ron nhân tạo được gán nhãn $k$</i></center></figcaption>
 </figure>
 Chúng ta có thể mô tả hoạt động của nơ-ron có nhãn $k$ trong hình trên bằng các phương trình toán học như sau:
@@ -58,7 +58,7 @@ $$\begin{center}
 \end{center}$$
 {% endraw %}
 
-\noindent Trong kỹ thuật, hàm này còn được gọi là hàm bước Heaviside (Heaviside step function). Tương ứng với hàm kích hoạt này, giá trị đầu ra ${{y_{k}}}$ của nơ-ron có nhãn $k$ sẽ là:
+Trong kỹ thuật, hàm này còn được gọi là hàm bước Heaviside (Heaviside step function). Tương ứng với hàm kích hoạt này, giá trị đầu ra {% raw %}$${y_{k}}$${% endraw %} của nơ-ron có nhãn $k$ sẽ là:
 
 {% raw %}
 $$\begin{align}
