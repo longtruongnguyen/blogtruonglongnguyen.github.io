@@ -19,13 +19,11 @@ Bộ não của con người lưu trữ thông tin trong những tế bào thầ
 
 ### Artificial Neural Network
 
-Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết về cách thức hoạt động của các tế bào thần kinh sinh học thành các mô hình mạng nơ-ron nhân tạo (Artificial Neural Network - \glsdisp{ANN}{ANN}) có thể hoạt động được trên máy tính. Hình ~\ref{Hinh32} cho thấy mô hình của một nơ-ron đơn lẻ, được xem như đơn vị xử lý thông tin cơ bản của một mạng nơ-ron. Các nơ-ron này được sử dụng để xây dựng thành các mạng nơ-ron có kiến trúc phức tạp hơn sẽ được trình bày trong các phần sau. Chúng ta sẽ xem xét 3 thành phần cơ bản của một mạng nơ-ron:
+Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết về cách thức hoạt động của các tế bào thần kinh sinh học thành các mô hình mạng nơ-ron nhân tạo (Artificial Neural Network) có thể hoạt động được trên máy tính. Hình trên cho thấy mô hình của một nơ-ron đơn lẻ, được xem như đơn vị xử lý thông tin cơ bản của một mạng nơ-ron. Các nơ-ron này được sử dụng để xây dựng thành các mạng nơ-ron có kiến trúc phức tạp hơn sẽ được trình bày trong các phần sau. Chúng ta sẽ xem xét 3 thành phần cơ bản của một mạng nơ-ron:
 
-\begin{itemize}
-	\item Một tập hợp các khớp thần kinh (synapse) hoặc còn được gọi là connecting link dùng để kết nối các nơ-ron lại với nhau. Mỗi khớp thần kinh được đặc trưng bởi cường độ liên kết của nó. Cụ thể hơn, một khớp thần kinh dùng để chuyển tín hiệu từ nơ-ron có nhãn $j$ sang nơ-ron có nhãn $k$ với trọng số là ${{w_{kj}}}$. Không giống như trọng số của một khớp thần kinh trong hệ thần kinh sinh học, trọng số của một khớp thần kinh nhân tạo có thể mang giá trị âm hoặc dương.
-	\item Một bộ cộng (adder) dùng để tổng hợp các tín hiệu đầu vào tại mỗi nơ-ron và gửi kết quả đi tiếp.
-	\item Một hàm kích hoạt (activation function) dùng để đưa các tín hiệu đầu ra của nơ-ron vào một miền giá trị nhất định hoặc vào một tập hợp các giá trị cố định.
-\end{itemize}
+- Một tập hợp các khớp thần kinh (synapse) hoặc còn được gọi là connecting link dùng để kết nối các nơ-ron lại với nhau. Mỗi khớp thần kinh được đặc trưng bởi cường độ liên kết của nó. Cụ thể hơn, một khớp thần kinh dùng để chuyển tín hiệu từ nơ-ron có nhãn $j$ sang nơ-ron có nhãn $k$ với trọng số là ${{w_{kj}}}$. Không giống như trọng số của một khớp thần kinh trong hệ thần kinh sinh học, trọng số của một khớp thần kinh nhân tạo có thể mang giá trị âm hoặc dương.
+- Một bộ cộng (adder) dùng để tổng hợp các tín hiệu đầu vào tại mỗi nơ-ron và gửi kết quả đi tiếp.
+- Một hàm kích hoạt (activation function) dùng để đưa các tín hiệu đầu ra của nơ-ron vào một miền giá trị nhất định hoặc vào một tập hợp các giá trị cố định.
 
 <figure class="image">
   <img src="https://nguyentruonglong.net/images/neuronModel.png" alt="Mô hình của một nơ-ron nhân tạo">
@@ -169,6 +167,6 @@ a_{j} = \frac{exp(z_{j})}{\sum^K_{k=1} exp(z_{k})},\quad j = 1, ..., K
 Mỗi giá trị $a_{j}$ là xác suất mà dữ liệu đầu vào sẽ thuộc vào lớp $j$ tương ứng và tổng của các giá trị này sẽ bằng $1$. Chúng ta phân lớp cho dữ liệu đầu vào bằng cách chọn lớp có giá trị xác suất $a_{j}$ lớn nhất.
 
 <figure class="image">
-  <img src="https://nguyentruonglong.net/images/softmaxEX.png" alt="Một số ví dụ minh họa về giá trị đầu vào và đầu ra của hàm softmax">
+  <img src="https://nguyentruonglong.net/images/softmaxEX.jpg" alt="Một số ví dụ minh họa về giá trị đầu vào và đầu ra của hàm softmax">
   <figcaption><center><i>Một số ví dụ minh họa về giá trị đầu vào và đầu ra của hàm softmax</i></center></figcaption>
 </figure>
