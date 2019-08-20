@@ -71,3 +71,4 @@ Depth_{3} = Depth_{2}
 #### Non-linear Layer
 
 Cuối cùng, trong Non-linear Layer, ta áp dụng hàm phi tuyến lên từng phần tử của các activation map, hàm phi tuyến thường được chọn là ReLU. Từ đây, ta có thể thực hiện lại các lớp Convolution Layer, Pooling Layer và Non-linear Layer để thu nhỏ thêm không gian kết quả hoặc đưa vào một Fully-Connected network, là mạng nơ-ron truyền thẳng thông thường, để xây dựng kết quả đại diện cho đầu vào.
+
