@@ -48,14 +48,12 @@ Trong đó {% raw %}$${x_1},{x_2},...,{x_m}$${% endraw %} là giá trị của c
 Hàm ngưỡng (threshold function) là hàm không liên tục và miền giá trị của hàm chỉ mang hai giá trị là $0$ và $1$. Hàm này được mô tả theo công thức như sau:
 
 {% raw %}
-$$\begin{center}
-	\begin{align}
+$$\begin{align}
 	\varphi \left( v \right) = \left\{ {\begin{array}{*{20}{c}}
 		{1\,\,\,if\,\,v \ge 0}\\
 		{0\,\,\,if\,\,v < 0}
 		\end{array}} \right.
-	\end{align}
-\end{center}$$
+\end{align}$$
 {% endraw %}
 
 Trong kỹ thuật, hàm này còn được gọi là hàm bước Heaviside (Heaviside step function). Tương ứng với hàm kích hoạt này, giá trị đầu ra {% raw %}$${y_{k}}$${% endraw %} của nơ-ron có nhãn $k$ sẽ là:
