@@ -39,11 +39,13 @@ Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết v�
 
 \noindent Chúng ta có thể mô tả hoạt động của nơ-ron có nhãn $k$ trong hình ~\ref{Hinh32} bằng các phương trình toán học như sau:
 	
-\begin{align}
+{% raw %}
+$$\begin{align}
 	&{u_k} = \sum\limits_{j = 1}^m {{w_{kj}}{x_j}}	\\
 	&{v_k} = {u_k} + {b_k}	\\
 	&{y_k} = \varphi \left( {{v_k}} \right)
-\end{align}
+\end{align}$$
+{% endraw %}
 	
 Trong đó ${x_1},{x_2},...,{x_m}$ là giá trị của các tín hiệu đầu vào, ${w_{k1}},{w_{k2}},...,{w_{km}}$ là các trọng số tương ứng với các khớp thần kinh liên kết đến nơ-ron có nhãn $k$, ${{u_k}}$ là bộ tổ hợp tuyến tính đầu ra (linear combiner output) từ các tín hiệu đầu vào, ${{b_k}}$ là độ lệch (bias), $\varphi \left( . \right)$ là hàm kích hoạt (activation function) và ${{y_k}}$ là tín hiệu đầu ra từ nơ-ron có nhãn $k$.
 
@@ -53,29 +55,35 @@ Trong đó ${x_1},{x_2},...,{x_m}$ là giá trị của các tín hiệu đầu 
 
 Hàm ngưỡng (threshold function) là hàm không liên tục và miền giá trị của hàm chỉ mang hai giá trị là $0$ và $1$. Hàm này được mô tả theo công thức như sau:
 
-\begin{center}
+{% raw %}
+$$\begin{center}
 	\begin{align}
 	\varphi \left( v \right) = \left\{ {\begin{array}{*{20}{c}}
 		{1\,\,\,if\,\,v \ge 0}\\
 		{0\,\,\,if\,\,v < 0}
 		\end{array}} \right.
 	\end{align}
-\end{center}
+\end{center}$$
+{% endraw %}
 
 \noindent Trong kỹ thuật, hàm này còn được gọi là hàm bước Heaviside (Heaviside step function). Tương ứng với hàm kích hoạt này, giá trị đầu ra ${{y_{k}}}$ của nơ-ron có nhãn $k$ sẽ là:
 
-\begin{align}
+{% raw %}
+$$\begin{align}
 {y_k} = \left\{ {\begin{array}{*{20}{c}}
 	{1\,\,\,if\,\,{v_k} \ge 0}\\
 	{0\,\,\,if\,\,{v_k} < 0}
 	\end{array}} \right.
-\end{align}
+\end{align}$$
+{% endraw %}
 
 Trong đó:
 
-\begin{align}
+{% raw %}
+$$\begin{align}
 {v_k} = \sum\limits_{j = 1}^m {{w_{kj}}{x_j} + {b_k}}
-\end{align}
+\end{align}$$
+{% endraw %}
 
 \begin{center}
 	\begin{figure}[H]
@@ -96,15 +104,17 @@ Hàm ReLU (Rectified Linear Unit) được giới thiệu bởi Hahnloser vào n
 \varphi \left( v \right) = \max \left( {0,v} \right)
 \end{align}
 
-\noindent Định nghĩa trên có thể được viết lại như sau:
-\begin{align}
+Định nghĩa trên có thể được viết lại như sau:
+{% raw %}
+$$\begin{align}
 \varphi \left( v \right) = \left\{ {\begin{array}{*{20}{c}}
 	{0\,\,\,if\,\,v \le 0}\\
 	{v\,\,\,if\,\,v > 0}
 	\end{array}} \right.
 \end{align}
 
-\begin{center}
+{% raw %}
+$$\begin{center}
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[scale=0.26]{images/ReLUFunctionGraph}
@@ -112,18 +122,21 @@ Hàm ReLU (Rectified Linear Unit) được giới thiệu bởi Hahnloser vào n
 		\caption{Đồ thị của hàm ReLU}
 		\label{Hinh34}
 	\end{figure}
-\end{center}
+\end{center}$$
+{% endraw %}
 
 Vào năm 2011, lần đầu tiên người ta đã chứng minh được rằng hàm ReLU giúp cho việc huấn luyện các mạng nơ-ron trở nên tốt hơn so với các hàm kích hoạt khác được sử dụng rộng rãi trước năm 2011 \cite{pmlr-v15-glorot11a}. Do đó đây là một hàm được sử dụng làm hàm kích hoạt phổ biến rộng rãi nhất trong các mạng nơ-ron cho đến hiện nay \cite{DBLP:journals/corr/abs-1710-05941}.
 
 \paragraph*{Hàm Logistic Sigmoid}\mbox{}\\
 
 Hàm logistic sigmoid có đồ thị là đường cong hình chữ S đặc trưng. Hàm này được định nghĩa như sau:
-\begin{align}
+{% raw %}
+$$\begin{align}
 \varphi \left( v \right) = \frac{1}{{1 + {e^{ - v}}}}
 \end{align}
 
-\begin{center}
+{% raw %}
+$$\begin{center}
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[scale=.32]{images/LogisticSigmoidGraph}
@@ -135,16 +148,19 @@ Hàm logistic sigmoid có đồ thị là đường cong hình chữ S đặc tr
 
 Hàm logistic sigmoid là hàm liên tục, có miền xác định là $\left( { - \infty , + \infty } \right)$ và có miền giá trị là $\left( { - 1,1} \right)$. Nhìn vào đồ thị của hàm ở hình ~\ref{Hinh35}, chúng ta có thể thấy rằng nếu đầu vào của hàm này càng lớn, giá trị đầu ra sẽ càng tiến gần đến 1. Với đầu vào có giá trị càng âm thì giá trị đầu ra của hàm càng tiến gần đến 0. Trước đây, hàm logistic sigmoid thường được ưu tiên sử dụng làm hàm kích hoạt trong các mạng nơ-ron do tính chất khả vi và có một đạo hàm đẹp có thể được tính toán khá dễ dàng:
 
-\begin{align}
+{% raw %}
+$$\begin{align}
 \frac{{d\varphi \left( v \right)}}{{dv}} = \left( {1 - \varphi \left( v \right)} \right)\varphi \left( v \right) = \varphi \left( v \right)\varphi \left( { - v} \right)
-\end{align}
+\end{align}$$
+{% endraw %}
 
 
 \paragraph*{Hàm Hyperbolic Tangent}\mbox{}\\
 
 Hàm hyperbolic tangent cũng là một hàm liên tục, có miền xác định là $\left( { - \infty , + \infty } \right)$ và có miền giá trị là $\left( { - 1,1} \right)$.
 
-\begin{center}
+{% raw %}
+$$\begin{center}
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[scale=.27]{images/HyperbolicTangentGraph}
@@ -156,17 +172,21 @@ Hàm hyperbolic tangent cũng là một hàm liên tục, có miền xác địn
 
 Tương tự như hàm logistic sigmoid, đồ thị của hàm hyperbolic tangent cũng có đồ thị hình chữ S như trong hình \ref{Hinh36}. Mối liên hệ giữa hàm logistic sigmoid và hàm hyperbolic tangent được biểu diễn qua công thức sau:
 
-\begin{align}
+{% raw %}
+$$\begin{align}
 \tanh \left( v \right) = 2\sigma \left( {2v} \right) - 1
-\end{align}
+\end{align}$$
+{% endraw %}
 
 Mặc dù hàm logistic sigmoid là một hàm đẹp, nhưng đôi khi cũng gặp một số vấn đề. Nếu đầu vào có giá trị càng âm thì giá trị đầu ra của hàm logistic sigmoid càng gần $0$, điều đó sẽ làm cho quá trình huấn luyện mạng nơ-ron trở nên chậm chạp, các trọng số được cập nhật với sự thay đổi giá trị rất ít. Trong trường hợp này, hàm hyperbolic tangent là một sự lựa chọn thay thế tốt cho hàm logistic sigmoid.
 
 ### Hàm Softmax
 Trong bài toán phân loại nhiều lớp với $K$ lớp cụ thể, hàm softmax được dùng để tính phân bố xác suất của dữ liệu đầu vào trên mỗi lớp cho trước. Hàm softmax sẽ chuyển đổi một vector $K$ chiều chứa các phần tử có giá trị là một số thực bất kỳ $z_{j}$ thành một vector $K$ chiều chứa các phần tử $a_{j}$ có giá trị trong miền $\left( {0,1} \right)$:
-\begin{equation}
+{% raw %}
+$$\begin{equation}
 a_{j} = \frac{exp(z_{j})}{\sum^K_{k=1} exp(z_{k})},\quad j = 1, ..., K
-\end{equation}
+\end{equation}$$
+{% endraw %}
 Mỗi giá trị $a_{j}$ là xác suất mà dữ liệu đầu vào sẽ thuộc vào lớp $j$ tương ứng và tổng của các giá trị này sẽ bằng $1$. Chúng ta phân lớp cho dữ liệu đầu vào bằng cách chọn lớp có giá trị xác suất $a_{j}$ lớn nhất.
 
 \begin{figure}[H]
