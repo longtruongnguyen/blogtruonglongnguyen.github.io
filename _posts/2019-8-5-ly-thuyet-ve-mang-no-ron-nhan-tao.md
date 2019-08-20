@@ -5,9 +5,9 @@ description: Những ý tưởng xây dựng các mô hình mạng nơ-ron nhân
 keywords: mạng nơ-ron nhân tạo, artificial neural Network, neural network, trí tuệ nhân tạo, mô hình mạng nơ-ron
 author: Nguyễn Trường Long
 ---
-\section{Lý thuyết về mạng nơ-ron nhân tạo}
+### Lý thuyết về mạng nơ-ron nhân tạo
 
-\subsection{Biological Neural Network}
+#### Biological Neural Network
 
 \begin{center}
 	\begin{figure}[H]
@@ -22,8 +22,7 @@ Những ý tưởng xây dựng các mô hình mạng nơ-ron nhân tạo bắt 
 
 Bộ não của con người lưu trữ thông tin trong những tế bào thần kinh và những khớp thần kinh giữa các tế bào này với nhau. Mỗi khái niệm trong não có thể được tượng trưng bằng một mạng của các kết nối khác nhau giữa những tế bào thần kinh. Sự hình thành các kiến thức mới (learning) xảy ra khi các khớp kết nối giữa nhiều nơ-ron trở nên mạnh hơn và liên kết giữa một cụm tế bào mới được hình thành. Cụ thể hơn là những thông tin này được hình thành từ khả năng thay đổi cường độ liên kết giữa các khớp thần kinh hay còn được gọi là sự mềm dẻo của khớp thần kinh (synaptic plasticity). Giả thuyết này được đưa ra bởi Hebb vào năm 1949, người cho rằng sự mềm dẻo của khớp thần kinh được tạo ra từ những kích thích lặp đi lặp lại và kéo dài giữa khớp tế bào trước (presynaptic terminal) và khớp tế bào sau (postsynaptic terminal). Điều này có nghĩa là khi hai nơ-ron được kích hoạt cùng lúc, các khớp thần kinh giữa hai tế bào sẽ trở nên mạnh hơn và hai tế bào này sẽ có thể kích hoạt lẫn nhau hiệu quả hơn. Các quá trình kích hoạt tạo sự liên kết này lâu dần sẽ tạo ra mạng lưới của các kết nối và nó sẽ đại diện cho một khái niệm nào đó.
 
-\newpage
-\subsection{Artificial Neural Network}
+#### Artificial Neural Network
 
 Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết về cách thức hoạt động của các tế bào thần kinh sinh học thành các mô hình mạng nơ-ron nhân tạo (Artificial Neural Network - \glsdisp{ANN}{ANN}) có thể hoạt động được trên máy tính. Hình ~\ref{Hinh32} cho thấy mô hình của một nơ-ron đơn lẻ, được xem như đơn vị xử lý thông tin cơ bản của một mạng nơ-ron. Các nơ-ron này được sử dụng để xây dựng thành các mạng nơ-ron có kiến trúc phức tạp hơn sẽ được trình bày trong các phần sau. Chúng ta sẽ xem xét 3 thành phần cơ bản của một mạng nơ-ron:
 
@@ -51,9 +50,9 @@ Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết v�
 	&{y_k} = \varphi \left( {{v_k}} \right)
 \end{align}
 	
-\noindent Trong đó ${x_1},{x_2},...,{x_m}$ là giá trị của các tín hiệu đầu vào, ${w_{k1}},{w_{k2}},...,{w_{km}}$ là các trọng số tương ứng với các khớp thần kinh liên kết đến nơ-ron có nhãn $k$, ${{u_k}}$ là bộ tổ hợp tuyến tính đầu ra (linear combiner output) từ các tín hiệu đầu vào, ${{b_k}}$ là độ lệch (bias), $\varphi \left( . \right)$ là hàm kích hoạt (activation function) và ${{y_k}}$ là tín hiệu đầu ra từ nơ-ron có nhãn $k$.
+Trong đó ${x_1},{x_2},...,{x_m}$ là giá trị của các tín hiệu đầu vào, ${w_{k1}},{w_{k2}},...,{w_{km}}$ là các trọng số tương ứng với các khớp thần kinh liên kết đến nơ-ron có nhãn $k$, ${{u_k}}$ là bộ tổ hợp tuyến tính đầu ra (linear combiner output) từ các tín hiệu đầu vào, ${{b_k}}$ là độ lệch (bias), $\varphi \left( . \right)$ là hàm kích hoạt (activation function) và ${{y_k}}$ là tín hiệu đầu ra từ nơ-ron có nhãn $k$.
 
-\subsection{Các hàm kích hoạt phổ biến}
+#### Các hàm kích hoạt phổ biến
 
 \paragraph*{Hàm ngưỡng}\mbox{}\\
 
@@ -77,7 +76,7 @@ Hàm ngưỡng (threshold function) là hàm không liên tục và miền giá 
 	\end{array}} \right.
 \end{align}
 
-\noindent Trong đó:
+Trong đó:
 
 \begin{align}
 {v_k} = \sum\limits_{j = 1}^m {{w_{kj}}{x_j} + {b_k}}
@@ -93,7 +92,7 @@ Hàm ngưỡng (threshold function) là hàm không liên tục và miền giá 
 	\end{figure}
 \end{center}
 
-\noindent Trong thực tế, hiện nay hàm ngưỡng ít được sử dụng do hàm này không có đạo hàm tại điểm $0$ và đạo hàm tại các điểm còn lại đều bằng $0$, các thuật toán dựa trên gradient đều không phù hợp khi sử dụng hàm ngưỡng làm hàm kích hoạt.
+Trong thực tế, hiện nay hàm ngưỡng ít được sử dụng do hàm này không có đạo hàm tại điểm $0$ và đạo hàm tại các điểm còn lại đều bằng $0$, các thuật toán dựa trên gradient đều không phù hợp khi sử dụng hàm ngưỡng làm hàm kích hoạt.
 
 \paragraph*{Hàm ReLU}\mbox{}\\
 
@@ -120,7 +119,7 @@ Hàm ReLU (Rectified Linear Unit) được giới thiệu bởi Hahnloser vào n
 	\end{figure}
 \end{center}
 
-\noindent Vào năm 2011, lần đầu tiên người ta đã chứng minh được rằng hàm ReLU giúp cho việc huấn luyện các mạng nơ-ron trở nên tốt hơn so với các hàm kích hoạt khác được sử dụng rộng rãi trước năm 2011 \cite{pmlr-v15-glorot11a}. Do đó đây là một hàm được sử dụng làm hàm kích hoạt phổ biến rộng rãi nhất trong các mạng nơ-ron cho đến hiện nay \cite{DBLP:journals/corr/abs-1710-05941}.
+Vào năm 2011, lần đầu tiên người ta đã chứng minh được rằng hàm ReLU giúp cho việc huấn luyện các mạng nơ-ron trở nên tốt hơn so với các hàm kích hoạt khác được sử dụng rộng rãi trước năm 2011 \cite{pmlr-v15-glorot11a}. Do đó đây là một hàm được sử dụng làm hàm kích hoạt phổ biến rộng rãi nhất trong các mạng nơ-ron cho đến hiện nay \cite{DBLP:journals/corr/abs-1710-05941}.
 
 \paragraph*{Hàm Logistic Sigmoid}\mbox{}\\
 
@@ -139,7 +138,7 @@ Hàm logistic sigmoid có đồ thị là đường cong hình chữ S đặc tr
 	\end{figure}
 \end{center}
 
-\noindent Hàm logistic sigmoid là hàm liên tục, có miền xác định là $\left( { - \infty , + \infty } \right)$ và có miền giá trị là $\left( { - 1,1} \right)$. Nhìn vào đồ thị của hàm ở hình ~\ref{Hinh35}, chúng ta có thể thấy rằng nếu đầu vào của hàm này càng lớn, giá trị đầu ra sẽ càng tiến gần đến 1. Với đầu vào có giá trị càng âm thì giá trị đầu ra của hàm càng tiến gần đến 0. Trước đây, hàm logistic sigmoid thường được ưu tiên sử dụng làm hàm kích hoạt trong các mạng nơ-ron do tính chất khả vi và có một đạo hàm đẹp có thể được tính toán khá dễ dàng:
+Hàm logistic sigmoid là hàm liên tục, có miền xác định là $\left( { - \infty , + \infty } \right)$ và có miền giá trị là $\left( { - 1,1} \right)$. Nhìn vào đồ thị của hàm ở hình ~\ref{Hinh35}, chúng ta có thể thấy rằng nếu đầu vào của hàm này càng lớn, giá trị đầu ra sẽ càng tiến gần đến 1. Với đầu vào có giá trị càng âm thì giá trị đầu ra của hàm càng tiến gần đến 0. Trước đây, hàm logistic sigmoid thường được ưu tiên sử dụng làm hàm kích hoạt trong các mạng nơ-ron do tính chất khả vi và có một đạo hàm đẹp có thể được tính toán khá dễ dàng:
 
 \begin{align}
 \frac{{d\varphi \left( v \right)}}{{dv}} = \left( {1 - \varphi \left( v \right)} \right)\varphi \left( v \right) = \varphi \left( v \right)\varphi \left( { - v} \right)
@@ -166,10 +165,9 @@ Tương tự như hàm logistic sigmoid, đồ thị của hàm hyperbolic tange
 \tanh \left( v \right) = 2\sigma \left( {2v} \right) - 1
 \end{align}
 
-\noindent Mặc dù hàm logistic sigmoid là một hàm đẹp, nhưng đôi khi cũng gặp một số vấn đề. Nếu đầu vào có giá trị càng âm thì giá trị đầu ra của hàm logistic sigmoid càng gần $0$, điều đó sẽ làm cho quá trình huấn luyện mạng nơ-ron trở nên chậm chạp, các trọng số được cập nhật với sự thay đổi giá trị rất ít. Trong trường hợp này, hàm hyperbolic tangent là một sự lựa chọn thay thế tốt cho hàm logistic sigmoid.
+Mặc dù hàm logistic sigmoid là một hàm đẹp, nhưng đôi khi cũng gặp một số vấn đề. Nếu đầu vào có giá trị càng âm thì giá trị đầu ra của hàm logistic sigmoid càng gần $0$, điều đó sẽ làm cho quá trình huấn luyện mạng nơ-ron trở nên chậm chạp, các trọng số được cập nhật với sự thay đổi giá trị rất ít. Trong trường hợp này, hàm hyperbolic tangent là một sự lựa chọn thay thế tốt cho hàm logistic sigmoid.
 
-\newpage
-\subsection{Hàm Softmax}
+### Hàm Softmax
 Trong bài toán phân loại nhiều lớp với $K$ lớp cụ thể, hàm softmax được dùng để tính phân bố xác suất của dữ liệu đầu vào trên mỗi lớp cho trước. Hàm softmax sẽ chuyển đổi một vector $K$ chiều chứa các phần tử có giá trị là một số thực bất kỳ $z_{j}$ thành một vector $K$ chiều chứa các phần tử $a_{j}$ có giá trị trong miền $\left( {0,1} \right)$:
 \begin{equation}
 a_{j} = \frac{exp(z_{j})}{\sum^K_{k=1} exp(z_{k})},\quad j = 1, ..., K
