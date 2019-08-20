@@ -148,7 +148,7 @@ $$\begin{align}
 
 Mặc dù hàm logistic sigmoid là một hàm đẹp, nhưng đôi khi cũng gặp một số vấn đề. Nếu đầu vào có giá trị càng âm thì giá trị đầu ra của hàm logistic sigmoid càng gần $0$, điều đó sẽ làm cho quá trình huấn luyện mạng nơ-ron trở nên chậm chạp, các trọng số được cập nhật với sự thay đổi giá trị rất ít. Trong trường hợp này, hàm hyperbolic tangent là một sự lựa chọn thay thế tốt cho hàm logistic sigmoid.
 
-### Hàm Softmax
+**Hàm Softmax**
 Trong bài toán phân loại nhiều lớp với $K$ lớp cụ thể, hàm softmax được dùng để tính phân bố xác suất của dữ liệu đầu vào trên mỗi lớp cho trước. Hàm softmax sẽ chuyển đổi một vector $K$ chiều chứa các phần tử có giá trị là một số thực bất kỳ $z_{j}$ thành một vector $K$ chiều chứa các phần tử $a_{j}$ có giá trị trong miền {% raw %}$$\left( {0,1} \right)$${% endraw %}:
 {% raw %}
 $$\begin{equation}
@@ -160,4 +160,15 @@ Mỗi giá trị $a_{j}$ là xác suất mà dữ liệu đầu vào sẽ thuộ
 <figure class="image">
   <img src="https://nguyentruonglong.net/images/softmaxEX.jpg" alt="Một số ví dụ minh họa về giá trị đầu vào và đầu ra của hàm softmax">
   <figcaption><center><i>Một số ví dụ minh họa về giá trị đầu vào và đầu ra của hàm softmax</i></center></figcaption>
+</figure>
+
+### Feedforward Neural Network
+
+Mạng nơ-ron được tạo thành khi chúng ta kết nối các nơ-ron đơn lẻ lại với nhau. Trong mạng nơ-ron, các nơ-ron được tổ chức thành từng lớp (layer). Ở dạng đơn giản nhất, mạng nơ-ron chỉ có duy nhất một lớp đầu ra (output layer). Các tín hiệu đầu vào được truyền trực tiếp thông qua các trọng số. Thiết kế đơn giản này tạo nền tảng cho các mạng nơ-ron khác có cấu trúc phức tạp hơn.
+
+Hình bên dưới dưới đây cho thấy kiến trúc của một mạng nơ-ron truyền thẳng (feedforward neural network) rất giống với kiến trúc được đề xuất bởi McCulloch và Pitt vào năm 1943. Thông thường các nơ-ron được xếp thành các lớp (layer) và kết nối với nhau. Lớp đầu tiên bên trái là lớp đầu vào (input layer) và lớp cuối cùng bên phải là lớp đầu ra (output layer), các lớp còn lại ở giữa là lớp ẩn (hidden layer). Các nơ-ron trong một lớp sẽ có trọng số (weight) tương ứng với kết nối đến nơ-ron của lớp khác. Mỗi một nơ-ron trong bất kỳ lớp nào của mạng đều được kết nối với tất cả các nơ-ron trong lớp đứng trước. Kiểu kết nối này được gọi là kết nối đầy đủ (fully connected). Không có bất kỳ kết nối nào giữa các nơ-ron trong cùng một lớp với nhau. Các tín hiệu chỉ được truyền thẳng theo một chiều từ trái sang phải qua các nơ-ron và không kết nối nào truyền tín hiệu theo chiều ngược lại.
+
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/ArchitecturalMultilayerPerceptron.png" alt="Hình minh hoạ kiến trúc của một mạng nơ-ron truyền thẳng với bốn lớp">
+  <figcaption><center><i>Hình minh hoạ kiến trúc của một mạng nơ-ron truyền thẳng với bốn lớp</i></center></figcaption>
 </figure>
