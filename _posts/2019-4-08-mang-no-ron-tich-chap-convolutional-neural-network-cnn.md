@@ -19,6 +19,11 @@ Sự tích chập riêng biệt giữa hai hàm $f$ và $g$ được định ngh
 $$\left( {f * g} \right)\left( x \right) = \sum\limits_t {f\left( t \right)} g\left( {x + t} \right)$$
 {% endraw %}
 
+Đối với tín hiệu 2 chiều như hình ảnh, chúng ta xem xét 2D-convolutions:
+{% raw %}
+$$\left( {K * I} \right)\left( {i,j} \right) = \sum\limits_{m,n} {K\left( {m,n} \right)} I\left( {i + n,j + m} \right)$$
+{% endraw %}
+
 Convolutional Neural Network (CNN) khá giống một mạng nơ-ron thông thường, bao gồm các nơ-ron có khả năng tự tối ưu hóa bằng quá trình học. Tuy nhiên, CNN được sử dụng chủ yếu trong việc xử lý ảnh, vì nếu sử dụng mạng nơ-ron thông thường sẽ cần rất nhiều trọng số (một hình kích thước 28x28x1 cần 784 trọng số). Vì vậy, các lớp trong CNN có nơ-ron được sắp xếp theo 3 chiều: width, height, depth. Ngoài ra, các nơ-ron trong một lớp chỉ liên kết với 1 vùng nhỏ trong lớp trước nó. Trong xử lý ngôn ngữ tự nhiên, ta có thể thay hình ảnh bằng một ma trận, mỗi hàng của ma trận là một vector đại diện một từ trong câu.
 
 Lấy ví dụ, câu đầu vào được chuyển thành một ma trận $d \times k$ với $d$ là độ dài vector đại diện từ và $k$ là một số cố định quyết định chiều dài tối đa của câu. Ta chèn số 0 (zero-pad) cho ma trận câu để đạt được chiều dài $k$, nếu câu có chiều dài ngắn hơn. Với những câu có chiều dài lớn hơn $k$, ta có thể bỏ hoặc cắt ra thành các câu nhỏ hơn.   
