@@ -1,11 +1,12 @@
 ---
 layout: post
-title: Mạng tích chập CNN (Convolutional Neural Network)
+title: Mạng nơ-ron tích chập CNN (Convolutional Neural Network)
 description: Convolutional Neural Network có kiến trúc khá giống một mạng nơ-ron truyền thẳng thông thường, bao gồm các nơ-ron có khả năng tự tối ưu hóa thông qua quá trình học.
-keywords: mạng tích chập cnn, mạng cnn, Convolutional Neural Network, mạng Convolutional Neural Network
+keywords: mạng tích chập cnn, mạng cnn, Convolutional Neural Network, mạng Convolutional Neural Network, mạng nơ-ron tích chập CNN, mạng nơ-ron tích chập
 author: Nguyễn Trường Long
 ---
 
+Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer perceptron) chỉ được định nghĩa để nhận dữ liệu đầu vào dưới dạng các vector. Đối với một số loại dữ liệu, đặc biệt là dữ liệu ở dạng hình ảnh thì mạng nơ-ron truyền thẳng nhiều lớp tỏ ra không hiệu quả để đáp ứng xử lý tốt. Để áp dụng mạng nơ-ron truyền thẳng nhiều lớp cho việc xử lý các dữ liệu ở dạng hình ảnh, chúng ta cần phải chuyển đổi được hình ảnh về dưới dạng vector. Điều này thường gây ra sự mất mát nhiều thông tin trong dữ liệu gốc ban đầu. Mạng nơ-ron tích chập nhiều lớp (CNN) được giới thiệu bởi LeCun đã loại bỏ việc trích xuất một cách thủ công các đặc trưng.
 Convolutional Neural Network (CNN) khá giống một mạng nơ-ron thông thường, bao gồm các nơ-ron có khả năng tự tối ưu hóa bằng quá trình học. Tuy nhiên, CNN được sử dụng chủ yếu trong việc xử lý ảnh, vì nếu sử dụng mạng nơ-ron thông thường sẽ cần rất nhiều trọng số (một hình kích thước 28x28x1 cần 784 trọng số). Vì vậy, các lớp trong CNN có nơ-ron được sắp xếp theo 3 chiều: width, height, depth. Ngoài ra, các nơ-ron trong một lớp chỉ liên kết với 1 vùng nhỏ trong lớp trước nó. Trong xử lý ngôn ngữ tự nhiên, ta có thể thay hình ảnh bằng một ma trận, mỗi hàng của ma trận là một vector đại diện một từ trong câu.
 
 Lấy ví dụ, câu đầu vào được chuyển thành một ma trận $d \times k$ với $d$ là độ dài vector đại diện từ và $k$ là một số cố định quyết định chiều dài tối đa của câu. Ta chèn số 0 (zero-pad) cho ma trận câu để đạt được chiều dài $k$, nếu câu có chiều dài ngắn hơn. Với những câu có chiều dài lớn hơn $k$, ta có thể bỏ hoặc cắt ra thành các câu nhỏ hơn.   
