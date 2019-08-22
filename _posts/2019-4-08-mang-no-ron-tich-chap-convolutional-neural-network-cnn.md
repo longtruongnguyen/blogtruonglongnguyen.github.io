@@ -8,7 +8,7 @@ author: Nguyễn Trường Long
 
 Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer perceptron) chỉ được xây dựng để nhận dữ liệu đầu vào dưới dạng vector. Đối với một số loại dữ liệu, đặc biệt là dữ liệu ở dạng hình ảnh, mạng nơ-ron truyền thẳng nhiều lớp tỏ ra không hiệu quả để đáp ứng xử lý tốt. Để áp dụng mạng nơ-ron truyền thẳng nhiều lớp cho việc xử lý các dữ liệu ở dạng hình ảnh, chúng ta cần phải chuyển đổi được hình ảnh về dưới dạng vector. Điều này thường gây ra sự mất mát nhiều thông tin trong dữ liệu gốc ban đầu. Mạng nơ-ron tích chập (CNN) được giới thiệu bởi LeCun đã loại bỏ việc trích xuất một cách thủ công các đặc trưng.
 
-Mạng CNN được cấu thành bởi một số loại layer sẽ được mô tả chi tiết hơn trong các phần sau bao gồm sau:
+Mạng CNN được cấu thành bởi một số loại layer sẽ được mô tả chi tiết hơn trong các phần sau bao gồm:
 - Convolutional layer
 - Pooling layer
 - Fully connected layer
@@ -23,6 +23,11 @@ $$\left( {f * g} \right)\left( x \right) = \sum\limits_t {f\left( t \right)} g\l
 {% raw %}
 $$\left( {K * I} \right)\left( {i,j} \right) = \sum\limits_{m,n} {K\left( {m,n} \right)} I\left( {i + n,j + m} \right)$$
 {% endraw %}
+
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/2DConvolution.png" alt="Ví dụ minh họa về 2D-Convolution">
+  <figcaption><center><i>Một ví dụ minh họa về 2D-Convolution</i></center></figcaption>
+</figure>
 
 Convolutional Neural Network (CNN) khá giống một mạng nơ-ron thông thường, bao gồm các nơ-ron có khả năng tự tối ưu hóa bằng quá trình học. Tuy nhiên, CNN được sử dụng chủ yếu trong việc xử lý ảnh, vì nếu sử dụng mạng nơ-ron thông thường sẽ cần rất nhiều trọng số (một hình kích thước 28x28x1 cần 784 trọng số). Vì vậy, các lớp trong CNN có nơ-ron được sắp xếp theo 3 chiều: width, height, depth. Ngoài ra, các nơ-ron trong một lớp chỉ liên kết với 1 vùng nhỏ trong lớp trước nó. Trong xử lý ngôn ngữ tự nhiên, ta có thể thay hình ảnh bằng một ma trận, mỗi hàng của ma trận là một vector đại diện một từ trong câu.
 
