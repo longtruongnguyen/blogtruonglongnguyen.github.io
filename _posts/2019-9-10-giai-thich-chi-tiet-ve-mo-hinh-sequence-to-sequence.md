@@ -2,6 +2,7 @@
 layout: post
 title: Giải thích chi tiết về mô hình Sequence-to-Sequence
 description: Mô hình Sequence-to-Sequence được đề xuất bởi Sutskever et al. vào năm 2014 và được sử dụng để tạo ra một chuỗi các token của câu trong ngôn ngữ đích làm câu bản dịch tương ứng cho một chuỗi các token của câu trong ngôn ngữ nguồn được cung cấp trước.
+excerpt: Mô hình Sequence-to-Sequence được đề xuất bởi Sutskever et al. vào năm 2014 và được sử dụng để tạo ra một chuỗi các token của câu trong ngôn ngữ đích làm câu bản dịch tương ứng cho một chuỗi các token của câu trong ngôn ngữ nguồn được cung cấp trước. Mô hình này sử dụng kiến trúc Encoder-Decoder và thông thường thì mạng RNN hoặc những cải tiến như mạng LSTM và GRU sẽ được sử dụng cho cả bộ Encoder và bộ Decoder. Đặc biệt, mạng LSTM được sử dụng để giải quyết các vấn đề phụ thuộc dài, ghi nhớ và biểu diễn mối quan hệ của các thông tin phụ thuộc vào ngữ cảnh trong câu văn bản.
 keywords: mô hình Sequence-to-Sequence, mô hình Sequence to Sequence, Sequence to Sequence model, mô hình Seq2Seq
 author: Nguyễn Trường Long
 ---
@@ -10,12 +11,11 @@ Mô hình Sequence-to-Sequence được đề xuất bởi Sutskever et al. vào
 
 - Bộ Encoder được sử dụng để ánh xạ chuỗi token trong ngôn ngữ nguồn đầu vào thành một vector có kích thước cố định. Tại mỗi bước mã hóa, Encoder sẽ nhận vector tương ứng với mỗi token trong chuỗi đầu vào để tạo ra vector trạng thái ẩn $s$ đại diện cho ý nghĩa của câu nguồn tại bước mã hóa cuối cùng.
 - Bộ Decoder sử dụng vector $s$ như khởi tạo cho trạng thái ẩn đầu tiên và tạo ra chuỗi các token ở ngôn ngữ đích tại mỗi bước giải mã. Do đó, hàm xác suất có điều kiện có thể được phân tích như sau:
-	
-{% raw %}
-$$\begin{equation}
-	p\left( {{y_1},...,{y_m}|{x_1},...,{x_n}} \right) = \prod\limits_{j = 1}^m {p\left( {{y_j}|s,{y_1},...,{y_{j - 1}}} \right)} \\
-\end{equation}$$
-{% endraw %}
+	{% raw %}
+		$$\begin{equation}
+			p\left( {{y_1},...,{y_m}|{x_1},...,{x_n}} \right) = \prod\limits_{j = 1}^m {p\left( {{y_j}|s,{y_1},...,{y_{j - 1}}} \right)} \\
+		\end{equation}$$
+	{% endraw %}
 
 Trong vế phải của công thức trên, mỗi phân bố {% raw %}$${p\left( {{y_j}|s,{y_1},...,{y_{j - 1}}} \right)}$${% endraw %} mô tả xác suất xuất hiện của token ${y_j}$ với vector đại diện cho câu đầu vào $s$ và các token trong chuỗi đầu ra đứng trước nó. Phân bố này được biểu diễn bằng một hàm softmax trên tất cả token trong tập từ vựng ở ngôn ngữ đích.
 
