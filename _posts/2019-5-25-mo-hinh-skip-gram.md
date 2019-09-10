@@ -6,14 +6,27 @@ keywords: mô hình Skip-gram, Skip-gram Model, mô hình Word2Vec, nhúng từ 
 author: Nguyễn Trường Long
 ---
 
-Ý tưởng của [mô hình Skip-gram](https://nguyentruonglong.net/mo-hinh-skip-gram.html) đối lập với [CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html), các từ mục tiêu bây giờ trở thành đầu vào và các từ ngữ cảnh trong câu trở thành đầu ra. Các bạn có thể xem lại bài viết về [mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) để nắm rõ hơn một số vấn đề mà mình sẽ không lặp lại trong bài viết này.
+Ý tưởng của [mô hình Skip-gram](https://nguyentruonglong.net/mo-hinh-skip-gram.html) đối lập với [CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html), các từ mục tiêu bây giờ trở thành đầu vào và các từ ngữ cảnh trong câu trở thành đầu ra.
 
 <figure class="image">
   <img src="https://nguyentruonglong.net/images/SkipGram.png" alt="Ảnh minh họa cho mô hình Skip-gram ở dạng tổng quát">
   <figcaption><center><i>Ảnh minh họa cho mô hình Skip-gram ở dạng tổng quát</i></center></figcaption>
 </figure>
 
-Gọi {% raw %}$${v_{{w_I}}}$${% endraw %} là vector đầu vào đại diện cho từ đầu vào duy nhất ${w_I}$. Các từ trong câu đầu vào của mô hình được chuyển về dưới dạng vector one-hot ${x^{\left( k \right)}}$. Ma trận $W$ với kích thước $V\times N$ là ma trận trọng số từ lớp đầu vào đến lớp ẩn, trong đó hàng thứ $i$ của ma trận chính là vector của từ thứ $i$ trong tập từ vựng. Ma trận này thu được sau khi huấn luyện là kết quả cần quan tâm do chứa các vector đại diện cho các từ trong tập từ vựng. Ma trận $h$ của lớp ẩn kích thước là $N\times 1$ với $N$ do chúng ta định nghĩa. Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra. Trong đầu ra thay vì chỉ có một phân phối, chúng ta tạo ra $C$ phân phối. Gọi $y_{c, j}$ là phần tử thứ $j$ trong vector đầu ra thứ $c$ với $c = 1, 2,... C$. Do ${x^{\left( k \right)}}$ là vector one-hot đầu vào duy nhất nên $h$ được tính như sau:
+Gọi {% raw %}$${v_{{w_I}}}$${% endraw %} là vector đầu vào đại diện cho từ đầu vào duy nhất ${w_I}$. Các từ trong câu đầu vào của mô hình được chuyển về dưới dạng vector one-hot ${x^{\left( k \right)}}$. Ma trận $W$ với kích thước $V\times N$ là ma trận trọng số từ lớp đầu vào đến lớp ẩn có dạng như sau:
+
+{% raw %}
+$$\begin{align}
+	{W_{V \times N}} = \left[ {\begin{array}{*{20}{c}}
+		{{w_{11}}}&{{w_{12}}}& \cdots &{{w_{1N}}}\\
+		{{w_{21}}}&{{w_{22}}}& \cdots &{{w_{2N}}}\\
+		\vdots & \vdots & \ddots & \vdots \\
+		{{w_{{\rm{V1}}}}}&{{w_{{\rm{V2}}}}}& \ldots &{{w_{{\rm{VN}}}}}
+		\end{array}} \right]
+\end{align}$$
+{% endraw %}
+
+Trong ma trận $W$, mỗi hàng thứ $i$ của ma trận chính là vector đại diện tương ứng cho từ thứ $i$ trong tập từ vựng. Ma trận này thu được sau khi huấn luyện là kết quả cần quan tâm do chứa các vector đại diện cho các từ trong tập từ vựng. Ma trận $h$ của lớp ẩn kích thước là $N\times 1$ với $N$ do chúng ta định nghĩa. Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra. Trong đầu ra thay vì chỉ có một phân phối, chúng ta tạo ra $C$ phân phối. Gọi $y_{c, j}$ là phần tử thứ $j$ trong vector đầu ra thứ $c$ với $c = 1, 2,... C$. Do ${x^{\left( k \right)}}$ là vector one-hot đầu vào duy nhất nên $h$ được tính như sau:
 {% raw %}
 $$\begin{equation}
 h = W_{\left( {k, \cdot } \right)}^T = v{}_{{w_I}}^T
