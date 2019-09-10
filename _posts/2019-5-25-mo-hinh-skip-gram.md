@@ -15,7 +15,22 @@ author: Nguyễn Trường Long
 </center>
 </figure>
 
-Gọi {% raw %}$${v_{{w_I}}}$${% endraw %} là vector đầu vào đại diện cho từ đầu vào duy nhất ${w_I}$. Các từ trong câu đầu vào của mô hình được chuyển về dưới dạng vector one-hot ${x^{\left( k \right)}}$. Ma trận $W$ với kích thước $V\times N$ là ma trận trọng số từ lớp đầu vào đến lớp ẩn có dạng như sau:
+Gọi {% raw %}$${v_{{w_I}}}$${% endraw %} là vector đầu vào đại diện cho từ đầu vào duy nhất ${w_I}$. Các từ trong câu đầu vào của mô hình được chuyển về dưới dạng vector one-hot ${x^{\left( k \right)}}$:
+
+{% raw %}
+$$\begin{align}
+	{x^{\left( k \right)}} = \left[ {\begin{array}{*{20}{c}}
+		{{x_1}}\\
+		{{x_2}}\\
+		\vdots \\
+		{{x_k}}\\
+		\vdots \\
+		{{x_V}}
+		\end{array}} \right]
+\end{align}$$
+{% endraw %}
+
+Ma trận $W$ với kích thước $V\times N$ là ma trận trọng số từ lớp đầu vào đến lớp ẩn có dạng như sau:
 
 {% raw %}
 $$\begin{align}
@@ -23,7 +38,7 @@ $$\begin{align}
 		{{w_{11}}}&{{w_{12}}}& \cdots &{{w_{1N}}}\\
 		{{w_{21}}}&{{w_{22}}}& \cdots &{{w_{2N}}}\\
 		\vdots & \vdots & \ddots & \vdots \\
-		{{w_{{\rm{V1}}}}}&{{w_{{\rm{V2}}}}}& \ldots &{{w_{{\rm{VN}}}}}
+		{{w_{{\rm{V1}}}}}&{{w_{{\rm{V2}}}}}& \ldots &{{w_{{{VN}}}}}
 		\end{array}} \right]
 \end{align}$$
 {% endraw %}
