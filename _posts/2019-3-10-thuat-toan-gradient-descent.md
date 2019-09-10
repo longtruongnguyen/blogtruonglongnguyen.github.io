@@ -4,12 +4,12 @@ title: Thuật toán Gradient Descent
 description: Ý tưởng của thuật toán gradient descent là chúng ta sẽ bắt đầu tại một điểm tùy ý, sau đó di chuyển dọc theo hướng ngược lại của gradient tại điểm đó, tiếp tục lặp lại quá trình này cho đến khi hy vọng có thể hội tụ tại điểm dừng.
 excerpt: Trong toán học, gradient là một trường hợp tổng quát của đạo hàm. Trong khi đạo hàm được định nghĩa trên các hàm số đơn biến và có giá trị vô hướng, gradient có giá trị là một vector. Giống như đạo hàm, gradient biểu diễn độ dốc tiếp tuyến (tangent) của đồ thị hàm số. Gradient của một hàm đa biến là một vector chứa tất cả các đạo hàm riêng phần (partial derivatives) của hàm đó.
 thumbnail: https://nguyentruonglong.net/images/understanding-gradient-descent.png
-keywords: thuật toán gradient descent, gradient descent, giải thuật gradient descent, phương pháp gradient descent, gradient
+keywords: thuật toán gradient descent, gradient descent algorithm, gradient descent, giải thuật gradient descent, phương pháp gradient descent, gradient
 author: Nguyễn Trường Long
 ---
 
 ### Giới thiệu thuật toán Gradient Descent
-Trong toán học, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) là một trường hợp tổng quát của đạo hàm. Trong khi đạo hàm được định nghĩa trên các hàm số đơn biến và có giá trị vô hướng, gradient có giá trị là một vector. Giống như đạo hàm, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) biểu diễn độ dốc tiếp tuyến (tangent) của đồ thị hàm số. Gradient của một hàm đa biến {% raw %}$$f\left( {{x_1},..,{x_M}} \right)$${% endraw %} là một vector chứa tất cả các đạo hàm riêng phần (partial derivatives) của hàm $$f$$ và được ký hiệu là $$\nabla f$$. Phần tử $$i$$ trong gradient là đạo hàm riêng phần của hàm $$f$$ theo biến $${x_i}$$.
+Trong toán học, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) là một trường hợp tổng quát của đạo hàm. Trong khi đạo hàm được định nghĩa trên các hàm số đơn biến và có giá trị vô hướng, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) có giá trị là một vector. Giống như đạo hàm, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) biểu diễn độ dốc tiếp tuyến (tangent) của đồ thị hàm số. [Gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của một hàm đa biến {% raw %}$$f\left( {{x_1},..,{x_M}} \right)$${% endraw %} là một vector chứa tất cả các đạo hàm riêng phần (partial derivatives) của hàm $$f$$ và được ký hiệu là $$\nabla f$$. Phần tử $$i$$ trong gradient là đạo hàm riêng phần của hàm $$f$$ theo biến $${x_i}$$.
 
 Cho hàm {% raw %}$$f:{\mathbb{R}^n} \to \mathbb{R}$${% endraw %} là hàm lồi và khả vi, bài toán chúng ta cần giải quyết là tìm $${x^*}$$ sao cho:
 {% raw %}
@@ -64,7 +64,7 @@ Trong quá trình huấn luyện các [mô hình mạng nơ-ron nhân tạo](htt
 <center>
   <img src="https://nguyentruonglong.net/images/GradientDescentOptimization.jpg" alt="Ảnh minh họa cho quá trình tối ưu hóa hàm lỗi trong machine learning bằng thuật toán gradient descent">
   <figcaption>
-	  <i>Ảnh minh họa cho quá trình tối ưu hóa hàm mất mát đơn giản $E\left( {{\phi _0},{\phi _1}} \right)$ bằng thuật toán gradient descent. Nguồn: Andrew Ng</i>
+	  <i>Ảnh minh họa cho quá trình tối ưu hóa hàm mất mát đơn giản $$ E\left( {{\phi {_0}},{\phi {_1}}} \right) $$ bằng thuật toán gradient descent. Nguồn: Andrew Ng</i>
   </figcaption>
 </center>
 </figure>
