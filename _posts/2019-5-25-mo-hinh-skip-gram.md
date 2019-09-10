@@ -41,7 +41,20 @@ h = \left[ {\begin{array}{*{20}{c}}
 \end{align}$$
 {% endraw %}
 
-Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra. Trong đầu ra thay vì chỉ có một phân phối, chúng ta tạo ra $C$ phân phối. Gọi $y_{c, j}$ là phần tử thứ $j$ trong vector đầu ra thứ $c$ với $c = 1, 2,... C$. Do ${x^{\left( k \right)}}$ là vector one-hot đầu vào duy nhất nên $h$ được tính như sau:
+Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra và có dạng như sau:
+
+{% raw %}
+$$\begin{align}
+	W_{N \times V}^' = \left[ {\begin{array}{*{20}{c}}
+	{w_{11}^'}&{w_{12}^'}& \cdots &{w_{1V}^'}\\
+	{w_{21}^'}&{w_{22}^'}& \cdots &{w_{2V}^'}\\
+	 \vdots & \vdots & \ddots & \vdots \\
+	{w_{N1}^'}&{w_{N1}^'}& \cdots &{w_{NV}^'}
+	\end{array}} \right]
+\end{align}$$
+{% endraw %}
+
+Trong đầu ra thay vì chỉ có một phân phối, chúng ta tạo ra $C$ phân phối. Gọi $y_{c, j}$ là phần tử thứ $j$ trong vector đầu ra thứ $c$ với $c = 1, 2,... C$. Do ${x^{\left( k \right)}}$ là vector one-hot đầu vào duy nhất nên $h$ được tính như sau:
 {% raw %}
 $$\begin{equation}
 h = W_{\left( {k, \cdot } \right)}^T = v{}_{{w_I}}^T
