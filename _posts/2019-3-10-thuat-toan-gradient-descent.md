@@ -7,6 +7,7 @@ keywords: thuật toán gradient descent, gradient descent, giải thuật gradi
 author: Nguyễn Trường Long
 ---
 
+### Giới thiệu thuật toán gradient descent
 Trong toán học, gradient là một trường hợp tổng quát của đạo hàm. Trong khi đạo hàm được định nghĩa trên các hàm số đơn biến và có giá trị vô hướng, gradient có giá trị là một vector. Giống như đạo hàm, gradient biểu diễn độ dốc tiếp tuyến (tangent) của đồ thị hàm số. Gradient của một hàm đa biến {% raw %}$$f\left( {{x_1},..,{x_M}} \right)$${% endraw %} là một vector chứa tất cả các đạo hàm riêng phần (partial derivatives) của hàm $$f$$ và được ký hiệu là $$\nabla f$$. Phần tử $$i$$ trong gradient là đạo hàm riêng phần của hàm $$f$$ theo biến $${x_i}$$.
 
 Cho hàm {% raw %}$$f:{\mathbb{R}^n} \to \mathbb{R}$${% endraw %} là hàm lồi và khả vi, bài toán chúng ta cần giải quyết là tìm $${x^*}$$ sao cho:
@@ -53,3 +54,51 @@ $$\begin{array}{l}
 6:\,\,{\rm{return}}\,\,{x^{\left( k \right)}}
 \end{array}$$
 {% endraw %}
+
+### Ứng dụng thuật toán gradient descent trong machine learning
+
+Trong quá trình huấn luyện các [mô hình mạng nơ-ron](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html), [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) được sử dụng để xác định bộ trọng số $w$ sao cho hàm mất mát {% raw %}$$E\left( w \right)$${% endraw %} đạt cực tiểu. Trong ph  ạm vi của bài viết này, mình sẽ trình bày những ý tưởng tổng quát về quá trình áp dụng thuật toán gradient descent trong machine learning và không đi quá sâu chi tiết về mặt toán học.
+
+Xét hàm mất mát {% raw %}$$E\left( w \right)$${% endraw %} là một hàm khả vi (differentiable) và liên tục (continuously) với tham số là bộ trọng số $w$. Hàm {% raw %}$$E\left( w \right)$${% endraw %} sẽ ánh xạ bộ trọng số $w$ sang số thực. Chúng ta sẽ tìm {% raw %}$$w^*$${% endraw %} thỏa mãn điều kiện:
+
+{% raw %}
+$$\begin{align}
+\nabla E\left( {{w^*}} \right) = 0
+\end{align}$$
+{% endraw %}
+
+Trong đó, $\nabla$ là toán tử gradient:
+
+{% raw %}
+$$\begin{align}
+\nabla  = {\left[ {\frac{\partial }{{\partial {w_1}}},\frac{\partial }{{\partial {w_2}}},...,\frac{\partial }{{\partial {w_M}}}} \right]^T}
+\end{align}$$
+{% endraw %}
+
+{% raw %}$$\nabla E\left( w \right)$${% endraw %} là gradient của hàm mất mát:
+
+{% raw %}
+$$\begin{align}
+\nabla {\rm E}\left( w \right) = {\left[ {\frac{{\partial E}}{{\partial {w_1}}},\frac{{\partial E}}{{\partial {w_2}}},...,\frac{{\partial E}}{{\partial {w_M}}}} \right]^T}
+\end{align}$$
+{% endraw %}
+
+Chúng ta bắt đầu bằng cách tạo một ước đoán ngẫu nhiên ban đầu là {% raw %}$$w\left( 0 \right)$${% endraw %}, sau đó cập nhật các trọng số này sao cho giá trị hàm mất mát {% raw %}$${\rm E}\left( w \right)$${% endraw %} được giảm dần tại mỗi lần lặp của thuật toán:
+
+{% raw %}
+$$\begin{align}
+E\left( {w\left( {n + 1} \right)} \right) < E\left( {w\left( n \right)} \right)
+\end{align}$$
+{% endraw %}
+
+Trong đó {% raw %}$$w\left( n \right)$${% endraw %} là giá trị cũ của bộ trọng số và {% raw %}$$w\left( {n + 1} \right)$${% endraw %} là giá trị mới được cập nhật.
+
+[Thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) sẽ điều chỉnh bộ trọng số $w$ sao cho hàm mất mát ngày càng đạt giá trị tối thiểu. Việc điều chỉnh bộ trọng số $w$ tại mỗi lần lặp của thuật toán được áp dụng theo hướng ngược lại với vector gradient:
+
+{% raw %}
+$$\begin{align}
+w\left( {n + 1} \right) = w\left( n \right) - \eta \nabla {\rm E}\left( {w\left( n \right)} \right)
+\end{align}$$
+{% endraw %}
+
+Trong đó $\eta$ là một số thực dương được gọi là learning rate hoặc step size. {% raw %}$$\nabla E\left( {w\left( n \right)} \right)$${% endraw %} là vector gradient tại điểm {% raw %}$${w\left( n \right)}$${% endraw %}. Giá trị learning rate có ảnh hưởng rất lớn đến việc hội tụ của [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html). Nếu learning rate nhỏ, thuật toán sẽ hội tụ chậm, nếu learning rate lớn, thuật toán sẽ hội tụ tiến nhanh đến mục tiêu. Tuy nhiên khi learning rate vượt qua một ngưỡng quan trọng nhất định, thuật toán sẽ dẫn đến hiện tượng phân kỳ.
