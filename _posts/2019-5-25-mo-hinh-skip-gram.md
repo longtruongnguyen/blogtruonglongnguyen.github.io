@@ -6,11 +6,13 @@ keywords: mô hình Skip-gram, Skip-gram Model, mô hình Word2Vec, nhúng từ 
 author: Nguyễn Trường Long
 ---
 
-Ý tưởng của [mô hình Skip-gram](https://nguyentruonglong.net/mo-hinh-skip-gram.html) đối lập với [CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html), các từ mục tiêu bây giờ trở thành đầu vào và các từ ngữ cảnh trong câu trở thành đầu ra.
+Ý tưởng của [mô hình Skip-gram](https://nguyentruonglong.net/mo-hinh-skip-gram.html) đối lập với [CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html), các từ mục tiêu bây giờ trở thành đầu vào và các từ ngữ cảnh trong câu trở thành đầu ra. Cho từ mục tiêu $${w_c}$$ tại vị trí $c$ trong câu văn bản, khi đó đầu vào của [mô hình Skip-gram](https://nguyentruonglong.net/mo-hinh-skip-gram.html) cũng chính là từ mục tiêu $${w_c}$$ và đầu ra của mô hình là các từ ngữ cảnh {% raw %}$$\left( {{w_{c - m}},...,{w_{c - 1}},{w_{c + 1}},...{w_{c + m}}} \right)$${% endraw %} xung quanh từ $${w_c}$$ trong phạm vi $$m$$.
 
 <figure class="image">
+<center>
   <img src="https://nguyentruonglong.net/images/SkipGram.png" alt="Ảnh minh họa cho mô hình Skip-gram ở dạng tổng quát">
-  <figcaption><center><i>Ảnh minh họa cho mô hình Skip-gram ở dạng tổng quát</i></center></figcaption>
+  <figcaption><i>Ảnh minh họa cho mô hình Skip-gram ở dạng tổng quát</i></figcaption>
+</center>
 </figure>
 
 Gọi {% raw %}$${v_{{w_I}}}$${% endraw %} là vector đầu vào đại diện cho từ đầu vào duy nhất ${w_I}$. Các từ trong câu đầu vào của mô hình được chuyển về dưới dạng vector one-hot ${x^{\left( k \right)}}$. Ma trận $W$ với kích thước $V\times N$ là ma trận trọng số từ lớp đầu vào đến lớp ẩn có dạng như sau:
