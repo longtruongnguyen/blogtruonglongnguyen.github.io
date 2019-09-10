@@ -15,7 +15,7 @@ author: Nguyễn Trường Long
 </center>
 </figure>
 
-Gọi {% raw %}$${v_{{w_I}}}$${% endraw %} là vector đầu vào đại diện cho từ đầu vào duy nhất ${w_I}$. Các từ trong câu đầu vào của mô hình được chuyển về dưới dạng vector one-hot ${x^{\left( k \right)}}$:
+[Mô hình Skip-gram](https://nguyentruonglong.net/mo-hinh-skip-gram.html) tổng quát được thể hiện trong hình bên trên với đầu vào gồm một từ mục tiêu duy nhất, đầu ra gồm $C$ từ ngữ cảnh xung quanh từ mục tiêu đầu vào, $V$ là kích thước của tập từ vựng trong tập ngữ liệu dùng để huấn luyện và hyperparameter $N$ là kích thước của hidden layer. Các unit thuộc các layer kế cận nhau được kết nối theo kiểu fully connected. Gọi {% raw %}$${v_{{w_I}}}$${% endraw %} là vector đầu vào đại diện cho từ đầu vào duy nhất ${w_I}$. Các từ trong câu đầu vào của mô hình được chuyển về dưới dạng vector one-hot ${x^{\left( k \right)}}$:
 
 {% raw %}
 $$\begin{align}
@@ -56,7 +56,7 @@ h = \left[ {\begin{array}{*{20}{c}}
 \end{align}$$
 {% endraw %}
 
-Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra và có dạng như sau:
+Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra có dạng như sau:
 
 {% raw %}
 $$\begin{align}
