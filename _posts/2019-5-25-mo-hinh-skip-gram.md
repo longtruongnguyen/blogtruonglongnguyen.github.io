@@ -28,7 +28,7 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-Trong ma trận $W$, mỗi hàng thứ $i$ của ma trận chính là vector đại diện tương ứng cho từ thứ $i$ trong tập từ vựng. Ma trận này thu được sau khi huấn luyện là kết quả cần quan tâm do chứa các vector đại diện cho các từ trong tập từ vựng. Ma trận $h$ của lớp ẩn kích thước là $N\times 1$ với $N$ do chúng ta định nghĩa có dạng như sau:
+Trong ma trận $W$, mỗi hàng thứ $i$ của ma trận chính là vector đại diện tương ứng cho từ thứ $i$ trong tập từ vựng và $N$ do chúng ta định nghĩa. Ma trận này thu được sau khi huấn luyện là kết quả cần quan tâm do chứa các vector đại diện cho các từ trong tập từ vựng. Ma trận $h$ của lớp ẩn kích thước là $N\times 1$ có dạng như sau:
 
 {% raw %}
 $$\begin{align}
