@@ -62,7 +62,7 @@ Trong quá trình huấn luyện các [mô hình mạng nơ-ron nhân tạo](htt
 
 <figure class="image">
 <center>
-  <img src="https://nguyentruonglong.net/images/GradientDescentOptimization.jpg" alt="Ảnh minh họa cho quá trình tối ưu hóa hàm lỗi trong machine learning bằng thuật toán gradient descent">
+  <img src="https://nguyentruonglong.net/images/GradientDescentOptimization.jpg" alt="Ảnh minh họa cho quá trình tối ưu hóa hàm mất mát trong machine learning bằng thuật toán gradient descent">
   <figcaption>
 	  <i>Ảnh minh họa cho quá trình sử dụng thuật toán gradient descent để tối ưu hóa hàm mất mát đơn giản {% raw %}$$ \begin{equation} E\left( {{\phi _0},{\phi _1}} \right) \end{equation} $${% endraw %}. Nguồn: Andrew Ng</i>
   </figcaption>
