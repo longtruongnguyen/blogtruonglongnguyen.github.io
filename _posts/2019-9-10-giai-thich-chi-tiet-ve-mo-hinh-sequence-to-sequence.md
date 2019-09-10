@@ -81,8 +81,6 @@ $$\begin{equation}
 \end{equation}$$
 {% endraw %}
 
-Ngoài ra, chúng ta cần phải xử lý thêm một số token đặc biệt để đánh dấu tín hiệu bắt đầu việc giải mã và kết thúc quá trình giải mã như trong ví dụ minh họa ở hình trên và các công việc này sẽ được mô tả cụ thể hơn ở nội dung hiện thực mô hình trong những phần sau.
-
 ### Cơ chế giải mã với thuật toán Greedy Search
 
 Trong quá trình giải mã của [mô hình Sequence-to-Sequence](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mo-hinh-sequence-to-sequence.html), thuật toán Greedy Search là một giải pháp đơn giản để mô hình dự đoán phần tử của chuỗi đầu ra tại mỗi bước của quá trình giải mã. Ở mỗi bước thời gian, trạng thái ẩn ở mạng RNN của bộ Decoder sẽ được ánh xạ thành một vector có kích thước $V$ bằng với kích thước của tập từ vựng ở ngôn ngữ đích. Hàm sofmax sẽ chuẩn hóa vector này thành vector $p$ với mỗi phần tử là giá trị xác suất xuất hiện của mỗi token tương ứng trong tập từ vựng ở ngôn ngữ đích với chuỗi đầu vào cho trước và chuỗi các phần tử đã được giải mã tại các bước trước. Hàm $${\rm{argmax}}$$ sẽ tính ra vị trí của phần tử trong vector $p$ có xác suất cao nhất và chúng ta sẽ chọn ra được token có vị trí tương đương với giá trị này trong tập từ vựng ở ngôn ngữ đích. Quá trình giải mã dừng lại khi trong chuỗi đầu ra xuất hiện token đặc biệt "$$<EOS>$$".
