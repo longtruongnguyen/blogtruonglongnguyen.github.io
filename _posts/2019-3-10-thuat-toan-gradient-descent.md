@@ -9,9 +9,7 @@ author: Nguyễn Trường Long
 ---
 
 ### Giới thiệu thuật toán Gradient Descent
-Trong toán học, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) là một trường hợp tổng quát của đạo hàm. Trong khi đạo hàm được định nghĩa trên các hàm số đơn biến và có giá trị vô hướng, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) có giá trị là một vector. Giống như đạo hàm, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) biểu diễn độ dốc tiếp tuyến (tangent) của đồ thị hàm số. [Gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của một hàm đa biến {% raw %}$$f\left( {{x_1},..,{x_M}} \right)$${% endraw %} là một vector chứa tất cả các đạo hàm riêng phần (partial derivatives) của hàm $$f$$ và được ký hiệu là $$\nabla f$$. Phần tử $$i$$ trong gradient là đạo hàm riêng phần của hàm $$f$$ theo biến $${x_i}$$.
-
-Cho hàm {% raw %}$$f:{\mathbb{R}^n} \to \mathbb{R}$${% endraw %} là hàm lồi và khả vi, bài toán chúng ta cần giải quyết là tìm $${x^*}$$ sao cho:
+Trong toán học, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) là một trường hợp tổng quát của đạo hàm. Trong khi đạo hàm được định nghĩa trên các hàm số đơn biến và có giá trị vô hướng, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) có giá trị là một vector. Giống như đạo hàm, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) biểu diễn độ dốc tiếp tuyến (tangent) của đồ thị hàm số. [Gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của một hàm đa biến {% raw %}$$f\left( {{x_1},..,{x_M}} \right)$${% endraw %} là một vector chứa tất cả các đạo hàm riêng phần (partial derivatives) của hàm $$f$$ và được ký hiệu là $$\nabla f$$. Phần tử $$i$$ trong gradient là đạo hàm riêng phần của hàm $$f$$ theo biến $${x_i}$$. Cho hàm {% raw %}$$f:{\mathbb{R}^n} \to \mathbb{R}$${% endraw %} là hàm lồi và khả vi, bài toán chúng ta cần giải quyết là tìm $${x^*}$$ sao cho:
 {% raw %}
 $$\begin{align}
 f\left( {{x^*}} \right) = \min f\left( x \right)
