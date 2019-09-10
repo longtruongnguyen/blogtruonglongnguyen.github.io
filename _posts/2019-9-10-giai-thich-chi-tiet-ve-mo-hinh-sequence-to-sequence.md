@@ -14,10 +14,18 @@ author: Nguyễn Trường Long
 
 ### Mô hình Sequence-to-Sequence
 
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/EndToEndModel.png" alt="Kiến trúc của mô hình Sequence-to-Sequence">
+  <figcaption><i>Kiến trúc của mô hình Sequence-to-Sequence với câu đầu vào là chuỗi "A B C D" và câu đầu ra là chuỗi "X Y Z"</i></figcaption>
+</center>
+</figure>
+
 Các thành phần chính của [mô hình Sequence-to-Sequence](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mo-hinh-sequence-to-sequence.html) bao gồm:
 
 - Bộ Encoder được sử dụng để ánh xạ chuỗi token trong ngôn ngữ nguồn đầu vào thành một vector có kích thước cố định. Tại mỗi bước mã hóa, Encoder sẽ nhận vector tương ứng với mỗi token trong chuỗi đầu vào để tạo ra vector trạng thái ẩn $s$ đại diện cho ý nghĩa của câu nguồn tại bước mã hóa cuối cùng.
 - Bộ Decoder sử dụng vector $s$ như khởi tạo cho trạng thái ẩn đầu tiên và tạo ra chuỗi các token ở ngôn ngữ đích tại mỗi bước giải mã. Do đó, hàm xác suất có điều kiện có thể được phân tích như sau:
+
 {% raw %}
 $$\begin{equation}
 	p\left( {{y_1},...,{y_m}|{x_1},...,{x_n}} \right) = \prod\limits_{j = 1}^m {p\left( {{y_j}|s,{y_1},...,{y_{j - 1}}} \right)} \\
@@ -54,13 +62,6 @@ h_{j} = f(h_{j-1},s)
 
 Trong đó $f$ là hàm biểu diễn chung cho quá trình tính trạng thái ẩn tại bước hiện tại từ trạng thái ẩn đầu ra của bước trước bằng mạng RNN hoặc bằng những cải tiến khác như LSTM} và GRU. Trong mô hình của Sutskever et
 al., vector $s$ đại diện cho câu nguồn chỉ được sử dụng một lần để làm trạng thái ẩn đầu tiên cho bộ Decoder. Trong mô hình của tác giả Bahdanau et al. và của tác giả Luong et al., $s$ là một vector đặc biệt được sử dụng xuyên suốt tại mỗi bước trong quá trình giải mã.
-
-<figure class="image">
-<center>
-  <img src="https://nguyentruonglong.net/images/EndToEndModel.png" alt="Kiến trúc của mô hình Sequence-to-Sequence">
-  <figcaption><i>Kiến trúc của mô hình Sequence-to-Sequence với câu đầu vào là chuỗi "A B C D" và câu đầu ra là chuỗi "X Y Z"</i></figcaption>
-</center>
-</figure>
 
 Hàm mất mát cần tối ưu hóa trong quá trình huấn luyện là một hàm có dạng tích của các hàm cross-entropy:
 
