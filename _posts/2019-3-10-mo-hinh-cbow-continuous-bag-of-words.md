@@ -8,6 +8,11 @@ author: Nguyễn Trường Long
 
 Ý tưởng chính của [mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) là dự đoán từ mục tiêu dựa vào các từ ngữ cảnh xung quanh nó trong một phạm vi nhất định. Cho từ mục tiêu $${w_c}$$ tại vị trí $c$, khi đó đầu vào là các từ ngữ cảnh {% raw %}$$\left( {{w_{c - m}},...,{w_{c - 1}},{w_{c + 1}},...{w_{c + m}}} \right)$${% endraw %} xung quanh từ $${w_c}$$ trong phạm vi $$m$$.
 
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/CBOWInputOutput.png" alt="Ảnh minh họa đầu vào và đầu ra của mô hình CBOW">
+  <figcaption><center><i>Ảnh minh họa đầu vào và đầu ra của [mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) trên câu văn bản "I have a big dog and horse" với $m = 1$</i></center></figcaption>
+</figure>
+
 [Mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) tổng quát được thể hiện trong hình bên dưới với kích thước đầu vào gồm $C$ từ ngữ cảnh, $V$ là kích thước của tập từ vựng và hyperparameter $N$ là kích thước của hidden layer. Các unit thuộc các layer kế cận nhau được kết nối theo kiểu fully connected. Mỗi từ đầu vào ở vị trí thứ $k$ trong tập từ vựng được biểu diễn bằng một one-hot vector có dạng:
 {% raw %}
 $$\begin{align}
@@ -32,6 +37,12 @@ $$\begin{align}
 		\end{array}} \right]
 \end{align}$$
 {% endraw %}
+
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/GeneralCBOW.png" alt="Ảnh minh họa cho mô hình CBOW ở dạng tổng quát">
+  <figcaption><center><i>Ảnh minh họa cho [mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) ở dạng tổng quát</i></center></figcaption>
+</figure>
+
 Mỗi hàng của ma trận $W$ là một biểu diễn vector $${v_w}$$ có số chiều là $N$ tương ứng với một từ $w$ trong tập từ vựng. Ma trận h với kích thước $$N \times 1$$ có dạng như sau:
 {% raw %}
 $$\begin{align}
