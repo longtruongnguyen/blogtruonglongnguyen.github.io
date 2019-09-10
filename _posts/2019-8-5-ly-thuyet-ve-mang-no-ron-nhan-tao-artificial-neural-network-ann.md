@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Lý thuyết về mạng nơ-ron nhân tạo (Artificial Neural Network - ANN)
-description: Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết về cách thức hoạt động của các tế bào thần kinh sinh học thành các mô hình mạng nơ-ron nhân tạo.
+description: Các nhà nghiên cứu đã tìm cách xây dựng các mô hình mạng nơ-ron nhân tạo dựa trên những hiểu biết về cách thức hoạt động của các mạng thần kinh sinh học đã khám phá được.
 keywords: mạng nơ-ron nhân tạo, artificial neural Network, neural network, trí tuệ nhân tạo, mô hình mạng nơ-ron, mạng ANN
 excerpt: Những ý tưởng xây dựng các mô hình mạng nơ-ron nhân tạo bắt nguồn từ việc khám phá ra các cơ chế hoạt động đơn giản của mạng nơ-ron sinh học (biological neural network). Trong hệ thống thần kinh sinh học, nơ-ron là tế bào sống và còn là đơn vị lưu trữ cơ bản trong bộ não của con người. Có khoảng 200 tỉ nơ-ron trong bộ não con người. Mỗi nơ-ron được liên kết với khoảng từ 1.000 đến 10.000 nơ-ron khác thông qua các khớp thần kinh (synapse). Các tín hiệu xung điện được truyền từ tế bào nơ-ron này sang tế bào nơ-ron khác thông qua các khớp thần kinh. Có tất cả khoảng 125 nghìn tỉ khớp thần kinh trong bộ não của con người.
 author: Nguyễn Trường Long
@@ -14,13 +14,13 @@ author: Nguyễn Trường Long
   <figcaption><center><i>Cấu trúc của một tế bào nơ-ron sinh học</i></center></figcaption>
 </figure>
 
-Những ý tưởng xây dựng các mô hình mạng nơ-ron nhân tạo bắt nguồn từ việc khám phá ra các cơ chế hoạt động đơn giản của mạng nơ-ron sinh học (biological neural network). Trong hệ thống thần kinh sinh học, nơ-ron là tế bào sống và còn là đơn vị lưu trữ cơ bản trong bộ não của con người. Có khoảng 200 tỉ nơ-ron trong bộ não con người. Mỗi nơ-ron được liên kết với khoảng từ 1.000 đến 10.000 nơ-ron khác thông qua các khớp thần kinh (synapse). Các tín hiệu xung điện được truyền từ tế bào nơ-ron này sang tế bào nơ-ron khác thông qua các khớp thần kinh. Có tất cả khoảng 125 nghìn tỉ khớp thần kinh trong bộ não của con người.
+Những ý tưởng xây dựng các mô hình [mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) bắt nguồn từ việc khám phá ra các cơ chế hoạt động đơn giản của mạng nơ-ron sinh học (biological neural network). Trong hệ thống thần kinh sinh học, nơ-ron là tế bào sống và còn là đơn vị lưu trữ cơ bản trong bộ não của con người. Có khoảng 200 tỉ nơ-ron trong bộ não con người. Mỗi nơ-ron được liên kết với khoảng từ 1.000 đến 10.000 nơ-ron khác thông qua các khớp thần kinh (synapse). Các tín hiệu xung điện được truyền từ tế bào nơ-ron này sang tế bào nơ-ron khác thông qua các khớp thần kinh. Có tất cả khoảng 125 nghìn tỉ khớp thần kinh trong bộ não của con người.
 
 Bộ não của con người lưu trữ thông tin trong những tế bào thần kinh và những khớp thần kinh giữa các tế bào này với nhau. Mỗi khái niệm trong não có thể được tượng trưng bằng một mạng của các kết nối khác nhau giữa những tế bào thần kinh. Sự hình thành các kiến thức mới (learning) xảy ra khi các khớp kết nối giữa nhiều nơ-ron trở nên mạnh hơn và liên kết giữa một cụm tế bào mới được hình thành. Cụ thể hơn là những thông tin này được hình thành từ khả năng thay đổi cường độ liên kết giữa các khớp thần kinh hay còn được gọi là sự mềm dẻo của khớp thần kinh (synaptic plasticity). Giả thuyết này được đưa ra bởi Hebb vào năm 1949, người cho rằng sự mềm dẻo của khớp thần kinh được tạo ra từ những kích thích lặp đi lặp lại và kéo dài giữa khớp tế bào trước (presynaptic terminal) và khớp tế bào sau (postsynaptic terminal). Điều này có nghĩa là khi hai nơ-ron được kích hoạt cùng lúc, các khớp thần kinh giữa hai tế bào sẽ trở nên mạnh hơn và hai tế bào này sẽ có thể kích hoạt lẫn nhau hiệu quả hơn. Các quá trình kích hoạt tạo sự liên kết này lâu dần sẽ tạo ra mạng lưới của các kết nối và nó sẽ đại diện cho một khái niệm nào đó.
 
 ### Artificial Neural Network
 
-Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết về cách thức hoạt động của các tế bào thần kinh sinh học thành các mô hình mạng nơ-ron nhân tạo (Artificial Neural Network) có thể hoạt động được trên máy tính. Hình trên cho thấy mô hình của một nơ-ron đơn lẻ, được xem như đơn vị xử lý thông tin cơ bản của một mạng nơ-ron. Các nơ-ron này được sử dụng để xây dựng thành các mạng nơ-ron có kiến trúc phức tạp hơn sẽ được trình bày trong các phần sau. Chúng ta sẽ xem xét 3 thành phần cơ bản của một mạng nơ-ron:
+Các nhà nghiên cứu đã tìm cách chuyển đổi những hiểu biết về cách thức hoạt động của các tế bào thần kinh sinh học thành các [mô hình mạng nơ-ron nhân tạo (Artificial Neural Network)](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) có thể hoạt động được trên máy tính. Hình trên cho thấy mô hình của một nơ-ron đơn lẻ, được xem như đơn vị xử lý thông tin cơ bản của một mạng nơ-ron. Các nơ-ron này được sử dụng để xây dựng thành các mạng nơ-ron có kiến trúc phức tạp hơn sẽ được trình bày trong các phần sau. Chúng ta sẽ xem xét 3 thành phần cơ bản của một mạng nơ-ron:
 
 - Một tập hợp các khớp thần kinh (synapse) hoặc còn được gọi là connecting link dùng để kết nối các nơ-ron lại với nhau. Mỗi khớp thần kinh được đặc trưng bởi cường độ liên kết của nó. Cụ thể hơn, một khớp thần kinh dùng để chuyển tín hiệu từ nơ-ron có nhãn $j$ sang nơ-ron có nhãn $k$ với trọng số là {% raw %}$${{w_{kj}}}$${% endraw %}. Không giống như trọng số của một khớp thần kinh trong hệ thần kinh sinh học, trọng số của một khớp thần kinh nhân tạo có thể mang giá trị âm hoặc dương.
 - Một bộ cộng (adder) dùng để tổng hợp các tín hiệu đầu vào tại mỗi nơ-ron và gửi kết quả đi tiếp.
@@ -106,7 +106,7 @@ $$\begin{align}
   <figcaption><center><i>Đồ thị của hàm ReLU</i></center></figcaption>
 </figure>
 
-Vào năm 2011, lần đầu tiên người ta đã chứng minh được rằng hàm ReLU giúp cho việc huấn luyện các mạng nơ-ron trở nên tốt hơn so với các hàm kích hoạt khác được sử dụng rộng rãi trước năm 2011. Do đó đây là một hàm được sử dụng làm hàm kích hoạt phổ biến rộng rãi nhất trong các mạng nơ-ron cho đến hiện nay.
+Vào năm 2011, lần đầu tiên người ta đã chứng minh được rằng hàm ReLU giúp cho việc huấn luyện các [mạng nơ-ron](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) trở nên tốt hơn so với các hàm kích hoạt khác được sử dụng rộng rãi trước năm 2011. Do đó đây là một hàm được sử dụng làm hàm kích hoạt phổ biến rộng rãi nhất trong các [mạng nơ-ron](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) cho đến hiện nay.
 
 
 **Hàm Logistic Sigmoid**
@@ -123,7 +123,7 @@ $$\begin{align}
   <figcaption><center><i>Đồ thị của hàm logistic sigmoid</i></center></figcaption>
 </figure>
 
-Hàm logistic sigmoid là hàm liên tục, có miền xác định là {% raw %}$$\left( { - \infty , + \infty } \right)$${% endraw %} và có miền giá trị là {% raw %}$$\left( { - 1,1} \right)$${% endraw %}. Nhìn vào đồ thị của hàm ở hình trên, chúng ta có thể thấy rằng nếu đầu vào của hàm này càng lớn, giá trị đầu ra sẽ càng tiến gần đến 1. Với đầu vào có giá trị càng âm thì giá trị đầu ra của hàm càng tiến gần đến 0. Trước đây, hàm logistic sigmoid thường được ưu tiên sử dụng làm hàm kích hoạt trong các mạng nơ-ron do tính chất khả vi và có một đạo hàm đẹp có thể được tính toán khá dễ dàng:
+Hàm logistic sigmoid là hàm liên tục, có miền xác định là {% raw %}$$\left( { - \infty , + \infty } \right)$${% endraw %} và có miền giá trị là {% raw %}$$\left( { - 1,1} \right)$${% endraw %}. Nhìn vào đồ thị của hàm ở hình trên, chúng ta có thể thấy rằng nếu đầu vào của hàm này càng lớn, giá trị đầu ra sẽ càng tiến gần đến 1. Với đầu vào có giá trị càng âm thì giá trị đầu ra của hàm càng tiến gần đến 0. Trước đây, hàm logistic sigmoid thường được ưu tiên sử dụng làm hàm kích hoạt trong các [mạng nơ-ron](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) do tính chất khả vi và có một đạo hàm đẹp có thể được tính toán khá dễ dàng:
 
 {% raw %}
 $$\begin{align}
