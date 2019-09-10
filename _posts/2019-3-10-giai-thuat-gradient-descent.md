@@ -3,7 +3,7 @@ layout: post
 title: Giải thuật Gradient Descent
 description: Ý tưởng của giải thuật gradient descent là chúng ta sẽ bắt đầu tại một điểm tùy ý, sau đó di chuyển dọc theo hướng ngược lại của gradient tại điểm đó, tiếp tục lặp lại quá trình này cho đến khi hy vọng có thể hội tụ tại điểm dừng.
 thumbnail: https://nguyentruonglong.net/images/understanding-gradient-descent.png
-keywords: "gradient descent, giải thuật gradient descent, gradient"
+keywords: gradient descent, giải thuật gradient descent, thuật toán gradient descent, phương pháp gradient descent, gradient
 author: Nguyễn Trường Long
 ---
 
@@ -16,9 +16,16 @@ f\left( {{x^*}} \right) = \min f\left( x \right)
 \end{align}$$
 {% endraw %}
 
-Xem xét bài toán trên, như chúng ta đã biết rằng để tìm cực tiểu của một hàm lồi, ta cần phải tìm điểm dừng của hàm số đó. Trong toán học, điểm dừng (stationary point) của một hàm khả vi là điểm mà mọi phần tử của gradient tại điểm đó đều bằng $$0$$. Ý tưởng của phương pháp [gradient descent](https://nguyentruonglong.net/giai-thuat-gradient-descent.html) là chúng ta sẽ bắt đầu tại một điểm tùy ý, sau đó di chuyển dọc theo hướng ngược lại của gradient tại điểm đó, tiếp tục lặp lại quá trình này cho đến khi hy vọng có thể hội tụ tại điểm dừng. Hình bên dưới đã minh họa ý tưởng này.
+Xem xét bài toán trên, như chúng ta đã biết rằng để tìm cực tiểu của một hàm lồi, ta cần phải tìm điểm dừng của hàm số đó. Trong toán học, điểm dừng (stationary point) của một hàm khả vi là điểm mà mọi phần tử của gradient tại điểm đó đều bằng $$0$$. Ý tưởng của [phương pháp gradient descent](https://nguyentruonglong.net/giai-thuat-gradient-descent.html) là chúng ta sẽ bắt đầu tại một điểm tùy ý, sau đó di chuyển dọc theo hướng ngược lại của gradient tại điểm đó, tiếp tục lặp lại quá trình này cho đến khi hy vọng có thể hội tụ tại điểm dừng. Hình bên dưới đã minh họa ý tưởng này.
 
-![](https://nguyentruonglong.net/images/understanding-gradient-descent.png)
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/understanding-gradient-descent.png" alt="Ảnh minh họa cho quá trình lặp của giải thuật gradient descent trong không gian 2 chiều">
+  <figcaption>
+	  <i>Ảnh minh họa cho quá trình lặp của giải thuật gradient descent trong không gian 2 chiều</i>
+  </figcaption>
+</center>
+</figure>
 
 Cụ thể hơn, chúng ta sẽ xác định hướng và kích thước di chuyển thông qua mô tả bằng các công thức toán học. Bắt đầu tại một điểm {% raw %}$${x^{\left( 0 \right)}} \in {\mathbb{R}^n}$${% endraw %} bất kỳ, chúng ta sẽ di chuyển theo hướng {% raw %}$$\nabla f\left( {{x^{\left( k \right)}}} \right)$${% endraw %} tại mỗi lần lặp $k \ge 0$ với kích thước lặp ${t_k}$ (step size) tới điểm tiếp theo {% raw %}$${x^{\left( {k + 1} \right)}}$${% endraw %}. Quá trình lặp này được tóm gọn trong công thức sau đây:
 {% raw %}
