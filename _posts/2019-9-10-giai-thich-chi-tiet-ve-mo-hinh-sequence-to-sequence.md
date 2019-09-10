@@ -8,6 +8,7 @@ author: Nguyễn Trường Long
 ---
 
 ### Giới thiệu
+
 Mô hình Sequence-to-Sequence được đề xuất bởi Sutskever et al. vào năm 2014 và được sử dụng để tạo ra một chuỗi các token của câu trong ngôn ngữ đích {% raw %}$$ y = \left\{ {{y_1},...,{y_m}} \right\} $${% endraw %} làm câu bản dịch tương ứng cho một chuỗi các token của câu trong ngôn ngữ nguồn {% raw %}$$x = \left\{ {{x_1},...,{x_n}} \right\}$${% endraw %} được cung cấp trước. Mục tiêu của quá trình huấn luyện là tối ưu hóa xác suất có điều kiện {% raw %} $$\begin{equation}
 {p\left( {{y_1},...,{y_m}|{x_1},...,{x_n}} \right)} \end{equation}$$ {% endraw %} với giá trị của $$m$$ là độ dài của chuỗi đầu ra có thể khác với $$n$$ là độ dài của chuỗi đầu vào. Mô hình này sử dụng kiến trúc Encoder-Decoder và thông thường thì mạng RNN hoặc những cải tiến như mạng LSTM và GRU sẽ được sử dụng cho cả bộ Encoder và bộ Decoder. Đặc biệt, mạng LSTM được sử dụng để giải quyết các vấn đề phụ thuộc dài, ghi nhớ và biểu diễn mối quan hệ của các thông tin phụ thuộc vào ngữ cảnh trong câu văn bản.
 
