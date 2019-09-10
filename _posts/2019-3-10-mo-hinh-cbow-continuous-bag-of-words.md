@@ -100,13 +100,28 @@ $$\begin{align}
 &= \frac{1}{C}{\left( {{v_{{w_{I,1}}}} + {v_{{w_{I,2}}}} + ... + {v_{{w_{I,C}}}}} \right)^T}
 \end{align}$$
 {% endraw %}
-Trong đó các one-hot vector {% raw %}$${x^{\left( 1 \right)}},...,{x^{\left( C \right)}}$${% endraw %} tương ứng lần lượt với các từ ngữ cảnh đầu vào {% raw %}$${{w_{I,1}},...,{w_{I,C}}}$${% endraw %} và {% raw %}$${{w_O}}$${% endraw %} là từ ở đầu ra của mô hình. Từ hidden layer đến  output layer là các trọng số được biểu diễn bằng một ma trận {% raw %}$${W^{'}} = \left\{ {w_{ij}^{'}} \right\}$${% endraw %} khác với kích thước {% raw %}$$N \times V$${% endraw %}. Chúng ta sẽ tính điểm số ${u_j}$ cho mỗi từ thứ $j$ trong tập từ vựng theo công thức sau:
+Trong đó các one-hot vector {% raw %}$${x^{\left( 1 \right)}},...,{x^{\left( C \right)}}$${% endraw %} tương ứng lần lượt với các từ ngữ cảnh đầu vào {% raw %}$${{w_{I,1}},...,{w_{I,C}}}$${% endraw %} và {% raw %}$${{w_O}}$${% endraw %} là từ ở đầu ra của mô hình. Từ hidden layer đến  output layer là các trọng số được biểu diễn bằng một ma trận {% raw %}$${W^{'}} = \left\{ {w_{ij}^{'}} \right\}$${% endraw %} khác với kích thước {% raw %}$$N \times V$${% endraw %} có dạng như sau:
+
+{% raw %}
+$$\begin{align}
+	W_{N \times V}^{'} = \left[ {\begin{array}{*{20}{c}}
+	{w_{11}^{'}}&{w_{12}^{'}}& \cdots &{w_{1V}^{'}}\\
+	{w_{21}^{'}}&{w_{22}^{'}}& \cdots &{w_{2V}^{'}}\\
+	 \vdots & \vdots & \ddots & \vdots \\
+	{w_{N1}^{'}}&{w_{N1}^{'}}& \cdots &{w_{NV}^{'}}
+	\end{array}} \right]
+\end{align}$$
+{% endraw %}
+
+Chúng ta sẽ tính điểm số ${u_j}$ cho mỗi từ thứ $j$ trong tập từ vựng theo công thức sau:
+
 {% raw %}
 $$\begin{equation}
 {u_j} = v{_{{w_j}}^{'}}^{T}h
 \end{equation}$$
 {% endraw %}
-Trong đó {% raw %}$$v_{{w_j}}^{'}$${% endraw %} là cột thứ $j$ của ma trận {% raw %}$${W^{'}}$${% endraw %}. Điểm số ${u_j}$ chính là thước đo độ khớp giữa $C$ từ ngữ cảnh đầu vào cho trước và từ ${w_j}$. Chúng ta sẽ sử dụng hàm softmax để chuẩn hóa phân phối hậu nghiệm (posterior distribution) của mỗi từ trong tập từ vựng như sau:
+
+Trong đó {% raw %}$$v_{{w_j}}^{'}$${% endraw %} là cột thứ $j$ của ma trận {% raw %}$${W^{'}}$${% endraw %}. Điểm số ${u_j}$ chính là thước đo độ khớp giữa $C$ từ ngữ cảnh đầu vào cho trước và từ ${w_j}$. Chúng ta sẽ sử dụng hàm $$softmax$$ để chuẩn hóa phân phối hậu nghiệm (posterior distribution) của mỗi từ trong tập từ vựng như sau:
 {% raw %}
 $$\begin{equation}
 {p\left( {{w_O}|{w_{I,1}},...,{w_{I,C}}} \right)} = {y_j} = \frac{{\exp \left( {{u_j}} \right)}}{{\sum\limits_{{j^{'}} = 1}^V {\exp \left( {{u_{{j^{'}}}}} \right)} }}
