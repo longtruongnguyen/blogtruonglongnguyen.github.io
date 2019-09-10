@@ -13,7 +13,14 @@ author: Nguyễn Trường Long
   <figcaption><center><i>Ảnh minh họa đầu vào và đầu ra của mô hình CBOW trên câu văn bản "I have a big dog and horse" với $m = 1$</i></center></figcaption>
 </figure>
 
-[Mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) tổng quát được thể hiện trong hình bên dưới với kích thước đầu vào gồm $C$ từ ngữ cảnh, $V$ là kích thước của tập từ vựng và hyperparameter $N$ là kích thước của hidden layer. Các unit thuộc các layer kế cận nhau được kết nối theo kiểu fully connected. Mỗi từ đầu vào ở vị trí thứ $k$ trong tập từ vựng được biểu diễn bằng một one-hot vector có dạng:
+[Mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) tổng quát được thể hiện trong hình bên dưới với kích thước đầu vào gồm $C$ từ ngữ cảnh, $V$ là kích thước của tập từ vựng và hyperparameter $N$ là kích thước của hidden layer. Các unit thuộc các layer kế cận nhau được kết nối theo kiểu fully connected.
+
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/GeneralCBOW.png" alt="Ảnh minh họa cho mô hình CBOW ở dạng tổng quát">
+  <figcaption><center><i>Ảnh minh họa cho mô hình CBOW ở dạng tổng quát</i></center></figcaption>
+</figure>
+
+Mỗi từ đầu vào ở vị trí thứ $k$ trong tập từ vựng được biểu diễn bằng một one-hot vector có dạng:
 {% raw %}
 $$\begin{align}
 	{x^{\left( k \right)}} = \left[ {\begin{array}{*{20}{c}}
@@ -80,12 +87,6 @@ $$\begin{align}
 	\end{array}
 \end{align}$$
 {% endraw %}
-
-
-<figure class="image">
-  <img src="https://nguyentruonglong.net/images/GeneralCBOW.png" alt="Ảnh minh họa cho mô hình CBOW ở dạng tổng quát">
-  <figcaption><center><i>Ảnh minh họa cho mô hình CBOW ở dạng tổng quát</i></center></figcaption>
-</figure>
 
 Sử dụng kết quả này, ta tính được $h$ như sau:
 {% raw %}
