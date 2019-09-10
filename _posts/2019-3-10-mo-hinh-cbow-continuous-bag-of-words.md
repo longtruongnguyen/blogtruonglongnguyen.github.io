@@ -11,7 +11,9 @@ author: Nguyễn Trường Long
 <figure class="image">
 <center>
   <img src="https://nguyentruonglong.net/images/CBOWInputOutput.png" alt="Ảnh minh họa đầu vào và đầu ra của mô hình CBOW">
-  <figcaption><i>Ảnh minh họa đầu vào và đầu ra của mô hình CBOW trên câu văn bản "I have a big dog and horse" với $m = 1$</i</figcaption>
+  <figcaption>
+	  <i>Ảnh minh họa đầu vào và đầu ra của mô hình CBOW trên câu văn bản "I have a big dog and horse" với $m = 1$</i>
+  </figcaption>
 </center>
 </figure>
 
