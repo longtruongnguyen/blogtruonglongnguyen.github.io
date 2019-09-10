@@ -56,7 +56,7 @@ h = \left[ {\begin{array}{*{20}{c}}
 \end{align}$$
 {% endraw %}
 
-Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra có dạng như sau:
+Mỗi phần tử của ma trận $h$ tương ứng với output của mỗi hidden layer unit. Activation function của các hidden layer unit đều là hàm tuyến tính {% raw %}$$\varphi \left( x \right) = x$${% endraw %}. Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra có dạng như sau:
 
 {% raw %}
 $$\begin{align}
