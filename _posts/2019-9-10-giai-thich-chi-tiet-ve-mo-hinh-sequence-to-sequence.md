@@ -14,7 +14,7 @@ Mô hình Sequence-to-Sequence được đề xuất bởi Sutskever et al. vào
 
 ### Mô hình Sequence-to-Sequence
 
-Các thành phần chính của mô hình bao gồm:
+Các thành phần chính của [mô hình Sequence-to-Sequence](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mo-hinh-sequence-to-sequence.html) bao gồm:
 
 - Bộ Encoder được sử dụng để ánh xạ chuỗi token trong ngôn ngữ nguồn đầu vào thành một vector có kích thước cố định. Tại mỗi bước mã hóa, Encoder sẽ nhận vector tương ứng với mỗi token trong chuỗi đầu vào để tạo ra vector trạng thái ẩn $s$ đại diện cho ý nghĩa của câu nguồn tại bước mã hóa cuối cùng.
 - Bộ Decoder sử dụng vector $s$ như khởi tạo cho trạng thái ẩn đầu tiên và tạo ra chuỗi các token ở ngôn ngữ đích tại mỗi bước giải mã. Do đó, hàm xác suất có điều kiện có thể được phân tích như sau:
