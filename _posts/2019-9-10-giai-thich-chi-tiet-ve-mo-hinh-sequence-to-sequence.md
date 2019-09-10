@@ -17,7 +17,7 @@ $$\begin{equation}
 \end{equation}$$
 {% endraw %}
 
-Trong vế phải của công thức trên, mỗi phân bố {% raw %} $$ {p\left( {{y_j}|s,{y_1},...,{y_{j - 1}}} \right)} $$ {% endraw %} mô tả xác suất xuất hiện của token $${y_j}$$ với vector đại diện cho câu đầu vào $$s$$ và các token trong chuỗi đầu ra đứng trước nó. Phân bố này được biểu diễn bằng một hàm $$\rm{softmax}$$ trên tất cả token trong tập từ vựng ở ngôn ngữ đích.
+Trong vế phải của công thức trên, mỗi phân bố {% raw %} $$\begin{equation} {p\left( {{y_j}|s,{y_1},...,{y_{j - 1}}} \right)} \end{equation} $$ {% endraw %} mô tả xác suất xuất hiện của token $${y_j}$$ với vector đại diện cho câu đầu vào $$s$$ và các token trong chuỗi đầu ra đứng trước nó. Phân bố này được biểu diễn bằng một hàm $$\rm{softmax}$$ trên tất cả token trong tập từ vựng ở ngôn ngữ đích.
 
 
 Công thức trên có thể được viết lại thành dạng như sau:
