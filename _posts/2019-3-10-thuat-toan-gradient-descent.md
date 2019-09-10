@@ -60,6 +60,15 @@ $$\begin{array}{l}
 
 Trong quá trình huấn luyện các [mô hình mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html), [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) được sử dụng để xác định bộ trọng số $w$ sao cho hàm mất mát {% raw %}$$E\left( w \right)$${% endraw %} đạt cực tiểu. Trong phạm vi của bài viết này, mình sẽ trình bày những ý tưởng tổng quát về quá trình áp dụng [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) trong machine learning và không tập trung đi quá sâu chi tiết về mặt toán học.
 
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/GradientDescentOptimization.jpg" alt="Ảnh minh họa cho quá trình tối ưu hóa hàm lỗi trong machine learning bằng thuật toán gradient descent">
+  <figcaption>
+	  <i>Ảnh minh họa cho quá trình tối ưu hóa hàm lỗi đơn giản {% raw %}$$E\left( {{\phi _0},{\phi _1}} \right)$${% endraw %} bằng thuật toán gradient descent. Nguồn: Andrew Ng</i>
+  </figcaption>
+</center>
+</figure>
+
 Xét hàm mất mát {% raw %}$$E\left( w \right)$${% endraw %} là một hàm khả vi (differentiable) và liên tục (continuously) với tham số là bộ trọng số $w$. Hàm {% raw %}$$E\left( w \right)$${% endraw %} sẽ ánh xạ bộ trọng số $w$ sang số thực. Chúng ta sẽ tìm {% raw %}$$w^*$${% endraw %} thỏa mãn điều kiện:
 
 {% raw %}
@@ -92,9 +101,7 @@ E\left( {w\left( {n + 1} \right)} \right) < E\left( {w\left( n \right)} \right)
 \end{align}$$
 {% endraw %}
 
-Trong đó {% raw %}$$w\left( n \right)$${% endraw %} là giá trị cũ của bộ trọng số và {% raw %}$$w\left( {n + 1} \right)$${% endraw %} là giá trị mới được cập nhật.
-
-[Thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) sẽ điều chỉnh bộ trọng số $w$ sao cho hàm mất mát ngày càng đạt giá trị tối thiểu. Việc điều chỉnh bộ trọng số $w$ tại mỗi lần lặp của thuật toán được áp dụng theo hướng ngược lại với vector gradient:
+Trong đó {% raw %}$$w\left( n \right)$${% endraw %} là giá trị cũ của bộ trọng số và {% raw %}$$w\left( {n + 1} \right)$${% endraw %} là giá trị mới được cập nhật. [Thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) sẽ điều chỉnh bộ trọng số $w$ sao cho hàm mất mát ngày càng đạt giá trị tối thiểu. Việc điều chỉnh bộ trọng số $w$ tại mỗi lần lặp của thuật toán được áp dụng theo hướng ngược lại với vector gradient:
 
 {% raw %}
 $$\begin{align}
