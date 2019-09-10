@@ -45,11 +45,11 @@ Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩ
 
 {% raw %}
 $$\begin{align}
-	W_{N \times V}^' = \left[ {\begin{array}{*{20}{c}}
-	{w_{11}^'}&{w_{12}^'}& \cdots &{w_{1V}^'}\\
-	{w_{21}^'}&{w_{22}^'}& \cdots &{w_{2V}^'}\\
+	W_{N \times V}^{'} = \left[ {\begin{array}{*{20}{c}}
+	{w_{11}^{'}}&{w_{12}^{'}}& \cdots &{w_{1V}^{'}}\\
+	{w_{21}^{'}}&{w_{22}^{'}}& \cdots &{w_{2V}^{'}}\\
 	 \vdots & \vdots & \ddots & \vdots \\
-	{w_{N1}^'}&{w_{N1}^'}& \cdots &{w_{NV}^'}
+	{w_{N1}^{'}}&{w_{N1}^{'}}& \cdots &{w_{NV}^{'}}
 	\end{array}} \right]
 \end{align}$$
 {% endraw %}
