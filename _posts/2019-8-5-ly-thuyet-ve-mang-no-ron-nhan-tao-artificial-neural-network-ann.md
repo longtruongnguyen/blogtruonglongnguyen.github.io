@@ -2,7 +2,7 @@
 layout: post
 title: Lý thuyết về mạng nơ-ron nhân tạo (Artificial Neural Network - ANN)
 description: Các nhà nghiên cứu đã tìm cách xây dựng các mô hình mạng nơ-ron nhân tạo dựa trên những hiểu biết về cách thức hoạt động của các mạng thần kinh sinh học đã khám phá được.
-keywords: mạng nơ-ron nhân tạo, artificial neural Network, neural network, mạng neural, mô hình mạng nơ-ron, mạng ANN, mạng nơ-ron truyền thẳng, feedforward neural network, trí tuệ nhân tạo, mô hình học sâu
+keywords: mạng nơ-ron nhân tạo, artificial neural Network, mạng ANN, neural network, mạng neural, mô hình mạng nơ-ron, neural network model, mạng nơ-ron truyền thẳng, feedforward neural network, deep neural network, mô hình học sâu, deep learning
 excerpt: Những ý tưởng xây dựng các mô hình mạng nơ-ron nhân tạo bắt nguồn từ việc khám phá ra các cơ chế hoạt động đơn giản của mạng nơ-ron sinh học (biological neural network). Trong hệ thống thần kinh sinh học, nơ-ron là tế bào sống và còn là đơn vị lưu trữ cơ bản trong bộ não của con người. Có khoảng 200 tỉ nơ-ron trong bộ não con người. Mỗi nơ-ron được liên kết với khoảng từ 1.000 đến 10.000 nơ-ron khác thông qua các khớp thần kinh (synapse). Các tín hiệu xung điện được truyền từ tế bào nơ-ron này sang tế bào nơ-ron khác thông qua các khớp thần kinh. Có tất cả khoảng 125 nghìn tỉ khớp thần kinh trong bộ não của con người.
 author: Nguyễn Trường Long
 ---
