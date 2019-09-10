@@ -26,7 +26,20 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-Trong ma trận $W$, mỗi hàng thứ $i$ của ma trận chính là vector đại diện tương ứng cho từ thứ $i$ trong tập từ vựng. Ma trận này thu được sau khi huấn luyện là kết quả cần quan tâm do chứa các vector đại diện cho các từ trong tập từ vựng. Ma trận $h$ của lớp ẩn kích thước là $N\times 1$ với $N$ do chúng ta định nghĩa. Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra. Trong đầu ra thay vì chỉ có một phân phối, chúng ta tạo ra $C$ phân phối. Gọi $y_{c, j}$ là phần tử thứ $j$ trong vector đầu ra thứ $c$ với $c = 1, 2,... C$. Do ${x^{\left( k \right)}}$ là vector one-hot đầu vào duy nhất nên $h$ được tính như sau:
+Trong ma trận $W$, mỗi hàng thứ $i$ của ma trận chính là vector đại diện tương ứng cho từ thứ $i$ trong tập từ vựng. Ma trận này thu được sau khi huấn luyện là kết quả cần quan tâm do chứa các vector đại diện cho các từ trong tập từ vựng. Ma trận $h$ của lớp ẩn kích thước là $N\times 1$ với $N$ do chúng ta định nghĩa có dạng như sau:
+
+{% raw %}
+$$\begin{align}
+h = \left[ {\begin{array}{*{20}{c}}
+	{{h_1}}\\
+	{{h_2}}\\
+	\vdots \\
+	{{h_N}}
+	\end{array}} \right]
+\end{align}$$
+{% endraw %}
+
+Ma trận $W'$ có chiều $N\times V$ là ma trận trọng số từ lớp ẩn đến lớp đầu ra. Trong đầu ra thay vì chỉ có một phân phối, chúng ta tạo ra $C$ phân phối. Gọi $y_{c, j}$ là phần tử thứ $j$ trong vector đầu ra thứ $c$ với $c = 1, 2,... C$. Do ${x^{\left( k \right)}}$ là vector one-hot đầu vào duy nhất nên $h$ được tính như sau:
 {% raw %}
 $$\begin{equation}
 h = W_{\left( {k, \cdot } \right)}^T = v{}_{{w_I}}^T
