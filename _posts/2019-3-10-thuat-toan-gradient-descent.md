@@ -8,8 +8,8 @@ keywords: thuật toán gradient descent, gradient descent, giải thuật gradi
 author: Nguyễn Trường Long
 ---
 
-### Giới thiệu thuật toán gradient descent
-Trong toán học, gradient là một trường hợp tổng quát của đạo hàm. Trong khi đạo hàm được định nghĩa trên các hàm số đơn biến và có giá trị vô hướng, gradient có giá trị là một vector. Giống như đạo hàm, gradient biểu diễn độ dốc tiếp tuyến (tangent) của đồ thị hàm số. Gradient của một hàm đa biến {% raw %}$$f\left( {{x_1},..,{x_M}} \right)$${% endraw %} là một vector chứa tất cả các đạo hàm riêng phần (partial derivatives) của hàm $$f$$ và được ký hiệu là $$\nabla f$$. Phần tử $$i$$ trong gradient là đạo hàm riêng phần của hàm $$f$$ theo biến $${x_i}$$.
+### Giới thiệu thuật toán Gradient Descent
+Trong toán học, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) là một trường hợp tổng quát của đạo hàm. Trong khi đạo hàm được định nghĩa trên các hàm số đơn biến và có giá trị vô hướng, gradient có giá trị là một vector. Giống như đạo hàm, [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) biểu diễn độ dốc tiếp tuyến (tangent) của đồ thị hàm số. Gradient của một hàm đa biến {% raw %}$$f\left( {{x_1},..,{x_M}} \right)$${% endraw %} là một vector chứa tất cả các đạo hàm riêng phần (partial derivatives) của hàm $$f$$ và được ký hiệu là $$\nabla f$$. Phần tử $$i$$ trong gradient là đạo hàm riêng phần của hàm $$f$$ theo biến $${x_i}$$.
 
 Cho hàm {% raw %}$$f:{\mathbb{R}^n} \to \mathbb{R}$${% endraw %} là hàm lồi và khả vi, bài toán chúng ta cần giải quyết là tìm $${x^*}$$ sao cho:
 {% raw %}
@@ -56,9 +56,9 @@ $$\begin{array}{l}
 \end{array}$$
 {% endraw %}
 
-### Ứng dụng thuật toán gradient descent trong machine learning
+### Ứng dụng thuật toán Gradient Descent trong Machine Learning
 
-Trong quá trình huấn luyện các [mô hình mạng nơ-ron](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html), [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) được sử dụng để xác định bộ trọng số $w$ sao cho hàm mất mát {% raw %}$$E\left( w \right)$${% endraw %} đạt cực tiểu. Trong phạm vi của bài viết này, mình sẽ trình bày những ý tưởng tổng quát về quá trình áp dụng [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) trong machine learning và không tập trung đi quá sâu chi tiết về mặt toán học.
+Trong quá trình huấn luyện các [mô hình mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html), [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) được sử dụng để xác định bộ trọng số $w$ sao cho hàm mất mát {% raw %}$$E\left( w \right)$${% endraw %} đạt cực tiểu. Trong phạm vi của bài viết này, mình sẽ trình bày những ý tưởng tổng quát về quá trình áp dụng [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) trong machine learning và không tập trung đi quá sâu chi tiết về mặt toán học.
 
 Xét hàm mất mát {% raw %}$$E\left( w \right)$${% endraw %} là một hàm khả vi (differentiable) và liên tục (continuously) với tham số là bộ trọng số $w$. Hàm {% raw %}$$E\left( w \right)$${% endraw %} sẽ ánh xạ bộ trọng số $w$ sang số thực. Chúng ta sẽ tìm {% raw %}$$w^*$${% endraw %} thỏa mãn điều kiện:
 
@@ -68,7 +68,7 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-Trong đó, $\nabla$ là toán tử gradient:
+Trong đó, $\nabla$ là [toán tử gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html):
 
 {% raw %}
 $$\begin{align}
@@ -76,7 +76,7 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-{% raw %}$$\nabla E\left( w \right)$${% endraw %} là gradient của hàm mất mát:
+{% raw %}$$\nabla E\left( w \right)$${% endraw %} là [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của hàm mất mát:
 
 {% raw %}
 $$\begin{align}
@@ -102,4 +102,4 @@ w\left( {n + 1} \right) = w\left( n \right) - \eta \nabla {\rm E}\left( {w\left(
 \end{align}$$
 {% endraw %}
 
-Trong đó $\eta$ là một số thực dương được gọi là learning rate hoặc step size. {% raw %}$$\nabla E\left( {w\left( n \right)} \right)$${% endraw %} là vector gradient tại điểm {% raw %}$${w\left( n \right)}$${% endraw %}. Giá trị learning rate có ảnh hưởng rất lớn đến việc hội tụ của [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html). Nếu learning rate nhỏ, thuật toán sẽ hội tụ chậm, nếu learning rate lớn, thuật toán sẽ hội tụ tiến nhanh đến mục tiêu. Tuy nhiên khi learning rate vượt qua một ngưỡng quan trọng nhất định, thuật toán sẽ dẫn đến hiện tượng phân kỳ.
+Trong đó $\eta$ là một số thực dương được gọi là learning rate hoặc step size và {% raw %}$$\nabla E\left( {w\left( n \right)} \right)$${% endraw %} là [vector gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) tại điểm {% raw %}$${w\left( n \right)}$${% endraw %}. Giá trị learning rate có ảnh hưởng rất lớn đến việc hội tụ của [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html). Nếu learning rate nhỏ, thuật toán sẽ hội tụ chậm, nếu learning rate lớn, thuật toán sẽ hội tụ tiến nhanh đến mục tiêu. Tuy nhiên khi learning rate vượt qua một ngưỡng quan trọng nhất định, thuật toán sẽ dẫn đến hiện tượng phân kỳ.
