@@ -6,7 +6,7 @@ keywords: mô hình CBOW, Continuous Bag of Words, mô hình Word2Vec, nhúng t�
 author: Nguyễn Trường Long
 ---
 
-Ý tưởng chính của [mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) là dự đoán từ mục tiêu dựa vào các từ ngữ cảnh xung quanh nó trong một phạm vi nhất định. Cho từ mục tiêu $${w_c}$$ tại vị trí $c$, khi đó đầu vào là các từ ngữ cảnh {% raw %}$$\left( {{w_{c - m}},...,{w_{c - 1}},{w_{c + 1}},...{w_{c + m}}} \right)$${% endraw %} xung quanh từ $${w_c}$$ trong phạm vi $$m$$.
+Ý tưởng chính của [mô hình CBOW](https://nguyentruonglong.net/mo-hinh-cbow-continuous-bag-of-words.html) là dự đoán từ mục tiêu dựa vào các từ ngữ cảnh xung quanh nó trong một phạm vi nhất định. Cho từ mục tiêu $${w_c}$$ tại vị trí $c$ trong câu văn bản, khi đó đầu vào là các từ ngữ cảnh {% raw %}$$\left( {{w_{c - m}},...,{w_{c - 1}},{w_{c + 1}},...{w_{c + m}}} \right)$${% endraw %} xung quanh từ $${w_c}$$ trong phạm vi $$m$$.
 
 <figure class="image">
 <center>
