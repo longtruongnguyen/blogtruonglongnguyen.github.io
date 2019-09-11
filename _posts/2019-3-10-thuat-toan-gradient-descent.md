@@ -95,16 +95,16 @@ Chúng ta bắt đầu bằng cách tạo một ước đoán ngẫu nhiên ban 
 
 {% raw %}
 $$\begin{align}
-E\left( {w\left( {n + 1} \right)} \right) < E\left( {w\left( n \right)} \right)
+E\left( {{w_{n + 1}}} \right) < E\left( {{w_n}} \right)
 \end{align}$$
 {% endraw %}
 
-Trong đó {% raw %}$${w_{n}}$${% endraw %} là giá trị cũ của bộ trọng số và {% raw %}$${w_{n + 1}}$${% endraw %} là giá trị mới được cập nhật. [Thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) sẽ điều chỉnh bộ trọng số $w$ sao cho hàm mất mát ngày càng đạt giá trị tối thiểu. Việc điều chỉnh bộ trọng số $w$ tại mỗi lần lặp của thuật toán được áp dụng theo hướng ngược lại với vector gradient:
+Trong đó {% raw %}$${w_{n}}$${% endraw %} là giá trị cũ của bộ trọng số và {% raw %}$$w_{n + 1}$${% endraw %} là giá trị mới được cập nhật. [Thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) sẽ điều chỉnh bộ trọng số $w$ sao cho hàm mất mát ngày càng đạt giá trị tối thiểu. Việc điều chỉnh bộ trọng số $w$ tại mỗi lần lặp của thuật toán được áp dụng theo hướng ngược lại với vector gradient:
 
 {% raw %}
 $$\begin{align}
-w\left( {n + 1} \right) = w\left( n \right) - \eta \nabla {\rm E}\left( {w\left( n \right)} \right)
+{w_{n + 1}} = {w_n} - \eta \nabla E\left( {{w_n}} \right)
 \end{align}$$
 {% endraw %}
 
-Trong đó $\eta$ là một số thực dương được gọi là learning rate hoặc step size và {% raw %}$$\nabla E\left( {w\left( n \right)} \right)$${% endraw %} là [vector gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) tại điểm {% raw %}$${w\left( n \right)}$${% endraw %}. Giá trị learning rate có ảnh hưởng rất lớn đến việc hội tụ của [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html). Nếu learning rate nhỏ, thuật toán sẽ hội tụ chậm, nếu learning rate lớn, thuật toán sẽ hội tụ tiến nhanh đến mục tiêu. Tuy nhiên khi learning rate vượt qua một ngưỡng quan trọng nhất định, thuật toán sẽ dẫn đến hiện tượng phân kỳ.
+Trong đó $\eta$ là một số thực dương được gọi là learning rate hoặc step size và {% raw %}$$\nabla E\left( {{w_n}} \right)$${% endraw %} là [vector gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) tại điểm {% raw %}$$w_{n}$${% endraw %}. Giá trị learning rate có ảnh hưởng rất lớn đến việc hội tụ của [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html). Nếu learning rate nhỏ, thuật toán sẽ hội tụ chậm, nếu learning rate lớn, thuật toán sẽ hội tụ tiến nhanh đến mục tiêu. Tuy nhiên khi learning rate vượt qua một ngưỡng quan trọng nhất định, thuật toán sẽ dẫn đến hiện tượng phân kỳ.
