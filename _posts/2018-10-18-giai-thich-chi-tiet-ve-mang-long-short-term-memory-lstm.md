@@ -21,45 +21,45 @@ Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến
 
 - Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được và có phương trình như sau:
 
-{% raw %}
-$$\begin{equation}
-f^{(t)}_{i} = \sigma \Bigg( \sum_{j} U^{f}_{i,j}x^{(t)}_{j} + \sum_{j} W^{f}_{i,j}h^{(t-1)}_{j} + b^{f}_{i} \Bigg)
-\end{equation}$$
-{% endraw %}
+	{% raw %}
+	$$\begin{equation}
+	f^{(t)}_{i} = \sigma \Bigg( \sum_{j} U^{f}_{i,j}x^{(t)}_{j} + \sum_{j} W^{f}_{i,j}h^{(t-1)}_{j} + b^{f}_{i} \Bigg)
+	\end{equation}$$
+	{% endraw %}
 
-Trong đó, {% raw %}$$f_i^{\left( t \right)}$${% endraw %} là forget gate của tế bào $i$ tại bước thời gian $t$, vector $x^{(t)}$ là giá trị đầu vào tại bước thời gian $t$, các ma trận {% raw %}$${U^f},\,{W^f},\,{b^f}$${% endraw %} lần lượt là ma trận trọng số đầu vào, ma trận trọng số hồi quy và bias tương ứng cho forget gate. Hàm kích hoạt là hàm logistic sigmoid trả về các giá trị gần $1$ cho thông tin cần lưu giữ và gần $0$ cho thông tin cần loại bỏ.
+	Trong đó, {% raw %}$$f_i^{\left( t \right)}$${% endraw %} là forget gate của tế bào $i$ tại bước thời gian $t$, vector $x^{(t)}$ là giá trị đầu vào tại bước thời gian $t$, các ma trận {% raw %}$${U^f},\,{W^f},\,{b^f}$${% endraw %} lần lượt là ma trận trọng số đầu vào, ma trận trọng số hồi quy và bias tương ứng cho forget gate. Hàm kích hoạt là hàm logistic sigmoid trả về các giá trị gần $1$ cho thông tin cần lưu giữ và gần $0$ cho thông tin cần loại bỏ.
 	
 - Input gate: Có nhiệm vụ chọn lọc những thông tin đầu vào nào cần được cập nhật:
 
-{% raw %}
-$$\begin{equation}
-	g^{(t)}_{i} = \sigma \Bigg( \sum_{j} U^{g}_{i,j}x^{(t)}_{j} + \sum_{j} W^{g}_{i,j}h^{(t-1)}_{j} + b^{g}_{i} \Bigg)
-\end{equation}$$
-{% endraw %}
+	{% raw %}
+	$$\begin{equation}
+		g^{(t)}_{i} = \sigma \Bigg( \sum_{j} U^{g}_{i,j}x^{(t)}_{j} + \sum_{j} W^{g}_{i,j}h^{(t-1)}_{j} + b^{g}_{i} \Bigg)
+	\end{equation}$$
+	{% endraw %}
 
-Trạng thái bên trong tế bào đóng vai trò như một bộ nhớ của mạng LSTM xuyên suốt qua các bước thời gian theo đó cũng được cập nhật như sau:
+	Trạng thái bên trong tế bào đóng vai trò như một bộ nhớ của mạng LSTM xuyên suốt qua các bước thời gian theo đó cũng được cập nhật như sau:
 
-{% raw %}
-$$\begin{equation}
-s^{(t)}_{i} = f^{(t)}_{i}s^{(t-1)}_{i} + g^{(t)}_{i}\sigma \Bigg( \sum_{j} U_{i,j}x^{(t)}_{j} + \sum_{j} W_{i,j}h^{(t-1)}_{j} + b_{i} \Bigg)
-\end{equation}$$
-{% endraw %}
+	{% raw %}
+	$$\begin{equation}
+	s^{(t)}_{i} = f^{(t)}_{i}s^{(t-1)}_{i} + g^{(t)}_{i}\sigma \Bigg( \sum_{j} U_{i,j}x^{(t)}_{j} + \sum_{j} W_{i,j}h^{(t-1)}_{j} + b_{i} \Bigg)
+	\end{equation}$$
+	{% endraw %}
 
 - Output gate: Có nhiệm vụ sàng lọc kiểm soát những thông tin cho đầu ra:
 
-{% raw %}
-$$\begin{equation}
-	q^{(t)}_{i} = \sigma \Bigg( \sum_{j} U^{o}_{i,j}x^{(t)}_{j} + \sum_{j} W^{o}_{i,j}h^{(t-1)}_{j} + b^{o}_{i} \Bigg)
-\end{equation}$$
-{% endraw %}
+	{% raw %}
+	$$\begin{equation}
+		q^{(t)}_{i} = \sigma \Bigg( \sum_{j} U^{o}_{i,j}x^{(t)}_{j} + \sum_{j} W^{o}_{i,j}h^{(t-1)}_{j} + b^{o}_{i} \Bigg)
+	\end{equation}$$
+	{% endraw %}
 
-Trong đó, {% raw %}$${U^o},\,{W^o},\,{b^o}$${% endraw %} là các ma trận trọng số đầu vào, ma trận trọng số hồi quy và bias tương ứng. Cuối cùng, giá trị đầu ra {% raw %}$$h_i^{\left( t \right)}$${% endraw %} của tế bào LSTM được tính như sau:
+	Trong đó, {% raw %}$${U^o},\,{W^o},\,{b^o}$${% endraw %} là các ma trận trọng số đầu vào, ma trận trọng số hồi quy và bias tương ứng. Cuối cùng, giá trị đầu ra {% raw %}$$h_i^{\left( t \right)}$${% endraw %} của tế bào LSTM được tính như sau:
 
-{% raw %}
-$$\begin{equation}
-		h_i^{\left( t \right)} = \tanh \left( {s_i^{\left( t \right)}} \right)q_i^{\left( t \right)}
-\end{equation}$$
-{% endraw %}
+	{% raw %}
+	$$\begin{equation}
+			h_i^{\left( t \right)} = \tanh \left( {s_i^{\left( t \right)}} \right)q_i^{\left( t \right)}
+	\end{equation}$$
+	{% endraw %}
 
 LSTM đã được chứng minh rằng có khả năng giải quyết bài toán phụ thuộc xa tốt hơn các mạng RNN cơ bản có kiến trúc đơn giản hơn. Từ khi ra đời cho đến nay, LSTM đã trở nên nổi tiếng và đạt được những thành tựu tuyệt vời trong nhiều lĩnh vực.
 
