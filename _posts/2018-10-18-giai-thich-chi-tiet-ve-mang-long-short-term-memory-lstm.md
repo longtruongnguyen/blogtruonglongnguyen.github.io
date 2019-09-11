@@ -38,9 +38,9 @@ $$\begin{equation}
 Trạng thái bên trong tế bào đóng vai trò như một bộ nhớ của mạng LSTM xuyên suốt qua các bước thời gian theo đó cũng được cập nhật như sau:
 
 {% raw %}
-$$begin{equation}
+$$begin{align}
 	s^{(t)}_{i} = f^{(t)}_{i}s^{(t-1)}_{i} + g^{(t)}_{i}\sigma \Bigg( \sum_{j} U_{i,j}x^{(t)}_{j} + \sum_{j} W_{i,j}h^{(t-1)}_{j} + b_{i} \Bigg)
-\end{equation}$$
+\end{align}$$
 {% endraw %}
 
 - Output gate: Có nhiệm vụ sàng lọc kiểm soát những thông tin cho đầu ra:
