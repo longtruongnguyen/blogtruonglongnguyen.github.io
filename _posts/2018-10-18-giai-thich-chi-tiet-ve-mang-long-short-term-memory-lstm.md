@@ -17,6 +17,13 @@ LSTM là một phiên bản mở rộng của mạng RNN, được đề xuất 
 
 Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến trúc cụ thể của mỗi tế bào được biểu diễn trong hình.
 
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/LSTMCell.png" alt="Sơ đồ biểu diễn kiến trúc bên trong của một tế bào LSTM">
+  <figcaption><i>Sơ đồ biểu diễn kiến trúc bên trong của một tế bào LSTM</i></figcaption>
+</center>
+</figure>
+
 Ý tưởng của LSTM là bổ sung thêm trạng thái bên trong tế bào (cell internal state) {% raw %}$$s_i^{\left( t \right)}$${% endraw %} và ba cổng sàng lọc các thông tin đầu vào và đầu ra cho tế bào bao gồm forget gate, input gate và output gate:
 
 - Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được và có phương trình như sau:
