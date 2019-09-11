@@ -31,7 +31,7 @@ Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến
 Trước khi trình bày các phương trình mô tả cơ chế hoạt động bên trong của một tế bào LSTM, chúng ta sẽ thống nhất quy ước một số ký hiệu được sử dụng sau đây:
 - ${x_{t}}$ là vector đầu vào tại mỗi bước thời gian $t$
 
-- {% raw %}$${W_{f,x}},{W_{f,h}},{W_{\mathop s\limits^ \sim  ,x}},{W_{\mathop s\limits^ \sim  ,h}},{W_{i,x}},{W_{i,h}},{W_{o,x}},{W_{o,h}}$${% endraw %} là các ma trận trọng số.
+- {% raw %}$${W_{f,x}},{W_{f,h}},{W_{\mathop s\limits^ \sim  ,x}},{W_{\mathop s\limits^ \sim  ,h}},{W_{i,x}},{W_{i,h}},{W_{o,x}},{W_{o,h}}$${% endraw %} là các ma trận trọng số trong mỗi tế bào LSTM.
 
 - {% raw %}$${b_f},{b_{\mathop s\limits^ \sim  }},{b_i},{b_o}$${% endraw %} là các vector bias.
 
