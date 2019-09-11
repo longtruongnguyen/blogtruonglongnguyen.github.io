@@ -28,7 +28,11 @@ Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến
 - Input gate: Có nhiệm vụ chọn lọc những thông tin cần thiết nào được thêm vào cell internal state
 - Output gate: Có nhiệm vụ xác định những thông tin nào từ cell internal state được sử dụng như đầu ra
 
+Trước khi trình bày các phương trình mô tả cơ chế hoạt động bên trong của một tế bào LSTM, chúng ta sẽ thống nhất quy ước một số ký hiệu được sử dụng sau đây:
+- {% raw %}$${W_{f,x}},{W_{f,h}},{W_{\mathop s\limits^ \sim  ,x}},{W_{\mathop s\limits^ \sim  ,h}},{W_{i,x}},{W_{i,h}},{W_{o,x}},{W_{o,h}}$${% endraw %} là các ma trận trọng số.
 
+
+- ${h_{t - 1}}$ là vector đầu vào tại mỗi bước thời gian $t$
 - Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được khỏi cell internal state và có phương trình như sau:
 
 	{% raw %}
