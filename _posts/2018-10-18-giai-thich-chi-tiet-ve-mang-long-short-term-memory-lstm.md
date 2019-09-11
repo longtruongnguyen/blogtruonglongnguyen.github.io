@@ -36,6 +36,8 @@ Trước khi trình bày các phương trình mô tả cơ chế hoạt động 
 - {% raw %}$${s_t},\mathop s\limits^ \sim  $${% endraw %} lần lượt là các vector đại diện cho cell internal state và candidate value.
 - ${h_{t}}$ là giá trị đầu ra của tế bào LSTM.
 
+Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}$$ và giá trị đầu ra ${h_{t}}$ được tính như sau:
+
 - Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được khỏi cell internal state và có phương trình như sau:
 
 	{% raw %}
