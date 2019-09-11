@@ -79,6 +79,11 @@ $${h_t} = {o_t} \circ \tanh \left( {{s_t}} \right)
 \end{equation}
 $${% endraw %}
 
+{% raw %}
+\begin{equation}
+$$4hi + 4h + 4{h^2} = 4\left( {hi + h + {h^2}} \right) = 4\left( {h\left( {i + 1} \right) + {h^2}} \right)
+\end{equation}
+$${% endraw %}
 
 - Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được khỏi cell internal state và có phương trình như sau:
 
