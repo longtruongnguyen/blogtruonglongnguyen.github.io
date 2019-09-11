@@ -15,7 +15,7 @@ Gradient biến mất (Vanishing Gradient Problem) và gradient bùng nổ (Expl
 
 LSTM là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. LSTM được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất. Có thể hiểu một cách đơn giản là mạng RNN cơ bản trong thực tế không có khả năng ghi nhớ thông tin từ các bước có khoảng cách xa và do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau.
 
-Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến trúc cụ thể của mỗi tế bào được biểu diễn trong *hình 1*. Đặc trưng chính của mạng LSTM được chứa trong các hidden layer bao gồm các memory cell.
+Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến trúc cụ thể của mỗi tế bào được biểu diễn trong *hình 1*. Đặc trưng chính của mạng LSTM được chứa trong các hidden layer bao gồm các memory cell. Tại mỗi bước thời gian $t$, các cổng đều lần lượt nhận giá trị đầu vào ${x_t}$ (đại diện cho một phần tử trong chuỗi đầu vào) và giá trị ${h_{t - 1}}$ có được từ đầu ra của memory cell từ bước thời gian trước đó $t-1$.
 
 <figure class="image">
 <center>
