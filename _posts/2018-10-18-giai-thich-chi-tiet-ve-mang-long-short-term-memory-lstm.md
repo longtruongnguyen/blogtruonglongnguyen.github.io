@@ -44,44 +44,44 @@ Trước khi trình bày các phương trình mô tả cơ chế hoạt động 
 Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}$$ và giá trị đầu ra ${h_{t}}$ được tính như sau:
 
 {% raw %}
-\begin{equation}
-$${f_t} = \sigma \left( {{W_{f,x}}{x_t} + {W_{f,h}}{h_{t - 1}} + {b_f}} \right)
+$$\begin{equation}
+{f_t} = \sigma \left( {{W_{f,x}}{x_t} + {W_{f,h}}{h_{t - 1}} + {b_f}} \right)
 \end{equation}
 $${% endraw %}
 
 {% raw %}
-\begin{equation}
-$$\mathop {{s_t}}\limits^ \sim   = \tanh \left( {{W_{\mathop s\limits^ \sim  ,x}}{x_t} + {W_{\mathop s\limits^ \sim  ,h}}{h_{t - 1}} + {b_{\mathop s\limits^ \sim  }}} \right)
+$$\begin{equation}
+\mathop {{s_t}}\limits^ \sim   = \tanh \left( {{W_{\mathop s\limits^ \sim  ,x}}{x_t} + {W_{\mathop s\limits^ \sim  ,h}}{h_{t - 1}} + {b_{\mathop s\limits^ \sim  }}} \right)
 \end{equation}
 $${% endraw %}
 
 {% raw %}
-\begin{equation}
-$${i_t} = \tanh \left( {{W_{i,x}}{x_t} + {W_{i,h}}{h_{t - 1}} + {b_i}} \right)
+$$\begin{equation}
+{i_t} = \tanh \left( {{W_{i,x}}{x_t} + {W_{i,h}}{h_{t - 1}} + {b_i}} \right)
 \end{equation}
 $${% endraw %}
 
 {% raw %}
-\begin{equation}
-$${s_t} = {f_t} \circ {s_{t - 1}} + {i_t} \circ \mathop {{s_t}}\limits^ \sim
+$$\begin{equation}
+{s_t} = {f_t} \circ {s_{t - 1}} + {i_t} \circ \mathop {{s_t}}\limits^ \sim
 \end{equation}
 $${% endraw %}
 
 {% raw %}
-\begin{equation}
-$${o_t} = \sigma \left( {{W_{o,x}}{x_t} + {W_{o,h}}{h_{t - 1}} + {b_o}} \right)
+$$\begin{equation}
+{o_t} = \sigma \left( {{W_{o,x}}{x_t} + {W_{o,h}}{h_{t - 1}} + {b_o}} \right)
 \end{equation}
 $${% endraw %}
 
 {% raw %}
-\begin{equation}
-$${h_t} = {o_t} \circ \tanh \left( {{s_t}} \right)
+$$\begin{equation}
+{h_t} = {o_t} \circ \tanh \left( {{s_t}} \right)
 \end{equation}
 $${% endraw %}
 
 {% raw %}
-\begin{equation}
-$$4hi + 4h + 4{h^2} = 4\left( {hi + h + {h^2}} \right) = 4\left( {h\left( {i + 1} \right) + {h^2}} \right)
+$$\begin{equation}
+4hi + 4h + 4{h^2} = 4\left( {hi + h + {h^2}} \right) = 4\left( {h\left( {i + 1} \right) + {h^2}} \right)
 \end{equation}
 $${% endraw %}
 
