@@ -32,6 +32,9 @@ Trước khi trình bày các phương trình mô tả cơ chế hoạt động 
 - ${x_{t}}$ là vector đầu vào tại mỗi bước thời gian $t$
 - {% raw %}$${W_{f,x}},{W_{f,h}},{W_{\mathop s\limits^ \sim  ,x}},{W_{\mathop s\limits^ \sim  ,h}},{W_{i,x}},{W_{i,h}},{W_{o,x}},{W_{o,h}}$${% endraw %} là các ma trận trọng số.
 - {% raw %}$${b_f},{b_{\mathop s\limits^ \sim  }},{b_i},{b_o}{% endraw %} là các vector bias.
+- {% raw %}$${f_t},{i_t},{o_t}$${% endraw %} lần lượt chứa các giá trị kích hoạt lần lượt cho các cổng forget gate, input gate và output gate tương ứng.
+- {% raw %}$${s_t},\mathop s\limits^ \sim  $${% endraw %} lần lượt là các vector đại diện cho cell internal state và candidate value.
+- ${h_{t}}$ là giá trị đầu ra của tế bào LSTM.
 
 - Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được khỏi cell internal state và có phương trình như sau:
 
