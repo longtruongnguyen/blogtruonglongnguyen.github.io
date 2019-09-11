@@ -91,7 +91,7 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-Chúng ta bắt đầu bằng cách tạo một ước đoán ngẫu nhiên ban đầu là {% raw %}$$w\left( 0 \right)$${% endraw %}, sau đó cập nhật các trọng số này sao cho giá trị hàm mất mát {% raw %}$${\rm E}\left( w \right)$${% endraw %} được giảm dần tại mỗi lần lặp của thuật toán:
+Chúng ta bắt đầu bằng cách tạo một ước đoán ngẫu nhiên ban đầu là {% raw %}$${w_0}$${% endraw %}, sau đó cập nhật các trọng số này sao cho giá trị hàm mất mát {% raw %}$${\rm E}\left( w \right)$${% endraw %} được giảm dần tại mỗi lần lặp của thuật toán:
 
 {% raw %}
 $$\begin{align}
@@ -99,7 +99,7 @@ E\left( {w\left( {n + 1} \right)} \right) < E\left( {w\left( n \right)} \right)
 \end{align}$$
 {% endraw %}
 
-Trong đó {% raw %}$$w\left( n \right)$${% endraw %} là giá trị cũ của bộ trọng số và {% raw %}$$w\left( {n + 1} \right)$${% endraw %} là giá trị mới được cập nhật. [Thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) sẽ điều chỉnh bộ trọng số $w$ sao cho hàm mất mát ngày càng đạt giá trị tối thiểu. Việc điều chỉnh bộ trọng số $w$ tại mỗi lần lặp của thuật toán được áp dụng theo hướng ngược lại với vector gradient:
+Trong đó {% raw %}$${w_{n}}$${% endraw %} là giá trị cũ của bộ trọng số và {% raw %}$${w_{n + 1}}$${% endraw %} là giá trị mới được cập nhật. [Thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) sẽ điều chỉnh bộ trọng số $w$ sao cho hàm mất mát ngày càng đạt giá trị tối thiểu. Việc điều chỉnh bộ trọng số $w$ tại mỗi lần lặp của thuật toán được áp dụng theo hướng ngược lại với vector gradient:
 
 {% raw %}
 $$\begin{align}
