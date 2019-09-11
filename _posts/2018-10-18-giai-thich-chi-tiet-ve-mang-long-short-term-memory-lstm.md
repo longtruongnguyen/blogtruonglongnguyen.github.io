@@ -13,17 +13,17 @@ Gradient biến mất (Vanishing Gradient Problem) và gradient bùng nổ (Expl
 
 ### Cơ chế hoạt động của mạng LSTM
 
-LSTM là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. LSTM được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất. Có thể hiểu một cách đơn giản là mạng RNN cơ bản trong thực tế không có khả năng ghi nhớ thông tin từ các bước có khoảng cách xa và do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau. Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến trúc cụ thể của mỗi tế bào được biểu diễn trong hình.
+LSTM là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. LSTM được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất. Có thể hiểu một cách đơn giản là mạng RNN cơ bản trong thực tế không có khả năng ghi nhớ thông tin từ các bước có khoảng cách xa và do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau.
+
+Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến trúc cụ thể của mỗi tế bào được biểu diễn trong hình.
 
 Ý tưởng của LSTM là bổ sung thêm trạng thái bên trong tế bào (cell internal state) {% raw %}$$s_i^{\left( t \right)}$${% endraw %} và ba cổng sàng lọc các thông tin đầu vào và đầu ra cho tế bào bao gồm forget gate, input gate và output gate:
 
 - Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được và có phương trình như sau:
 
-{% raw %}
-$$\begin{equation}
-	f^{(t)}_{i} = \sigma \Bigg( \sum_{j} U^{f}_{i,j}x^{(t)}_{j} + \sum_{j} W^{f}_{i,j}h^{(t-1)}_{j} + b^{f}_{i} \Bigg)
-\end{equation}$$
-{% endraw %}
+{% raw %} $$
+f^{(t)}_{i} = \sigma \Bigg( \sum_{j} U^{f}_{i,j}x^{(t)}_{j} + \sum_{j} W^{f}_{i,j}h^{(t-1)}_{j} + b^{f}_{i} \Bigg)
+$$ {% endraw %}
 
 Trong đó, {% raw %}$$f_i^{\left( t \right)}$${% endraw %} là forget gate của tế bào $i$ tại bước thời gian $t$, vector $x^{(t)}$ là giá trị đầu vào tại bước thời gian $t$, các ma trận {% raw %}$${U^f},\,{W^f},\,{b^f}$${% endraw %} lần lượt là ma trận trọng số đầu vào, ma trận trọng số hồi quy và bias tương ứng cho forget gate. Hàm kích hoạt là hàm logistic sigmoid trả về các giá trị gần $1$ cho thông tin cần lưu giữ và gần $0$ cho thông tin cần loại bỏ.
 	
