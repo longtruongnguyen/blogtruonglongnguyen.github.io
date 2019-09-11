@@ -15,8 +15,6 @@ Gradient biến mất (Vanishing Gradient Problem) và gradient bùng nổ (Expl
 
 LSTM là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. LSTM được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất. Có thể hiểu một cách đơn giản là mạng RNN cơ bản trong thực tế không có khả năng ghi nhớ thông tin từ các bước có khoảng cách xa và do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau.
 
-Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến trúc cụ thể của mỗi tế bào được biểu diễn trong <strong>hình 1</strong>. Đặc trưng của mạng LSTM được chứa trong các hidden layer bao gồm các memory cell. Mạng LSTM bổ sung thêm trạng thái bên trong tế bào (cell internal state) {% raw %}$$s_t$${% endraw %} và ba cổng sàng lọc các thông tin đầu vào và đầu ra cho tế bào bao gồm forget gate $${f_t}$$, input gate $${i_t}$$ và output gate $${o_t}$$. Tại mỗi bước thời gian $t$, các cổng đều lần lượt nhận giá trị đầu vào ${x_t}$ (đại diện cho một phần tử trong chuỗi đầu vào) và giá trị $ {h_{t - 1}} $ có được từ đầu ra của memory cell từ bước thời gian trước đó $t-1$. Các cổng đều đóng vai trò có nhiệm vụ sàng lọc thông tin với mỗi mục đích khác nhau:
-
 <figure class="image">
 <center>
   <img src="https://nguyentruonglong.net/images/LSTMCell.png" alt="Sơ đồ biểu diễn kiến trúc bên trong của một tế bào LSTM">
@@ -24,9 +22,9 @@ Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến
 </center>
 </figure>
 
-Ý tưởng của LSTM là bổ sung thêm trạng thái bên trong tế bào (cell internal state) {% raw %}$$s_i^{\left( t \right)}$${% endraw %} và ba cổng sàng lọc các thông tin đầu vào và đầu ra cho tế bào bao gồm forget gate, input gate và output gate:
+Mạng LSTM bao gồm nhiều tế bào LSTM liên kết với nhau với kiến trúc cụ thể của mỗi tế bào được biểu diễn trong <strong>hình 1</strong>. Đặc trưng của mạng LSTM được chứa trong các hidden layer bao gồm các memory cell. Mạng LSTM bổ sung thêm trạng thái bên trong tế bào (cell internal state) {% raw %}$$s_t$${% endraw %} và ba cổng sàng lọc các thông tin đầu vào và đầu ra cho tế bào bao gồm forget gate $${f_t}$$, input gate $${i_t}$$ và output gate $${o_t}$$. Tại mỗi bước thời gian $t$, các cổng đều lần lượt nhận giá trị đầu vào ${x_t}$ (đại diện cho một phần tử trong chuỗi đầu vào) và giá trị $ {h_{t - 1}} $ có được từ đầu ra của memory cell từ bước thời gian trước đó $t-1$. Các cổng đều đóng vai trò có nhiệm vụ sàng lọc thông tin với mỗi mục đích khác nhau:
 
-- Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được và có phương trình như sau:
+- Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được khỏi cell internal state và có phương trình như sau:
 
 	{% raw %}
 	$$\begin{equation}
