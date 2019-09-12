@@ -89,7 +89,7 @@ Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}
 	\end{equation}
 	$${% endraw %}
 
-{%
+<!--
 {% raw %}
 $$\begin{equation}
 4hi + 4h + 4{h^2} = 4\left( {hi + h + {h^2}} \right) = 4\left( {h\left( {i + 1} \right) + {h^2}} \right)
@@ -139,4 +139,4 @@ $${% endraw %}
 	{% endraw %}
 
 LSTM đã được chứng minh rằng có khả năng giải quyết bài toán phụ thuộc xa tốt hơn các mạng RNN cơ bản có kiến trúc đơn giản hơn. Từ khi ra đời cho đến nay, LSTM đã trở nên nổi tiếng và đạt được những thành tựu tuyệt vời trong nhiều lĩnh vực.
-%}
+-->
