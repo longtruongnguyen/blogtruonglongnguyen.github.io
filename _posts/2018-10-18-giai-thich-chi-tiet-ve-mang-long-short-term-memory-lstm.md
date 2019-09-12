@@ -43,7 +43,7 @@ Trước khi trình bày các phương trình mô tả cơ chế hoạt động 
 
 Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}$$ và giá trị đầu ra ${h_{t}}$ được tính như sau:
 
-- Ở bước đầu tiên, tế bào LSTM quyết định những thông tin nào cần được loại bỏ từ cell internal state ở bước thời gian trước đó $${s_{t - 1}}$$. Activation value $${f_{t}}$$ của forget gate tại bước thời gian $t$ được tính dựa trên giá trị đầu vào hiện tại $${x_{t}}$$, giá trị đầu ra $${h_{t-1}}$$ từ tế bào LSTM ở bước trước đó và bias $${b_f}$$ của forget gate. Hàm sigmoid function biến đổi tất cả activation value về miền có giá trị trong khoảng từ 0 (hoàn toàn quên) và 1 (hoàn toàn ghi nhớ):
+- Ở bước đầu tiên, tế bào LSTM quyết định những thông tin nào cần được loại bỏ từ cell internal state ở bước thời gian trước đó $${s_{t - 1}}$$. Activation value $${f_{t}}$$ của forget gate tại bước thời gian $t$ được tính dựa trên giá trị đầu vào hiện tại $${x_{t}}$$, giá trị đầu ra $${h_{t-1}}$$ từ tế bào LSTM ở bước trước đó và bias $${b_f}$$ của forget gate. Hàm sigmoid function biến đổi tất cả activation value về miền có giá trị trong khoảng từ $0$ (hoàn toàn quên) và $1$ (hoàn toàn ghi nhớ):
 
 	{% raw %}
 	$$\begin{equation}
@@ -66,6 +66,8 @@ Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}
 	{i_t} = \tanh \left( {{W_{i,x}}{x_t} + {W_{i,h}}{h_{t - 1}} + {b_i}} \right)
 	\end{equation}
 	$${% endraw %}
+
+- Ở bước thứ ba, cell internal state $${s_{t}}$$ được tính dựa trên kết quả tính toán thu được từ các bước trước với phép nhân Hadamard theo từng phần tử (Hadamard product) được ký hiệu bằng $$ \circ $$:
 
 {% raw %}
 $$\begin{equation}
