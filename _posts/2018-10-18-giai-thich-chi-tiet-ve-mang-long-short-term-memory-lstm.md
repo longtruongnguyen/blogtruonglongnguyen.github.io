@@ -43,7 +43,7 @@ Trước khi trình bày các phương trình mô tả cơ chế hoạt động 
 
 Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}$$ và giá trị đầu ra ${h_{t}}$ được tính như sau:
 
-- Ở bước đầu tiên, tế bào LSTM quyết định những thông tin nào cần được loại bỏ từ cell internal state ở bước thời gian trước đó $${s_{t - 1}}$$. Giá trị $${s_{t}}$$ của forget gate tại bước thời gian $t$ được tính dựa trên giá trị đầu vào hiện tại $${x_{t}}$$, giá trị đầu ra $${h_{t-1}}$$ từ tế bào LSTM ở bước trước đó và bias $${b_f}$$ của forget gate. Hàm  sigmoid function biến đổi tất cả các activation value về miền có giá trị trong khoảng từ 0 (hoàn toàn quên) và 1 (hoàn toàn ghi nhớ):
+- Ở bước đầu tiên, tế bào LSTM quyết định những thông tin nào cần được loại bỏ từ cell internal state ở bước thời gian trước đó $${s_{t - 1}}$$. Activation value $${f_{t}}$$ của forget gate tại bước thời gian $t$ được tính dựa trên giá trị đầu vào hiện tại $${x_{t}}$$, giá trị đầu ra $${h_{t-1}}$$ từ tế bào LSTM ở bước trước đó và bias $${b_f}$$ của forget gate. Hàm sigmoid function biến đổi tất cả activation value về miền có giá trị trong khoảng từ 0 (hoàn toàn quên) và 1 (hoàn toàn ghi nhớ):
 
 {% raw %}
 $$\begin{equation}
@@ -51,11 +51,15 @@ $$\begin{equation}
 \end{equation}
 $${% endraw %}
 
+- Ở bước thứ hai, tế bào LSTM quyết định những thông tin nào cần được thêm vào cell internal state $${s_{t}}$$. Bước này bao gồm hai quá trình tính toán đối với $$\mathop {{s_t}}\limits^ \sim  $$ và $${f_{t}}$$. Candidate value $$\mathop {{s_t}}\limits^ \sim  $$ biểu diễn những thông tin tiềm năng cần được thêm vào cell internal state được tính như sau:
+
 {% raw %}
 $$\begin{equation}
 \mathop {{s_t}}\limits^ \sim   = \tanh \left( {{W_{\mathop s\limits^ \sim  ,x}}{x_t} + {W_{\mathop s\limits^ \sim  ,h}}{h_{t - 1}} + {b_{\mathop s\limits^ \sim  }}} \right)
 \end{equation}
 $${% endraw %}
+
+Activation value $${i_t}$$ của input gate theo đó cũng được tính như sau:
 
 {% raw %}
 $$\begin{equation}
