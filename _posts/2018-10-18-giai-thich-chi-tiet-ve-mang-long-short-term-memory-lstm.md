@@ -67,26 +67,29 @@ Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}
 	\end{equation}
 	$${% endraw %}
 
-- Ở bước thứ ba, cell internal state $${s_{t}}$$ được tính dựa trên kết quả tính toán thu được từ các bước trước với phép nhân Hadamard theo từng phần tử (Hadamard product) được ký hiệu bằng $$ \circ $$:
+- Ở bước thứ ba, giá trị mới của cell internal state $${s_{t}}$$ được tính dựa trên kết quả tính toán thu được từ các bước trước với phép nhân Hadamard theo từng phần tử (Hadamard product) được ký hiệu bằng $$ \circ $$:
 
-{% raw %}
-$$\begin{equation}
-{s_t} = {f_t} \circ {s_{t - 1}} + {i_t} \circ \mathop {{s_t}}\limits^ \sim
-\end{equation}
-$${% endraw %}
+	{% raw %}
+	$$\begin{equation}
+	{s_t} = {f_t} \circ {s_{t - 1}} + {i_t} \circ \mathop {{s_t}}\limits^ \sim
+	\end{equation}
+	$${% endraw %}
 
-{% raw %}
-$$\begin{equation}
-{o_t} = \sigma \left( {{W_{o,x}}{x_t} + {W_{o,h}}{h_{t - 1}} + {b_o}} \right)
-\end{equation}
-$${% endraw %}
+- Ở bước cuối cùng, giá trị đầu ra $${h_{t}}$$ của tế bào LSTM được tính toán dựa theo hai phương trình sau:
 
-{% raw %}
-$$\begin{equation}
-{h_t} = {o_t} \circ \tanh \left( {{s_t}} \right)
-\end{equation}
-$${% endraw %}
+	{% raw %}
+	$$\begin{equation}
+	{o_t} = \sigma \left( {{W_{o,x}}{x_t} + {W_{o,h}}{h_{t - 1}} + {b_o}} \right)
+	\end{equation}
+	$${% endraw %}
 
+	{% raw %}
+	$$\begin{equation}
+	{h_t} = {o_t} \circ \tanh \left( {{s_t}} \right)
+	\end{equation}
+	$${% endraw %}
+
+{%
 {% raw %}
 $$\begin{equation}
 4hi + 4h + 4{h^2} = 4\left( {hi + h + {h^2}} \right) = 4\left( {h\left( {i + 1} \right) + {h^2}} \right)
@@ -136,4 +139,4 @@ $${% endraw %}
 	{% endraw %}
 
 LSTM đã được chứng minh rằng có khả năng giải quyết bài toán phụ thuộc xa tốt hơn các mạng RNN cơ bản có kiến trúc đơn giản hơn. Từ khi ra đời cho đến nay, LSTM đã trở nên nổi tiếng và đạt được những thành tựu tuyệt vời trong nhiều lĩnh vực.
-
+%}
