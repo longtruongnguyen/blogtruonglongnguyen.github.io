@@ -3,17 +3,17 @@ layout: post
 title: Giải thích chi tiết về mạng Long Short-Term Memory (LSTM)
 description: LSTM được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong RNN do bị ảnh hưởng bởi vấn đề gradient biến mất.
 excerpt: LSTM là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. LSTM được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất. Có thể hiểu một cách đơn giản là mạng RNN cơ bản trong thực tế không có khả năng ghi nhớ thông tin từ các bước có khoảng cách xa và do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau.
-keywords: mạng LSTM, mạng nơ-ron LSTM, LSTM neural network, Long Short Term Memory, mạng RNN, học sâu, deep learning
+keywords: mạng LSTM, mạng nơ-ron LSTM, mạng Long Short-Term Memory, LSTM neural network, Long Short Term Memory, mạng RNN, học sâu, deep learning
 author: Nguyễn Trường Long
 ---
 
 ### Các vấn đề về gradient trong quá trình huấn luyện
 
-Gradient biến mất (Vanishing Gradient Problem) và gradient bùng nổ (Exploding Gradient Problem) là những vấn đề gặp phải khi sử dụng các kỹ thuật tối ưu hóa trọng số dựa trên gradient để huấn luyện mạng nơ-ron. Các vấn đề này thường gặp phải do việc lựa chọn các hàm kích hoạt không hợp lý hoặc số lượng các lớp ẩn của mạng quá lớn. Đặc biệt, các vấn đề này thường hay xuất hiện trong quá trình huấn luyện các mạng nơ-ron hồi quy. Trong thuật toán BPTT, khi chúng ta càng quay lùi về các bước thời gian trước đó thì các giá trị gradient càng giảm dần, điều này làm giảm tốc độ hội tụ của các trọng số do sự thay đổi hầu như rất nhỏ. Trong một số trường hợp khác, các gradient có giá trị rất lớn khiến cho quá trình cập nhật các trọng số bị phân kỳ và vấn đề này được gọi là gradient bùng nổ. Các vấn đề về gradient biến mất thường được quan tâm hơn vấn đề gradient bùng nổ do vấn đề gradient biến mất khó có thể được nhận biết trong khi gradient bùng nổ có thể dễ dàng quan sát và nhận biết hơn. Có nhiều nghiên cứu đề xuất các giải pháp để giải quyết những vấn đề này như lựa chọn hàm kích hoạt hợp lý, thiết lập các kích thước cho mạng hợp lý hoặc khởi tạo các trọng số ban đầu phù hợp khi huấn luyện. Một trong các giải pháp cụ thể có thể chỉ ra là thuật toán Truncated BPTT, một biến thể cải tiến của BPTT được áp dụng trong quá trình huấn luyện mạng nơ-ron hồi quy trên các chuỗi dài. Ngoài ra, mạng Long Short-Term Memory được giới thiệu trong những phần tiếp theo đã khắc phục được các vấn đề này.
+Gradient biến mất (Vanishing Gradient Problem) và gradient bùng nổ (Exploding Gradient Problem) là những vấn đề gặp phải khi sử dụng các kỹ thuật tối ưu hóa trọng số dựa trên gradient để huấn luyện mạng nơ-ron. Các vấn đề này thường gặp phải do việc lựa chọn các hàm kích hoạt không hợp lý hoặc số lượng các lớp ẩn của mạng quá lớn. Đặc biệt, các vấn đề này thường hay xuất hiện trong quá trình huấn luyện các mạng nơ-ron hồi quy. Trong thuật toán BPTT, khi chúng ta càng quay lùi về các bước thời gian trước đó thì các giá trị gradient càng giảm dần, điều này làm giảm tốc độ hội tụ của các trọng số do sự thay đổi hầu như rất nhỏ. Trong một số trường hợp khác, các gradient có giá trị rất lớn khiến cho quá trình cập nhật các trọng số bị phân kỳ và vấn đề này được gọi là gradient bùng nổ. Các vấn đề về gradient biến mất thường được quan tâm hơn vấn đề gradient bùng nổ do vấn đề gradient biến mất khó có thể được nhận biết trong khi gradient bùng nổ có thể dễ dàng quan sát và nhận biết hơn. Có nhiều nghiên cứu đề xuất các giải pháp để giải quyết những vấn đề này như lựa chọn hàm kích hoạt hợp lý, thiết lập các kích thước cho mạng hợp lý hoặc khởi tạo các trọng số ban đầu phù hợp khi huấn luyện. Một trong các giải pháp cụ thể có thể chỉ ra là thuật toán Truncated BPTT, một biến thể cải tiến của BPTT được áp dụng trong quá trình huấn luyện mạng nơ-ron hồi quy trên các chuỗi dài. Ngoài ra, [mạng Long Short-Term Memory](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được giới thiệu trong những phần tiếp theo đã khắc phục được các vấn đề này.
 
 ### Cơ chế hoạt động của mạng LSTM
 
-LSTM là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. LSTM được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất. Có thể hiểu một cách đơn giản là mạng RNN cơ bản trong thực tế không có khả năng ghi nhớ thông tin từ các bước có khoảng cách xa và do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau.
+[LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất. Có thể hiểu một cách đơn giản là mạng RNN cơ bản trong thực tế không có khả năng ghi nhớ thông tin từ các bước có khoảng cách xa và do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau.
 
 <figure class="image">
 <center>
@@ -22,13 +22,13 @@ LSTM là một phiên bản mở rộng của mạng RNN, được đề xuất 
 </center>
 </figure>
 
-Mạng LSTM có thể bao gồm nhiều tế bào LSTM (LSTM memory cell) liên kết với nhau và kiến trúc cụ thể của mỗi tế bào được biểu diễn như trong <strong>hình 1</strong>. Ý tưởng của LSTM là bổ sung thêm trạng thái bên trong tế bào (cell internal state) {% raw %}$$s_t$${% endraw %} và ba cổng sàng lọc các thông tin đầu vào và đầu ra cho tế bào bao gồm forget gate $${f_t}$$, input gate $${i_t}$$ và output gate $${o_t}$$. Tại mỗi bước thời gian $t$, các cổng đều lần lượt nhận giá trị đầu vào ${x_t}$ (đại diện cho một phần tử trong chuỗi đầu vào) và giá trị $ {h_{t - 1}} $ có được từ đầu ra của memory cell từ bước thời gian trước đó $t-1$. Các cổng đều đóng vai trò có nhiệm vụ sàng lọc thông tin với mỗi mục đích khác nhau:
+[Mạng LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) có thể bao gồm nhiều tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) (LSTM memory cell) liên kết với nhau và kiến trúc cụ thể của mỗi tế bào được biểu diễn như trong <strong>hình 1</strong>. Ý tưởng của [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) là bổ sung thêm trạng thái bên trong tế bào (cell internal state) {% raw %}$$s_t$${% endraw %} và ba cổng sàng lọc các thông tin đầu vào và đầu ra cho tế bào bao gồm forget gate $${f_t}$$, input gate $${i_t}$$ và output gate $${o_t}$$. Tại mỗi bước thời gian $t$, các cổng đều lần lượt nhận giá trị đầu vào ${x_t}$ (đại diện cho một phần tử trong chuỗi đầu vào) và giá trị $ {h_{t - 1}} $ có được từ đầu ra của memory cell từ bước thời gian trước đó $t-1$. Các cổng đều đóng vai trò có nhiệm vụ sàng lọc thông tin với mỗi mục đích khác nhau:
 
 - Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được khỏi cell internal state
 - Input gate: Có nhiệm vụ chọn lọc những thông tin cần thiết nào được thêm vào cell internal state
 - Output gate: Có nhiệm vụ xác định những thông tin nào từ cell internal state được sử dụng như đầu ra
 
-Trước khi trình bày các phương trình mô tả cơ chế hoạt động bên trong của một tế bào LSTM, chúng ta sẽ thống nhất quy ước một số ký hiệu được sử dụng sau đây:
+Trước khi trình bày các phương trình mô tả cơ chế hoạt động bên trong của một tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html), chúng ta sẽ thống nhất quy ước một số ký hiệu được sử dụng sau đây:
 - ${x_{t}}$ là vector đầu vào tại mỗi bước thời gian $t$
 
 - {% raw %}$${W_{f,x}},{W_{f,h}},{W_{\mathop s\limits^ \sim  ,x}},{W_{\mathop s\limits^ \sim  ,h}},{W_{i,x}},{W_{i,h}},{W_{o,x}},{W_{o,h}}$${% endraw %} là các ma trận trọng số trong mỗi tế bào LSTM.
@@ -39,11 +39,11 @@ Trước khi trình bày các phương trình mô tả cơ chế hoạt động 
 
 - {% raw %}$${s_t},\mathop s\limits^ \sim  $${% endraw %} lần lượt là các vector đại diện cho cell internal state và candidate value.
 
-- ${h_{t}}$ là giá trị đầu ra của tế bào LSTM.
+- ${h_{t}}$ là giá trị đầu ra của tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html).
 
 Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}$$ và giá trị đầu ra ${h_{t}}$ được tính như sau:
 
-- Ở bước đầu tiên, tế bào LSTM quyết định những thông tin nào cần được loại bỏ từ cell internal state ở bước thời gian trước đó $${s_{t - 1}}$$. Activation value $${f_{t}}$$ của forget gate tại bước thời gian $t$ được tính dựa trên giá trị đầu vào hiện tại $${x_{t}}$$, giá trị đầu ra $${h_{t-1}}$$ từ tế bào LSTM ở bước trước đó và bias $${b_f}$$ của forget gate. Hàm sigmoid function biến đổi tất cả activation value về miền có giá trị trong khoảng từ $0$ (hoàn toàn quên) và $1$ (hoàn toàn ghi nhớ):
+- Ở bước đầu tiên, tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) quyết định những thông tin nào cần được loại bỏ từ cell internal state ở bước thời gian trước đó $${s_{t - 1}}$$. Activation value $${f_{t}}$$ của forget gate tại bước thời gian $t$ được tính dựa trên giá trị đầu vào hiện tại $${x_{t}}$$, giá trị đầu ra $${h_{t-1}}$$ từ tế bào LSTM ở bước trước đó và bias $${b_f}$$ của forget gate. Hàm sigmoid function biến đổi tất cả activation value về miền có giá trị trong khoảng từ $0$ (hoàn toàn quên) và $1$ (hoàn toàn ghi nhớ):
 
 	{% raw %}
 	$$\begin{equation}
@@ -51,7 +51,7 @@ Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}
 	\end{equation}
 	$${% endraw %}
 
-- Ở bước thứ hai, tế bào LSTM quyết định những thông tin nào cần được thêm vào cell internal state $${s_{t}}$$. Bước này bao gồm hai quá trình tính toán đối với {% raw %}$$\mathop {{s_t}}\limits^ \sim  $$ và $${f_{t}}$${% endraw %}. Candidate value {% raw %}$$\mathop {{s_t}}\limits^ \sim  $${% endraw %} biểu diễn những thông tin tiềm năng cần được thêm vào cell internal state được tính như sau:
+- Ở bước thứ hai, tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) quyết định những thông tin nào cần được thêm vào cell internal state $${s_{t}}$$. Bước này bao gồm hai quá trình tính toán đối với {% raw %}$$\mathop {{s_t}}\limits^ \sim  $$ và $${f_{t}}$${% endraw %}. Candidate value {% raw %}$$\mathop {{s_t}}\limits^ \sim  $${% endraw %} biểu diễn những thông tin tiềm năng cần được thêm vào cell internal state được tính như sau:
 
 	{% raw %}
 	$$\begin{equation}
@@ -75,7 +75,7 @@ Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}
 	\end{equation}
 	$${% endraw %}
 
-- Ở bước cuối cùng, giá trị đầu ra $${h_{t}}$$ của tế bào LSTM được tính toán dựa theo hai phương trình sau:
+- Ở bước cuối cùng, giá trị đầu ra $${h_{t}}$$ của tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được tính toán dựa theo hai phương trình sau:
 
 	{% raw %}
 	$$\begin{equation}
