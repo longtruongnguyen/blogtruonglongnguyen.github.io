@@ -2,6 +2,7 @@
 layout: post
 title: Giới thiệu tổng quát về dịch máy
 description: Dịch máy hay còn được gọi là dịch tự động có thể được định nghĩa như một lĩnh vực nghiên cứu việc sử dụng phần mềm máy tính để dịch văn bản hoặc lời nói từ ngôn ngữ tự nhiên này sang ngôn ngữ tự nhiên khác.
+excerpt: Các ý tưởng về dịch máy manh nha bắt đầu xuất hiện vào thế kỷ 17. Năm 1629, René Descartes đã đề xuất lý thuyết về một ngôn ngữ tổng quát (universal language) mô tả tất cả những ý tưởng và khái niệm tương đương nhau trong các ngôn ngữ khác nhau. Tuy nhiên, mãi cho đến thế kỷ 20, những ý tưởng cụ thể đầu tiên về dịch máy mới bắt đầu được công nhận.
 keywords: dịch máy, dịch tự động, machine translation, giới thiệu tổng quát về dịch máy, xử lý ngôn ngữ tự nhiên, lịch sử dịch máy
 author: Nguyễn Trường Long
 ---
