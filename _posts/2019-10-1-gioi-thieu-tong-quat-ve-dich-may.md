@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Giới thiệu tổng quan về dịch máy
+title: Giới thiệu tổng quát về dịch máy
 description: Dịch máy hay còn được gọi là dịch tự động có thể được định nghĩa như một lĩnh vực nghiên cứu việc sử dụng phần mềm máy tính để dịch văn bản hoặc lời nói từ ngôn ngữ tự nhiên này sang ngôn ngữ tự nhiên khác.
 keywords: dịch máy, dịch tự động, machine translation, giới thiệu tổng quan về dịch máy, xử lý ngôn ngữ tự nhiên
 author: Nguyễn Trường Long
