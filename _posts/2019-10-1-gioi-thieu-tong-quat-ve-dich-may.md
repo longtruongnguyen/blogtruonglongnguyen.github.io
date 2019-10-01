@@ -2,7 +2,7 @@
 layout: post
 title: Giới thiệu tổng quát về dịch máy
 description: Dịch máy hay còn được gọi là dịch tự động có thể được định nghĩa như một lĩnh vực nghiên cứu việc sử dụng phần mềm máy tính để dịch văn bản hoặc lời nói từ ngôn ngữ tự nhiên này sang ngôn ngữ tự nhiên khác.
-keywords: dịch máy, dịch tự động, machine translation, giới thiệu tổng quan về dịch máy, xử lý ngôn ngữ tự nhiên
+keywords: dịch máy, dịch tự động, machine translation, giới thiệu tổng quát về dịch máy, xử lý ngôn ngữ tự nhiên, lịch sử dịch máy
 author: Nguyễn Trường Long
 ---
 
@@ -30,11 +30,9 @@ Khi con người thực hiện đánh giá chất lượng một bản dịch, c
 
 Tất cả những nhược điểm đã nêu ra đều cho thấy rằng để đánh giá và so sánh chất lượng bản dịch giữa các hệ thống dịch máy khác nhau một cách hiệu quả và khách quan cần phải sử dụng các thước đo được tính toán tự động, không phụ thuộc vào ngôn ngữ và có tương quan cao với con người.
 
-##### Thuật toán BLEU
+### Thuật toán BLEU
 
-Thuật toán này được đề xuất trong một báo cáo nghiên cứu của IBM tại hội nghị ACL vào năm 2011.
-
-Ý tưởng chính của thuật toán BLEU đó là đánh giá chất lượng bản dịch từ đầu ra của hệ thống dịch máy thông qua việc so sánh nó với các bản dịch tham khảo có chất lượng tốt từ con người, bản dịch này càng giống với bản dịch của con người thì nó càng đạt chất lượng. Việc đánh giá các bản dịch sẽ dựa trên việc so sánh điểm số được tính bởi công thức sau đây:
+Thuật toán BLEU được đề xuất trong một báo cáo nghiên cứu của IBM tại hội nghị ACL vào năm 2011. Ý tưởng chính của thuật toán BLEU đó là đánh giá chất lượng bản dịch từ đầu ra của hệ thống dịch máy thông qua việc so sánh nó với các bản dịch tham khảo có chất lượng tốt từ con người, bản dịch này càng giống với bản dịch của con người thì nó càng đạt chất lượng. Việc đánh giá các bản dịch sẽ dựa trên việc so sánh điểm số được tính bởi công thức sau đây:
 
 {% raw %}
 $$\begin{align}
