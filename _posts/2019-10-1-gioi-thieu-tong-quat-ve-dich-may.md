@@ -28,7 +28,11 @@ Hiện nay có nhiều hệ thống dịch máy khác nhau có thể dịch mộ
 
 Khi con người thực hiện đánh giá chất lượng một bản dịch, các yếu tố như tính lưu loát, tính đúng đắn và sự mạch lạc ngữ nghĩa của bản dịch đều được xem xét. Tuy nhiên, điều này có thể gây tốn kém nhiều thời gian, nguồn lực và chi phí khi số lượng các bản dịch cần đánh giá có số lượng lớn. Hơn nữa, cùng một người đánh giá một bản dịch cố định tại hai thời điểm khác nhau có thể cho ra hai kết quả đánh giá khác nhau. 
 
-Tất cả những nhược điểm đã nêu ra đều cho thấy rằng để đánh giá và so sánh chất lượng bản dịch giữa các hệ thống dịch máy khác nhau một cách hiệu quả và khách quan cần phải sử dụng các thước đo được tính toán tự động, không phụ thuộc vào ngôn ngữ và có tương quan cao với con người. Có nhiều thước đo dùng để đánh giá chất lượng bản dịch, tuy nhiên trong phạm vi của luận văn này, nhóm chỉ nghiên cứu và sử dụng phương pháp đánh giá chất lượng bản dịch được sử dụng phổ biến nhất là BLEU. Thuật toán này được đề xuất trong một báo cáo nghiên cứu của IBM tại hội nghị ACL vào năm 2011.
+Tất cả những nhược điểm đã nêu ra đều cho thấy rằng để đánh giá và so sánh chất lượng bản dịch giữa các hệ thống dịch máy khác nhau một cách hiệu quả và khách quan cần phải sử dụng các thước đo được tính toán tự động, không phụ thuộc vào ngôn ngữ và có tương quan cao với con người.
+
+##### Thuật toán BLEU
+
+Thuật toán này được đề xuất trong một báo cáo nghiên cứu của IBM tại hội nghị ACL vào năm 2011.
 
 Ý tưởng chính của thuật toán BLEU đó là đánh giá chất lượng bản dịch từ đầu ra của hệ thống dịch máy thông qua việc so sánh nó với các bản dịch tham khảo có chất lượng tốt từ con người, bản dịch này càng giống với bản dịch của con người thì nó càng đạt chất lượng. Việc đánh giá các bản dịch sẽ dựa trên việc so sánh điểm số được tính bởi công thức sau đây:
 
@@ -54,7 +58,7 @@ Trong đó:
   {p_n} = \frac{{\sum\limits_{C \in \left\{ {Candidates} \right\}} {\sum\limits_{n - gram \in C} {Coun{t_{clip}}\left( {n - gram} \right)} } }}{{\sum\limits_{C \in \left\{ {Candidates} \right\}} {\sum\limits_{n - gram \in C} {Count\left( {n - gram} \right)} } }}$$
   {% endraw %}
   Trong đó:
-		- {% raw %}$$ {Coun{t_{clip}}\left( {n - gram} \right)} $${% endraw %} là số lượng các cụm có $n$ từ liên tiếp (n-gram) trùng nhau giữa bản dịch cần đánh giá (candidate translation) và các bản dịch tham khảo từ con người (reference translation).
-		- {% raw %}$$ {Count\left( {n - gram} \right)} $${% endraw %} là số lượng các cụm có $n$ từ liên tiếp trong bản dịch từ hệ thống dịch máy.
+	- {% raw %}$$ {Coun{t_{clip}}\left( {n - gram} \right)} $${% endraw %} là số lượng các cụm có $n$ từ liên tiếp (n-gram) trùng nhau giữa bản dịch cần đánh giá (candidate translation) và các bản dịch tham khảo từ con người (reference translation).
+	- {% raw %}$$ {Count\left( {n - gram} \right)} $${% endraw %} là số lượng các cụm có $n$ từ liên tiếp trong bản dịch từ hệ thống dịch máy.
 
 Giá trị của BLEU luôn nằm trong khoảng từ 0 đến 1. Khi giá trị của BLEU càng gần 1, điều này chỉ ra rằng bản dịch từ hệ thống dịch máy càng gần sát so với các bản dịch tham khảo. Với thiết kế đã được đưa ra, BLEU có thể đánh giá bản dịch từ đầu ra của hệ thống dịch máy so với nhiều bản dịch tham khảo tương đương về nghĩa từ con người trên các văn bản tài liệu rất lớn. Vì một văn bản ở ngôn ngữ nguồn có thể tồn tại nhiều bản dịch khác nhau ở ngôn ngữ đích nhưng đều tương đương với nhau về nghĩa nên việc bổ sung thêm nhiều bản dịch tham khảo có thể làm tăng giá trị của điểm BLEU. Mặc dù vậy, điểm BLEU cũng tồn tại một số nhược điểm. Nó không thể đánh giá được tính dễ hiểu (intelligibility) và tính đúng đắn ngữ pháp (grammatical correctness) của bản dịch giống như con người. Tuy nhiên, nó đã được chứng minh là một thước đo có tương quan hợp lý so với các đánh giá từ con người.
