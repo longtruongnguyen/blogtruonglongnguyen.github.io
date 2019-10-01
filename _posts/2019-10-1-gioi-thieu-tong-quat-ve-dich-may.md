@@ -9,7 +9,7 @@ author: Nguyễn Trường Long
 
 ### Giới thiệu
 
-Dịch máy (machine translation - MT) hay còn được gọi là dịch tự động có thể được định nghĩa như một lĩnh vực nhỏ của ngành ngôn ngữ tính toán (computational linguistics) mà nghiên cứu việc sử dụng phần mềm máy tính để dịch văn bản hoặc lời nói từ ngôn ngữ tự nhiên này sang ngôn ngữ tự nhiên khác. Đây là một lĩnh vực sử dụng kết hợp nhiều ý tưởng và các kỹ thuật với nhau từ ngôn ngữ học, khoa học máy tính, xác suất thống kê và trí tuệ nhân tạo. Mục tiêu của dịch máy là phát triển một hệ thống cho phép tạo ra bản dịch chính xác giữa các ngôn ngữ tự nhiên của con người.
+Dịch máy (machine translation) hay còn được gọi là dịch tự động có thể được định nghĩa như một lĩnh vực nhỏ của ngành ngôn ngữ tính toán (computational linguistics) mà nghiên cứu việc sử dụng phần mềm máy tính để dịch văn bản hoặc lời nói từ ngôn ngữ tự nhiên này sang ngôn ngữ tự nhiên khác. Đây là một lĩnh vực sử dụng kết hợp nhiều ý tưởng và các kỹ thuật với nhau từ ngôn ngữ học, khoa học máy tính, xác suất thống kê và trí tuệ nhân tạo. Mục tiêu của dịch máy là phát triển một hệ thống cho phép tạo ra bản dịch chính xác giữa các ngôn ngữ tự nhiên của con người.
 
 ### Lịch sử phát triển của dịch máy
 
