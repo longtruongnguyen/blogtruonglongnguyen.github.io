@@ -23,6 +23,16 @@ Tuy nhiên vào năm 1960, nhà ngôn ngữ học Bar-Hillel đã chỉ ra nhữ
 
 Ở giai đoạn trong những năm 1970 trở về sau, do quá trình toàn cầu hóa bắt đầu diễn ra, các nhu cầu về một hệ thống với chi phí thấp có thể dịch một loạt các tài liệu kỹ thuật và thương mại được thúc đẩy gia tăng. Đến năm 1980, các hệ thống dịch máy thương mại bắt đầu xuất hiện ngày càng đa dạng như SYSTRAN, AS-TRANSAC, METAL, ALPS,... Các hướng nghiên cứu đột phá về mặt lý thuyết trong dịch máy được ra đời tạo thêm nhiều triển vọng lớn đối với dịch máy.
 
+### Các hướng tiếp cận trong dịch máy
+
+Có nhiều tiêu chí và cách thức để phân loại các hệ thống dịch máy khác nhau từ nhiều nhà nghiên cứu. Nhưng trong phạm vi của luận văn này, nhóm sẽ phân chia các hệ thống dịch máy theo ba hướng tiếp cận chính là:
+
+- *Dịch máy dựa trên luật (Rule-based Machine Translation - RBMT)*: Hướng tiếp cận này còn được biết đến với tên gọi dịch máy dựa trên kiến thức (Knowledge-based Machine Translation - KBMT), là tên gọi chung cho một nhóm các hệ thống dịch máy hoạt động dựa trên các thông tin về ngôn ngữ học giữa ngôn ngữ nguồn và ngôn ngữ đích. Các hệ thống dịch máy dựa trên hướng tiếp cận này hoạt động theo nguyên tắc chung là nhận các văn bản đầu vào ở ngôn ngữ nguồn và tạo thành các văn bản đầu ra ở ngôn ngữ đích dựa trên việc phân tích hình thái (morphological), cú pháp (syntactic) và ngữ nghĩa (semantic).
+	
+- *Dịch máy dựa trên kho ngữ liệu (Corpus-based Machine Translation - CBMT)*: Theo hướng tiếp cận này, quá trình tạo ra bản dịch được thực hiện dựa trên các tri thức được trích xuất tự động thông qua việc phân tích các văn bản song ngữ đạt tiêu chuẩn do con người xây dựng. Kho ngữ liệu chứa càng nhiều mẫu ví dụ thì chất lượng của bản dịch càng được cải thiện tốt hơn. Nhưng chính vì thế mà việc thu thập và quản lý kho ngữ liệu cũng trở nên phức tạp và tốn kém chi phí, tài nguyên cho hệ thống cũng phải đủ lớn để đáp ứng yêu cầu.
+	
+- *Dịch máy kết hợp (Hybrid Machine Translation - HMT)*: Trên thực tế, các hệ thống dịch máy dựa trên mỗi hướng tiếp cận đơn lẻ trên đều tồn tại nhiều nhược điểm riêng. HMT ra đời dựa trên nguyên tắc kết hợp nhiều hướng tiếp cận dịch máy đơn lẻ lại để giải quyết những nhược điểm tồn tại ở mỗi hướng tiếp cận đơn lẻ này. Hiện nay, nhiều hệ thống HMT đã thành công trong việc cải thiện tốt hơn chất lượng của bản dịch.
+
 ### Phương pháp đánh giá các mô hình dịch máy
 
 Hiện nay có nhiều hệ thống dịch máy khác nhau có thể dịch một văn bản từ ngôn ngữ này sang ngôn ngữ khác và ngày càng có nhiều mô hình lý thuyết về dịch máy được đề xuất. Tuy nhiên, chất lượng các bản dịch từ những hệ thống dịch máy là yếu tố được quan tâm nhiều hơn cả. Chúng ta cần phải đánh giá được hệ thống dịch máy nào tạo ra bản dịch tốt và đạt chất lượng cao để lựa chọn sử dụng. Việc đánh giá chất lượng này có thể được thực hiện thủ công thông qua con người hoặc được thực hiện một cách tự động.
