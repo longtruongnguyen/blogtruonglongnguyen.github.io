@@ -25,7 +25,7 @@ Tuy nhiên vào năm 1960, nhà ngôn ngữ học Bar-Hillel đã chỉ ra nhữ
 
 ### Các hướng tiếp cận trong dịch máy
 
-Có nhiều tiêu chí và cách thức để phân loại các hệ thống dịch máy khác nhau từ nhiều nhà nghiên cứu. Nhưng trong phạm vi của luận văn này, nhóm sẽ phân chia các hệ thống dịch máy theo ba hướng tiếp cận chính là:
+Có nhiều tiêu chí và cách thức để phân loại các hệ thống dịch máy khác nhau từ nhiều nhà nghiên cứu. Nhưng trong phạm vi của bài viết này mình sẽ phân chia các hệ thống dịch máy theo ba hướng tiếp cận chính là:
 
 - *Dịch máy dựa trên luật (Rule-based Machine Translation - RBMT)*: Hướng tiếp cận này còn được biết đến với tên gọi dịch máy dựa trên kiến thức (Knowledge-based Machine Translation - KBMT), là tên gọi chung cho một nhóm các hệ thống dịch máy hoạt động dựa trên các thông tin về ngôn ngữ học giữa ngôn ngữ nguồn và ngôn ngữ đích. Các hệ thống dịch máy dựa trên hướng tiếp cận này hoạt động theo nguyên tắc chung là nhận các văn bản đầu vào ở ngôn ngữ nguồn và tạo thành các văn bản đầu ra ở ngôn ngữ đích dựa trên việc phân tích hình thái (morphological), cú pháp (syntactic) và ngữ nghĩa (semantic).
 	
