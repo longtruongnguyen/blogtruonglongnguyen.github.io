@@ -17,7 +17,7 @@ author: Nguyễn Trường Long
 <figure class="image">
 <center>
   <img src="https://nguyentruonglong.net/images/EndToEndModel.png" alt="Kiến trúc của mô hình Sequence-to-Sequence">
-  <figcaption><i>Kiến trúc của mô hình Sequence-to-Sequence với câu đầu vào là chuỗi "A B C D" và câu đầu ra là chuỗi "X Y Z"</i></figcaption>
+  <figcaption><i>Kiến trúc của mô hình Sequence-to-Sequence với câu đầu vào là chuỗi "A B C D" và câu đầu ra là chuỗi "X Y Z". Nguồn: Lương Minh Thắng et al.</i></figcaption>
 </center>
 </figure>
 
