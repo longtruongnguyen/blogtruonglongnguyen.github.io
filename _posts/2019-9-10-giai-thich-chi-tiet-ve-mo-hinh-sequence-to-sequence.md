@@ -60,7 +60,7 @@ h_{j} = f(h_{j-1},s)
 \end{equation}$$
 {% endraw %}
 
-Trong đó $f$ là hàm biểu diễn chung cho quá trình tính trạng thái ẩn tại bước hiện tại từ trạng thái ẩn đầu ra của bước trước bằng mạng RNN hoặc bằng những cải tiến khác như LSTM} và GRU. Trong mô hình của Sutskever et
+Trong đó $f$ là hàm biểu diễn chung cho quá trình tính trạng thái ẩn tại bước hiện tại từ trạng thái ẩn đầu ra của bước trước bằng mạng RNN hoặc bằng những cải tiến khác như LSTM và GRU. Trong mô hình của Sutskever et
 al., vector $s$ đại diện cho câu nguồn chỉ được sử dụng một lần để làm trạng thái ẩn đầu tiên cho bộ Decoder. Trong mô hình của tác giả Bahdanau et al. và của tác giả Luong et al., $s$ là một vector đặc biệt được sử dụng xuyên suốt tại mỗi bước trong quá trình giải mã.
 
 Hàm mất mát cần tối ưu hóa trong quá trình huấn luyện là một hàm có dạng tích của các hàm cross-entropy:
