@@ -11,14 +11,14 @@ author: Nguyễn Trường Long
 
 Trước khi đi sâu vào giải thích chi tiết mạng [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html), mình sẽ giới thiệu sơ qua về mạng nơ-ron hồi quy (Recurrent Neural Network - RNN). Đây là mạng nơ-ron nhân tạo được thiết kế cho việc xử lý các loại dữ liệu có dạng chuỗi tuần tự. Trong mạng RNN, trạng thái ẩn tại mỗi bước thời gian sẽ được tính toán dựa vào dữ liệu đầu vào tại bước thời gian tương ứng và các thông tin có được từ bước thời gian trước đó, tạo khả năng ghi nhớ các thông tin đã được tính toán ở những bước thời gian trước cho mạng. <i>Hình 1</i> biễu diễn kiến trúc của một mạng RNN cơ bản cho tác vụ ánh xạ một chuỗi đầu vào thành chuỗi đầu ra với cùng một độ dài khi được duỗi ra.
 
-Cụ thể hơn, cho các vector {% raw %}$${x^{\left( 1 \right)}},{x^{\left( 2 \right)}},...,{x^{\left( \tau  \right)}}$${% raw %} đại diện cho các phần tử trong chuỗi dữ liệu đầu vào, tại mỗi bước thời gian $t$, mạng RNN nhận lần lượt từng vector $x^{(t)}$ và thực hiện những tính toán để ánh xạ thành chuỗi đầu ra được mô tả bởi các phương trình sau:
+Cụ thể hơn, cho các vector {% raw %}$${x^{\left( 1 \right)}},{x^{\left( 2 \right)}},...,{x^{\left( \tau  \right)}}$${% endraw %} đại diện cho các phần tử trong chuỗi dữ liệu đầu vào, tại mỗi bước thời gian $t$, mạng RNN nhận lần lượt từng vector $x^{(t)}$ và thực hiện những tính toán để ánh xạ thành chuỗi đầu ra được mô tả bởi các phương trình sau:
 
 {% raw %}$$\begin{align}
 &{h^{\left( t \right)}} = \tanh \left( {U{x^{\left( t \right)}} + W{h^{\left( {t - 1} \right)}} + b} \right)\\
 &{o^{\left( t \right)}} = V{h^{\left( t \right)}} + c\\
 &\hat{y}^{(t)} = {\rm{softmax}}\left( {{o^{\left( t \right)}}} \right)\\
 \end{align}
-$${% raw %}
+$${% endraw %}
 Trong đó:
 	- $x^{(t)}$: Giá trị đầu vào tại bước thời gian $t$
 	- $h^{(t)}$: Trạng thái ẩn tại bước thời gian $t$
@@ -30,9 +30,11 @@ Trong đó:
 <figure class="image">
 <center>
   <img src="https://nguyentruonglong.net/images/RNNUnfold.png" alt="Kiến trúc của một mạng RNN cơ bản khi được duỗi ra">
-  <figcaption><i>Hình 1: Kiến trúc của một mạng RNN cơ bản khi được duỗi ra. Xét tại mỗi bước thời gian $t$ theo chiều từ dưới lên trên: {% raw %}$${x^{\left( t \right)}}$${% endraw %} là giá trị đầu vào, {% raw %}$${h^{\left( t \right)}}$${% endraw %} là trạng thái ẩn, {% raw %}$${o^{\left( t \right)}}$${% endraw %} là giá trị đầu ra. $U$, $W$, $V$ là các ma trận trọng số của mạng RNN. $L$ là hàm tính mất mát giữa giá trị đầu ra {% raw %}$${o^{\left( t \right)}}$${% endraw %} từ mạng RNN và giá trị đầu ra chuẩn {% raw %}$${y^{\left( t \right)}}$${% endraw %} từ tập dữ liệu. Nguồn: Ian Goodfellow</i></figcaption>
+  <figcaption><i>Hình 1: Kiến trúc của một mạng RNN cơ bản khi được duỗi ra. Nguồn: Ian Goodfellow</i></figcaption>
 </center>
 </figure>
+
+Trong <i>Hình 1</i>, tại mỗi bước thời gian $t$ theo chiều từ dưới lên trên: {% raw %}$${x^{\left( t \right)}}$${% endraw %} là giá trị đầu vào, {% raw %}$${h^{\left( t \right)}}$${% endraw %} là trạng thái ẩn, {% raw %}$${o^{\left( t \right)}}$${% endraw %} là giá trị đầu ra. $U$, $W$, $V$ là các ma trận trọng số của mạng RNN. $L$ là hàm tính mất mát giữa giá trị đầu ra {% raw %}$${o^{\left( t \right)}}$${% endraw %} từ mạng RNN và giá trị đầu ra chuẩn {% raw %}$${y^{\left( t \right)}}$${% endraw %} từ tập dữ liệu.
 
 ### Các vấn đề về gradient trong quá trình huấn luyện
 
