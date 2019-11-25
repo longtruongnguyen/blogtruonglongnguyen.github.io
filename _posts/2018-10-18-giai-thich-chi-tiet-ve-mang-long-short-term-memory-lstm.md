@@ -13,19 +13,21 @@ Trước khi đi sâu vào giải thích chi tiết mạng [LSTM](https://nguyen
 
 Cụ thể hơn, cho các vector {% raw %}$${x^{\left( 1 \right)}},{x^{\left( 2 \right)}},...,{x^{\left( \tau  \right)}}$${% endraw %} đại diện cho các phần tử trong chuỗi dữ liệu đầu vào, tại mỗi bước thời gian $t$, mạng RNN nhận lần lượt từng vector $x^{(t)}$ và thực hiện những tính toán để ánh xạ thành chuỗi đầu ra được mô tả bởi các phương trình sau:
 
-{% raw %}$$\begin{align}
+{% raw %}$$
+\begin{align}
 &{h^{\left( t \right)}} = \tanh \left( {U{x^{\left( t \right)}} + W{h^{\left( {t - 1} \right)}} + b} \right)\\
 &{o^{\left( t \right)}} = V{h^{\left( t \right)}} + c\\
 &\hat{y}^{(t)} = {\rm{softmax}}\left( {{o^{\left( t \right)}}} \right)\\
 \end{align}
 $${% endraw %}
+
 Trong đó:
-	- $x^{(t)}$: Giá trị đầu vào tại bước thời gian $t$
-	- $h^{(t)}$: Trạng thái ẩn tại bước thời gian $t$
-	- $o^{(t)}$: Giá trị đầu ra tại bước thời gian $t$
-	- $\hat{y}^{(t)}$: Vector xác suất đã chuẩn hóa qua hàm softmax tại bước thời gian $t$
-	- $U$, $V$, $W$: Các ma trận trọng số trong mạng RNN tương ứng với các kết nối theo chiều lần lượt là từ đầu vào đến trạng thái ẩn, từ trạng thái ẩn đến đầu ra và từ trạng thái ẩn đến trạng thái ẩn
-	- $b$, $c$: Độ lệch (bias)
+- $x^{(t)}$: Giá trị đầu vào tại bước thời gian $t$
+- $h^{(t)}$: Trạng thái ẩn tại bước thời gian $t$
+- $o^{(t)}$: Giá trị đầu ra tại bước thời gian $t$
+- $\hat{y}^{(t)}$: Vector xác suất đã chuẩn hóa qua hàm softmax tại bước thời gian $t$
+- $U$, $V$, $W$: Các ma trận trọng số trong mạng RNN tương ứng với các kết nối theo chiều lần lượt là từ đầu vào đến trạng thái ẩn, từ trạng thái ẩn đến đầu ra và từ trạng thái ẩn đến trạng thái ẩn
+- $b$, $c$: Độ lệch (bias)
 
 <figure class="image">
 <center>
