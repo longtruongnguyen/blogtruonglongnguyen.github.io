@@ -36,7 +36,7 @@ Trong đó:
 - $U$, $V$, $W$: Các ma trận trọng số trong mạng RNN tương ứng với các kết nối theo chiều lần lượt là từ đầu vào đến trạng thái ẩn, từ trạng thái ẩn đến đầu ra và từ trạng thái ẩn đến trạng thái ẩn
 - $b$, $c$: Độ lệch (bias)
 
-Trong <i>Hình 1</i>, tại mỗi bước thời gian $t$ theo chiều từ dưới lên trên: {% raw %}$${x^{\left( t \right)}}$${% endraw %} là giá trị đầu vào, {% raw %}$${h^{\left( t \right)}}$${% endraw %} là trạng thái ẩn, {% raw %}$${o^{\left( t \right)}}$${% endraw %} là giá trị đầu ra. $U$, $W$, $V$ là các ma trận trọng số của mạng RNN. $L$ là hàm tính mất mát giữa giá trị đầu ra {% raw %}$${o^{\left( t \right)}}$${% endraw %} từ mạng RNN và giá trị đầu ra chuẩn {% raw %}$${y^{\left( t \right)}}$${% endraw %} từ tập dữ liệu.
+Nhìn vào <i>Hình 1</i>, xét tại mỗi bước thời gian $t$ theo chiều từ dưới lên trên, ta có thể thấy rằng {% raw %}$${x^{\left( t \right)}}$${% endraw %} là giá trị đầu vào, {% raw %}$${h^{\left( t \right)}}$${% endraw %} là trạng thái ẩn, {% raw %}$${o^{\left( t \right)}}$${% endraw %} là giá trị đầu ra. $U$, $W$, $V$ là các ma trận trọng số của mạng RNN. $L$ là hàm tính mất mát giữa giá trị đầu ra {% raw %}$${o^{\left( t \right)}}$${% endraw %} từ mạng RNN và giá trị đầu ra chuẩn {% raw %}$${y^{\left( t \right)}}$${% endraw %} từ tập dữ liệu.
 
 ### Các vấn đề về gradient trong quá trình huấn luyện
 
