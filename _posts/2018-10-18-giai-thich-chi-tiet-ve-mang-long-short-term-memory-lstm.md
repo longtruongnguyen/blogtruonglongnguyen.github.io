@@ -11,6 +11,13 @@ author: Nguyễn Trường Long
 
 Trước khi đi sâu vào giải thích chi tiết mạng [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html), mình sẽ giới thiệu sơ qua về mạng nơ-ron hồi quy (Recurrent Neural Network - RNN). Đây là mạng nơ-ron nhân tạo được thiết kế cho việc xử lý các loại dữ liệu có dạng chuỗi tuần tự. Trong mạng RNN, trạng thái ẩn tại mỗi bước thời gian sẽ được tính toán dựa vào dữ liệu đầu vào tại bước thời gian tương ứng và các thông tin có được từ bước thời gian trước đó, tạo khả năng ghi nhớ các thông tin đã được tính toán ở những bước thời gian trước cho mạng. <i>Hình 1</i> biễu diễn kiến trúc của một mạng RNN cơ bản cho tác vụ ánh xạ một chuỗi đầu vào thành chuỗi đầu ra với cùng một độ dài khi được duỗi ra.
 
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/RNNUnfold.png" alt="Kiến trúc của một mạng RNN cơ bản khi được duỗi ra">
+  <figcaption><i>Hình 1: Kiến trúc của một mạng RNN cơ bản khi được duỗi ra. Nguồn: Ian Goodfellow</i></figcaption>
+</center>
+</figure>
+
 Cụ thể hơn, cho các vector {% raw %}$${x^{\left( 1 \right)}},{x^{\left( 2 \right)}},...,{x^{\left( \tau  \right)}}$${% endraw %} đại diện cho các phần tử trong chuỗi dữ liệu đầu vào, tại mỗi bước thời gian $t$, mạng RNN nhận lần lượt từng vector $x^{(t)}$ và thực hiện những tính toán để ánh xạ thành chuỗi đầu ra được mô tả bởi các phương trình sau:
 
 {% raw %}$$
@@ -28,13 +35,6 @@ Trong đó:
 - $\hat{y}^{(t)}$: Vector xác suất đã chuẩn hóa qua hàm softmax tại bước thời gian $t$
 - $U$, $V$, $W$: Các ma trận trọng số trong mạng RNN tương ứng với các kết nối theo chiều lần lượt là từ đầu vào đến trạng thái ẩn, từ trạng thái ẩn đến đầu ra và từ trạng thái ẩn đến trạng thái ẩn
 - $b$, $c$: Độ lệch (bias)
-
-<figure class="image">
-<center>
-  <img src="https://nguyentruonglong.net/images/RNNUnfold.png" alt="Kiến trúc của một mạng RNN cơ bản khi được duỗi ra">
-  <figcaption><i>Hình 1: Kiến trúc của một mạng RNN cơ bản khi được duỗi ra. Nguồn: Ian Goodfellow</i></figcaption>
-</center>
-</figure>
 
 Trong <i>Hình 1</i>, tại mỗi bước thời gian $t$ theo chiều từ dưới lên trên: {% raw %}$${x^{\left( t \right)}}$${% endraw %} là giá trị đầu vào, {% raw %}$${h^{\left( t \right)}}$${% endraw %} là trạng thái ẩn, {% raw %}$${o^{\left( t \right)}}$${% endraw %} là giá trị đầu ra. $U$, $W$, $V$ là các ma trận trọng số của mạng RNN. $L$ là hàm tính mất mát giữa giá trị đầu ra {% raw %}$${o^{\left( t \right)}}$${% endraw %} từ mạng RNN và giá trị đầu ra chuẩn {% raw %}$${y^{\left( t \right)}}$${% endraw %} từ tập dữ liệu.
 
