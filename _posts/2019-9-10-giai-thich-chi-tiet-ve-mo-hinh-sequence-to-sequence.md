@@ -2,7 +2,7 @@
 layout: post
 title: Giải thích chi tiết về mô hình Sequence-to-Sequence
 description: Mô hình Sequence-to-Sequence được sử dụng để ánh xạ tạo ra một chuỗi các token của câu đầu ra tương ứng với một chuỗi các token của câu đầu vào được cung cấp trước.
-excerpt: Mô hình Sequence-to-Sequence được đề xuất bởi Sutskever et al. vào năm 2014 và được sử dụng để tạo ra một chuỗi các token của câu trong ngôn ngữ đích làm câu bản dịch tương ứng cho một chuỗi các token của câu trong ngôn ngữ nguồn được cung cấp trước. Mô hình này sử dụng kiến trúc Encoder-Decoder và thông thường thì mạng RNN hoặc những cải tiến như mạng LSTM và GRU sẽ được sử dụng cho cả bộ Encoder và bộ Decoder. Đặc biệt, mạng LSTM được sử dụng để giải quyết các vấn đề phụ thuộc dài, ghi nhớ và biểu diễn mối quan hệ của các thông tin phụ thuộc vào ngữ cảnh trong câu văn bản.
+excerpt: Mô hình Sequence-to-Sequence được đề xuất bởi Sutskever et al. vào năm 2014 và được sử dụng để tạo ra một chuỗi các token của câu trong ngôn ngữ đích làm câu bản dịch tương ứng cho một chuỗi các token của câu trong ngôn ngữ nguồn được cung cấp trước. Mô hình này sử dụng kiến trúc Encoder-Decoder và thông thường thì mạng RNN hoặc những cải tiến như mạng LSTM và GRU sẽ được sử dụng cho cả bộ Encoder và bộ Decoder.
 keywords: mô hình Sequence-to-Sequence, mô hình Sequence to Sequence, Sequence to Sequence model, mô hình Seq2Seq
 author: Nguyễn Trường Long
 ---
