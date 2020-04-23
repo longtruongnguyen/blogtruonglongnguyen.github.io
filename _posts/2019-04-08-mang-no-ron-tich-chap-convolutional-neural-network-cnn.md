@@ -7,14 +7,16 @@ keywords: mạng tích chập cnn, mạng cnn, Convolutional Neural Network, m�
 author: Nguyễn Trường Long
 ---
 
-Mạng nơ-ron tích chập (Convolutional Neural Networks - CNN) là một loại mạng neural network đã đạt được nhiều thành tựu trong các bài toán nhận dạng hình ảnh (image recognition) và phân lớp hình ảnh (image classification) hiện nay.
+[Mạng nơ-ron tích chập (Convolutional Neural Networks - CNN)](https://nguyentruonglong.net/mang-no-ron-tich-chap-convolutional-neural-network-cnn.html) là một loại mạng neural network đã đạt được nhiều thành tựu trong các bài toán nhận dạng hình ảnh (image recognition) và phân lớp hình ảnh (image classification) hiện nay. Ngoài ra, [mạng CNN](https://nguyentruonglong.net/mang-no-ron-tich-chap-convolutional-neural-network-cnn.html)còn được ứng dụng trong các bài toán xử lý ngôn tự nhiên (natural language processing) như phát hiện thư rác (spam detection), phân loại văn bản (topic categorization),...
 
-Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer perceptron) chỉ được xây dựng để nhận dữ liệu đầu vào dưới dạng vector. Đối với một số loại dữ liệu, đặc biệt là dữ liệu ở dạng hình ảnh, mạng nơ-ron truyền thẳng nhiều lớp tỏ ra không hiệu quả để đáp ứng xử lý tốt. Để áp dụng mạng nơ-ron truyền thẳng nhiều lớp cho việc xử lý các dữ liệu ở dạng hình ảnh, chúng ta cần phải chuyển đổi được hình ảnh về dưới dạng vector. Điều này thường gây ra sự mất mát nhiều thông tin trong dữ liệu gốc ban đầu. Mạng nơ-ron tích chập (CNN) được giới thiệu bởi LeCun đã loại bỏ việc trích xuất một cách thủ công các đặc trưng.
+Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer perceptron) chỉ được xây dựng để nhận dữ liệu đầu vào dưới dạng vector. Đối với một số loại dữ liệu, đặc biệt là dữ liệu ở dạng hình ảnh, mạng nơ-ron truyền thẳng nhiều lớp tỏ ra không hiệu quả để đáp ứng xử lý tốt. Để áp dụng mạng nơ-ron truyền thẳng nhiều lớp cho việc xử lý các dữ liệu ở dạng hình ảnh, chúng ta cần phải chuyển đổi được hình ảnh về dưới dạng vector. Điều này thường gây ra sự mất mát nhiều thông tin trong dữ liệu gốc ban đầu. [Mạng CNN](https://nguyentruonglong.net/mang-no-ron-tich-chap-convolutional-neural-network-cnn.html) được giới thiệu bởi LeCun đã loại bỏ việc trích xuất một cách thủ công các đặc trưng.
 
-Mạng CNN được cấu thành bởi một số loại layer sẽ được mô tả chi tiết hơn trong các phần sau bao gồm:
+[Mạng CNN](https://nguyentruonglong.net/mang-no-ron-tich-chap-convolutional-neural-network-cnn.html) được cấu thành bởi một số loại layer sẽ được mô tả chi tiết hơn trong các phần sau bao gồm:
 - Convolutional layer
 - Pooling layer
 - Fully connected layer
+
+### Toán tử tích chập (convolution operation)
 
 ### Convolutional layer
 Sự tích chập riêng biệt giữa hai hàm $f$ và $g$ được định nghĩa như sau:
