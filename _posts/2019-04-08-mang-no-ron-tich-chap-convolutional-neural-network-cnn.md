@@ -19,7 +19,7 @@ Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer per
 ### Toán tử tích chập (convolution operation)
 
 ### Convolutional layer
-Sự tích chập riêng biệt giữa hai hàm $f$ và $g$ được định nghĩa như sau:
+Cho hai hàm $f$ và $g$, tích chập giữa hai hàm này được định nghĩa như sau:
 {% raw %}
 $$\left( {f * g} \right)\left( x \right) = \sum\limits_t {f\left( t \right)} g\left( {x + t} \right)$$
 {% endraw %}
