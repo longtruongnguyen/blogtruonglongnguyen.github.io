@@ -16,10 +16,10 @@ Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer per
 - Pooling layer
 - Fully connected layer
 
-### Toán tử tích chập (convolution operation)
+### Phép tích chập (convolution operation)
 
-### Convolutional layer
-Cho hai hàm $f$ và $g$, tích chập giữa hai hàm này được định nghĩa như sau:
+Trong toán học, phép tích chập giữa hai hàm $f$ và $g$ sẽ tạo ra một hàm thứ ba biểu diễn sự biến đổi của của một hàm đối với hàm còn lại. Xét hai hàm $f$ và $g$, phép tích chập giữa hai hàm này được định nghĩa như sau:
+
 {% raw %}
 $$\left( {f * g} \right)\left( x \right) = \sum\limits_t {f\left( t \right)} g\left( {x + t} \right)$$
 {% endraw %}
@@ -34,5 +34,5 @@ $$\left( {K * I} \right)\left( {i,j} \right) = \sum\limits_{m,n} {K\left( {m,n} 
   <figcaption><center><i>Một ví dụ minh họa về 2D-Convolution</i></center></figcaption>
 </figure>
 
-
+### Convolutional layer
 (Bài viết đang trong quá trình hoàn thiện)
