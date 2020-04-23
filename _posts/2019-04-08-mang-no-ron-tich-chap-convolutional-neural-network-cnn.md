@@ -31,7 +31,7 @@ $$\left( {K * I} \right)\left( {i,j} \right) = \sum\limits_{m,n} {K\left( {m,n} 
 
 <figure class="image">
   <img src="https://nguyentruonglong.net/images/2DConvolution.png" alt="Ví dụ minh họa về 2D-Convolution">
-  <figcaption><center><i>Một ví dụ minh họa về 2D-Convolution</i></center></figcaption>
+  <figcaption><center><i>Một ví dụ minh họa về 2D-Convolution. Nguồn: Ian Goodfellow</i></center></figcaption>
 </figure>
 
 ### Convolutional layer
