@@ -44,11 +44,13 @@ $$\begin{array}{l}
   <figcaption><center><i>Ví dụ về một hình ảnh 2D đầu vào của mặt trời được tích chập với một kernel. Một bản đồ đặc trưng (feature map) có kích thước (N - 2) x (N - 2) là kết quả được tạo ra từ phép tích chập này. Nguồn: Carlos José Díaz Baso</i></center></figcaption>
 </figure>
 
+Chúng ta xem xét trong không gian một chiều, phép tích chập giữa hai hàm $f$ và $g$ được mô tả bởi phương trình sau:
+
 {% raw %}
 $$\left( {f * g} \right)\left( x \right) = \sum\limits_t {f\left( t \right)} g\left( {x + t} \right)$$
 {% endraw %}
 
-Đối với tín hiệu 2 chiều như hình ảnh, chúng ta có hai đầu vào cho phép tích chập. Đầu vào thứ nhất là một hình ảnh 2D, đầu vào còn lại được gọi là kernel hoặc mask hoạt động giống như bộ lọc (filter) cho hình ảnh 2D đầu vào và tạo ra một hình ảnh khác cho đầu ra. Chúng ta xem xét cụ thể một 2D-convolution sau:
+Đối với dữ liệu đầu vào 2 chiều như hình ảnh, chúng ta có hai đầu vào cho phép tích chập. Đầu vào thứ nhất là một hình ảnh 2D, đầu vào còn lại được gọi là kernel hoặc mask hoạt động giống như bộ lọc (filter) cho hình ảnh 2D đầu vào và tạo ra một hình ảnh khác cho đầu ra. Chúng ta xem xét cụ thể một 2D-convolution sau:
 
 {% raw %}
 $$\left( {K * I} \right)\left( {i,j} \right) = \sum\limits_{m,n} {K\left( {m,n} \right)} I\left( {i + n,j + m} \right)$$
