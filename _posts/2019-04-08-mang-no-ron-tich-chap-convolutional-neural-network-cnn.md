@@ -34,6 +34,11 @@ $$\begin{array}{l}
 \end{array}$$
 {% endraw %}
 
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/2DConvolution.png" alt="Ví dụ về một hình ảnh 2D đầu vào của mặt trời được tích chập với một kernel">
+  <figcaption><center><i>Ví dụ về một hình ảnh 2D đầu vào của mặt trời được tích chập với một kernel. Một bản đồ đặc trưng (feature map) có kích thước (N - 2) x (N - 2) là kết quả được tạo ra từ phép tích chập này. Nguồn: Carlos José Díaz Baso</i></center></figcaption>
+</figure>
+
 {% raw %}
 $$\left( {f * g} \right)\left( x \right) = \sum\limits_t {f\left( t \right)} g\left( {x + t} \right)$$
 {% endraw %}
@@ -45,7 +50,7 @@ $$\left( {K * I} \right)\left( {i,j} \right) = \sum\limits_{m,n} {K\left( {m,n} 
 {% endraw %}
 
 <figure class="image">
-  <img src="https://nguyentruonglong.net/images/2DConvolution.png" alt="Ví dụ minh họa về 2D-Convolution">
+  <img src="https://nguyentruonglong.net/images/ConvolutionKernel.png" alt="Ví dụ minh họa về 2D-Convolution">
   <figcaption><center><i>Một ví dụ minh họa về 2D-Convolution. Nguồn: Ian Goodfellow</i></center></figcaption>
 </figure>
 
