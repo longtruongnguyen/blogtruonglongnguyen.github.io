@@ -23,14 +23,14 @@ Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer per
 Trong toán học, phép tích chập giữa hai hàm $f$ và $g$ sẽ tạo ra một hàm thứ ba biểu diễn sự biến đổi của của một hàm đối với hàm còn lại. Xét hai hàm $f$ và $g$, phép tích chập giữa hai hàm này được định nghĩa như sau:
 
 {% raw %}
-$$h\left( x \right) = f \otimes g = \int\limits_{ - \infty }^\infty  {f\left( {x - u} \right)} g\left( u \right)du = {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ f \right]F\left( g \right)} \right)$$
+$$h\left( x \right) = f \otimes g = \int\limits_{ - \infty }^\infty  {f\left( {x - u} \right)} g\left( u \right)du = {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ f \right]F\left[ g \right]} \right)$$
 {% endraw %}
 
 {% raw %}
 $$\begin{array}{l}
-\rm{feature map} &= input \otimes kernel\\
+{\rm{feuture map}} &= input \otimes kernel\\
 &= \sum\limits_{y = 0}^{columns} {\left( {\sum\limits_{x = 0}^{rows} {input\left( {x - a,y - b} \right){\rm{kernel}}\left( {x,y} \right)} } \right)} \\
-&= {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ {input} \right]F\left( {{\rm{kernel}}} \right)} \right)
+&= {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ {input} \right]F\left[ {{\rm{kernel}}} \right]} \right)
 \end{array}$$
 {% endraw %}
 
