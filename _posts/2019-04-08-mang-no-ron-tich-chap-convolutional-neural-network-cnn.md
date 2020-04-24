@@ -27,14 +27,15 @@ $$h\left( x \right) = f \otimes g = \int\limits_{ - \infty }^\infty  {f\left( {x
 {% endraw %}
 
 {% raw %}
-$${\rm{feuture map  =  input}} \otimes {\rm{kernel  =  }}\sum\limits_{y = 0}^{columns} {\left( {\sum\limits_{x = 0}^{rows} {input\left( {x - a,y - b} \right){kernel}\left( {x,y} \right)} } \right) = } {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ {input} \right]F\left( {{kernel}} \right)} \right)$$
+$${\rm{feuture map  =  input}} \otimes {kernel} &= \sum\limits_{y = 0}^{columns} {\left( {\sum\limits_{x = 0}^{rows} {input\left( {x - a,y - b} \right){kernel}\left( {x,y} \right)} } \right)}\\
+&= {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ {input} \right]F\left( {{kernel}} \right)} \right)$$
 {% endraw %}
 
 {% raw %}
 $$\left( {f * g} \right)\left( x \right) = \sum\limits_t {f\left( t \right)} g\left( {x + t} \right)$$
 {% endraw %}
 
-Đối với tín hiệu 2 chiều như hình ảnh, chúng ta có hai đầu vào cho phép tích chập. Đầu vào thứ nhất là một hình ảnh 2D, đầu vào còn lại được gọi là kernel hoặc mask hoạt động giống như bộ lọc (filter) cho hình ảnh 2D đầu vào và tạo ra một hình ảnh khác cho đầu ra. Chúng ta xem xét cụ thể một 2D-convolutions sau:
+Đối với tín hiệu 2 chiều như hình ảnh, chúng ta có hai đầu vào cho phép tích chập. Đầu vào thứ nhất là một hình ảnh 2D, đầu vào còn lại được gọi là kernel hoặc mask hoạt động giống như bộ lọc (filter) cho hình ảnh 2D đầu vào và tạo ra một hình ảnh khác cho đầu ra. Chúng ta xem xét cụ thể một 2D-convolution sau:
 
 {% raw %}
 $$\left( {K * I} \right)\left( {i,j} \right) = \sum\limits_{m,n} {K\left( {m,n} \right)} I\left( {i + n,j + m} \right)$$
