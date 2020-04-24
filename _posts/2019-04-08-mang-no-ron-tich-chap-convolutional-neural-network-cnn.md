@@ -16,6 +16,11 @@ Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer per
 - Pooling layer
 - Fully connected layer
 
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/CompleteCNNArchitecture.png" alt="Kiến trúc tổng quát của một Convolutional Neural Network">
+  <figcaption><center><i>Kiến trúc tổng quát của một Convolutional Neural Network. Nguồn: Nikhil Ketkar</i></center></figcaption>
+</figure>
+
 ### Phép tích chập (convolution operation)
 
 Để đào sâu và hiểu rõ hơn về [mạng nơ-ron tích chập](https://nguyentruonglong.net/mang-no-ron-tich-chap-convolutional-neural-network-cnn.html), chúng ta cần lướt qua một chút về các kiến thức toán học có liên quan đến phép tích chập. Chúng ta có thể hình dung một cách đơn giản rằng ý nghĩa của phép tích chập giống như một hoạt động trộn thông tin lại với nhau. Phép tích chập được ứng dụng tương đối rộng rãi trong nhiều ngành khoa học và kỹ thuật khác nhau.
