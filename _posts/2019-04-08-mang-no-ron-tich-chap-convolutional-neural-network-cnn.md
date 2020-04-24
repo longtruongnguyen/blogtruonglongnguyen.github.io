@@ -27,7 +27,7 @@ $$h\left( x \right) = f \otimes g = \int\limits_{ - \infty }^\infty  {f\left( {x
 {% endraw %}
 
 {% raw %}
-$${\rm{feuture map  =  input}} \otimes {\rm{kernel  =  }}\sum\limits_{y = 0}^{columns} {\left( {\sum\limits_{x = 0}^{rows} {input\left( {x - a,y - b} \right)\kernel\left( {x,y} \right)} } \right) = } {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ {input} \right]F\left( {\kernel} \right)} \right)$$
+$${\rm{feuture map  =  input}} \otimes {\rm{kernel  =  }}\sum\limits_{y = 0}^{columns} {\left( {\sum\limits_{x = 0}^{rows} {input\left( {x - a,y - b} \right){kernel}\left( {x,y} \right)} } \right) = } {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ {input} \right]F\left( {{kernel}} \right)} \right)$$
 {% endraw %}
 
 {% raw %}
