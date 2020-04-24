@@ -23,6 +23,10 @@ Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer per
 Trong toán học, phép tích chập giữa hai hàm $f$ và $g$ sẽ tạo ra một hàm thứ ba biểu diễn sự biến đổi của của một hàm đối với hàm còn lại. Xét hai hàm $f$ và $g$, phép tích chập giữa hai hàm này được định nghĩa như sau:
 
 {% raw %}
+$$h\left( x \right) = f \otimes g = \int\limits_{ - \infty }^\infty  {f\left( {x - u} \right)} g\left( u \right)du = {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ f \right]F\left( g \right)} \right)$$
+{% endraw %}
+
+{% raw %}
 $$\left( {f * g} \right)\left( x \right) = \sum\limits_t {f\left( t \right)} g\left( {x + t} \right)$$
 {% endraw %}
 
