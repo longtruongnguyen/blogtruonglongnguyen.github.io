@@ -18,7 +18,7 @@ Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer per
 
 ### Phép tích chập (convolution operation)
 
-Để đào sâu và hiểu rõ hơn về mạng nơ-ron tích chập, chúng ta cần lướt qua một chút về các kiến thức toán học có liên quan đến phép tích chập. Chúng ta có thể hình dung một cách đơn giản rằng ý nghĩa của phép tích chập giống như một hoạt động trộn thông tin lại với nhau. Phép tích chập được ứng dụng tương đối nhiều trong các ngành khoa học và kỹ thuật khác nhau.
+Để đào sâu và hiểu rõ hơn về [mạng nơ-ron tích chập](https://nguyentruonglong.net/mang-no-ron-tich-chap-convolutional-neural-network-cnn.html), chúng ta cần lướt qua một chút về các kiến thức toán học có liên quan đến phép tích chập. Chúng ta có thể hình dung một cách đơn giản rằng ý nghĩa của phép tích chập giống như một hoạt động trộn thông tin lại với nhau. Phép tích chập được ứng dụng tương đối nhiều trong các ngành khoa học và kỹ thuật khác nhau.
 
 Trong toán học, phép tích chập giữa hai hàm $f$ và $g$ sẽ tạo ra một hàm thứ ba biểu diễn sự biến đổi của của một hàm đối với hàm còn lại. Xét hai hàm $f$ và $g$, phép tích chập giữa hai hàm này được định nghĩa như sau:
 
@@ -27,8 +27,11 @@ $$h\left( x \right) = f \otimes g = \int\limits_{ - \infty }^\infty  {f\left( {x
 {% endraw %}
 
 {% raw %}
-$${\rm{feuture map  =  input}} \otimes {kernel} &= \sum\limits_{y = 0}^{columns} {\left( {\sum\limits_{x = 0}^{rows} {input\left( {x - a,y - b} \right){kernel}\left( {x,y} \right)} } \right)}\\
-&= {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ {input} \right]F\left( {{kernel}} \right)} \right)$$
+$$\begin{array}{l}
+\rm{feature map} &= input \otimes kernel\\
+&= \sum\limits_{y = 0}^{columns} {\left( {\sum\limits_{x = 0}^{rows} {input\left( {x - a,y - b} \right){\rm{kernel}}\left( {x,y} \right)} } \right)} \\
+&= {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ {input} \right]F\left( {{\rm{kernel}}} \right)} \right)
+\end{array}$$
 {% endraw %}
 
 {% raw %}
