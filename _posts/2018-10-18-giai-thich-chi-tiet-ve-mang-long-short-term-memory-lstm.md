@@ -18,7 +18,10 @@ Trước khi đi sâu vào giải thích chi tiết mạng [LSTM](https://nguyen
 </center>
 </figure>
 
-Cụ thể hơn, cho các vector {% raw %}$${x^{\left( 1 \right)}},{x^{\left( 2 \right)}},...,{x^{\left( \tau  \right)}}$${% endraw %} đại diện cho các phần tử trong chuỗi dữ liệu đầu vào, tại mỗi bước thời gian $t$, mạng RNN nhận lần lượt từng vector $x^{(t)}$ và thực hiện những tính toán để ánh xạ thành chuỗi đầu ra được mô tả bởi các phương trình sau:
+Trong <i>Hình 1</i>, xét tại mỗi bước thời gian $t$ theo chiều từ dưới lên trên, {% raw %}$${x^{\left( t \right)}}$${% endraw %} là giá trị đầu vào, {% raw %}$${h^{\left( t \right)}}$${% endraw %} là trạng thái ẩn, {% raw %}$${o^{\left( t \right)}}$${% endraw %} là giá trị đầu ra. $U$, $W$, $V$ là các ma trận trọng số của mạng RNN. $L$ là hàm tính mất mát giữa giá trị đầu ra {% raw %}$${o^{\left( t \right)}}$${% endraw %} từ mạng RNN và giá trị đầu ra chuẩn {% raw %}$${y^{\left( t \right)}}$${% endraw %} từ tập dữ liệu.
+
+
+Đi sâu vào kiến trúc chi tiết hơn, chúng ta xem các vector {% raw %}$${x^{\left( 1 \right)}},{x^{\left( 2 \right)}},...,{x^{\left( \tau  \right)}}$${% endraw %} đại diện cho các phần tử trong chuỗi dữ liệu đầu vào, tại mỗi bước thời gian $t$, mạng RNN nhận lần lượt từng vector $x^{(t)}$ và thực hiện những tính toán để ánh xạ thành chuỗi đầu ra được mô tả bởi các phương trình sau:
 
 {% raw %}$$
 \begin{align}
@@ -36,7 +39,12 @@ Trong đó:
 - $U$, $V$, $W$: Các ma trận trọng số trong mạng RNN tương ứng với các kết nối theo chiều lần lượt là từ đầu vào đến trạng thái ẩn, từ trạng thái ẩn đến đầu ra và từ trạng thái ẩn đến trạng thái ẩn
 - $b$, $c$: Độ lệch (bias)
 
-Nhìn vào <i>Hình 1</i>, xét tại mỗi bước thời gian $t$ theo chiều từ dưới lên trên, ta có thể thấy rằng {% raw %}$${x^{\left( t \right)}}$${% endraw %} là giá trị đầu vào, {% raw %}$${h^{\left( t \right)}}$${% endraw %} là trạng thái ẩn, {% raw %}$${o^{\left( t \right)}}$${% endraw %} là giá trị đầu ra. $U$, $W$, $V$ là các ma trận trọng số của mạng RNN. $L$ là hàm tính mất mát giữa giá trị đầu ra {% raw %}$${o^{\left( t \right)}}$${% endraw %} từ mạng RNN và giá trị đầu ra chuẩn {% raw %}$${y^{\left( t \right)}}$${% endraw %} từ tập dữ liệu.
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/IllustrationofRNN.png" alt="Kiến trúc chi tiết của một mạng RNN tại mỗi bước thời gian">
+  <figcaption><i>Hình 2: Kiến trúc chi tiết của một mạng RNN tại mỗi bước thời gian. Nguồn: Nikhil Ketkar</i></figcaption>
+</center>
+</figure>
 
 ### Các vấn đề về gradient trong quá trình huấn luyện
 
@@ -49,7 +57,7 @@ Gradient biến mất (Vanishing Gradient Problem) và gradient bùng nổ (Expl
 <figure class="image">
 <center>
   <img src="https://nguyentruonglong.net/images/LSTMCell.png" alt="Sơ đồ biểu diễn kiến trúc bên trong của một tế bào LSTM">
-  <figcaption><i>Hình 2: Sơ đồ biểu diễn kiến trúc bên trong của một tế bào LSTM</i></figcaption>
+  <figcaption><i>Hình 3: Sơ đồ biểu diễn kiến trúc bên trong của một tế bào LSTM</i></figcaption>
 </center>
 </figure>
 
