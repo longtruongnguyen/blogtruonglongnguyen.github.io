@@ -61,5 +61,16 @@ $$\left( {K * I} \right)\left( {i,j} \right) = \sum\limits_{m,n} {K\left( {m,n} 
   <figcaption><center><i>Một ví dụ minh họa về 2D-Convolution. Nguồn: Ian Goodfellow</i></center></figcaption>
 </figure>
 
-### Convolutional layer
+### Convolutional Layer
+
+### Pooling Layer
+
+Chức năng chung của pooling layer là giảm kích thước không gian của đặc trưng với mục đích chính là giảm số lượng tham số và khối lượng tính toán trong network. Pooling layer hoạt động trên từng feuture map độc lập với nhau. Hướng tiếp cận phổ biến nhất được sử dụng là max pooling.
+
+<figure class="image">
+  <img src="https://nguyentruonglong.net/images/PoolingSchematic.gif" alt="Ví dụ minh họa cho thấy pooling đang hoạt động trên 4 vùng không chồng chéo nhau của hình ảnh">
+  <figcaption><center><i>Ví dụ minh họa cho thấy pooling đang hoạt động trên 4 vùng không chồng chéo nhau của hình ảnh. Nguồn: UFLDL Tutorial</i></center></figcaption>
+</figure>
+
+
 (Bài viết đang trong quá trình hoàn thiện)
