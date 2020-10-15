@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Đồng bộ hóa giữa các Thread trong Python
