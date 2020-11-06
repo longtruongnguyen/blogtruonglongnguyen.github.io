@@ -21,4 +21,14 @@ Bài toán buổi ăn tối của các triết gia được đề xuất lần �
 * Sau khi một triết gia ăn mỳ xong cần đặt cả hai nĩa trở về vị trí gốc ban đầu để các triết gia còn lại có thể sử dụng
 * Một triết gia không thể bắt đầu ăn mỳ khi họ chưa lấy được đầy đủ cả hai nĩa bên trái lẫn bên phải
 * Giả sử việc ăn uống của mỗi triết gia này là không bị giới hạn và không một triết gia nào có thể biết liệu khi nào những người còn lại có thể muốn ăn mỳ hoặc suy nghĩ.
-* Hãy thiết kế một thuật toán sao cho mỗi triết gia có thể tiếp tục mãi mãi giữa quá trình suy nghĩ, ăn mỳ mà không bị nhịn đói.
+* Hãy thiết kế một thuật toán sao cho mỗi triết gia có thể tiếp tục mãi mãi giữa hai trạng thái suy nghĩ và ăn mỳ mà không bị nhịn đói.
+
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/DiningPhilosophersProblem.png" alt="Ảnh minh họa cho bài toán buổi ăn tối của các triết gia">
+  <figcaption>
+	  <i>Ảnh minh họa cho bài toán buổi ăn tối của các triết gia. Nguồn: O'Reilly</i>
+  </figcaption>
+</center>
+</figure>
