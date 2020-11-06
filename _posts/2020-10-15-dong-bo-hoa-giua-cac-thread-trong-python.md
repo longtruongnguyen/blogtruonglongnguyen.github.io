@@ -3,11 +3,11 @@ layout: post
 title: Đồng bộ hóa giữa các Thread trong Python
 description: Đồng bộ hóa giữa các Thread trong Python
 keywords: cơ chế đồng bộ trong Python, đồng bộ hóa trong Python, đồng bộ hóa thread, synchronization, đồng bộ trong Python, ngôn ngữ lập trình Python, đồng bộ các luồng trong Python
-excerpt: Một trong những vấn đề lớn mà chúng ta thường hay gặp nhất trong việc thiết kế những hệ thống chạy đồng thời (concurrent systems) chính là deadlock. Bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho khái niệm deadblock này. Chúng ta hãy cùng tìm hiểu bài toán này.
+excerpt: Một trong những vấn đề lớn mà chúng ta thường hay gặp nhất trong việc thiết kế những hệ thống chạy đồng thời (concurrent systems) chính là deadlock. Bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho khái niệm deadlock này. Chúng ta hãy cùng tìm hiểu bài toán này.
 author: Nguyễn Trường Long
 ---
 
-Một trong những vấn đề lớn mà chúng ta thường hay gặp nhất trong việc thiết kế những hệ thống chạy đồng thời (concurrent systems) chính là deadlock. Bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho khái niệm deadblock này. Chúng ta hãy cùng tìm hiểu bài toán này.
+Một trong những vấn đề lớn mà chúng ta thường hay gặp nhất trong việc thiết kế những hệ thống chạy đồng thời (concurrent systems) chính là deadlock. Bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho khái niệm deadlock này. Chúng ta hãy cùng tìm hiểu bài toán này.
 
 ### Giới thiệu về bài toán kinh điển "Bữa ăn tối của các triết gia"
 
