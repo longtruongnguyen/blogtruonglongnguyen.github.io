@@ -33,6 +33,6 @@ Bài toán buổi ăn tối của các triết gia được đề xuất lần �
 </center>
 </figure>
 
-Chúng ta có thể thấy một tình huống có thể phát sinh với bài toán đặt ra là tất cả 5 nhà triết học đều chọn nĩa bên trái và ngồi suy nghĩ cho đến khi lấy được nĩa bên phải để có thể ăn mỳ. Điều này dẫn đến trạng thái bế tắc, hay còn được gọi là deadlock, là trạng thái mà mỗi nhà triết học đã chọn cái nĩa ở bên trái đang đợi cái nĩa ở bên phải dẫn đến không có tiến trình nào tiếp theo có thể xảy ra.
+Chúng ta có thể thấy một tình huống có thể phát sinh với bài toán đặt ra là tất cả 5 nhà triết học đều chọn nĩa bên trái và ngồi suy nghĩ cho đến khi lấy được nĩa bên phải để có thể ăn mỳ. Điều này dẫn đến trạng thái bế tắc, hay còn được gọi là deadlock, là trạng thái mà mỗi nhà triết học đã chọn cái nĩa ở bên trái đang đợi cái nĩa ở bên phải dẫn đến không có sự kiện nào tiếp theo có thể xảy ra. Trong bài toán này, mỗi cái nĩa đại diện cho tài nguyên của hệ thống và mỗi nhà triết học đại diện cho một tiến trình. Những vấn đề mà các triết gia này có thể gặp phải tương tự như những vấn đề trong lập trình máy tính khi nhiều tiến trình cần quyền truy cập độc quyền vào các tài nguyên dùng chung.
 
 
