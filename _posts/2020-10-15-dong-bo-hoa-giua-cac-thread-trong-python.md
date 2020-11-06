@@ -51,7 +51,7 @@ Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên 
 <center>
   <img src="https://nguyentruonglong.net/images/ForkBombAttack.jpg" alt="Ảnh minh họa mô phỏng hình thức tấn công fork bomb">
   <figcaption>
-	  <i>Ảnh minh họa mô phỏng hình thức tấn công fork bomb. Nguồn: O'Reilly</i>
+	  <i>Ảnh minh họa mô phỏng hình thức tấn công fork bomb. Nguồn: https://www.imperva.com</i>
   </figcaption>
 </center>
 </figure>
