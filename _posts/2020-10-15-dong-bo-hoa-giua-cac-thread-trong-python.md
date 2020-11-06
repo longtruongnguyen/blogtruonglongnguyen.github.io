@@ -23,7 +23,6 @@ Bài toán buổi ăn tối của các triết gia được đề xuất lần �
 * Giả sử việc ăn uống của mỗi nhà triết học này là không bị giới hạn và không một nhà triết học nào có thể biết liệu khi nào những người còn lại có thể muốn ăn mỳ hoặc suy nghĩ
 * Hãy thiết kế một thuật toán sao cho mỗi nhà triết học có thể tiếp tục mãi mãi giữa hai trạng thái suy nghĩ và ăn mỳ mà không bị nhịn đói
 
-
 <figure class="image">
 <center>
   <img src="https://nguyentruonglong.net/images/DiningPhilosophersProblem.png" alt="Ảnh minh họa cho bài toán buổi ăn tối của các triết gia">
@@ -39,8 +38,6 @@ Trong bài toán này, mỗi cái nĩa đại diện cho tài nguyên của hệ
 
 Chúng ta có thể thấy một tình huống có thể phát sinh với bài toán đặt ra là tất cả 5 nhà triết học đều chọn nĩa bên trái và ngồi suy nghĩ cho đến khi lấy được nĩa bên phải để có thể ăn mỳ. Điều này dẫn đến trạng thái bế tắc, hay còn được gọi là deadlock, là trạng thái mà mỗi nhà triết học đã chọn cái nĩa ở bên trái đang đợi cái nĩa ở bên phải dẫn đến không có sự kiện nào tiếp theo có thể xảy ra. Có thể khái quát một cách tổng quát rằng deadlock xảy ra khi mỗi tiến trình (process) nắm giữ một tài nguyên và đợi được cấp tài nguyên từ bất kỳ tiến trình nào khác.
 
-### Vấn đề Livelock
-
 ### Vấn đề Starvation
 
 Giả sử chúng ta bổ sung thêm một quy tắc vào tập hợp các quy tắc trong bài toán trên là các nhà triết học nếu đang nắm giữ một nĩa sẽ phải đặt nĩa này xuống sau mười phút chờ đợi nếu vẫn chưa nắm giữ được nĩa còn lại, sau đó đợi thêm mười phút nữa để bắt đầu lại quá trình lấy nĩa. Nếu tất cả năm triết gia xuất hiện trong phòng ăn cùng một lúc và mỗi người này cầm chiếc nĩa bên trái cùng một lúc, các nhà triết học sẽ đợi mười phút cho đến khi tất cả đặt nĩa xuống và sau đó đợi thêm mười phút nữa trước khi tất cả cùng bắt đầu lại quá trình cầm nĩa lên.
@@ -55,6 +52,12 @@ Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên 
   </figcaption>
 </center>
 </figure>
+
+### Vấn đề Livelock
+
+### Vấn đề Race Condition
+
+### Loại trừ tương hỗ
 
 ### Tài liệu tham khảo
 * <a href="http://www.cse.hcmut.edu.vn/~sonsys/OS_CQA01/Lecture07.pdf" target="_blank">http://www.cse.hcmut.edu.vn/~sonsys/OS_CQA01/Lecture07.pdf</a>
