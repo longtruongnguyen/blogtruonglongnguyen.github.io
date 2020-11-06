@@ -40,7 +40,7 @@ Chúng ta có thể thấy một tình huống có thể phát sinh với bài t
 
 ### Vấn đề Starvation
 
-Giả sử chúng ta bổ sung thêm một quy tắc vào tập hợp các quy tắc trong bài toán trên là các nhà triết học nếu đang nắm giữ một nĩa sẽ phải đặt nĩa này xuống sau mười phút chờ đợi nếu vẫn chưa nắm giữ được nĩa còn lại, sau đó đợi thêm mười phút nữa để bắt đầu lại quá trình lấy nĩa. Nếu tất cả năm triết gia xuất hiện trong phòng ăn cùng một lúc và mỗi người này cầm chiếc nĩa bên trái cùng một lúc, các nhà triết học sẽ đợi mười phút cho đến khi tất cả đặt nĩa xuống và sau đó đợi thêm mười phút nữa trước khi tất cả cùng bắt đầu lại quá trình cầm nĩa lên.
+Giả sử chúng ta bổ sung thêm một quy tắc vào tập hợp các quy tắc trong bài toán trên là các nhà triết học nếu đang nắm giữ một nĩa sẽ phải đặt nĩa này xuống sau mười phút chờ đợi nếu vẫn chưa nắm giữ được nĩa còn lại, sau đó đợi thêm mười phút nữa để bắt đầu lại quá trình lấy nĩa. Nếu tất cả năm nhà triết học xuất hiện trong phòng ăn cùng một lúc và mỗi người này cầm chiếc nĩa bên trái cùng một lúc, các nhà triết học sẽ đợi mười phút cho đến khi tất cả đặt nĩa xuống và sau đó đợi thêm mười phút nữa trước khi tất cả cùng bắt đầu lại quá trình cầm nĩa lên.
 
 Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên (resource starvation) có thể xảy ra do sự thiếu hụt tài nguyên máy tính hoặc do nhiều tiến trình đang cạnh tranh nắm giữ cho cùng một tài nguyên máy tính. Trong thực tế, tình trạng đói tài nguyên có thể xảy ra do lỗi trong việc thiết kế các thuật toán lập lịch hoặc thuật toán loại trừ tương hỗ, nhưng cũng có thể do rò rỉ tài nguyên và cũng có thể xảy ra qua hình thức tấn công có tên gọi là "<a href="https://www.imperva.com/learn/ddos/fork-bomb/" target="_blank">fork bomb</a>".
 
