@@ -45,8 +45,16 @@ Chúng ta có thể thấy một tình huống có thể phát sinh với bài t
 
 Giả sử chúng ta bổ sung thêm một quy tắc vào tập hợp các quy tắc trong bài toán trên là các nhà triết học nếu đang nắm giữ một nĩa sẽ phải đặt nĩa này xuống sau mười phút chờ đợi nếu vẫn chưa nắm giữ được nĩa còn lại, sau đó đợi thêm mười phút nữa để bắt đầu lại quá trình lấy nĩa. Nếu tất cả năm triết gia xuất hiện trong phòng ăn cùng một lúc và mỗi người này cầm chiếc nĩa bên trái cùng một lúc, các nhà triết học sẽ đợi mười phút cho đến khi tất cả đặt nĩa xuống và sau đó đợi thêm mười phút nữa trước khi tất cả cùng bắt đầu lại quá trình cầm nĩa lên.
 
-Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên (resource starvation) có thể xảy ra do sự thiếu hụt tài nguyên máy tính hoặc do nhiều tiến trình đang cạnh tranh nắm giữ cho cùng một tài nguyên máy tính. Trong thực tế, tình trạng đói tài nguyên có thể xảy ra do lỗi trong việc thiết kế các thuật toán lập lịch hoặc thuật toán loại trừ tương hỗ, nhưng cũng có thể do rò rỉ tài nguyên và cũng có thể xảy ra qua hình thức tấn công có tên gọi là "fork bomb".
+Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên (resource starvation) có thể xảy ra do sự thiếu hụt tài nguyên máy tính hoặc do nhiều tiến trình đang cạnh tranh nắm giữ cho cùng một tài nguyên máy tính. Trong thực tế, tình trạng đói tài nguyên có thể xảy ra do lỗi trong việc thiết kế các thuật toán lập lịch hoặc thuật toán loại trừ tương hỗ, nhưng cũng có thể do rò rỉ tài nguyên và cũng có thể xảy ra qua hình thức tấn công có tên gọi là "<a href="https://www.imperva.com/learn/ddos/fork-bomb/" target="_blank">fork bomb</a>".
 
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/ForkBombAttack.jpg" alt="Ảnh minh họa mô phỏng hình thức tấn công fork bomb">
+  <figcaption>
+	  <i>Ảnh minh họa mô phỏng hình thức tấn công fork bomb. Nguồn: O'Reilly</i>
+  </figcaption>
+</center>
+</figure>
 
 ### Tài liệu tham khảo
 * <a href="http://www.cse.hcmut.edu.vn/~sonsys/OS_CQA01/Lecture07.pdf" target="_blank">http://www.cse.hcmut.edu.vn/~sonsys/OS_CQA01/Lecture07.pdf</a>
@@ -55,6 +63,8 @@ Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên 
 * <a href="https://en.wikipedia.org/wiki/Starvation_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Starvation_(computer_science)</a>
 * <a href="https://csrc.nist.gov/glossary/term/Resource_Starvation" target="_blank">https://csrc.nist.gov/glossary/term/Resource_Starvation</a>
 * <a href="https://www.geeksforgeeks.org/deadlock-starvation-and-livelock/" target="_blank">https://www.geeksforgeeks.org/deadlock-starvation-and-livelock/</a>
+* <a href="https://www.imperva.com/learn/ddos/fork-bomb/" target="_blank">https://www.imperva.com/learn/ddos/fork-bomb/</a>
+
 
 
 
