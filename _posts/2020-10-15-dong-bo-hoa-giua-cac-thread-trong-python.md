@@ -7,7 +7,17 @@ excerpt: Một trong những vấn đề lớn mà chúng ta thường hay gặp
 author: Nguyễn Trường Long
 ---
 
-Một trong những vấn đề lớn mà chúng ta thường hay gặp nhất trong việc thiết kế những hệ thống chạy đồng thời (concurrent systems) chính là deadlock. Bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho khái niệm deadlock này. Chúng ta hãy cùng tìm hiểu bài toán này.
+### Tiến trình (process), tiểu trình (thread) và sự đồng bộ hóa (synchronization)
+
+* <i>Tiến trình</i>:
+* <i>Tiểu trình</i>:
+
+Vấn đề đồng bộ hóa có thể được phân chia thành hai loại chính:
+
+* <i>Đồng bộ hóa tài nguyên (resource synchronization)</i>: Xác định việc truy cập vào tài nguyên dùng chung (shared resource) có an toàn hay không, khi nào an toàn và khi nào không an toàn.
+* Đồng bộ hóa hoạt động (activity synchronization):  Đảm bảo thứ tự thực thi chính xác giữa các tác vụ khi được sử dụng phối hợp với nhau. Đồng bộ hóa hoạt động bao gồm cả các vấn đề về đồng bộ (synchronous) và bất đồng bộ (asynchronous).
+
+Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa. Chúng ta hãy cùng tìm hiểu bài toán này.
 
 ### Giới thiệu về bài toán kinh điển "Bữa ăn tối của các triết gia"
 
@@ -36,7 +46,7 @@ Trong bài toán này, mỗi cái nĩa đại diện cho tài nguyên của hệ
 
 ### Vấn đề Deadlock
 
-Chúng ta có thể thấy một tình huống có thể phát sinh với bài toán đặt ra là tất cả 5 nhà triết học đều chọn nĩa bên trái và ngồi suy nghĩ cho đến khi lấy được nĩa bên phải để có thể ăn mỳ. Điều này dẫn đến trạng thái bế tắc, hay còn được gọi là deadlock, là trạng thái mà mỗi nhà triết học đã chọn cái nĩa ở bên trái đang đợi cái nĩa ở bên phải dẫn đến không có sự kiện nào tiếp theo có thể xảy ra. Có thể khái quát một cách tổng quát rằng deadlock xảy ra khi mỗi tiến trình (process) nắm giữ một tài nguyên và đợi được cấp tài nguyên từ bất kỳ tiến trình nào khác.
+Chúng ta có thể thấy một tình huống có thể phát sinh với bài toán đặt ra là tất cả 5 nhà triết học đều chọn nĩa bên trái và ngồi suy nghĩ cho đến khi lấy được nĩa bên phải để có thể ăn mỳ. Điều này dẫn đến trạng thái bế tắc, hay còn được gọi là deadlock, là trạng thái mà mỗi nhà triết học đã chọn cái nĩa ở bên trái đang đợi cái nĩa ở bên phải dẫn đến không có sự kiện nào tiếp theo có thể xảy ra. Có thể khái quát một cách tổng quát rằng deadlock xảy ra khi mỗi tiến trình (process) nắm giữ một tài nguyên và đợi được cấp tài nguyên từ bất kỳ tiến trình nào khác. Đây là một trong những vấn đề lớn mà chúng ta thường hay gặp nhất trong việc thiết kế những hệ thống chạy đồng thời (concurrent systems).
 
 ### Vấn đề Starvation
 
@@ -59,14 +69,19 @@ Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên 
 
 ### Loại trừ tương hỗ
 
+### Vấn đề vùng trọng yếu (Critical section)
+
 ### Tài liệu tham khảo
+
 * <a href="http://www.cse.hcmut.edu.vn/~sonsys/OS_CQA01/Lecture07.pdf" target="_blank">http://www.cse.hcmut.edu.vn/~sonsys/OS_CQA01/Lecture07.pdf</a>
+* <a href="https://computersciencewiki.org/index.php/Processes_and_Threads/" target="_blank">https://computersciencewiki.org/index.php/Processes_and_Threads/</a>
 * <a href="https://www.geeksforgeeks.org/difference-between-deadlock-and-starvation-in-os/" target="_blank">https://www.geeksforgeeks.org/difference-between-deadlock-and-starvation-in-os/</a>
 * <a href="https://en.wikipedia.org/wiki/Dining_philosophers_problem" target="_blank">https://en.wikipedia.org/wiki/Dining_philosophers_problem</a>
 * <a href="https://en.wikipedia.org/wiki/Starvation_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Starvation_(computer_science)</a>
 * <a href="https://csrc.nist.gov/glossary/term/Resource_Starvation" target="_blank">https://csrc.nist.gov/glossary/term/Resource_Starvation</a>
 * <a href="https://www.geeksforgeeks.org/deadlock-starvation-and-livelock/" target="_blank">https://www.geeksforgeeks.org/deadlock-starvation-and-livelock/</a>
 * <a href="https://www.imperva.com/learn/ddos/fork-bomb/" target="_blank">https://www.imperva.com/learn/ddos/fork-bomb/</a>
+* <a href="http://www.embeddedlinux.org.cn/rtconforembsys/5107final/LiB0091.html/" target="_blank">http://www.embeddedlinux.org.cn/rtconforembsys/5107final/LiB0091.html/</a>
 
 
 
