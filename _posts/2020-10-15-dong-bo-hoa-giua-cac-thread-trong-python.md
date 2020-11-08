@@ -3,7 +3,7 @@ layout: post
 title: Đồng bộ hóa giữa các Thread trong Python
 description: Đồng bộ hóa giữa các Thread trong Python
 keywords: cơ chế đồng bộ trong Python, đồng bộ hóa trong Python, đồng bộ hóa thread, synchronization, đồng bộ trong Python, ngôn ngữ lập trình Python, đồng bộ các luồng trong Python
-excerpt: Một trong những vấn đề lớn mà chúng ta thường hay gặp nhất trong việc thiết kế những hệ thống chạy đồng thời (concurrent systems) chính là deadlock. Bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho khái niệm deadlock này. Chúng ta hãy cùng tìm hiểu bài toán này.
+excerpt: Vấn đề đồng bộ hóa có thể được phân chia thành hai loại chính là đồng bộ hóa tài nguyên và đồng bộ hóa hoạt động. Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa.
 author: Nguyễn Trường Long
 ---
 
@@ -14,8 +14,8 @@ author: Nguyễn Trường Long
 
 Vấn đề đồng bộ hóa có thể được phân chia thành hai loại chính:
 
-* <i>Đồng bộ hóa tài nguyên (resource synchronization)</i>: Xác định việc truy cập vào tài nguyên dùng chung (shared resource) có an toàn hay không, khi nào an toàn và khi nào không an toàn.
-* Đồng bộ hóa hoạt động (activity synchronization):  Đảm bảo thứ tự thực thi chính xác giữa các tác vụ khi được sử dụng phối hợp với nhau. Đồng bộ hóa hoạt động bao gồm cả các vấn đề về đồng bộ (synchronous) và bất đồng bộ (asynchronous).
+* <i>Đồng bộ hóa tài nguyên (resource synchronization):</i> Xác định việc truy cập vào tài nguyên dùng chung (shared resource) có an toàn hay không, khi nào an toàn và khi nào không an toàn.
+* <i>Đồng bộ hóa hoạt động (activity synchronization):</i> Đảm bảo thứ tự thực thi chính xác giữa các tác vụ khi được sử dụng phối hợp cùng với nhau. Đồng bộ hóa hoạt động bao gồm cả các vấn đề về đồng bộ (synchronous) và bất đồng bộ (asynchronous).
 
 Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa. Chúng ta hãy cùng tìm hiểu bài toán này.
 
@@ -69,7 +69,7 @@ Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên 
 
 ### Loại trừ tương hỗ
 
-### Vấn đề vùng trọng yếu (Critical section)
+### Vấn đề Critical Section
 
 ### Tài liệu tham khảo
 
