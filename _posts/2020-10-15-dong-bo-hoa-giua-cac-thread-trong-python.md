@@ -7,10 +7,10 @@ excerpt: Vấn đề đồng bộ hóa có thể được phân chia thành hai 
 author: Nguyễn Trường Long
 ---
 
-### Tiến trình (process), tiểu trình (thread) và sự đồng bộ hóa (synchronization)
+### Tiến trình (process), luồng (thread) và sự đồng bộ hóa (synchronization)
 
-* <i>Tiến trình</i>:
-* <i>Tiểu trình</i>:
+* <i>Tiến trình</i>: Tiến trình là một thể hiện (instance) của một chương trình máy tính đang chạy được thực thi bởi bộ xử lý máy tính (computer processor). Một tiến trình có thể khởi tạo các tiến trình con (subprocess hay còn gọi là child process). Một tiến trình con là bản sao của tiến trình cha và chia sẻ tài nguyên của nó, nhưng tiến trình con không thể tồn tại nếu tiến trình cha bị chấm dứt.
+* <i>Luồng</i>: Luồng là đơn vị thực thi trong một tiến trình. Một tiến trình có thể có một hoặc nhiều luồng khác nhau.
 
 Vấn đề đồng bộ hóa có thể được phân chia thành hai loại chính:
 
@@ -73,7 +73,6 @@ Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên 
 
 ### Tài liệu tham khảo
 
-* <a href="http://www.cse.hcmut.edu.vn/~sonsys/OS_CQA01/Lecture07.pdf" target="_blank">http://www.cse.hcmut.edu.vn/~sonsys/OS_CQA01/Lecture07.pdf</a>
 * <a href="https://computersciencewiki.org/index.php/Processes_and_Threads/" target="_blank">https://computersciencewiki.org/index.php/Processes_and_Threads/</a>
 * <a href="https://www.geeksforgeeks.org/difference-between-deadlock-and-starvation-in-os/" target="_blank">https://www.geeksforgeeks.org/difference-between-deadlock-and-starvation-in-os/</a>
 * <a href="https://en.wikipedia.org/wiki/Dining_philosophers_problem" target="_blank">https://en.wikipedia.org/wiki/Dining_philosophers_problem</a>
