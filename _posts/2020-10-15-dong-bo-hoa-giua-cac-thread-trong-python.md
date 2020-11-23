@@ -12,12 +12,12 @@ author: Nguyễn Trường Long
 * <i>Tiến trình</i>: Tiến trình là một thể hiện (instance) của một chương trình máy tính đang chạy được thực thi bởi bộ xử lý máy tính (computer processor). Một tiến trình có thể khởi tạo các tiến trình con (subprocess hay còn gọi là child process). Một tiến trình con là bản sao của tiến trình cha và chia sẻ tài nguyên của nó, nhưng tiến trình con không thể tồn tại nếu tiến trình cha bị chấm dứt.
 * <i>Luồng</i>: Luồng là đơn vị thực thi trong một tiến trình. Một tiến trình có thể có một hoặc nhiều luồng khác nhau.
 
+Các tiến trình chạy trong không gian bộ nhớ riêng biệt với nhau trong khi các luồng trong cùng một tiến trình chạy chung trong một không gian bộ nhớ. Các luồng không độc lập với nhau giống như các tiến trình do đó các luồng có thể chia sẻ phần dữ liệu và tài nguyên cho nhau.
+
 Vấn đề đồng bộ hóa có thể được phân chia thành hai loại chính:
 
 * <i>Đồng bộ hóa tài nguyên (resource synchronization):</i> Xác định việc truy cập vào tài nguyên dùng chung (shared resource) có an toàn hay không, khi nào an toàn và khi nào không an toàn.
 * <i>Đồng bộ hóa hoạt động (activity synchronization):</i> Đảm bảo thứ tự thực thi chính xác giữa các tác vụ khi được sử dụng phối hợp cùng với nhau. Đồng bộ hóa hoạt động bao gồm cả các vấn đề về đồng bộ (synchronous) và bất đồng bộ (asynchronous).
-
-Các tiến trình chạy trong không gian bộ nhớ riêng biệt với nhau trong khi các luồng trong cùng một tiến trình chạy chung trong một không gian bộ nhớ. Các luồng không độc lập với nhau giống như các tiến trình do đó các luồng có thể chia sẻ phần dữ liệu và tài nguyên cho nhau.
 
 Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa. Chúng ta hãy cùng tìm hiểu bài toán này.
 
