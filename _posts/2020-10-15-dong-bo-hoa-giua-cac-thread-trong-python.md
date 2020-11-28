@@ -67,6 +67,17 @@ Khái quát hóa một cách tổng quát thì tình trạng đói tài nguyên 
 
 ### Vấn đề Livelock
 
+Livelock là một trường hợp đặc biệt của deadlock, trong đó các tiến trình (process) hoặc luồng (thread) có thể chuyển đổi trạng thái nhưng bị mắc kẹt và không đạt được tiến triển mới nào. Đây cũng là một vấn đề gặp phải tương đối phổ biến trong các chương trình đồng thời (concurrent program). Có thể minh họa trường hợp này bằng một ví dụ nhỏ sau. Giả sử có hai người gặp nhau trong một lối đi nhỏ. Khi người thứ nhất dịch chuyển qua phải để nhường lối đi thì người thứ hai cũng dịch chuyển qua phải. Khi người thứ nhất dịch chuyển qua trái để nhường lối đi thì người thứ hai cũng đồng thời dịch chuyển qua trái. Quá trình này cứ lặp đi lặp lại vô tận nhưng kết quả cuối cùng vẫn rơi vào bế tắc.
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/LivelockIllustration.png" alt="Ảnh minh họa cho trường hợp Livelock">
+  <figcaption>
+	  <i>Ảnh minh họa cho trường hợp Livelock</i>
+  </figcaption>
+</center>
+</figure>
+
 ### Vấn đề Race Condition
 
 ### Loại trừ tương hỗ
