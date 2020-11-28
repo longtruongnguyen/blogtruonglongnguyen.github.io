@@ -32,9 +32,9 @@ Cả hai khái niệm đồng thời (concurrency) và song song (parallel) đ�
 </center>
 </figure>
 
-Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa. Chúng ta hãy cùng tìm hiểu bài toán này.
-
 ### Giới thiệu về bài toán kinh điển "Bữa ăn tối của các triết gia"
+
+Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa. Chúng ta hãy cùng tìm hiểu bài toán này.
 
 Bài toán buổi ăn tối của các triết gia được đề xuất lần đầu tiên bởi E. W. Dijkstra. Mình tạm dịch tóm lược lại nội dung của <a href="https://en.wikipedia.org/wiki/Dining_philosophers_problem" target="_blank">bài toán này</a> từ Wikipedia như sau:<br/>
 
@@ -93,9 +93,9 @@ Livelock là một trường hợp đặc biệt của deadlock, trong đó các
 
 ### Vấn đề Race Condition
 
-### Loại trừ tương hỗ
-
 ### Vấn đề Critical Section
+
+### Loại trừ tương hỗ
 
 ### Tài liệu tham khảo
 
