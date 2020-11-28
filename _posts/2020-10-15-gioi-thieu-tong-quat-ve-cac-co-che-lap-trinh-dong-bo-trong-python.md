@@ -19,8 +19,6 @@ Vấn đề đồng bộ hóa có thể được phân chia thành hai loại ch
 * <i>Đồng bộ hóa tài nguyên (resource synchronization):</i> Xác định việc truy cập vào tài nguyên dùng chung (shared resource) có an toàn hay không, khi nào an toàn và khi nào không an toàn.
 * <i>Đồng bộ hóa hoạt động (activity synchronization):</i> Đảm bảo thứ tự thực thi chính xác giữa các tác vụ khi được sử dụng phối hợp cùng với nhau. Đồng bộ hóa hoạt động bao gồm cả các vấn đề về đồng bộ (synchronous) và bất đồng bộ (asynchronous).
 
-Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa. Chúng ta hãy cùng tìm hiểu bài toán này.
-
 ### Phân biệt khái niệm đồng thời và song song
 
 Cả hai khái niệm đồng thời (concurrency) và song song (parallel) đều đề cập đến việc giải quyết nhiều tác vụ tại một thời điểm nhưng có một chút khác biệt giữa hai khái niệm này. Thuật ngữ lập trình đồng thời (concurrent programming) để cập đến hai hoặc nhiều tiến trình được xử lý xen kẽ nhau thông qua cơ chế context switch và hoàn thành tác vụ trong các khoảng thời gian chồng chéo nhau trên một lõi đơn của CPU. Thuật ngữ lập trình song song (parallel programming) đề cập đến hai hoặc nhiều tiến trình được xử lý song song với nhau trên nhiều lõi CPU khác nhau.
@@ -33,6 +31,8 @@ Cả hai khái niệm đồng thời (concurrency) và song song (parallel) đ�
   </figcaption>
 </center>
 </figure>
+
+Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa. Chúng ta hãy cùng tìm hiểu bài toán này.
 
 ### Giới thiệu về bài toán kinh điển "Bữa ăn tối của các triết gia"
 
