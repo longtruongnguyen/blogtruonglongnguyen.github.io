@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Đồng bộ hóa giữa các Thread trong Python
-description: Đồng bộ hóa giữa các Thread trong Python
-keywords: cơ chế đồng bộ trong Python, đồng bộ hóa trong Python, đồng bộ hóa thread, synchronization, đồng bộ trong Python, ngôn ngữ lập trình Python, đồng bộ các luồng trong Python
+title: Giới thiệu tổng quát về các cơ chế lập trình đồng bộ trong Python và những vấn đề liên quan
+description: Vấn đề đồng bộ hóa trong Python có thể được phân chia thành hai loại chính là đồng bộ hóa tài nguyên (resource synchronization) và đồng bộ hóa hoạt động (activity synchronization).
+keywords: cơ chế đồng bộ trong Python, đồng bộ hóa trong Python, đồng bộ thread, đồng bộ tài nguyên, synchronization, đồng bộ trong Python, đồng bộ hoạt động, ngôn ngữ lập trình Python, đồng bộ các luồng, cơ chế đồng bộ, lập trình đa luồng, cơ chế lập trình đồng bộ
 excerpt: Vấn đề đồng bộ hóa có thể được phân chia thành hai loại chính là đồng bộ hóa tài nguyên và đồng bộ hóa hoạt động. Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa.
 author: Nguyễn Trường Long
 ---
