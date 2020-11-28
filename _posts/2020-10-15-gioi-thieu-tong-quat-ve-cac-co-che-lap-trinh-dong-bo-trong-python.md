@@ -21,6 +21,8 @@ Vấn đề đồng bộ hóa có thể được phân chia thành hai loại ch
 
 Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa. Chúng ta hãy cùng tìm hiểu bài toán này.
 
+### Phân biệt khái niệm đồng thời và song song
+
 ### Giới thiệu về bài toán kinh điển "Bữa ăn tối của các triết gia"
 
 Bài toán buổi ăn tối của các triết gia được đề xuất lần đầu tiên bởi E. W. Dijkstra. Mình tạm dịch tóm lược lại nội dung của <a href="https://en.wikipedia.org/wiki/Dining_philosophers_problem" target="_blank">bài toán này</a> từ Wikipedia như sau:<br/>
