@@ -93,7 +93,7 @@ Livelock là một trường hợp đặc biệt của deadlock, trong đó các
 
 ### Vấn đề Race Condition
 
-Race Condition là một trường hợp xảy ra khi có nhiều luồng riêng biệt cùng truy cập vào một tài nguyên chung và thay đổi dữ liệu cùng lúc, làm cho dữ liệu cuối cùng không được chính xác như mong muốn.
+Race condition là một trường hợp xảy ra khi có nhiều luồng riêng biệt cùng truy cập vào một tài nguyên chung và thay đổi dữ liệu cùng lúc, làm cho dữ liệu cuối cùng không được chính xác như mong muốn. Race condition có thể được ngăn chặn bằng cách tuần tự hóa các quá trình truy cập vào tài liệu chung. Nếu các lệnh đọc và ghi là đồng thời với nhau, chúng ta sẽ mặc định ưu tiên lệnh đọc luôn được thực hiện và hoàn thành trước.
 
 ### Vấn đề Critical Section
 
