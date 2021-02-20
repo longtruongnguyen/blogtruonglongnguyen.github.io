@@ -8,9 +8,14 @@ keywords: mạng Hyperledger Fabric, blockchain, smart contract, chaincode, Memb
 author: Nguyễn Trường Long
 ---
 
-### Giới thiệu về  Hyperledger Fabric Network
+### Giới thiệu về mạng Hyperledger Fabric
 
-### Các thành phần của Hyperledger Fabric Network:
+### Mô hình Hyperledger Fabric
+
+- <i>Assets</i>: Có thể hiểu asset trong mạng Hyperledger Fabric được định nghĩa là mọi thứ có giá trị bao gồm tài sản hữu hình và tài sản vô hình (hợp đồng và tài sản trí tuệ). Hyperledger Fabric cung cấp khả năng sửa đổi tài sản bằng cách sử dụng các chaincode transaction.
+
+### Các thành phần của mạng Hyperledger Fabric
+
 - Ledger: Một ledger (sổ cái) bao gồm 2 phần khác nhau là "blockchain" và "state database".
 - Membership Service Provider: Membership Service Provider (MSP) là một thành phần của hệ thống có nhiệm vụ cung cấp các chứng chỉ (credential) cho client và peer để họ tham gia vào Hyperledger Fabric network.
 - Smart Contract: Smart Contract là một đoạn mã được gọi bởi ứng dụng của client bên ngoài mạng blockchain - quản lý quyền truy cập và sửa đổi đối với một tập hợp các cặp khóa-giá trị ở "state database".
