@@ -12,7 +12,9 @@ author: Nguyễn Trường Long
 
 ### Mô hình Hyperledger Fabric
 
-- <i>Assets</i>: Có thể hiểu asset trong mạng Hyperledger Fabric được định nghĩa là mọi thứ có giá trị bao gồm tài sản hữu hình và tài sản vô hình (hợp đồng và tài sản trí tuệ). Hyperledger Fabric cung cấp khả năng sửa đổi tài sản bằng cách sử dụng các chaincode transaction.
+- <i>Assets</i>: Có thể hiểu asset trong mạng Hyperledger Fabric được định nghĩa là mọi thứ có giá trị bao gồm tài sản hữu hình và tài sản vô hình (hợp đồng và tài sản trí tuệ). Hyperledger Fabric cung cấp khả năng chỉnh sửa tài sản bằng cách sử dụng các chaincode transaction. Asset được biểu diễn trong Hyperledger Fabric dưới dạng tập hợp các cặp key-value. Các trạng thái thay đổi được ghi lại dưới dạng transaction trên một Channel ledger. Asset có thể được biểu diễn dưới dạng nhị phân hoặc JSON.
+- <i>Chaincode</i>: Chaincode là phần mềm xác định asset và transaction instruction để sửa đổi asset. Nói cách khác, chain code mang bản chất business logic. Chaincode thực thi các quy tắc để chỉnh sửa key-value trong state database. Các hàm chaincode được thực thi dựa trên state database hiện tại của ledger và được khởi tạo thông qua đề xuất transaction.
+- <i>Ledger Features</i>: Ledger được sắp xếp theo trình tự, có khả năng chống giả mạo các thay đổi trong mạng Hyperledger Fabric. Chuyển đổi trạng thái là kết quả của các lệnh gọi chaincode được gửi bởi những bên tham gia vào mạng. Kết quả của mỗi transaction là tập hợp các cặp khóa-giá trị được commit đến Ledger như tạo, cập nhật và xóa.
 
 ### Các thành phần của mạng Hyperledger Fabric
 
