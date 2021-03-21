@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Cơ chế Global Interpreter Lock trong Python
-description: 
-keywords:
-excerpt:
+description: Cơ chế GIL quy định rằng Python chỉ sử dụng một luồng duy nhất để thực thi các lệnh lập trình trong một chương trình. Điều này có nghĩa là trong Python tại một thời điểm chỉ có một luồng duy nhất được thực thi.
+keywords: Cơ chế GIL, Cơ chế Global Interpreter Lock, GIL trong Python, Global Interpreter Lock, GIL
+excerpt: Trong ngôn ngữ lập trình Python tồn tại một cơ chế được gọi là Global Interpreter Lock (GIL). Cơ chế này không cho phép tăng hiệu suất của các chương trình đa luồng lên nhiều và thậm chí có thể làm giảm hiệu suất của một số chương trình đa luồng.
 author: Nguyễn Trường Long
 ---
 
@@ -27,7 +27,7 @@ Có một sự khác biệt đáng kể về mặt quản lý các đối tượ
 
 ### Tài liệu tham khảo
 
-* <a href="https://www.geeksforgeeks.org/what-is-the-python-global-interpreter-lock-gil/" target="_blank">https://www.geeksforgeeks.org/what-is-the-python-global-interpreter-lock-gil/</a>
+* <a href="https://www.geeksforgeeks.org/what-is-the-python-global-interpreter-lock-gil" target="_blank">https://www.geeksforgeeks.org/what-is-the-python-global-interpreter-lock-gil</a>
 * <a href="https://www.javatpoint.com/python-memory-management" target="_blank">https://www.javatpoint.com/python-memory-management</a>
 * <a href="https://www.guru99.com/python-multithreading-gil-example.html" target="_blank">https://www.guru99.com/python-multithreading-gil-example.html</a>
-* <a href="https://realpython.com/python-memory-management/" target="_blank">https://realpython.com/python-memory-management/</a>
+* <a href="https://realpython.com/python-memory-management" target="_blank">https://realpython.com/python-memory-management</a>
