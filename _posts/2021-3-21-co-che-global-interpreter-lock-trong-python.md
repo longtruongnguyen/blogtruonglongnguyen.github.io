@@ -15,8 +15,17 @@ Trong ngôn ngữ lập trình Python tồn tại một cơ chế được gọi
 
 Cơ chế GIL quy định rằng Python chỉ sử dụng một luồng duy nhất để thực thi các lệnh lập trình trong một chương trình. Điều này có nghĩa là trong Python tại một thời điểm chỉ có một luồng duy nhất được thực thi. Hiệu suất của một chương trình đơn luồng và chương trình đa luồng là tương đương nhau trong Python.
 
+### Cơ chế quản lý bộ nhớ trong Python
+
+Quản lý bộ nhớ là quy trình kiểm soát và phân phối tài nguyên bộ nhớ máy tính, gán các phần của bộ nhớ máy tính cho dữ liệu được sinh ra trong các chương trình đang chạy. Trình quản lý bộ nhớ xác định vị trí để ghi dữ liệu của chương trình. Vì máy tính chỉ có bộ nhớ với dung lượng hữu hạn, trình quản lý bộ nhớ phải tìm một số vùng trống trong bộ nhớ để cung cấp cho chương trình. Quá trình cung cấp bộ nhớ này thường được gọi là cấp phát bộ nhớ. Ngược lại khi dữ liệu không còn cần thiết nữa thì nó có thể bị xóa đi hoặc giải phóng.
+
+Có một sự khác biệt đáng kể về mặt quản lý các đối tượng trong không gian bộ nhớ giữa ngôn ngữ lập trình Python và các ngôn ngữ lập trình khác. 
+
 ### Cơ chế GIL đối với I/O-bound và CPU-bound
 
 ### Tài liệu tham khảo
 
 * <a href="https://www.geeksforgeeks.org/what-is-the-python-global-interpreter-lock-gil/" target="_blank">https://www.geeksforgeeks.org/what-is-the-python-global-interpreter-lock-gil/</a>
+* <a href="https://www.javatpoint.com/python-memory-management" target="_blank">https://www.javatpoint.com/python-memory-management</a>
+* <a href="https://www.guru99.com/python-multithreading-gil-example.html" target="_blank">https://www.guru99.com/python-multithreading-gil-example.html</a>
+* <a href="https://realpython.com/python-memory-management/" target="_blank">https://realpython.com/python-memory-management/</a>
