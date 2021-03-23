@@ -15,13 +15,11 @@ Khi chương trình yêu cầu bộ nhớ, vì máy tính chỉ có bộ nhớ v
 
 Có một sự khác biệt đáng kể về mặt quản lý các đối tượng trong không gian bộ nhớ giữa ngôn ngữ lập trình Python và các ngôn ngữ lập trình khác.
 
+Python cung cấp các module hỗ trợ cho cả xử lý đa luồng và xử lý đa tiến trình. Có một yếu tố quan trọng cần được đề cập đến trong việc phân bổ và giải phóng bộ nhớ đó là sẽ xảy ra xung đột nếu hai hoặc nhiều tiến trình khác nhau cố gắng ghi vào một vùng nhớ cùng lúc với nhau. Một giải pháp cho vấn đề này là sử dụng một khóa chung duy nhất cho một luồng tương tác với tài nguyên được chia sẻ.
+
 ### Giới thiệu về cơ chế Global Interpreter Lock
 
-Python cung cấp các module hỗ trợ cho cả xử lý đa luồng và xử lý đa tiến trình.
-
-Trong ngôn ngữ lập trình Python tồn tại một cơ chế được gọi là Global Interpreter Lock (GIL). Cơ chế này không cho phép tăng hiệu suất của các chương trình đa luồng lên nhiều và thậm chí có thể làm giảm hiệu suất của một số chương trình đa luồng.
-
-Cơ chế GIL quy định rằng Python chỉ sử dụng một luồng duy nhất để thực thi các lệnh lập trình trong một chương trình. Điều này có nghĩa là trong Python tại một thời điểm chỉ có một luồng duy nhất được thực thi. Mỗi luồng muốn thực thi trước tiên phải đợi GIL được giải phóng bởi luồng đang thực thi. Có thể hình dung đơn giản rằng GIL là microphone duy nhất trong một hội nghị chẳng hạn, bất kỳ ai muốn phát biểu đều phải nhận được microphone từ người đang giữ microphone ở thời điểm hiện tại. Do cơ chế GIL, hiệu suất của một chương trình đơn luồng và một chương trình đa luồng là tương đương nhau trong Python.
+Trong ngôn ngữ lập trình Python tồn tại một cơ chế được gọi là Global Interpreter Lock (GIL). Cơ chế này khóa toàn bộ trình thông dịch, chỉ cho phép Python sử dụng một luồng duy nhất để thực thi các lệnh lập trình trong một chương trình. Điều này có nghĩa là trong Python tại một thời điểm chỉ có một luồng duy nhất được thực thi. Mỗi luồng muốn thực thi trước tiên phải đợi GIL được giải phóng bởi luồng đang thực thi. Có thể hình dung đơn giản rằng GIL là microphone duy nhất trong một hội nghị chẳng hạn, bất kỳ ai muốn phát biểu đều phải nhận được microphone từ người đang giữ microphone ở thời điểm hiện tại. Do cơ chế GIL, hiệu suất của một chương trình đơn luồng và một chương trình đa luồng là tương đương nhau trong Python. Cơ chế này làm cho các chương trình đa luồng không tăng hiệu suất lên nhiều và thậm chí có thể làm giảm hiệu suất của một số chương trình đa luồng.
 
 ### Cơ chế GIL đối với I/O-bound và CPU-bound
 
