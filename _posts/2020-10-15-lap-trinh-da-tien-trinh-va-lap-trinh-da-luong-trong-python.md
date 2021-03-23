@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Giới thiệu tổng quát về lập trình đa tiến trình và lập trình đa luồng trong Python
+title: Lập trình đa tiến trình và lập trình đa luồng trong Python
 description: Vấn đề đồng bộ hóa trong Python có thể được phân chia thành hai loại chính là đồng bộ hóa tài nguyên (resource synchronization) và đồng bộ hóa hoạt động (activity synchronization).
 keywords: cơ chế đồng bộ trong Python, đồng bộ hóa trong Python, đồng bộ thread, đồng bộ tài nguyên, synchronization, đồng bộ trong Python, đồng bộ hoạt động, ngôn ngữ lập trình Python, đồng bộ các luồng, cơ chế đồng bộ, lập trình đa luồng, cơ chế lập trình đồng bộ
 excerpt: Vấn đề đồng bộ hóa có thể được phân chia thành hai loại chính là đồng bộ hóa tài nguyên và đồng bộ hóa hoạt động. Trong khoa học máy tính, bài toán buổi ăn tối của các triết gia (Dining Philosophers Problem) thường được xem là ví dụ minh họa tốt nhất cho các vấn đề về đồng bộ hóa.
@@ -21,7 +21,7 @@ Vấn đề đồng bộ hóa có thể được phân chia thành hai loại ch
 
 ### Phân biệt khái niệm đồng thời và song song
 
-Cả hai khái niệm đồng thời (concurrency) và song song (parallel) đều đề cập đến việc giải quyết nhiều tác vụ tại một thời điểm nhưng có một chút khác biệt giữa hai khái niệm này. Thuật ngữ lập trình đồng thời (concurrent programming) để cập đến hai hoặc nhiều tiến trình được xử lý xen kẽ nhau thông qua cơ chế context switch và hoàn thành tác vụ trong các khoảng thời gian chồng chéo nhau trên một lõi đơn của CPU. Thuật ngữ lập trình song song (parallel programming) đề cập đến hai hoặc nhiều tiến trình được xử lý song song với nhau trên nhiều lõi CPU khác nhau.
+Cả hai khái niệm đồng thời (concurrency) và song song (parallelism) đều đề cập đến việc giải quyết nhiều tác vụ tại một thời điểm nhưng có một chút khác biệt giữa hai khái niệm này. Thuật ngữ lập trình đồng thời (concurrent programming) để cập đến hai hoặc nhiều tiến trình được xử lý xen kẽ nhau thông qua cơ chế context switch và hoàn thành tác vụ trong các khoảng thời gian chồng chéo nhau trên một lõi đơn của CPU. Thuật ngữ lập trình song song (parallel programming) đề cập đến hai hoặc nhiều tiến trình được xử lý song song với nhau trên nhiều lõi CPU khác nhau.
 
 <figure class="image">
 <center>
