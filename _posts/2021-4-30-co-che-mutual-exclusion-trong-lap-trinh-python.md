@@ -10,42 +10,45 @@ author: Nguyễn Trường Long
 Mutual exclusion là một cơ chế ngăn chặn việc truy cập đồng thời vào tài nguyên được chia sẻ. Khái niệm này được sử dụng trong lập trình đồng thời cùng với critical section, quy định rằng chỉ có một tiến trình hoặc luồng chứa critical section tại một thời điểm. Khi một tiến trình hoặc luồng nắm giữ một tài nguyên, nó phải khóa quyền truy cập vào tài nguyên được chia sẻ từ các tiến trình hoặc luồng khác để ngăn chặn các truy cập đồng thời vào cùng một tài nguyên. Đến khi giải phóng tài nguyên được chia sẻ, tiến trình hoặc luồng sẽ rời khỏi critical section và cho phép các luồng hoặc tiến trình khác tiến vào critical section.
 
 {% highlight python %}
-  def __init__(self):
-      # Khởi tạo semaphore sử dụng Semaphore class trong threading module
-      self.sem = threading.Semaphore()
+import threading
+import time
 
-  def process_1(self):
-      while True:
-          print("Entry Section 1")
-          self.sem.acquire()      # Giảm giá trị của semahpore
+def __init__(self):
+    # Khởi tạo semaphore sử dụng Semaphore class trong threading module
+    self.sem = threading.Semaphore()
 
-          self.criticalsection()  # Bắt đầu crictical section (process 1)
-          # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
-          self.sem.release()
+def process_1(self):
+    while True:
+        print("Entry Section 1")
+        self.sem.acquire()      # Giảm giá trị của semahpore
 
-          print("Critical Section over for process 1")
-          time.sleep(3)
+        self.criticalsection()  # Bắt đầu crictical section (process 1)
+        # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
+        self.sem.release()
 
-  def process_2(self):
-      while True:
-          print("Entry Section 2")
-          self.sem.acquire()      # Giảm giá trị của semahpore
+        print("Critical Section over for process 1")
+        time.sleep(3)
 
-          self.criticalsection()  # Bắt đầu crictical section (process 2)
-          # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
-          self.sem.release()
+def process_2(self):
+    while True:
+        print("Entry Section 2")
+        self.sem.acquire()      # Giảm giá trị của semahpore
 
-          print("Critical Section over for process 2")
-          time.sleep(3)
+        self.criticalsection()  # Bắt đầu crictical section (process 2)
+        # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
+        self.sem.release()
 
-  def criticalsection(self):
-      print(" Entered Critical Section! Perform operation on shared resource")
+        print("Critical Section over for process 2")
+        time.sleep(3)
 
-  def main(self):
-      t1 = threading.Thread(target=self.process_1)  # Gọi đến process 1
-      t1.start()
-      t2 = threading.Thread(target=self.process_2)  # Gọi đến process 2
-      t2.start()
+def criticalsection(self):
+    print(" Entered Critical Section! Perform operation on shared resource")
+
+def main(self):
+    t1 = threading.Thread(target=self.process_1)  # Gọi đến process 1
+    t1.start()
+    t2 = threading.Thread(target=self.process_2)  # Gọi đến process 2
+    t2.start()
 
 if __name__ == "__main__":
     c = CricticalSection()
