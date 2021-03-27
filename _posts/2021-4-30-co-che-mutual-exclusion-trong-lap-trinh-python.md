@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cơ chế mutual exclusion trong lập trình Python
+title: Cơ chế Mutual Exclusion trong lập trình Python
 description:
 keywords:
 excerpt:
