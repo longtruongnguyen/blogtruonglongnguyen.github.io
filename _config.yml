@@ -100,3 +100,4 @@ exclude:
 
 theme: jekyll-theme-cayman
 repository: sergodeeva/sergodeeva.github.io
+highlighter: rouge
