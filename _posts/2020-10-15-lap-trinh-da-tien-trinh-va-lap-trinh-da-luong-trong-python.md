@@ -18,7 +18,7 @@ author: Nguyễn Trường Long
 </center>
 </figure>
 
-##### <i>Tiến trình</i>
+#### <i>Khái niệm về tiến trình</i>
 
 Tiến trình là một thể hiện (instance) của một chương trình máy tính đang chạy được thực thi bởi bộ xử lý máy tính (computer processor). Mỗi tiến trình được biểu diễn trong hệ điều hành bằng một khối dữ liệu được gọi là Process Control Block (PCB). Nó bao gồm tất cả thông tin của một tiến trình.
 
@@ -32,12 +32,21 @@ Tiến trình là một thể hiện (instance) của một chương trình máy
 </figure>
 
 Một tiến trình có thể khởi tạo các tiến trình con (subprocess hay còn gọi là child process). Một tiến trình con là bản sao của tiến trình cha và chia sẻ tài nguyên của nó, nhưng tiến trình con không thể tồn tại nếu tiến trình cha bị chấm dứt.
-	
-##### <i>Luồng</i>
+
+#### <i>Khái niệm về luồng</i>
 
 Luồng là đơn vị thực thi trong một tiến trình. Một tiến trình có thể có một hoặc nhiều luồng khác nhau.
 
 Các tiến trình chạy trong không gian bộ nhớ riêng biệt với nhau trong khi các luồng trong cùng một tiến trình chạy chung trong một không gian bộ nhớ. Các luồng không độc lập với nhau giống như các tiến trình do đó các luồng có thể chia sẻ phần dữ liệu và tài nguyên cho nhau.
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/ThreadControlBlock.png" alt="Cấu trúc dữ liệu của một Thread Control Block">
+  <figcaption>
+	  <i>Cấu trúc dữ liệu của một Thread Control Block</i>
+  </figcaption>
+</center>
+</figure>
 
 Vấn đề đồng bộ hóa có thể được phân chia thành hai loại chính:
 
