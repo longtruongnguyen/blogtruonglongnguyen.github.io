@@ -93,14 +93,11 @@ Livelock là một trường hợp đặc biệt của deadlock, trong đó các
 
 ### Vấn đề Critical Section
 
-Critical Section hay còn gọi là vùng tranh chấp, là đoạn mã chứa các biến dùng chung có thể được truy cập bởi nhiều tiến trình hoặc luồng khác nhau có thể gây ra xung đột trong chương trình đồng thời. Điều này đặc biệt đúng khi các tiến trình hoặc luồng tương tác với nó được lập lịch thiếu chính xác. Chúng ta cần thiết kế các giải pháp để bảo vệ tính toàn vẹn dữ liệu có liên quan đến các đoạn mã này.
+Critical Section hay còn gọi là vùng tranh chấp, là đoạn mã chứa các biến dùng chung có thể được truy cập bởi nhiều tiến trình hoặc luồng khác nhau có thể gây ra xung đột trong chương trình đồng thời. Vùng tranh chấp chứa các biến hoặc tài nguyên được chia sẻ cần được đồng bộ hóa để duy trì tính nhất quán của các biến dữ liệu. Nói một cách dễ hiểu, vùng tranh chấp là tập hợp các câu lệnh hoặc vùng mã cần thực hiện các tác vụ nguyên tử (atomic operation) chẳng hạn như truy cập tài nguyên (tệp, cổng đầu vào hoặc đầu ra, dữ liệu toàn cục,... ). Điều này đặc biệt đúng khi các tiến trình hoặc luồng tương tác với nó được lập lịch thiếu chính xác. Chúng ta cần thiết kế các giải pháp để bảo vệ tính toàn vẹn dữ liệu có liên quan đến các đoạn mã này.
 
 ### Vấn đề Race Condition
 
 Race condition là một trường hợp xảy ra khi có nhiều luồng riêng biệt cùng truy cập vào một tài nguyên chung và thay đổi dữ liệu cùng lúc, làm cho dữ liệu cuối cùng không được chính xác như mong muốn. Race condition có thể được ngăn chặn bằng cách tuần tự hóa các quá trình truy cập vào tài nguyên chung. Nếu các lệnh đọc và ghi là đồng thời với nhau, chúng ta sẽ mặc định ưu tiên lệnh đọc luôn được thực hiện và hoàn thành trước.
-
-
-### Loại trừ tương hỗ
 
 ### Tài liệu tham khảo
 
