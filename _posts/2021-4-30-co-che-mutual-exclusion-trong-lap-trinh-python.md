@@ -11,42 +11,40 @@ Mutual exclusion là một cơ chế ngăn chặn việc truy cập đồng th�
 
 {% highlight python %}
   def __init__(self):
-      # initializing semaphore using Semaphore class in threading module
+      # Khởi tạo semaphore sử dụng Semaphore class trong threading module
       self.sem = threading.Semaphore()
 
   def process_1(self):
       while True:
           print("Entry Section 1")
-          self.sem.acquire()      # decrement the value of semahpore
+          self.sem.acquire()      # Giảm giá trị của semahpore
 
-          self.criticalsection()  # entering crictical section(process 1)
-          # incrementing the value of semaphore hence allowing other thread to enter critical section
+          self.criticalsection()  # Bắt đầu crictical section (process 1)
+          # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
           self.sem.release()
 
-          # remainder section of the process 1
           print("Critical Section over for process 1")
-          time.sleep(3)           # allowing some delay in the process
+          time.sleep(3)
 
   def process_2(self):
       while True:
-          print("Entry Section-2")
-          self.sem.acquire()      # decrement the value of semahpore
+          print("Entry Section 2")
+          self.sem.acquire()      # Giảm giá trị của semahpore
 
-          self.criticalsection()  # entering crictical section (process 2)
-          # incrementing the value of semaphore hence allowing other thread to enter critical section
+          self.criticalsection()  # Bắt đầu crictical section (process 2)
+          # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
           self.sem.release()
 
-          # remainder section of the process 2
           print("Critical Section over for process 2")
-          time.sleep(3)    # allowing some delay in the process
+          time.sleep(3)
 
   def criticalsection(self):
-      print(" Entered Critical Section!. Perform operation on shared resource")
+      print(" Entered Critical Section! Perform operation on shared resource")
 
   def main(self):
-      t1 = threading.Thread(target=self.process_1)  # calling process 1
+      t1 = threading.Thread(target=self.process_1)  # Gọi đến process 1
       t1.start()
-      t2 = threading.Thread(target=self.process_2)  # calling  process 2
+      t2 = threading.Thread(target=self.process_2)  # Gọi đến process 2
       t2.start()
 
 if __name__ == "__main__":
