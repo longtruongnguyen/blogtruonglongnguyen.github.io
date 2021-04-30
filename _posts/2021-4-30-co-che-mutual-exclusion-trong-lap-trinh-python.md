@@ -18,24 +18,24 @@ class CricticalSection():
         # Khởi tạo semaphore sử dụng Semaphore class trong threading module
         self.sem = threading.Semaphore()
 
-    def process_1(self):
+    def thread_1(self):
         while True:
             print("Entry Section 1")
             self.sem.acquire()      # Giảm giá trị của semahpore
 
-            self.criticalsection()  # Bắt đầu crictical section (process 1)
+            self.criticalsection()  # Bắt đầu crictical section (thread 1)
             # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
             self.sem.release()
 
             print("Critical Section over for process 1")
             time.sleep(3)
 
-    def process_2(self):
+    def thread_2(self):
         while True:
             print("Entry Section 2")
             self.sem.acquire()      # Giảm giá trị của semahpore
 
-            self.criticalsection()  # Bắt đầu crictical section (process 2)
+            self.criticalsection()  # Bắt đầu crictical section (thread 2)
             # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
             self.sem.release()
 
@@ -46,9 +46,9 @@ class CricticalSection():
         print(" Entered Critical Section! Perform operation on shared resource")
 
     def main(self):
-        t1 = threading.Thread(target=self.process_1)  # Gọi đến process 1
+        t1 = threading.Thread(target=self.thread_1)  # Gọi đến thread 1
         t1.start()
-        t2 = threading.Thread(target=self.process_2)  # Gọi đến process 2
+        t2 = threading.Thread(target=self.thread_2)  # Gọi đến thread 2
         t2.start()
 
 if __name__ == "__main__":
