@@ -203,7 +203,7 @@ Có 3 hướng tiếp cận chính có thể sử dụng để giải quyết nh
         font-family: Arial, sans-serif;
         font-size: 16px;
         overflow: hidden;
-        padding: 10px 5px;
+        padding: 15px 10px;
         word-break: normal;
     }
     .tg th {
@@ -214,7 +214,7 @@ Có 3 hướng tiếp cận chính có thể sử dụng để giải quyết nh
         font-size: 16px;
         font-weight: normal;
         overflow: hidden;
-        padding: 10px 5px;
+        padding: 15px 10px;
         word-break: normal;
     }
     .tg .tg-fymr {
