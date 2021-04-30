@@ -48,9 +48,9 @@ def run_multithreads(maximum_number, number_thread):
     """
 
     thread_list = list()
-    # Kích thước tối đa input cho mỗi thread
+    # Kích thước tối đa của input cho mỗi thread
     batch_size = math.ceil(maximum_number/number_thread)
-    # Thực thi loop_numbers với thread thứ 1 đến thread thứ number_thread
+    # Thực thi loop_numbers từ thread thứ 1 đến thread thứ number_thread
     for thread_num in range(1, number_thread + 1):
         # Điểm bắt đầu input cho thread thứ thread_num
         number_start = (thread_num-1)*batch_size + 1
@@ -61,7 +61,7 @@ def run_multithreads(maximum_number, number_thread):
         print(
             f'Thread {thread_num}: Loop numbers from {number_start} to {number_end}')
         t = threading.Thread(target=loop_numbers, args=[
-                             batch_input])  # Gọi đến hàm loop_numbers
+                             batch_input])  # Gọi đến loop_numbers
         t.start()
         thread_list.append(t)
 
@@ -82,6 +82,8 @@ def main():
 if __name__ == "__main__":
     main()
 {% endhighlight %}
+
+Chúng ta sẽ thực thi tác vụ lặp từ 1 đến 10000000 cho 10 trường hợp cụ thể, lần lượt sử dụng từ 1 đến 10 thread khác nhau. Mỗi thread sẽ lặp trên một kích thước được chia đều cho mỗi thread. Dưới đây là output ghi lại thời gian thực thi lần lượt cho 10 trường hợp cụ thể.
 
 {% highlight text %}
 Thread 1: Loop numbers from 1 to 10000000
@@ -161,7 +163,7 @@ Using 10 threads: 0.8629951477050781s
 -----------------------------------
 {% endhighlight %}
 
-Tác động của [GIL](https://nguyentruonglong.net/co-che-global-interpreter-lock-trong-python.html) không xảy ra trong chương trình đơn luồng, nhưng nó có thể gây ra hiện tượng bottleneck trong CPU-bound và trong các chương trình đa luồng.
+Chúng ta có thể thấy trong 10 trường hợp sử dụng tối đa lần lượt từ 1 đến 10 thread khác nhau cùng thực thi tác vụ ban đầu, thời gian thực thi tác vụ vẫn là xấp xỉ nhau và không có bất kỳ trường hợp nào tăng hiệu suất lên đáng kể. Tác động của [GIL](https://nguyentruonglong.net/co-che-global-interpreter-lock-trong-python.html) không xảy ra trong chương trình đơn luồng, nhưng nó có thể gây ra hiện tượng bottleneck trong CPU-bound và trong các chương trình đa luồng.
 
 ### Cơ chế GIL đối với I/O-bound và CPU-bound
 
