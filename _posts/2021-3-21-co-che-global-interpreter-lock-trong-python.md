@@ -201,7 +201,7 @@ Có 3 hướng tiếp cận chính có thể sử dụng để giải quyết nh
         border-style: solid;
         border-width: 1px;
         font-family: Arial, sans-serif;
-        font-size: 14px;
+        font-size: 16px;
         overflow: hidden;
         padding: 10px 5px;
         word-break: normal;
@@ -211,7 +211,7 @@ Có 3 hướng tiếp cận chính có thể sử dụng để giải quyết nh
         border-style: solid;
         border-width: 1px;
         font-family: Arial, sans-serif;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: normal;
         overflow: hidden;
         padding: 10px 5px;
@@ -229,37 +229,44 @@ Có 3 hướng tiếp cận chính có thể sử dụng để giải quyết nh
         vertical-align: top;
     }
 </style>
-<table class="tg">
-    <thead>
-        <tr>
-            <th class="tg-fymr">Approach</th>
-            <th class="tg-fymr">Python package</th>
-            <th class="tg-fymr">Better</th>
-            <th class="tg-fymr">Parallel</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="tg-0pky">Threading</td>
-            <td class="tg-0pky">threading</td>
-            <td class="tg-0pky">I/O-bound</td>
-            <td class="tg-0pky">No</td>
-        </tr>
-        <tr>
-            <td class="tg-0pky">Multiprocessing</td>
-            <td class="tg-0pky">multiprocessing</td>
-            <td class="tg-0pky">CPU-bound</td>
-            <td class="tg-0pky">Yes</td>
-        </tr>
-        <tr>
-            <td class="tg-0pky">Asynchronous</td>
-            <td class="tg-0pky">asyncio</td>
-            <td class="tg-0pky">I/O-bound</td>
-            <td class="tg-0pky">No</td>
-        </tr>
-    </tbody>
-</table>
 
+<figure>
+    <center>
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th class="tg-fymr">Approach</th>
+                    <th class="tg-fymr">Python package</th>
+                    <th class="tg-fymr">Better</th>
+                    <th class="tg-fymr">Parallel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-0pky">Threading</td>
+                    <td class="tg-0pky">threading</td>
+                    <td class="tg-0pky">I/O-bound</td>
+                    <td class="tg-0pky">No</td>
+                </tr>
+                <tr>
+                    <td class="tg-0pky">Multiprocessing</td>
+                    <td class="tg-0pky">multiprocessing</td>
+                    <td class="tg-0pky">CPU-bound</td>
+                    <td class="tg-0pky">Yes</td>
+                </tr>
+                <tr>
+                    <td class="tg-0pky">Asynchronous</td>
+                    <td class="tg-0pky">asyncio</td>
+                    <td class="tg-0pky">I/O-bound</td>
+                    <td class="tg-0pky">No</td>
+                </tr>
+            </tbody>
+        </table>
+        <figcaption>
+            <i></i>
+        </figcaption>
+    </center>
+</figure>
 
 ### Tài liệu tham khảo
 
