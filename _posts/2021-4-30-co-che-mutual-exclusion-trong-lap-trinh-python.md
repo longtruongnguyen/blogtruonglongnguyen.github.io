@@ -27,7 +27,7 @@ class CricticalSection():
             # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
             self.sem.release()
 
-            print("Critical Section over for process 1")
+            print("Critical Section over for thread 1")
             time.sleep(3)
 
     def thread_2(self):
@@ -39,7 +39,7 @@ class CricticalSection():
             # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
             self.sem.release()
 
-            print("Critical Section over for process 2")
+            print("Critical Section over for thread 2")
             time.sleep(3)
 
     def criticalsection(self):
