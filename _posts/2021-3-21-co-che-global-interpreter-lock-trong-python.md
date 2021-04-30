@@ -167,6 +167,23 @@ Chúng ta có thể thấy trong 10 trường hợp sử dụng tối đa lần 
 
 ### Cơ chế GIL đối với I/O-bound và CPU-bound
 
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/IOBound.png" alt="Ảnh minh họa cho vấn đề I/O-bound">
+  <figcaption>
+	  <i>Ảnh minh họa cho vấn đề I/O-bound</i>
+  </figcaption>
+</center>
+</figure>
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/CPUBound.png" alt="Ảnh minh họa cho vấn đề CPU-bound">
+  <figcaption>
+	  <i>Ảnh minh họa cho vấn đề CPU-bound</i>
+  </figcaption>
+</center>
+</figure>
 
 ### Tài liệu tham khảo
 
@@ -176,3 +193,5 @@ Chúng ta có thể thấy trong 10 trường hợp sử dụng tối đa lần 
 * <a href="https://realpython.com/python-memory-management" target="_blank">https://realpython.com/python-memory-management</a>
 * <a href="https://www.freecodecamp.org/news/multithreaded-python" target="_blank">https://www.freecodecamp.org/news/multithreaded-python</a>
 * <a href="https://docs.python.org/3/c-api/structures.html" target="_blank">https://docs.python.org/3/c-api/structures.html</a>
+* <a href="https://realpython.com/python-concurrency" target="_blank">https://realpython.com/python-concurrency</a>
+
