@@ -176,7 +176,7 @@ Chúng ta có thể thấy trong 10 trường hợp sử dụng tối đa lần 
 </center>
 </figure>
 
-Trong ảnh minh họa trên, các ô màu xanh lam biểu diễn thời gian khi chương trình đang hoạt động và các ô màu đỏ biểu diễn thời gian chờ đợi thao tác I/O hoàn tất. Tốc độ của chương trình bị giới hạn bởi phần lớp thời gian chờ đợi các thao tác input/output được thực thi hoàn tất. Các tác vụ input/output này có thể là reading/writing dữ liệu từ ổ đĩa, reading/waiting dữ liệu từ bàn phím hoặc chuột máy tính, reading/waiting dữ liệu từ network,... . Có thể hiểu tổng quát các tác vụ input/output là tất cả những gì mà máy tính không thể tự thực hiện được và phải chờ đợi phản hồi từ những thành phần khác, ví dụ như trình duyệt trên máy tính chờ đợi dữ liệu phản hồi từ máy chủ.
+Trong ảnh minh họa trên, các ô màu xanh lam biểu diễn thời gian khi chương trình đang hoạt động và các ô màu đỏ biểu diễn thời gian chờ đợi tác vụ I/O hoàn tất. Tốc độ của chương trình bị giới hạn bởi phần lớp thời gian chờ đợi các tác vụ input/output được thực thi hoàn tất. Các tác vụ input/output này có thể là reading/writing dữ liệu từ ổ đĩa, reading/waiting dữ liệu từ bàn phím hoặc chuột máy tính, reading/waiting dữ liệu từ network,... . Có thể hiểu tổng quát các tác vụ input/output là tất cả những gì mà máy tính không thể tự thực hiện được và phải chờ đợi phản hồi từ những thành phần khác, ví dụ như trình duyệt trên máy tính chờ đợi dữ liệu phản hồi từ máy chủ.
 
 <figure class="image">
 <center>
@@ -186,6 +186,8 @@ Trong ảnh minh họa trên, các ô màu xanh lam biểu diễn thời gian kh
   </figcaption>
 </center>
 </figure>
+
+Mặt khác, có những chương trình thực hiện các tính toán mà không cần truy cập mạng hoặc truy cập những thành phần ngoại vi khác. Trong ảnh minh họa trên, chúng ta có thể thấy những tác vụ I/O không có bất kỳ ảnh hưởng đáng kể nào trong quá trình thực thi chương trình. Đây là những chương trình CPU-bound hay chương trình bị ràng buộc bởi CPU vì tài nguyên giới hạn tốc độ chương trình là CPU chứ không phải mạng hoặc những thành phần ngoại vi. Tóm lại thì CPU-bound là vấn đề tốc độ thực thi chương trình để hoàn thành một tác vụ chủ yếu được xác định và bị giới hạn bởi tốc độ của CPU. Việc tăng tốc những chương trình CPU-bound liên quan đến việc tìm kiếm phương thức để thực hiện nhiều phép tính toán hơn trong cùng một khoảng thời gian.
 
 ### Tài liệu tham khảo
 
