@@ -189,6 +189,15 @@ Trong ảnh minh họa trên, các ô màu xanh lam biểu diễn thời gian kh
 
 Mặt khác, có những chương trình thực hiện các tính toán mà không cần truy cập mạng hoặc truy cập những thành phần ngoại vi khác. Trong ảnh minh họa trên, chúng ta có thể thấy những tác vụ I/O không có bất kỳ ảnh hưởng đáng kể nào trong quá trình thực thi chương trình. Đây là những chương trình CPU-bound hay chương trình bị ràng buộc bởi CPU vì tài nguyên giới hạn tốc độ chương trình là CPU chứ không phải mạng hoặc những thành phần ngoại vi. Tóm lại thì CPU-bound là vấn đề tốc độ thực thi chương trình để hoàn thành một tác vụ chủ yếu được xác định và bị giới hạn bởi tốc độ của CPU. Việc tăng tốc những chương trình CPU-bound liên quan đến việc tìm kiếm phương thức để thực hiện nhiều phép tính toán hơn trong cùng một khoảng thời gian.
 
+Có 3 hướng tiếp cận chính có thể sử dụng để giải quyết những vấn đề này được mô tả tóm gọn trong bảng bên dưới.
+
+| Approach        | Python package  | Better    | Parallel |
+|-----------------|-----------------|-----------|----------|
+| Threading       | threading       | I/O-bound | No       |
+| Multiprocessing | multiprocessing | CPU-bound | Yes      |
+| Asynchronous    | asyncio         | I/O-bound | No       |
+
+
 ### Tài liệu tham khảo
 
 * <a href="https://www.geeksforgeeks.org/what-is-the-python-global-interpreter-lock-gil" target="_blank">https://www.geeksforgeeks.org/what-is-the-python-global-interpreter-lock-gil</a>
@@ -198,4 +207,5 @@ Mặt khác, có những chương trình thực hiện các tính toán mà khô
 * <a href="https://www.freecodecamp.org/news/multithreaded-python" target="_blank">https://www.freecodecamp.org/news/multithreaded-python</a>
 * <a href="https://docs.python.org/3/c-api/structures.html" target="_blank">https://docs.python.org/3/c-api/structures.html</a>
 * <a href="https://realpython.com/python-concurrency" target="_blank">https://realpython.com/python-concurrency</a>
+* <a href="https://granulate.io/introduction-to-the-infamous-python-gil" target="_blank">https://granulate.io/introduction-to-the-infamous-python-gil</a>
 
