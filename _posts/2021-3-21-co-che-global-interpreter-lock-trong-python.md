@@ -195,6 +195,7 @@ Có 3 hướng tiếp cận chính có thể sử dụng để giải quyết nh
     .tg {
         border-collapse: collapse;
         border-spacing: 0;
+	overflow: auto;
     }
     .tg td {
         border-color: black;
