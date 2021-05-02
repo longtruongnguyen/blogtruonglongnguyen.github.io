@@ -34,7 +34,7 @@ class CricticalSection():
         global x
         x += 1
 
-    def main(self):
+    def main(self, step):
         global x
         x = 0
         t1 = Thread(target=self.thread_1)  # Gọi đến thread 1
@@ -45,12 +45,12 @@ class CricticalSection():
         t1.join()
         t2.join()
 
+        print(f'Step {step + 1}: x = {x}')
 
 if __name__ == '__main__':
     c = CricticalSection()
     for i in range(10):
-        c.main()
-        print(f'Step {i + 1}: x = {x}')
+        c.main(step=i)
 {% endhighlight %}
 
 Output của chương trình trên tại lần đầu tiên chạy chương trình mình thu được như sau:
