@@ -24,7 +24,7 @@ class CricticalSection():
             self.sem.acquire()      # Giảm giá trị của semahpore
 
             self.criticalsection()  # Bắt đầu crictical section (thread 1)
-            # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
+            # Tăng giá trị của semaphore để cho phép luồng khác tiến vào critical section
             self.sem.release()
 
             print("Critical Section over for thread 1")
@@ -36,7 +36,7 @@ class CricticalSection():
             self.sem.acquire()      # Giảm giá trị của semahpore
 
             self.criticalsection()  # Bắt đầu crictical section (thread 2)
-            # Tăng giá trị của semaphore để cho phép luồng khác tiền vào critical section
+            # Tăng giá trị của semaphore để cho phép luồng khác tiến vào critical section
             self.sem.release()
 
             print("Critical Section over for thread 2")
