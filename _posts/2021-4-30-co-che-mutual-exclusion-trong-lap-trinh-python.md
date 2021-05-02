@@ -15,7 +15,7 @@ Khái niệm này được sử dụng trong lập trình cùng với critical s
 
 ### Vấn đề critical section
 
-Mình có tham khảo ý tưởng từ một đoạn code mẫu <a href="https://cppsecrets.com/users/120612197115104981111171149751485164103109971051084699111109/Python-Implementation-of-Mutual-Exclusion-with-semaphore.php" target="_blank">tại đây</a> và thêm thắt chỉnh sửa một chút để mọi người dễ hình dung hơn cho từng trường hợp cụ thể. Với trường hợp nhiều luồng truy cập vào cùng tài nguyên được chia sẻ trong multithreading, hãy cùng nhau xét ví dụ sau:
+Mình có tham khảo ý tưởng từ một đoạn code mẫu <a href="https://cppsecrets.com/users/120612197115104981111171149751485164103109971051084699111109/Python-Implementation-of-Mutual-Exclusion-with-semaphore.php" target="_blank">tại đây</a> và thêm thắt chỉnh sửa một chút để chúng ta dễ hình dung hơn cho từng trường hợp cụ thể. Với trường hợp nhiều luồng truy cập vào cùng tài nguyên được chia sẻ trong multithreading, hãy cùng nhau xét ví dụ sau:
 
 {% highlight python %}
 from threading import Thread
@@ -120,7 +120,7 @@ if __name__ == '__main__':
         c.main(step=i)
 {% endhighlight %}
 
-Output của chương trình trên tại lần chạy đầu tiên thu được như sau:
+Trong ví dụ trên có sử dụng ctypes object là <i>multiprocessing.Value</i>, chúng ta có thể tham khảo chi tiết hơn <a href="https://www.kite.com/python/docs/multiprocessing.Value" target="_blank">tại đây</a>. Output của chương trình trên tại lần chạy đầu tiên thu được như sau:
 
 {% highlight text %}
 Step 1: x = 11571
