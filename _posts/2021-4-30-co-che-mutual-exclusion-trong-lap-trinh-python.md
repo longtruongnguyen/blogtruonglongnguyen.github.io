@@ -54,6 +54,7 @@ if __name__ == '__main__':
 {% endhighlight %}
 
 Output của chương trình trên tại lần đầu tiên chạy chương trình mình thu được như sau:
+
 {% highlight text %}
 Step 1: x = 1609593
 Step 2: x = 1675511
@@ -67,7 +68,8 @@ Step 9: x = 1806681
 Step 10: x = 1849179
 {% endhighlight %}
 
-Thử chạy lại chương trình trên một lần nữa. Kết quả mình thu được lại hoàn toàn khác so với lần chạy đầu tiên:
+Thử chạy lại chương trình trên một lần nữa và quan sát. Kết quả mình thu được lại hoàn toàn khác so với lần chạy đầu tiên:
+
 {% highlight text %}
 Step 1: x = 1682482
 Step 2: x = 1531211
@@ -116,6 +118,36 @@ if __name__ == '__main__':
     c = CricticalSection()
     for i in range(10):
         c.main(step=i)
+{% endhighlight %}
+
+Output của chương trình trên tại lần chạy đầu tiên thu được như sau:
+
+{% highlight text %}
+Step 1: x = 11571
+Step 2: x = 11779
+Step 3: x = 10834
+Step 4: x = 11760
+Step 5: x = 19729
+Step 6: x = 18965
+Step 7: x = 11355
+Step 8: x = 19504
+Step 9: x = 19224
+Step 10: x = 12202
+{% endhighlight %}
+
+Tại lần chạy tiếp theo kết quả vẫn là hoàn toàn khác biệt so với lần đầu:
+
+{% highlight text %}
+Step 1: x = 10661
+Step 2: x = 12165
+Step 3: x = 15036
+Step 4: x = 19132
+Step 5: x = 11817
+Step 6: x = 10217
+Step 7: x = 14314
+Step 8: x = 10497
+Step 9: x = 17631
+Step 10: x = 14249
 {% endhighlight %}
 
 ### Mutual exclusion trong single computer system và distributed system
