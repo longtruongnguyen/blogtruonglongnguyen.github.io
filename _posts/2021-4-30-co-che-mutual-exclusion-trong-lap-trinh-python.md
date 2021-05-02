@@ -120,7 +120,7 @@ if __name__ == '__main__':
         c.main(step=i)
 {% endhighlight %}
 
-Trong ví dụ trên có sử dụng ctypes object là <i>multiprocessing.Value</i>, chúng ta có thể tham khảo chi tiết hơn <a href="https://www.kite.com/python/docs/multiprocessing.Value" target="_blank">tại đây</a>. Output của chương trình trên tại lần chạy đầu tiên thu được như sau:
+Trong ví dụ trên có sử dụng ctypes object là <i>multiprocessing.Value</i> để tạo shared memory cho các tiến trình khác nhau, chúng ta có thể tham khảo chi tiết hơn <a href="https://www.kite.com/python/docs/multiprocessing.Value" target="_blank">tại đây</a>. Output của chương trình trên tại lần chạy đầu tiên thu được như sau:
 
 {% highlight text %}
 Step 1: x = 11571
