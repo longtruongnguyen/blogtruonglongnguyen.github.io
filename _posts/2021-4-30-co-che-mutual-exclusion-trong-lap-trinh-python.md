@@ -15,8 +15,10 @@ Khái niệm này được sử dụng trong lập trình cùng với critical s
 
 ### Vấn đề critical section
 
+Mình có tham khảo ý tưởng từ một đoạn code mẫu <a href="https://cppsecrets.com/users/120612197115104981111171149751485164103109971051084699111109/Python-Implementation-of-Mutual-Exclusion-with-semaphore.php" target="_blank">tại đây</a> và thêm thắt chỉnh sửa một chút để mọi người dễ hình dung hơn cho từng trường hợp cụ thể. Với trường hợp nhiều luồng cùng truy cập vào tài nguyên được chia sẻ trong multithreading, hãy cùng nhau xét ví dụ sau:
+
 {% highlight python %}
-import threading
+from threading import Thread
 
 class CricticalSection():
 
@@ -35,9 +37,9 @@ class CricticalSection():
     def main(self):
         global x
         x = 0
-        t1 = threading.Thread(target=self.thread_1)  # Gọi đến thread 1
+        t1 = Thread(target=self.thread_1)  # Gọi đến thread 1
         t1.start()
-        t2 = threading.Thread(target=self.thread_2)  # Gọi đến thread 2
+        t2 = Thread(target=self.thread_2)  # Gọi đến thread 2
         t2.start()
 
         t1.join()
@@ -77,6 +79,43 @@ Step 7: x = 1509799
 Step 8: x = 1702471
 Step 9: x = 1676963
 Step 10: x = 1762260
+{% endhighlight %}
+
+Với trường hợp nhiều tiến trình cùng truy cập vào tài nguyên được chia sẻ trong multiprocessing, hãy đến với ví dụ sau với một chút biến thể nhỏ so với ví dụ đầu tiên:
+
+{% highlight python %}
+from multiprocessing import Process
+
+class CricticalSection():
+
+    def process_1(self, x):
+        for _ in range(10000):
+            self.criticalsection(x) # Thực thi trong crictical section (process 1)
+
+    def process_2(self, x):
+        for _ in range(10000):
+            self.criticalsection(x) # Thực thi trong crictical section (process 2)
+
+    def criticalsection(self, x):
+        x.value += 1
+
+    def main(self, step):
+        x = multiprocessing.Value('i', 0)
+        t1 = Process(target=self.process_1, args=(x,))  # Gọi đến process 1
+        t1.start()
+        t2 = Process(target=self.process_2, args=(x,))  # Gọi đến process 2
+        t2.start()
+
+        t1.join()
+        t2.join()
+
+        print(f'Step {step + 1}: x = {x.value}')
+
+
+if __name__ == '__main__':
+    c = CricticalSection()
+    for i in range(10):
+        c.main(step=i)
 {% endhighlight %}
 
 ### Mutual exclusion trong single computer system và distributed system
