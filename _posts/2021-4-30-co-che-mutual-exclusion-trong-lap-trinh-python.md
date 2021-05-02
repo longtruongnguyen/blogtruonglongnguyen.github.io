@@ -16,75 +16,67 @@ Khái niệm này được sử dụng trong lập trình cùng với critical s
 ### Vấn đề critical section
 
 {% highlight python %}
-from multiprocessing import Process, Lock
-import time
+import threading
 
 class CricticalSection():
-    def __init__(self):
-        # Khởi tạo lock trong multiprocessing module
-        self.lock = Lock()
 
-    def process_1(self):
-        while True:
-            print("Entry Section 1")
-            self.lock.acquire()
+    def thread_1(self):
+        for _ in range(1000000):
+            self.criticalsection()  # Thực thi trong crictical section (thread 1)
 
-            self.criticalsection()  # Bắt đầu crictical section (process 1)
-            # Tăng giá trị của semaphore để cho phép tiến trình khác tiến vào critical section
-            self.lock.release()
-
-            print("Critical Section over for process 1")
-            time.sleep(3)
-
-    def process_2(self):
-        while True:
-            print("Entry Section 2")
-            self.lock.acquire()
-
-            self.criticalsection()  # Bắt đầu crictical section (process 2)
-            # Tăng giá trị của semaphore để cho phép tiến trình khác tiến vào critical section
-            self.lock.release()
-
-            print("Critical Section over for process 2")
-            time.sleep(3)
+    def thread_2(self):
+        for _ in range(1000000):
+            self.criticalsection()  # Thực thi trong crictical section (thread 2)
 
     def criticalsection(self):
-        print("Entered Critical Section! Perform operation on shared resource")
+        global x
+        x += 1
 
     def main(self):
-        t1 = Process(target=self.process_1)  # Gọi đến process 1
+        global x
+        x = 0
+        t1 = threading.Thread(target=self.thread_1)  # Gọi đến thread 1
         t1.start()
-        t2 = Process(target=self.process_2)  # Gọi đến process 2
+        t2 = threading.Thread(target=self.thread_2)  # Gọi đến thread 2
         t2.start()
 
-if __name__ == "__main__":
+        t1.join()
+        t2.join()
+
+
+if __name__ == '__main__':
     c = CricticalSection()
-    c.main()
+    for i in range(10):
+        c.main()
+        print(f'Step {i + 1}: x = {x}')
 {% endhighlight %}
 
-Output của chương trình trên sẽ là:
+Output của chương trình trên tại lần đầu tiên chạy chương trình mình thu được như sau:
 {% highlight text %}
-Entry Section 2
-Entered Critical Section! Perform operation on shared resource
-Critical Section over for process 2
-Entry Section 1
-Entered Critical Section! Perform operation on shared resource
-Critical Section over for process 1
-Entry Section 2
-Entered Critical Section! Perform operation on shared resource
-Critical Section over for process 2
-Entry Section 1
-Entered Critical Section! Perform operation on shared resource
-Critical Section over for process 1
-Entry Section 2
-Entered Critical Section! Perform operation on shared resource
-Critical Section over for process 2
-Entry Section 1
-Entered Critical Section! Perform operation on shared resource
-Critical Section over for process 1
-Entry Section 2
-Entered Critical Section! Perform operation on shared resource
-Critical Section over for process 2
+Step 1: x = 1609593
+Step 2: x = 1675511
+Step 3: x = 1714802
+Step 4: x = 1761148
+Step 5: x = 1890098
+Step 6: x = 1817904
+Step 7: x = 1628041
+Step 8: x = 1669174
+Step 9: x = 1806681
+Step 10: x = 1849179
+{% endhighlight %}
+
+Thử chạy lại chương trình trên một lần nữa. Kết quả mình thu được lại hoàn toàn khác so với lần chạy đầu tiên:
+{% highlight text %}
+Step 1: x = 1682482
+Step 2: x = 1531211
+Step 3: x = 1481805
+Step 4: x = 1733795
+Step 5: x = 1348640
+Step 6: x = 1570863
+Step 7: x = 1509799
+Step 8: x = 1702471
+Step 9: x = 1676963
+Step 10: x = 1762260
 {% endhighlight %}
 
 ### Mutual exclusion trong single computer system và distributed system
