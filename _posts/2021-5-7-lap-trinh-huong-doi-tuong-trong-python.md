@@ -14,6 +14,13 @@ author: Nguyễn Trường Long
 ### Các tính chất OOP trong Python
 
 #### Tính thừa kế (inheritance)
+Thừa kế là mối quan hệ được biết đến nhiều nhất và được sử dụng rất nhiều trong lập trình hướng đối tượng. Chúng ta có thể hình dung thừa kế giống như một cây gia phả trong gia đình.
+
+##### Đa thừa kế (multiple inheritance)
+
+Trong lập trình hướng đối tượng, thay vì kế thừa các tính năng và phương thức từ một class duy nhất, một class có thể kế thừa các thuộc tính và phương thức từ nhiều class cha khác nhau.
+
+##### Method Overriding trong Python 
 
 #### Tính đa hình (polymorphism)
 
