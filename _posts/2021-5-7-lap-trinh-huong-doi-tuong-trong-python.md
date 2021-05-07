@@ -6,3 +6,19 @@ keywords: lập trình OOP trong ngôn ngữ Python, lập trình oop, ngôn ng�
 excerpt: Các tính năng của lập trình hướng đối tượng (OOP) trong Python giúp dễ dàng xây dựng các chương trình có độ phức tạp ngày càng tăng và tái sử dụng lại các thành phần đã tồn tại trong quá trình phát triển.
 author: Nguyễn Trường Long
 ---
+
+### Lập trình hướng đối tượng trong Python
+
+### Class và Object trong Python
+
+### Các tính chất OOP trong Python
+
+#### Tính thừa kế (inheritance)
+
+#### Tính đa hình (polymorphism)
+
+#### Tính trừu tượng (abstraction)
+
+#### Tính bao đóng (encapsulation)
+
+### Tài liệu tham khảo
