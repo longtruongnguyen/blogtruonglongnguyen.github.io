@@ -280,4 +280,3 @@ Có 3 hướng tiếp cận chính có thể sử dụng để giải quyết nh
 * <a href="https://realpython.com/python-concurrency" target="_blank">https://realpython.com/python-concurrency</a>
 * <a href="https://granulate.io/introduction-to-the-infamous-python-gil" target="_blank">https://granulate.io/introduction-to-the-infamous-python-gil</a>
 * <a href="https://www.programmersought.com/article/8984296557" target="_blank">https://www.programmersought.com/article/8984296557</a>
-
