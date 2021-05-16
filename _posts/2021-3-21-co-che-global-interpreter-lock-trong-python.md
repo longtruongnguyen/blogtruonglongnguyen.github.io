@@ -22,7 +22,7 @@ Python cung cấp các module hỗ trợ cho cả xử lý đa luồng và xử 
 
 ### Giới thiệu về cơ chế Global Interpreter Lock
 
-Trong ngôn ngữ lập trình Python tồn tại một cơ chế được gọi là [Global Interpreter Lock (GIL)](https://nguyentruonglong.net/co-che-global-interpreter-lock-trong-python.html). Cơ chế này khóa toàn bộ trình thông dịch, chỉ cho phép Python sử dụng một luồng duy nhất để thực thi các lệnh lập trình trong một chương trình. Điều này có nghĩa là trong Python tại một thời điểm chỉ có một luồng duy nhất được thực thi. Mỗi luồng muốn thực thi trước tiên phải đợi [GIL](https://nguyentruonglong.net/co-che-global-interpreter-lock-trong-python.html) được giải phóng bởi luồng đang thực thi. Có thể hình dung đơn giản rằng [GIL](https://nguyentruonglong.net/co-che-global-interpreter-lock-trong-python.html) là microphone duy nhất trong một hội nghị chẳng hạn, bất kỳ ai muốn phát biểu đều phải nhận được microphone từ người đang giữ microphone ở thời điểm hiện tại. Do [cơ chế GIL](https://nguyentruonglong.net/co-che-global-interpreter-lock-trong-python.html), hiệu suất của một chương trình đơn luồng và một chương trình đa luồng là tương đương nhau trong Python. Cơ chế này làm cho các chương trình đa luồng không tăng hiệu suất lên nhiều và thậm chí có thể làm giảm hiệu suất của một số chương trình đa luồng. Mình có viết thử một chương trình sau làm ví dụ minh họa cho vấn đề này:
+
 
 {% highlight python %}
 import threading
@@ -279,4 +279,5 @@ Có 3 hướng tiếp cận chính có thể sử dụng để giải quyết nh
 * <a href="https://docs.python.org/3/c-api/structures.html" target="_blank">https://docs.python.org/3/c-api/structures.html</a>
 * <a href="https://realpython.com/python-concurrency" target="_blank">https://realpython.com/python-concurrency</a>
 * <a href="https://granulate.io/introduction-to-the-infamous-python-gil" target="_blank">https://granulate.io/introduction-to-the-infamous-python-gil</a>
+* <a href="https://www.programmersought.com/article/8984296557" target="_blank">https://www.programmersought.com/article/8984296557</a>
 
