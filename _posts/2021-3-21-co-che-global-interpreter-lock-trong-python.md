@@ -7,7 +7,6 @@ excerpt: Trong ngôn ngữ lập trình Python tồn tại một cơ chế đư�
 author: Nguyễn Trường Long
 ---
 
-
 ### Cơ chế quản lý bộ nhớ trong Python
 
 Quản lý bộ nhớ là quy trình kiểm soát và phân phối tài nguyên bộ nhớ máy tính cho dữ liệu được sinh ra trong các chương trình đang chạy. Quản lý bộ nhớ trong một chương trình kết hợp hai nhiệm vụ liên quan, được gọi là cấp phát (allocation) và tái sử dụng (recycling).
