@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Kiến trúc chi tiết của mạng Hyperledger Fabric
-description:
-excerpt:
+description: Mạng Hyperledger Fabric bao gồm nhiều tổ chức tương tác lẫn nhau trong mạng. Ví dụ một tổ chức có thể là một ngân hàng trong một mạng lưới bao gồm các tổ chức tài chính hoặc một đối tác vận chuyển trong một mạng lưới chuỗi cung ứng.
+excerpt: Mạng Hyperledger Fabric bao gồm nhiều tổ chức tương tác lẫn nhau trong mạng. Ví dụ một tổ chức có thể là một ngân hàng trong một mạng lưới bao gồm các tổ chức tài chính hoặc một đối tác vận chuyển trong một mạng lưới chuỗi cung ứng.
 thumbnail: 
 keywords: mạng Hyperledger Fabric, blockchain, smart contract, chaincode, Membership Service Provider, peer, ledger, Hyperledger
 author: Nguyễn Trường Long
@@ -44,4 +44,6 @@ Một số tính năng chính của Fabric ledger:
 -	Transaction bao gồm chữ ký của mọi endorsing peer và được gửi đến ordering service.
 -	Các transaction được sắp xếp thành các khối và được "phân phối" từ ordering service đến các peer trong một channel.
 -	Các peer xác thực giao dịch dựa trên các chính sách chứng thực (endorsement policies) và thực thi các chính sách này.
+
+### Tài liệu tham khảo
 
