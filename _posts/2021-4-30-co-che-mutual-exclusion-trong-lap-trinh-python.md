@@ -9,7 +9,7 @@ author: Nguyễn Trường Long
 
 ### Giới thiệu về mutual exclusion
 
-[Mutual exclusion (khóa loại trừ lẫn nhau)](https://nguyentruonglong.net/co-che-mutual-exclusion-trong-lap-trinh-python.html) là một cơ chế thường được sử dụng để đồng bộ hóa các tiến trình hoặc luồng cần truy cập vào một số tài nguyên được chia sẻ trong các chương trình. Cơ chế này ngăn chặn việc truy cập đồng thời vào tài nguyên được chia sẻ để tránh xảy ra các vấn đề race condition. Nó quy định rằng nếu một tiến trình hoặc luồng khóa một tài nguyên, thì một tiến trình khác muốn truy cập vào nó sẽ cần phải đợi cho đến khi tiến trình đầu tiên mở khóa. Khi tiến trình hoặc luồng thứ hai này nắm giữ tài nguyên được chia sẻ, nó cũng sẽ tiến hành khóa tài nguyên này lại cho đến khi nó xử lý hoàn tất và quy trình này cứ lặp lại tiếp tục.
+[Mutual exclusion (khóa loại trừ lẫn nhau)](https://nguyentruonglong.net/co-che-mutual-exclusion-trong-lap-trinh-python.html) là một cơ chế thường được sử dụng để đồng bộ hóa các tiến trình hoặc luồng cần truy cập vào một số tài nguyên được chia sẻ trong các chương trình. Cơ chế này ngăn chặn việc truy cập đồng thời vào tài nguyên được chia sẻ để tránh xảy ra các vấn đề race condition. Nó quy định rằng nếu một tiến trình hoặc luồng khóa một tài nguyên, thì một tiến trình hoặc luồng khác muốn truy cập vào nó sẽ cần phải đợi cho đến khi tiến trình đầu tiên mở khóa. Khi tiến trình hoặc luồng thứ hai này nắm giữ tài nguyên được chia sẻ, nó cũng sẽ tiến hành khóa tài nguyên này lại cho đến khi nó xử lý hoàn tất và quy trình này cứ lặp lại tiếp tục.
 
 Khái niệm này được sử dụng trong lập trình cùng với critical section, quy định rằng chỉ có một tiến trình hoặc luồng chứa critical section tại một thời điểm. Khi một tiến trình hoặc luồng nắm giữ một tài nguyên, nó phải khóa quyền truy cập vào tài nguyên được chia sẻ từ các tiến trình hoặc luồng khác để ngăn chặn các truy cập đồng thời vào cùng một tài nguyên. Đến khi giải phóng tài nguyên được chia sẻ, tiến trình hoặc luồng sẽ rời khỏi critical section và cho phép các tiến trình hoặc luồng khác tiến vào critical section.
 
@@ -150,9 +150,31 @@ Step 9: x = 17631
 Step 10: x = 14249
 {% endhighlight %}
 
+### Tổng quát hoá cơ chế Mutual exclusion (Semaphore)
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/SemaphoreFlags.jpg" alt="Semaphore và ứng dụng trong đời sống">
+  <figcaption>
+	  <i>Semaphore và ứng dụng trong đời sống</i>
+  </figcaption>
+</center>
+</figure>
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/SemaphoreSharedResource.png" alt="Cơ chế semaphore trong khoa học máy tính">
+  <figcaption>
+	  <i>Cơ chế semaphore trong khoa học máy tính</i>
+  </figcaption>
+</center>
+</figure>
+
+Trong khoa học máy tính, semaphore hiểu đơn giản chỉ là một biến đếm với giá trị có thể thay đổi (tăng hoặc giảm) tùy thuộc vào nhu cầu do người lập trình xác định. Biến đếm này kiểm soát quá trình truy cập của các luồng hoặc tiến trình vào một tài nguyên dùng chung để tránh xảy ra các vấn đề critical section.
+
 ### Xây dựng cơ chế Mutual exclusion bằng semaphore trong Python
 
-Với ví dụ ở trường hợp nhiều luồng cùng tranh chấp sử dụng tài nguyên chung, chúng ta sẽ sử dụng <strong><i>semaphore</i></strong> với 2 phương thức là <strong><i>acquire()</i></strong> và <strong><i>release()</i></strong> để khoá tài nguyên chung lại mỗi khi có một luồng đang thực thi trên vùng tài nguyên chung này.
+Với ví dụ ở trường hợp nhiều luồng cùng tranh chấp sử dụng tài nguyên chung, chúng ta sẽ sử dụng <strong><i>semaphore</i></strong> với 2 phương thức là <strong><i>acquire()</i></strong> và <strong><i>release()</i></strong> để khoá tài nguyên chung lại, chỉ cho phép một luồng được thực thi trên vùng tài nguyên chung này tại một thời điểm.
 
 {% highlight python %}
 import threading
