@@ -66,7 +66,7 @@ str_next_page: "Next"
 
 str_previous_page: "Previous"
 
-pagination_nr: 2paginate_path: /page:num/
+pagination_nr: "/blog/page:num/"
 
 # The release of Jekyll Now that you're using
 version: v1.2.0
