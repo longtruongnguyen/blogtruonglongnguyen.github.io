@@ -150,7 +150,67 @@ Step 9: x = 17631
 Step 10: x = 14249
 {% endhighlight %}
 
-### Mutual exclusion trong single computer system và distributed system
+### Xây dựng cơ chế Mutual exclusion bằng semaphore trong Python
+
+Với ví dụ ở trường hợp nhiều luồng cùng tranh chấp sử dụng tài nguyên chung, chúng ta sẽ sử dụng semaphore với 2 phương thức là <strong><i>acquire()</i></strong> và <strong><i>release()</i></strong> để khoá tài nguyên chung lại mỗi khi có một luồng đang thực thi trên vùng tài nguyên chung này.
+
+{% highlight python %}
+import threading
+from threading import Thread
+
+class CricticalSection():
+    def __init__(self):
+        self.sem = threading.Semaphore()  # Khởi tạo semaphore
+
+    def thread_1(self):
+        for _ in range(1000000):
+            self.criticalsection()  # Thực thi trong crictical section (thread 1)
+
+    def thread_2(self):
+        for _ in range(1000000):
+            self.criticalsection()  # Thực thi trong crictical section (thread 2)
+
+    def criticalsection(self):
+        self.sem.acquire()
+        global x
+        x += 1
+        self.sem.release()
+
+    def main(self, step):
+        global x
+        x = 0
+        t1 = Thread(target=self.thread_1)  # Gọi đến thread 1
+        t1.start()
+        t2 = Thread(target=self.thread_2)  # Gọi đến thread 2
+        t2.start()
+
+        t1.join()
+        t2.join()
+
+        print(f'Step {step + 1}: x = {x}')
+
+if __name__ == '__main__':
+    c = CricticalSection()
+    for i in range(10):
+        c.main(step=i)
+
+{% endhighlight %}
+
+Output của chương trình trên tại mọi lần thực thi đều thu được kết quả như sau:
+
+{% highlight text %}
+Step 1: x = 2000000
+Step 2: x = 2000000
+Step 3: x = 2000000
+Step 4: x = 2000000
+Step 5: x = 2000000
+Step 6: x = 2000000
+Step 7: x = 2000000
+Step 8: x = 2000000
+Step 9: x = 2000000
+Step 10: x = 2000000
+{% endhighlight %}
+
 
 ### Tài liệu tham khảo
 
