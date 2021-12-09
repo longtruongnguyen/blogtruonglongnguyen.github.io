@@ -58,9 +58,15 @@ baseurl: ""
 
 permalink: /:title.html
 
-paginate: 100
+paginate: 5
 
 paginate_path: "/blog/page:num/"
+
+str_next_page: "Next"
+
+str_previous_page: "Previous"
+
+pagination_nr: 2paginate_path: /page:num/
 
 # The release of Jekyll Now that you're using
 version: v1.2.0
