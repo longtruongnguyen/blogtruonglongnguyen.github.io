@@ -10,12 +10,30 @@ author: Nguyễn Trường Long
 
 ### Giới thiệu về công nghệ Blockchain
 
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/BlockchainSystems.png" alt="Các thành phần chính của hệ thống Blockchain">
+  <figcaption>
+	  <i>Các thành phần chính của hệ thống Blockchain</i>
+  </figcaption>
+</center>
+</figure>
+
 Blockchain là một công nghệ cho phép xây dựng các ứng dụng trong đó nhiều bên có thể ghi lại các giao dịch (transaction) trực tiếp mà không cần cơ quan trung ương (central authority) được tin tưởng để đảm bảo rằng các giao dịch đã được xác minh. Blockchain sử dụng mạng ngang hàng (peer-to-peer network) với mỗi bên tham gia trong mạng có thể truy cập sổ cái được chia sẻ. Sổ cái này chính là nơi ghi lại các giao dịch đã thực hiện. Những giao dịch này được thiết kế để không thể chỉnh sửa, thay đổi và có thể xác minh thông qua mật mã. Nhìn ở góc độ tổng quan, công nghệ blockchain bao gồm 3 thành phần:
 - <i>Sổ cái phân tán (distributed ledger)</i>: Sổ cái là một nhật ký ghi lại các giao dịch, lưu giữ toàn bộ lịch sử thay đổi dữ liệu. Sổ cái là không thể chỉnh sửa, các giao dịch đã xác nhận có thể được xác minh độc lập bởi mọi thành viên trong mạng. Mỗi thành viên của mạng đều duy trì một bản sao của sổ cái.
 - <i>Thuật toán đồng thuận (consensus algorithm)</i>:  Các thuật toán đồng thuật giúp thống nhất chung một phương pháp giữa các thành viên trong mạng để cho phép các giao dịch và dữ liệu được ghi vào sổ cái và thực thi các đoạn mã smart contract. Nếu các yêu cầu đồng thuận không đáp ứng thì các giao dịch hoặc hoạt động được xem là không hợp lệ.
 - <i>Hợp đồng thông minh (smart contract)</i>: Hợp đồng thông minh là các đoạn mã được thực thi trên mạng blockchain. Thông thường thì hợp đồng thông xác định các quy tắc của hợp đồng kinh doanh và được thực thi khi các điều kiện tiên quyết của hợp đồng đáp ứng.
 
 ### Giới thiệu về mạng Hyperledger Fabric
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/HyperledgerFabricWorkFlow.png" alt="Mô hình hoạt động của mạng Hyperledger Fabric">
+  <figcaption>
+	  <i>Mô hình hoạt động của mạng Hyperledger Fabric</i>
+  </figcaption>
+</center>
+</figure>
 
 Mạng Hyperledger Fabric bao gồm nhiều tổ chức tương tác lẫn nhau trong mạng. Ví dụ một tổ chức có thể là một ngân hàng trong một mạng lưới bao gồm các tổ chức tài chính hoặc một đối tác vận chuyển trong một mạng lưới chuỗi cung ứng. Mỗi tổ chức có cơ quan cấp chứng chỉ Fabric và một hoặc nhiều nút ngang hàng (peer node). Một mạng Fabric cũng có một ordering service được chia sẻ bởi tất cả tổ chức trong mạng và thành phần này giúp xử lý giao dịch cho mạng lưới. Chúng ta sẽ đi vào mô tả chi tiết từng khái niệm và thành phần.
 
@@ -45,5 +63,8 @@ Một số tính năng chính của Fabric ledger:
 -	Các transaction được sắp xếp thành các khối và được "phân phối" từ ordering service đến các peer trong một channel.
 -	Các peer xác thực giao dịch dựa trên các chính sách chứng thực (endorsement policies) và thực thi các chính sách này.
 
+
 ### Tài liệu tham khảo
+
+* <a href="https://glpcoin.medium.com/hyperledger-fabric-4b2704f5f6d8" target="_blank">https://glpcoin.medium.com/hyperledger-fabric-4b2704f5f6d8</a>
 
