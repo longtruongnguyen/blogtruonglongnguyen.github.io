@@ -60,7 +60,7 @@ permalink: /:title.html
 
 paginate: 3
 
-# paginate_path: "/blog/page:num/"
+paginate_path: "/blog/page:num/"
 
 str_next_page: "Next"
 
