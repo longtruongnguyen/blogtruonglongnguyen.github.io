@@ -9,9 +9,9 @@ author: Nguyễn Trường Long
 
 ### Giới thiệu về mutual exclusion
 
-[Mutual exclusion (khóa loại trừ lẫn nhau)](https://nguyentruonglong.net/co-che-mutual-exclusion-trong-lap-trinh-python.html) là một cơ chế thường được sử dụng để đồng bộ hóa các tiến trình hoặc luồng cần truy cập vào một số tài nguyên được chia sẻ trong các chương trình. Cơ chế này ngăn chặn việc truy cập đồng thời vào tài nguyên được chia sẻ để tránh xảy ra các vấn đề race condition. Nó quy định rằng nếu một tiến trình hoặc luồng khóa một tài nguyên, thì một tiến trình hoặc luồng khác muốn truy cập vào nó sẽ cần phải đợi cho đến khi tiến trình đầu tiên mở khóa. Khi tiến trình hoặc luồng thứ hai này nắm giữ tài nguyên được chia sẻ, nó cũng sẽ tiến hành khóa tài nguyên này lại cho đến khi nó xử lý hoàn tất và quy trình này cứ lặp lại tiếp tục.
+[Mutual exclusion (khóa loại trừ lẫn nhau)](https://nguyentruonglong.net/co-che-mutual-exclusion-trong-lap-trinh-python.html) là một cơ chế thường được sử dụng để đồng bộ hóa các tiến trình hoặc luồng cần truy cập vào một số tài nguyên được chia sẻ trong các chương trình. Cơ chế này ngăn chặn việc truy cập đồng thời vào tài nguyên được chia sẻ để tránh xảy ra các vấn đề <strong><i>race condition</i></strong>. Nó quy định rằng nếu một tiến trình hoặc luồng khóa một tài nguyên, thì một tiến trình hoặc luồng khác muốn truy cập vào nó sẽ cần phải đợi cho đến khi tiến trình đầu tiên mở khóa. Khi tiến trình hoặc luồng thứ hai này nắm giữ tài nguyên được chia sẻ, nó cũng sẽ tiến hành khóa tài nguyên này lại cho đến khi nó xử lý hoàn tất và quy trình này cứ lặp lại tiếp tục.
 
-Khái niệm này được sử dụng trong lập trình cùng với critical section, quy định rằng chỉ có một tiến trình hoặc luồng chứa critical section tại một thời điểm. Khi một tiến trình hoặc luồng nắm giữ một tài nguyên, nó phải khóa quyền truy cập vào tài nguyên được chia sẻ từ các tiến trình hoặc luồng khác để ngăn chặn các truy cập đồng thời vào cùng một tài nguyên. Đến khi giải phóng tài nguyên được chia sẻ, tiến trình hoặc luồng sẽ rời khỏi critical section và cho phép các tiến trình hoặc luồng khác tiến vào critical section.
+Khái niệm này được sử dụng trong lập trình cùng với <strong><i>critical section</i></strong>, quy định rằng chỉ có một tiến trình hoặc luồng chứa critical section tại một thời điểm. Khi một tiến trình hoặc luồng nắm giữ một tài nguyên, nó phải khóa quyền truy cập vào tài nguyên được chia sẻ từ các tiến trình hoặc luồng khác để ngăn chặn các truy cập đồng thời vào cùng một tài nguyên. Đến khi giải phóng tài nguyên được chia sẻ, tiến trình hoặc luồng sẽ rời khỏi <strong><i>critical section</i></strong> và cho phép các tiến trình hoặc luồng khác tiến vào <strong><i>critical section</i></strong>.
 
 ### Vấn đề critical section
 
@@ -120,7 +120,7 @@ if __name__ == '__main__':
         c.main(step=i)
 {% endhighlight %}
 
-Trong ví dụ trên có sử dụng ctypes object là <i>multiprocessing.Value</i> để tạo shared memory cho các tiến trình khác nhau, chúng ta có thể tham khảo chi tiết hơn <a href="https://www.kite.com/python/docs/multiprocessing.Value" target="_blank">tại đây</a>. Output của chương trình trên tại lần chạy đầu tiên thu được như sau:
+Trong ví dụ trên có sử dụng ctypes object là <strong><i>multiprocessing.Value</i></strong> để tạo shared memory cho các tiến trình khác nhau, chúng ta có thể tham khảo chi tiết hơn <a href="https://www.kite.com/python/docs/multiprocessing.Value" target="_blank">tại đây</a>. Output của chương trình trên tại lần chạy đầu tiên thu được như sau:
 
 {% highlight text %}
 Step 1: x = 11571
@@ -150,6 +150,8 @@ Step 9: x = 17631
 Step 10: x = 14249
 {% endhighlight %}
 
+Khi nhiều tiến trình hoặc luồng cùng truy cập vào một đoạn mã giống nhau thì đoạn mã đó được gọi là <strong><i>critical section</i></strong>. <strong><i>Critical section</i></strong> chứa các biến hoặc tài nguyên chung cần được đồng bộ hóa để duy trì tính nhất quán của biến dữ liệu. Trong 2 ví dụ trên, khi một tiến trình hoặc luồng cố gắng thay đổi giá trị của dữ liệu được chia sẻ cùng lúc khi một tiến trình hoặc luồng khác cố gắng đọc giá trị, kết quả cuối cùng là không thể đoán trước được. Chúng ta thấy <strong><i>critical section</i></strong> không được duy trì tính nhất quán trong quá trình đọc và ghi dữ liệu liệu dẫn đến xung đột.
+
 ### Tổng quát hoá cơ chế Mutual exclusion (Semaphore)
 
 <figure class="image">
@@ -170,7 +172,7 @@ Step 10: x = 14249
 </center>
 </figure>
 
-Trong khoa học máy tính, semaphore hiểu đơn giản chỉ là một biến đếm với giá trị có thể thay đổi (tăng hoặc giảm) tùy thuộc vào nhu cầu do người lập trình xác định. Biến đếm này kiểm soát quá trình truy cập của các luồng hoặc tiến trình vào một tài nguyên dùng chung để tránh xảy ra các vấn đề critical section.
+Trong khoa học máy tính, semaphore hiểu đơn giản chỉ là một biến đếm với giá trị có thể thay đổi (tăng hoặc giảm) tùy thuộc vào nhu cầu do người lập trình xác định. Biến đếm này kiểm soát quá trình truy cập của các luồng hoặc tiến trình vào một tài nguyên dùng chung để tránh xảy ra các vấn đề <strong><i>critical section</i></strong>.
 
 ### Xây dựng cơ chế Mutual exclusion bằng semaphore trong Python
 
@@ -240,4 +242,4 @@ Step 10: x = 2000000
 * <a href="https://www.geeksforgeeks.org/mutual-exclusion-in-synchronization" target="_blank">https://www.geeksforgeeks.org/mutual-exclusion-in-synchronization</a>
 * <a href="https://docs.python.org/3/library/multiprocessing.html" target="_blank">https://docs.python.org/3/library/multiprocessing.html</a>
 * <a href="https://en.wikipedia.org/wiki/Semaphore_(programming)" target="_blank">https://en.wikipedia.org/wiki/Semaphore_(programming)</a>
-
+* <a href="https://www.geeksforgeeks.org/g-fact-70" target="_blank">https://www.geeksforgeeks.org/g-fact-70</a>
