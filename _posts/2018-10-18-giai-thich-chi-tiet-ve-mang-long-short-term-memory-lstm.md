@@ -20,13 +20,13 @@ Trước khi đi sâu vào giải thích chi tiết mạng [LSTM](https://nguyen
 
 Dựa trên số lượng xử lý của chuỗi đầu vào và chuỗi đầu ra, người ta chia mạng RNN thành 4 loại chính:
 
-- <strong><i>One to One RNN</i></strong>: 
-- <strong><i>One to Many RNN</i></strong>:
-- <strong><i>Many to One RNN</i></strong>: 
-- <strong><i>Many to Many RNN</i></strong>: 
+- <strong><i>One to One RNN</i></strong>
+- <strong><i>One to Many RNN</i></strong>
+- <strong><i>Many to One RNN</i></strong>
+- <strong><i>Many to Many RNN</i></strong>
 
 
-Trong mạng RNN, trạng thái ẩn tại mỗi bước thời gian sẽ được tính toán dựa vào dữ liệu đầu vào tại bước thời gian tương ứng và các thông tin có được từ bước thời gian trước đó, tạo khả năng ghi nhớ các thông tin đã được tính toán ở những bước thời gian trước cho mạng. <i>Hình 1</i> biễu diễn kiến trúc của một mạng RNN cơ bản cho tác vụ ánh xạ một chuỗi đầu vào thành chuỗi đầu ra với cùng một độ dài khi được duỗi ra.
+Trong mạng RNN, trạng thái ẩn tại mỗi bước thời gian sẽ được tính toán dựa vào dữ liệu đầu vào tại bước thời gian tương ứng và các thông tin có được từ bước thời gian trước đó, tạo khả năng ghi nhớ các thông tin đã được tính toán ở những bước thời gian trước cho mạng. <i>Hình 2</i> biễu diễn kiến trúc của một mạng RNN cơ bản cho tác vụ ánh xạ một chuỗi đầu vào thành chuỗi đầu ra với cùng một độ dài khi được duỗi ra.
 
 <figure class="image">
 <center>
