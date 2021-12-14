@@ -9,12 +9,29 @@ author: Nguyễn Trường Long
 
 ### Giới thiệu về Recurrent Neural Network
 
-Trước khi đi sâu vào giải thích chi tiết mạng [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html), mình sẽ giới thiệu sơ qua về mạng nơ-ron hồi quy (Recurrent Neural Network - RNN). Đây là mạng nơ-ron nhân tạo được thiết kế cho việc xử lý các loại dữ liệu có dạng chuỗi tuần tự. Trong mạng RNN, trạng thái ẩn tại mỗi bước thời gian sẽ được tính toán dựa vào dữ liệu đầu vào tại bước thời gian tương ứng và các thông tin có được từ bước thời gian trước đó, tạo khả năng ghi nhớ các thông tin đã được tính toán ở những bước thời gian trước cho mạng. <i>Hình 1</i> biễu diễn kiến trúc của một mạng RNN cơ bản cho tác vụ ánh xạ một chuỗi đầu vào thành chuỗi đầu ra với cùng một độ dài khi được duỗi ra.
+Trước khi đi sâu vào giải thích chi tiết mạng [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html), mình sẽ giới thiệu sơ qua về mạng nơ-ron hồi quy (Recurrent Neural Network - RNN). Đây là mạng nơ-ron nhân tạo được thiết kế cho việc xử lý các loại dữ liệu có dạng chuỗi tuần tự.
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/TypesofRNN.jpg" alt="Các loại mạng RNN chính">
+  <figcaption><i>Hình 1: Các loại mạng RNN chính</i></figcaption>
+</center>
+</figure>
+
+Dựa trên số lượng xử lý của chuỗi đầu vào và chuỗi đầu ra, người ta chia mạng RNN thành 4 loại chính:
+
+- <strong><i>One to One RNN</i></strong>: 
+- <strong><i>One to Many RNN</i></strong>:
+- <strong><i>Many to One RNN</i></strong>: 
+- <strong><i>Many to Many RNN</i></strong>: 
+
+
+Trong mạng RNN, trạng thái ẩn tại mỗi bước thời gian sẽ được tính toán dựa vào dữ liệu đầu vào tại bước thời gian tương ứng và các thông tin có được từ bước thời gian trước đó, tạo khả năng ghi nhớ các thông tin đã được tính toán ở những bước thời gian trước cho mạng. <i>Hình 1</i> biễu diễn kiến trúc của một mạng RNN cơ bản cho tác vụ ánh xạ một chuỗi đầu vào thành chuỗi đầu ra với cùng một độ dài khi được duỗi ra.
 
 <figure class="image">
 <center>
   <img src="https://nguyentruonglong.net/images/RNNUnfold.png" alt="Kiến trúc của một mạng RNN cơ bản khi được duỗi ra">
-  <figcaption><i>Hình 1: Kiến trúc của một mạng RNN cơ bản khi được duỗi ra. Nguồn: Ian Goodfellow</i></figcaption>
+  <figcaption><i>Hình 2: Kiến trúc của một mạng RNN cơ bản khi được duỗi ra. Nguồn: Ian Goodfellow</i></figcaption>
 </center>
 </figure>
 
@@ -42,7 +59,7 @@ Trong đó:
 <figure class="image">
 <center>
   <img src="https://nguyentruonglong.net/images/IllustrationofRNN.png" alt="Kiến trúc chi tiết của một mạng RNN tại mỗi bước thời gian">
-  <figcaption><i>Hình 2: Kiến trúc chi tiết của một mạng RNN tại mỗi bước thời gian. Nguồn: Nikhil Ketkar</i></figcaption>
+  <figcaption><i>Hình 3: Kiến trúc chi tiết của một mạng RNN tại mỗi bước thời gian. Nguồn: Nikhil Ketkar</i></figcaption>
 </center>
 </figure>
 
@@ -56,27 +73,27 @@ Mạng RNN bị ảnh hưởng bởi khả năng ghi nhớ ngắn hạn (short-t
 
 <figure class="image">
 <center>
-  <img src="https://nguyentruonglong.net/images/LSTMstepbystep.gif" alt="Ảnh minh hoạ quá trình xử lý dữ liệu của mạng LSTM">
-  <figcaption><i>Ảnh minh hoạ quá trình xử lý dữ liệu của mạng LSTM</i></figcaption>
+  <img src="https://nguyentruonglong.net/images/LSTMstepbystep.gif" alt="Minh hoạ quá trình xử lý dữ liệu của mạng LSTM">
+  <figcaption><i>Hình 4: Minh hoạ quá trình xử lý dữ liệu của mạng LSTM</i></figcaption>
 </center>
 </figure>
 
 [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất.
 
-Giả sử khi xem một bộ phim dài tập, chúng ta ghi nhớ bối cảnh phim đã diễn ra ở những tập trước đó, kết hợp xử lý với thông tin của tập phim hiện tại hoặc khi đọc sách, chúng ta ghi nhớ điều gì đã xảy ra ở chương trước, kết hợp thành mạch thông tin để hiểu và tiếp thu cho nội dung hiện tại. Tương tự như vậy, khi các mạng RNN hoạt động, thông tin trước đó được ghi nhớ và sử dụng lại để xử lý cho đầu vào hiện tại. Tuy nhiên thì mạng RNN không thể ghi nhớ thông tin ở các bước có khoảng cách khá xa trước đó do vấn đề gradient biến mất. Do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau. [Mạng LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được thiết kế với các kết nối phản hồi (feedback connection) để khắc phục nhược điểm này.
+Giả sử khi xem một bộ phim dài tập, chúng ta ghi nhớ bối cảnh phim đã diễn ra ở những tập trước đó, kết hợp xử lý với thông tin của tập phim hiện tại hoặc khi đọc sách, chúng ta ghi nhớ điều gì đã xảy ra ở chương trước, kết hợp thành mạch thông tin để hiểu và tiếp thu cho nội dung hiện tại. Tương tự như vậy, khi các mạng RNN hoạt động, thông tin trước đó được ghi nhớ và sử dụng lại để xử lý cho đầu vào hiện tại. Tuy nhiên thì mạng RNN không thể ghi nhớ thông tin ở các bước có khoảng cách khá xa trước đó do vấn đề gradient biến mất. Do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau. [Mạng LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được thiết kế với các kết nối phản hồi (feedback connection) giúp khắc phục nhược điểm này.
 
 <figure class="image">
 <center>
   <img src="https://nguyentruonglong.net/images/LSTMCell.png" alt="Sơ đồ biểu diễn kiến trúc bên trong của một tế bào LSTM">
-  <figcaption><i>Hình 3: Sơ đồ biểu diễn kiến trúc bên trong của một tế bào LSTM</i></figcaption>
+  <figcaption><i>Hình 5: Sơ đồ biểu diễn kiến trúc bên trong của một tế bào LSTM</i></figcaption>
 </center>
 </figure>
 
 [Mạng LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) có thể bao gồm nhiều tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) (LSTM memory cell) liên kết với nhau và kiến trúc cụ thể của mỗi tế bào được biểu diễn như trong <i>Hình 2</i>. Ý tưởng của [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) là bổ sung thêm trạng thái bên trong tế bào (cell internal state) {% raw %}$$s_t$${% endraw %} và ba cổng sàng lọc các thông tin đầu vào và đầu ra cho tế bào bao gồm forget gate $${f_t}$$, input gate $${i_t}$$ và output gate $${o_t}$$. Tại mỗi bước thời gian $t$, các cổng đều lần lượt nhận giá trị đầu vào ${x_t}$ (đại diện cho một phần tử trong chuỗi đầu vào) và giá trị $ {h_{t - 1}} $ có được từ đầu ra của memory cell từ bước thời gian trước đó $t-1$. Các cổng đều đóng vai trò có nhiệm vụ sàng lọc thông tin với mỗi mục đích khác nhau:
 
-- Forget gate: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được khỏi cell internal state
-- Input gate: Có nhiệm vụ chọn lọc những thông tin cần thiết nào được thêm vào cell internal state
-- Output gate: Có nhiệm vụ xác định những thông tin nào từ cell internal state được sử dụng như đầu ra
+- <strong><i>Forget gate</i></strong>: Có nhiệm vụ loại bỏ những thông tin không cần thiết nhận được khỏi cell internal state
+- <strong><i>Input gate</i></strong>: Có nhiệm vụ chọn lọc những thông tin cần thiết nào được thêm vào cell internal state
+- <strong><i>Output gate</i></strong>: Có nhiệm vụ xác định những thông tin nào từ cell internal state được sử dụng như đầu ra
 
 Trước khi trình bày các phương trình mô tả cơ chế hoạt động bên trong của một tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html), chúng ta sẽ thống nhất quy ước một số ký hiệu được sử dụng sau đây:
 - ${x_{t}}$ là vector đầu vào tại mỗi bước thời gian $t$
@@ -143,6 +160,7 @@ Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}
 
 * <a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21" target="_blank">https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21</a>
 * <a href="https://towardsdatascience.com/lstm-networks-a-detailed-explanation-8fae6aefc7f9" target="_blank">https://towardsdatascience.com/lstm-networks-a-detailed-explanation-8fae6aefc7f9</a>
+* <a href="https://iq.opengenus.org/types-of-rnn" target="_blank">https://iq.opengenus.org/types-of-rnn</a>
 
 
 <!--
