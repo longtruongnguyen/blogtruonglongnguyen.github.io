@@ -50,9 +50,20 @@ Trong đó:
 
 Gradient biến mất (Vanishing Gradient Problem) và gradient bùng nổ (Exploding Gradient Problem) là những vấn đề gặp phải khi sử dụng các kỹ thuật tối ưu hóa trọng số dựa trên gradient để huấn luyện mạng nơ-ron. Các vấn đề này thường gặp phải do việc lựa chọn các hàm kích hoạt không hợp lý hoặc số lượng các lớp ẩn của mạng quá lớn. Đặc biệt, các vấn đề này thường hay xuất hiện trong quá trình huấn luyện các mạng nơ-ron hồi quy. Trong thuật toán BPTT, khi chúng ta càng quay lùi về các bước thời gian trước đó thì các giá trị gradient càng giảm dần, điều này làm giảm tốc độ hội tụ của các trọng số do sự thay đổi hầu như rất nhỏ. Trong một số trường hợp khác, các gradient có giá trị rất lớn khiến cho quá trình cập nhật các trọng số bị phân kỳ và vấn đề này được gọi là gradient bùng nổ. Các vấn đề về gradient biến mất thường được quan tâm hơn vấn đề gradient bùng nổ do vấn đề gradient biến mất khó có thể được nhận biết trong khi gradient bùng nổ có thể dễ dàng quan sát và nhận biết hơn. Có nhiều nghiên cứu đề xuất các giải pháp để giải quyết những vấn đề này như lựa chọn hàm kích hoạt hợp lý, thiết lập các kích thước cho mạng hợp lý hoặc khởi tạo các trọng số ban đầu phù hợp khi huấn luyện. Một trong các giải pháp cụ thể có thể chỉ ra là thuật toán Truncated BPTT, một biến thể cải tiến của BPTT được áp dụng trong quá trình huấn luyện mạng nơ-ron hồi quy trên các chuỗi dài. Ngoài ra, cơ chế của [mạng LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được đề xuất đã khắc phục được các vấn đề này sẽ được giới thiệu trong phần tiếp theo.
 
+Mạng RNN bị ảnh hưởng bởi khả năng ghi nhớ ngắn hạn (short-term memory). Nếu dữ liệu đầu vào là một chuỗi trình tự dài, mạng RNN sẽ gặp khó khăn trong việc chuyển tải thông tin từ các bước thời gian đầu tiên đến các bước sau đó. Ví dụ trong bài toán phân loại văn bản, nếu chúng ta đang cố gắng xử lý một đoạn văn bản dài để thực hiện phân loại, mạng RNN có thể bỏ sót nhiều thông tin quan trọng ngay từ những bước đầu.
+
 ### Cơ chế hoạt động của mạng LSTM
 
-[LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất. Có thể hiểu một cách đơn giản là mạng RNN cơ bản trong thực tế không có khả năng ghi nhớ thông tin từ các bước có khoảng cách xa và do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau.
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/LSTMstepbystep.gif" alt="Ảnh minh hoạ quá trình xử lý dữ liệu của mạng LSTM">
+  <figcaption><i>Ảnh minh hoạ quá trình xử lý dữ liệu của mạng LSTM</i></figcaption>
+</center>
+</figure>
+
+[LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) là một phiên bản mở rộng của mạng RNN, được đề xuất vào năm 1997 bởi Sepp Hochreiter và Jürgen Schmidhuber. [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được thiết kế để giải quyết các bài toán về phụ thuộc xa (long-term dependencies) trong mạng RNN do bị ảnh hưởng bởi vấn đề gradient biến mất.
+
+Giả sử khi xem một bộ phim dài tập, chúng ta ghi nhớ bối cảnh phim đã diễn ra ở những tập trước đó hoặc khi đọc sách, chúng ta ghi nhớ điều gì đã xảy ra ở chương trước. Tương tự như vậy, khi các mạng RNN hoạt động, thông tin trước đó được ghi nhớ và sử dụng lại để xử lý cho đầu vào hiện tại. Tuy nhiên thì mạng RNN không thể ghi nhớ các phụ thuộc lâu dài do vấn đề gradient biến mất. [Mạng LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html) được thiết kế rõ ràng để khắc phục nhược điểm này. Có thể hiểu một cách đơn giản là mạng RNN cơ bản trong thực tế không có khả năng ghi nhớ thông tin từ các bước có khoảng cách xa và do đó những phần tử đầu tiên trong chuỗi đầu vào không có nhiều ảnh hưởng đến các kết quả tính toán dự đoán phần tử cho chuỗi đầu ra trong các bước sau.
 
 <figure class="image">
 <center>
@@ -70,7 +81,7 @@ Gradient biến mất (Vanishing Gradient Problem) và gradient bùng nổ (Expl
 Trước khi trình bày các phương trình mô tả cơ chế hoạt động bên trong của một tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html), chúng ta sẽ thống nhất quy ước một số ký hiệu được sử dụng sau đây:
 - ${x_{t}}$ là vector đầu vào tại mỗi bước thời gian $t$
 
-- {% raw %}$${W_{f,x}},{W_{f,h}},{W_{\mathop s\limits^ \sim  ,x}},{W_{\mathop s\limits^ \sim  ,h}},{W_{i,x}},{W_{i,h}},{W_{o,x}},{W_{o,h}}$${% endraw %} là các ma trận trọng số trong mỗi tế bào LSTM.
+- {% raw %}$${W_{f,x}},{W_{f,h}},{W_{\mathop s\limits^ \sim  ,x}},{W_{\mathop s\limits^ \sim  ,h}},{W_{i,x}},{W_{i,h}},{W_{o,x}},{W_{o,h}}$${% endraw %} là các ma trận trọng số trong mỗi tế bào [LSTM](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-long-short-term-memory-lstm.html).
 
 - {% raw %}$${b_f},{b_{\mathop s\limits^ \sim  }},{b_i},{b_o}$${% endraw %} là các vector bias.
 
@@ -127,6 +138,12 @@ Trong quá trình lan truyền xuôi (forward pass), cell internal state $${s_t}
 	{h_t} = {o_t} \circ \tanh \left( {{s_t}} \right)
 	\end{equation}
 	$${% endraw %}
+
+### Tài liệu tham khảo
+
+* <a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21" target="_blank">https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21</a>
+* <a href="https://towardsdatascience.com/lstm-networks-a-detailed-explanation-8fae6aefc7f9" target="_blank">https://towardsdatascience.com/lstm-networks-a-detailed-explanation-8fae6aefc7f9</a>
+
 
 <!--
 {% raw %}
