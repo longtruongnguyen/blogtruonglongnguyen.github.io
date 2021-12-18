@@ -29,6 +29,10 @@ author: Nguyễn Trường Long
 
 ### Sổ cái phân tán (distributed ledger)
 
+Sổ cái phân tán là một cơ sở dữ liệu được chia sẻ và đồng bộ hóa trên các tổ chức hoặc khu vực địa lý khác nhau và nhiều người có thể truy cập được. Nó cho phép các giao dịch đều có bằng chứng công khai. Người tham gia tại mỗi node của mạng có thể truy cập các bản ghi được chia sẻ trên mạng đó và có thể sở hữu một bản sao giống hệt. Bất kỳ thay đổi hoặc bổ sung nào được thực hiện đối với sổ cái đều được phản ánh và sao chép lại cho tất cả những người tham gia khác chỉ trong vòng vài giây hoặc vài phút.
+
+Sổ cái phân tán trái ngược với sổ cái tập trung. Sổ cái tập trung dễ bị tấn công mạng và gian lận hơn, vì nó có một điểm lỗi duy nhất (SPOF). Các sổ cái phân tán về cơ bản đều là một công nghệ tương tự được sử dụng bởi [blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html), đó là công nghệ được sử dụng bởi <strong><i>bitcoin</i></strong>. Hay nói cách khác thì [blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) là một loại sổ cái phân tán được sử dụng bởi <strong><i>bitcoin</i></strong>.
+
 ### Thuật toán đồng thuận (consensus algorithm)
 
 ### Hợp đồng thông minh (smart contract)
