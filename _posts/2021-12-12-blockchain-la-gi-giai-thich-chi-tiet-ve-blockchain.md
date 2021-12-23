@@ -32,19 +32,28 @@ author: Nguyễn Trường Long
 
 [Blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) tổ chức dữ liệu thành danh sách liên kết các khối. Các khối được kết nối với nhau bằng cách sử dụng mã băm và mỗi khối tham chiếu đến khối trước đó trong chuỗi. Dữ liệu trong [blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) liên kết với nhau trong chế độ chỉ cho phép nối thêm khối mới vào các khối đã được ghi. Điều này khiến cho nội dung của khối khó có thể bị giả mạo vì bất kỳ thay đổi nào của khối sẽ làm cho tất cả các khối kế thừa tiếp theo trở nên không hợp lệ.
 
-### Sổ cái phân tán (distributed ledger)
+#### Sổ cái phân tán (distributed ledger)
 
 Sổ cái phân tán là một cơ sở dữ liệu được chia sẻ và đồng bộ hóa trên các tổ chức hoặc khu vực địa lý khác nhau và nhiều người có thể truy cập được. Nó cho phép các giao dịch đều có bằng chứng công khai. Người tham gia tại mỗi node của mạng có thể truy cập các bản ghi được chia sẻ trên mạng đó và có thể sở hữu một bản sao giống hệt. Bất kỳ thay đổi hoặc bổ sung nào được thực hiện đối với sổ cái đều được phản ánh và sao chép lại cho tất cả những người tham gia khác chỉ trong vòng vài giây hoặc vài phút.
 
 Sổ cái phân tán trái ngược với sổ cái tập trung. Sổ cái tập trung dễ bị tấn công mạng và gian lận hơn, vì nó chỉ có một điểm lỗi duy nhất (SPOF). Các sổ cái phân tán về cơ bản đều là một công nghệ tương tự được sử dụng bởi [blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html).
 
-### Thuật toán đồng thuận (consensus algorithm)
+#### Thuật toán đồng thuận (consensus algorithm)
 
 Không có cơ quan trung ương nào xác thực và xác minh các giao dịch trong [mạng blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html). Nhưng mọi giao dịch trong [blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) đều được coi là hoàn toàn bảo mật và đều được xác minh. Thuật toán đồng thuận là một cơ chế mà thông qua đó toàn bộ [mạng blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) đạt được thỏa thuận về trạng thái hiện tại của sổ cái phân tán. Thông qua cơ chế này, [mạng blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) thiết lập sự tin tưởng giữa các peer chưa biết nhau trong môi trường lưu trữ phân tán. [Mạng blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) dựa trên thuật toán đồng thuận PoW và được sử dụng bởi các thợ đào để tạo ra các khối mới. Các khối mới này sau đó được phát đi yêu cầu vào trong mạng để xác minh sự đồng thuận và ghi vào sổ cái.
 
-### Hợp đồng thông minh (smart contract)
+#### Hợp đồng thông minh (smart contract)
 
 Hợp đồng thông minh có thể xem là các chương trình máy tính (computer programs) được lưu trữ và thực thi trên [mạng blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html). Mỗi hợp đồng thông minh bao gồm đoạn mã xác định các điều kiện tiên quyết, khi được đáp ứng sẽ được thực thi tạo ra kết quả. Bằng cách chạy trên một chuỗi khối phi tập trung thay vì một máy chủ tập trung, các hợp đồng thông minh cho phép nhiều bên đi đến kết quả được chia sẻ với nhau một cách chính xác và chống giả mạo.
+
+### Các loại công nghệ Blockchain
+
+Hiện tại có 3 nhóm công nghệ blockchain chính:
+- <i><a href="https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html" target="_blank">Public blockchain</a></i>: Tất cả các bản ghi đều có thể xem được công khai trong loại blockchain này. Mọi người đều có thể tham gia vào quy trình đồng thuận, kiểm tra và còn có thể xác minh các giao dịch. Một chuỗi khối công khai có thể được đọc và ghi bởi tất cả mọi người trên toàn cầu. Tiền điện tử được xây dựng dựa trên [public blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html).
+- <i><a href="https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html" target="_blank">Private blockchain</a></i>: Các node thuộc về một tổ chức cụ thể sẽ được cấp phép tham gia vào quá trình đồng thuận. Một [private blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) được coi là một mạng tập trung, do thực tế là chỉ có một tổ chức duy nhất kiểm soát nó hoàn toàn. [Private blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) thiết lập các giới hạn cho những người có thể đọc hoặc ghi chuỗi khối.
+- <i><a href="https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html" target="_blank">Consortium blockchain</a></i>: Loại [blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) này được xây dựng kết hợp bao gồm cả [private blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) và [public blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html). Nó thường cho phép các quan hệ đối tác như giữa doanh nghiệp với doanh nghiệp tương tác với nhau. Dữ liệu trong mạng bao gồm cả riêng tư hoặc công khai, được xem như một phần phi tập trung. Chỉ một tập hợp các node đã được chọn trước đó sẽ tham gia vào quy trình đồng thuận của chuỗi khối. Một số [consortium blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) tiêu biểu bao gồm R3CEV và Hyperledger. 
+
+### Ứng dụng của công nghệ Blockchain
 
 ### Tài liệu tham khảo
 
