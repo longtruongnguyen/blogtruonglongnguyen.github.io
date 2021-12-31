@@ -28,7 +28,7 @@ author: Nguyễn Trường Long
 - <i>Các khối (block)</i>: Các khối là tập hợp các giao dịch được nối vào chuỗi (chain) sau khi được xác thực. [Blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) dựa trên Khóa công khai (<i>Public keys</i>) để kết nối các khối khác nhau lại thành một danh sách liên kết.
 - <i>Sổ cái phân tán (distributed ledger)</i>: Sổ cái là một nhật ký ghi lại các giao dịch, lưu giữ toàn bộ lịch sử thay đổi dữ liệu. Sổ cái là không thể chỉnh sửa, các giao dịch đã xác nhận có thể được xác minh độc lập bởi mọi thành viên trong mạng. Mỗi thành viên của mạng đều duy trì một bản sao của sổ cái. [Blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) là một loại sổ cái phân tán của tất cả các khối (block) tạo thành mạng và được sử dụng bởi <strong><i>Bitcoin</i></strong>.
 - <i>Thuật toán đồng thuận (consensus algorithm)</i>: Các thuật toán đồng thuật giúp thống nhất chung một phương pháp giữa các thành viên trong mạng để cho phép các giao dịch và dữ liệu được ghi vào sổ cái và thực thi các đoạn mã smart contract. Nếu các yêu cầu đồng thuận không được đáp ứng thì các giao dịch hoặc hoạt động được xem là không hợp lệ. [Blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) sử dụng thuật toán đồng thuận để quyết định khối (block) nào sẽ được thêm vào chuỗi (chain).
-- <i>Hợp đồng thông minh (smart contract)</i>: Hợp đồng thông minh là các đoạn mã lập trình được thực thi trên [mạng blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html). Thông thường thì hợp đồng thông minh xác định các quy tắc của hợp đồng kinh doanh và được thực thi khi các điều kiện tiên quyết của hợp đồng đáp ứng. Ví dụ trong <i>Bitcoin</i>, hợp đồng thông minh sẽ thiết lập một tập hợp các điều kiện phải được đáp ứng để chuyển <strong><i>Bitcoin</i></strong> giữa những người dùng trên mạng.
+- <i>Hợp đồng thông minh (smart contract)</i>: Hợp đồng thông minh là các đoạn mã lập trình được thực thi trên [mạng blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html). Thông thường thì hợp đồng thông minh xác định các quy tắc của hợp đồng kinh doanh và được thực thi khi các điều kiện tiên quyết của hợp đồng đáp ứng. Ví dụ trong <strong><i>Bitcoin</i></strong>, hợp đồng thông minh sẽ thiết lập một tập hợp các điều kiện phải được đáp ứng để chuyển <strong><i>Bitcoin</i></strong> giữa những người dùng trên mạng.
 
 [Blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) tổ chức dữ liệu thành danh sách liên kết các khối. Các khối được kết nối với nhau bằng cách sử dụng mã băm và mỗi khối tham chiếu đến khối trước đó trong chuỗi. Dữ liệu trong [blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) liên kết với nhau trong chế độ chỉ cho phép nối thêm khối mới vào các khối đã được ghi. Điều này khiến cho nội dung của khối khó có thể bị giả mạo vì bất kỳ thay đổi nào của khối sẽ làm cho tất cả các khối kế thừa tiếp theo trở nên không hợp lệ.
 
@@ -57,11 +57,20 @@ Hợp đồng thông minh có thể xem là các chương trình máy tính (com
 </center>
 </figure>
 
-Cấu trúc dữ liệu của mỗi block trong blockchain bao gồm header section và body section.
+Cấu trúc dữ liệu của mỗi block trong [blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) bao gồm header section và body section.
 
-Trong danh sách được liên kết, liên kết từ node trước trỏ đến node sau được gọi là con trỏ (pointer). Con trỏ là các biến lưu trữ địa chỉ của node tiếp theo. Nó được sử dụng để chuyển tiếp sang node tiếp theo trong danh sách liên kết. Node cuối cùng trong danh sách được liên kết có một con trỏ lưu giá trị là null biểu diễn danh sách đã kết thúc.
+Các block được liên kết với nhau theo dạng khá tương đồng với cấu trúc dữ liệu của danh sách liên kết. Trong danh sách liên kết, liên kết từ node trước trỏ đến node sau được gọi là con trỏ (pointer). Con trỏ là các biến lưu trữ địa chỉ của node tiếp theo. Nó được sử dụng để chuyển tiếp sang node tiếp theo trong danh sách liên kết. Node cuối cùng trong danh sách được liên kết có một con trỏ lưu giá trị là null biểu diễn danh sách đã kết thúc.
 
-Trong [cấu trúc dữ liệu của blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html), liên kết từ block sau trỏ đến block trước được gọi là <strong><i>hash pointer</strong></i>. <strong><i>Hash pointer</strong></i> được sử dụng để tra cứu block trước đó của giao dịch và còn được sử dụng để xác minh rằng các giao dịch được lưu trữ trong block trước đó không bị giả mạo. <strong><i>Hash pointer</strong></i> là giá trị băm header data của block trước đó.
+Trong [cấu trúc dữ liệu của blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html), liên kết từ block sau trỏ đến block trước được gọi là <strong><i>hash pointer</i></strong>. <strong><i>Hash pointer</i></strong> được sử dụng để tra cứu block trước đó của giao dịch và còn được sử dụng để xác minh rằng các giao dịch được lưu trữ trong block trước đó không bị giả mạo. <strong><i>Hash pointer</i></strong> là giá trị băm header data của block trước đó.
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/MerkleTreeblockchain.png" alt="Cấu trúc dữ liệu phần body của mỗi block trong Blockchain">
+  <figcaption>
+	  <i>Cấu trúc dữ liệu phần body của mỗi block trong Blockchain</i>
+  </figcaption>
+</center>
+</figure>
 
 ### Các loại công nghệ Blockchain
 
