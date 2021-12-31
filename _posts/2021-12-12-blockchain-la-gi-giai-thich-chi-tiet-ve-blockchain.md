@@ -4,7 +4,7 @@ title: Blockchain là gì? Giải thích chi tiết về Blockchain
 description: Blockchain là một hệ thống lưu trữ thông tin theo cơ chế gây khó khăn cho việc thay đổi dữ liệu, hack hoặc gian lận hệ thống. Một sổ cái kỹ thuật số (digital ledger) ghi lại các giao dịch và được sao chép, phân phối trên toàn bộ mạng lưới hệ thống máy tính của blockchain.
 excerpt: Blockchain là một hệ thống lưu trữ thông tin theo cơ chế gây khó khăn cho việc thay đổi dữ liệu, hack hoặc gian lận hệ thống. Một sổ cái kỹ thuật số (digital ledger) ghi lại các giao dịch và được sao chép, phân phối trên toàn bộ mạng lưới hệ thống máy tính của blockchain.
 thumbnail: https://nguyentruonglong.net/images/BlockchainSystems.png
-keywords: blockchain là gì, giải thích chi tiết về blockchain, sổ cái phân tán, giải thích blockchain, công nghệ blockchain, blockchain, mạng blockchain
+keywords: blockchain là gì, giải thích chi tiết về blockchain, sổ cái phân tán, giải thích blockchain, công nghệ blockchain, blockchain, mạng blockchain, nền tảng blockchain, mô hình blockchain, cơ chế blockchain, sổ cái blockchain
 author: Nguyễn Trường Long
 ---
 
@@ -45,6 +45,23 @@ Không có cơ quan trung ương nào xác thực và xác minh các giao dịch
 #### Hợp đồng thông minh (smart contract)
 
 Hợp đồng thông minh có thể xem là các chương trình máy tính (computer programs) được lưu trữ và thực thi trên [mạng blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html). Mỗi hợp đồng thông minh bao gồm đoạn mã xác định các điều kiện tiên quyết, khi được đáp ứng sẽ được thực thi tạo ra kết quả. Bằng cách chạy trên một chuỗi khối phi tập trung thay vì một máy chủ tập trung, các hợp đồng thông minh cho phép nhiều bên đi đến kết quả được chia sẻ với nhau một cách chính xác và chống giả mạo.
+
+### Cấu trúc dữ liệu của Blockchain
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/BlockchainDataStructure.png" alt="Cấu trúc dữ liệu của mỗi block trong Blockchain">
+  <figcaption>
+	  <i>Cấu trúc dữ liệu của mỗi block trong Blockchain</i>
+  </figcaption>
+</center>
+</figure>
+
+Cấu trúc dữ liệu của mỗi block trong blockchain bao gồm header section và body section.
+
+Trong danh sách được liên kết, liên kết từ node trước trỏ đến node sau được gọi là con trỏ (pointer). Con trỏ là các biến lưu trữ địa chỉ của node tiếp theo. Nó được sử dụng để chuyển tiếp sang node tiếp theo trong danh sách liên kết. Node cuối cùng trong danh sách được liên kết có một con trỏ lưu giá trị là null biểu diễn danh sách đã kết thúc.
+
+Trong [cấu trúc dữ liệu của blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html), liên kết từ block sau trỏ đến block trước được gọi là <strong><i>hash pointer</strong></i>. <strong><i>Hash pointer</strong></i> được sử dụng để tra cứu block trước đó của giao dịch và còn được sử dụng để xác minh rằng các giao dịch được lưu trữ trong block trước đó không bị giả mạo. <strong><i>Hash pointer</strong></i> là giá trị băm header data của block trước đó.
 
 ### Các loại công nghệ Blockchain
 
