@@ -3,7 +3,7 @@ layout: post
 title: Cấu trúc dữ liệu cây Merkle (Merkle tree)
 description: Cây Merkle là một cấu trúc dữ liệu tổng quát của danh sách băm (hash list). Nó là một cấu trúc cây trong đó mỗi node lá có giá trị là kết quả hàm băm của một block dữ liệu và mỗi node không phải node lá có giá trị là kết quả một hàm băm các node con của nó.
 excerpt: Cây Merkle là một cấu trúc dữ liệu tổng quát của danh sách băm (hash list). Nó là một cấu trúc cây trong đó mỗi node lá có giá trị là kết quả hàm băm của một block dữ liệu và mỗi node không phải node lá có giá trị là kết quả một hàm băm các node con của nó.
-thumbnail: 
+thumbnail: https://nguyentruonglong.net/images/HashTree.png
 keywords: Cấu trúc dữ liệu cây Merkle, cây Merkle, Merkle tree
 author: Nguyễn Trường Long
 ---
