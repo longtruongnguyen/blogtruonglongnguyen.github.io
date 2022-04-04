@@ -28,4 +28,9 @@ Trong hình ảnh bên trên, chúng ta thấy có một dữ liệu đầu vào
 
 Trong các hệ thống phân tán (distributed system) và hệ thống ngang hàng (peer-to-peer system), việc xác minh dữ liệu là rất quan trọng. Điều này là do cùng một dữ liệu được chia sẻ ra và lưu trữ ở nhiều nơi khác nhau. Vì vậy nếu một phần dữ liệu được thay đổi ở một vị trí thì điều quan trọng là dữ liệu phải được thay đổi đồng nhất ở mọi nơi lưu trữ khác. Cơ chế xác minh dữ liệu được sử dụng để đảm bảo dữ liệu giống nhau ở tất cả mọi nơi.
 
-Tuy nhiên việc kiểm tra toàn bộ từng tệp dữ liệu bất kỳ khi nào hệ thống muốn xác minh dữ liệu sẽ tốn rất nhiều thời gian và chi phí tính toán. Vì vậy cây Merkle sẽ được sử dụng trong các trường hợp này. Nó giúp giới hạn lượng dữ liệu được gửi qua mạng trong quá trình xác minh càng nhiều càng tốt. Thay vì gửi toàn bộ tệp dữ liệu qua mạng, nó chỉ gửi giá trị kết quả băm của tệp dữ liệu để kiểm tra xem nó có khớp hay không.
+Tuy nhiên việc kiểm tra toàn bộ từng tệp dữ liệu bất kỳ khi nào hệ thống muốn xác minh dữ liệu sẽ tốn rất nhiều thời gian và chi phí tính toán. Vì vậy cây Merkle được sử dụng trong các trường hợp này. Nó giúp giới hạn lượng dữ liệu được gửi qua mạng trong quá trình xác minh càng nhiều càng tốt. Thay vì gửi toàn bộ tệp dữ liệu qua mạng, nó chỉ gửi giá trị kết quả băm của tệp dữ liệu để kiểm tra xem dữ liệu có khớp hay không.
+
+### Ứng dụng của cây Merkle trong Bitcoin
+
+Trong Bitcoin và các loại tiền điện tử khác, cây Merkle được sử dụng để mã hóa dữ liệu trong blockchain một cách hiệu quả và an toàn hơn. Nó là một cấu trúc dữ liệu toán học được tạo thành từ các hàm băm của các khối dữ liệu khác nhau. Cây Merkle tổng hợp tất cả các giao dịch trong một khối và tạo ra một dấu vân tay kỹ thuật số của toàn bộ tập hợp các hoạt động, cho phép người dùng xác minh xem nó có bao gồm một giao dịch (transaction) trong khối hay không. Nó cho phép xác minh tính nhất quán nhanh chóng và an toàn trên các bộ dữ liệu lớn. Merkle tree được thực hiện bằng cách băm các cặp node lặp đi lặp lại cho đến khi chỉ còn lại một kết quả băm cuối cùng, giá trị băm này được gọi là Merkle Root hoặc Root Hash.
+
