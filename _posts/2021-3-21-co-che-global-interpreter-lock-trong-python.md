@@ -13,7 +13,7 @@ Quản lý bộ nhớ là quy trình kiểm soát và phân phối tài nguyên 
 
 Khi chương trình yêu cầu bộ nhớ, vì máy tính chỉ có bộ nhớ với dung lượng hữu hạn nên trình quản lý bộ nhớ phải tìm một số vùng trống trong bộ nhớ để có thể cung cấp cho chương trình. Quá trình cung cấp bộ nhớ này thường được gọi là cấp phát bộ nhớ. Ngược lại khi dữ liệu không còn cần thiết nữa thì nó có thể bị xóa đi hoặc giải phóng. Tác vụ này có thể được thực hiện thủ công bởi lập trình viên hoặc tự động bởi trình quản lý bộ nhớ.
 
-Có một sự khác biệt đáng kể về mặt quản lý các đối tượng trong không gian bộ nhớ giữa ngôn ngữ lập trình Python và các ngôn ngữ lập trình khác. Tất cả các object trong Python đều được extension từ <i>PyObject</i> chứa hai thông tin cơ bản:
+Có một sự khác biệt đáng kể về mặt quản lý các đối tượng trong không gian bộ nhớ giữa ngôn ngữ lập trình Python và các ngôn ngữ lập trình khác. Tất cả các object trong Python đều được kế thừa từ <i>PyObject</i> chứa hai thông tin cơ bản:
 
 * <i>Py_REFCNT</i>: chứa số lượng tham chiếu của đối tượng
 * <i>Py_TYPE</i>: chứa con trỏ đến đối tượng loại tương ứng
