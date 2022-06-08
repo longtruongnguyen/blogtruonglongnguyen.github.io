@@ -17,7 +17,7 @@ author: Nguyễn Trường Long
 <center>
   <img src="https://nguyentruonglong.net/images/HashTree.png" alt="Cấu trúc dữ liệu cây Merkle">
   <figcaption>
-	  <i>Cấu trúc dữ liệu [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html)</i>
+	  <i>Cấu trúc dữ liệu cây Merkle</i>
   </figcaption>
 </center>
 </figure>
@@ -30,7 +30,12 @@ Trong các hệ thống phân tán (distributed system) và hệ thống ngang h
 
 Tuy nhiên việc kiểm tra toàn bộ từng tệp dữ liệu bất kỳ khi nào hệ thống muốn xác minh dữ liệu sẽ tốn rất nhiều thời gian và chi phí tính toán. Vì vậy [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng trong các trường hợp này. Nó giúp giới hạn lượng dữ liệu được gửi qua mạng trong quá trình xác minh càng nhiều càng tốt. Thay vì gửi toàn bộ tệp dữ liệu qua mạng, nó chỉ gửi giá trị kết quả băm của tệp dữ liệu để kiểm tra xem dữ liệu có khớp hay không.
 
-### Ứng dụng của [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) trong Bitcoin
+### Ứng dụng của cây Merkle trong Bitcoin
 
 Trong Bitcoin và các loại tiền điện tử khác, [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng để mã hóa dữ liệu trong blockchain một cách hiệu quả và an toàn hơn. Nó là một cấu trúc dữ liệu toán học được tạo thành từ các hàm băm của các khối dữ liệu khác nhau. Cây Merkle tổng hợp tất cả các giao dịch trong một khối và tạo ra một dấu vân tay kỹ thuật số của toàn bộ tập hợp các hoạt động, cho phép người dùng xác minh xem nó có bao gồm một giao dịch (transaction) trong khối hay không. Nó cho phép xác minh tính nhất quán nhanh chóng và an toàn trên các bộ dữ liệu lớn. Merkle tree được thực hiện bằng cách băm các cặp node lặp đi lặp lại cho đến khi chỉ còn lại một kết quả băm cuối cùng, giá trị băm này được gọi là Merkle Root hoặc Root Hash.
+
+### Tài liệu tham khảo
+
+* <a href="https://www.investopedia.com/terms/m/merkle-tree.asp" target="_blank">https://www.investopedia.com/terms/m/merkle-tree.asp</a>
+* <a href="https://www.gemini.com/cryptopedia/merkle-tree-blockchain-merkle-root" target="_blank">https://www.gemini.com/cryptopedia/merkle-tree-blockchain-merkle-root</a>
 
