@@ -9,6 +9,6 @@ author: Nguyễn Trường Long
 
 ### Giới thiệu về Domain-Driven Design
 
-Hôm vừa rồi tình cờ đọc được một số bài viết về [kiến trúc Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html). Thấy có hứng thú nên quyết định tìm hiểu sâu thêm về kiến trúc này mặc dù nó chưa thật sự phổ biến ở Việt Nam. Tài liệu mà tham khảo chủ yếu đến từ blog của bác Martin Fowler và sách của bác Eric Evans. Những tài liệu này sẽ được đính kèm ở mục tài liệu tham khảo bên dưới cuối bài viết này.
+Hôm vừa rồi tình cờ đọc được một số bài viết về [kiến trúc Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html). Thấy có hứng thú nên quyết định tìm hiểu sâu thêm về kiến trúc này mặc dù nó chưa thật sự phổ biến ở Việt Nam. Tài liệu được tham khảo chủ yếu đến từ blog của bác Martin Fowler và sách của bác Eric Evans. Những tài liệu này sẽ được đính kèm ở mục tài liệu tham khảo bên dưới cuối bài viết này. Trong bài viết này mình sẽ note lại những kiến thức trong quá trình tìm hiểu được dù thật sự chưa bao giờ có cơ hội làm việc trên kiến trúc này. Nếu có điều gì sai sót mong sẽ nhận được nhiều góp ý.
 
 ### Tài liệu tham khảo
