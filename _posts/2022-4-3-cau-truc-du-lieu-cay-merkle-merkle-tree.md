@@ -38,12 +38,12 @@ Trong Bitcoin và các loại tiền điện tử khác, [cây Merkle](https://n
 
 Đối với Git, commit ID của mỗi commit là giá trị băm của commit object đó. Giá trị băm này được tính toán từ tất cả dữ liệu liên quan tạo nên commit đó bao gồm:
 
-	* Những thay đổi tệp trong commit
-	* Tên của các tệp trong commit
-	* Tên của người đã commit
-	* Thời gian tạo commit
-	* Message mô tả commit
-	* Parent commit ID
+* Những thay đổi tệp trong commit
+* Tên của các tệp trong commit
+* Tên của người đã commit
+* Thời gian tạo commit
+* Message mô tả commit
+* Parent commit ID
 
 
 ### Tài liệu tham khảo
