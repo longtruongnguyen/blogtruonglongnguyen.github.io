@@ -32,7 +32,19 @@ Tuy nhiên việc kiểm tra toàn bộ từng tệp dữ liệu bất kỳ khi 
 
 ### Ứng dụng của cây Merkle trong Bitcoin
 
-Trong Bitcoin và các loại tiền điện tử khác, [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng để mã hóa dữ liệu trong blockchain một cách hiệu quả và an toàn hơn. Nó là một cấu trúc dữ liệu toán học được tạo thành từ các hàm băm của các khối dữ liệu khác nhau. Cây Merkle tổng hợp tất cả các giao dịch trong một khối và tạo ra một dấu vân tay kỹ thuật số của toàn bộ tập hợp các hoạt động, cho phép người dùng xác minh xem nó có bao gồm một giao dịch (transaction) trong khối hay không. Nó cho phép xác minh tính nhất quán nhanh chóng và an toàn trên các bộ dữ liệu lớn. Merkle tree được thực hiện bằng cách băm các cặp node lặp đi lặp lại cho đến khi chỉ còn lại một kết quả băm cuối cùng, giá trị băm này được gọi là Merkle Root hoặc Root Hash.
+Trong Bitcoin và các loại tiền điện tử khác, [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng để mã hóa dữ liệu trong blockchain một cách hiệu quả và an toàn hơn. Nó là một cấu trúc dữ liệu toán học được tạo thành từ các giá trị hàm băm của các khối (block) dữ liệu giao dịch khác nhau. [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) tổng hợp tất cả các giao dịch trong một khối và tạo ra một dấu vân tay kỹ thuật số của toàn bộ tập hợp các hoạt động, cho phép người dùng xác minh xem nó có bao gồm một giao dịch (transaction) trong khối hay không. Nó cho phép xác minh tính nhất quán nhanh chóng và an toàn trên các bộ dữ liệu lớn. [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được triển khai bằng cách băm các cặp node lặp đi lặp lại cho đến khi chỉ còn lại một kết quả băm cuối cùng, giá trị băm này được gọi là Merkle Root hoặc Root Hash.
+
+### Ứng dụng của cây Merkle trong Git
+
+Đối với Git, commit ID của mỗi commit là giá trị băm của commit object đó. Giá trị băm này được tính toán từ tất cả dữ liệu liên quan tạo nên commit đó bao gồm:
+
+	* Những thay đổi tệp trong commit
+	* Tên của các tệp trong commit
+	* Tên của người đã commit
+	* Thời gian tạo commit
+	* Message mô tả commit
+	* Parent commit ID
+
 
 ### Tài liệu tham khảo
 
