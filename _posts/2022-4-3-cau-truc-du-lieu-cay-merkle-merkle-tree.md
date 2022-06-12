@@ -11,7 +11,7 @@ author: Nguyễn Trường Long
 
 [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) là một cấu trúc dữ liệu tổng quát của danh sách băm (hash list). Nó là một cấu trúc cây trong đó mỗi node lá có giá trị là kết quả hàm băm của một block dữ liệu và mỗi node không phải node lá có giá trị là kết quả một hàm băm các node con của nó. [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) có hệ số phân nhánh là 2 với mỗi node sẽ có tối đa là 2 node con.
 
-[Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng trong các hệ thống phân tán dùng xác minh dữ liệu. [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) tỏ ra hiệu quả vì nó sử dụng hàm băm thay vì các tệp dữ liệu đầy đủ. Hàm băm là cách mã hóa tệp dữ liệu thành các dữ liệu có kích thước nhỏ hơn nhiều so với dữ liệu thực. Hiện tại thì cấu trúc dữ liệu cây Merkle được ứng dụng chính trong các mạng ngang hàng như Tor, Bitcoin và Git,... 
+[Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng trong các hệ thống phân tán dùng xác minh dữ liệu. [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) tỏ ra hiệu quả vì nó sử dụng hàm băm thay vì các tệp dữ liệu đầy đủ. Hàm băm là cách mã hóa tệp dữ liệu thành các dữ liệu có kích thước nhỏ hơn nhiều so với dữ liệu thực. Hiện tại thì [cấu trúc dữ liệu cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được ứng dụng chính trong các mạng ngang hàng như [Tor](https://www.torproject.org), [Bitcoin](https://bitcoin.org/bitcoin.pdf) và [Git](https://git-scm.com),... 
 
 <figure class="image">
 <center>
@@ -32,11 +32,11 @@ Tuy nhiên việc kiểm tra toàn bộ từng tệp dữ liệu bất kỳ khi 
 
 ### Ứng dụng của cây Merkle trong Bitcoin
 
-Trong Bitcoin và các loại tiền điện tử khác, [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng để mã hóa dữ liệu trong blockchain một cách hiệu quả và an toàn hơn. Nó là một cấu trúc dữ liệu toán học được tạo thành từ các giá trị hàm băm của các khối (block) dữ liệu giao dịch khác nhau. [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) tổng hợp tất cả các giao dịch trong một khối và tạo ra một dấu vân tay kỹ thuật số của toàn bộ tập hợp các hoạt động, cho phép người dùng xác minh xem nó có bao gồm một giao dịch (transaction) trong khối hay không. Nó cho phép xác minh tính nhất quán nhanh chóng và an toàn trên các bộ dữ liệu lớn. [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được triển khai bằng cách băm các cặp node lặp đi lặp lại cho đến khi chỉ còn lại một kết quả băm cuối cùng, giá trị băm này được gọi là Merkle Root hoặc Root Hash.
+Trong [Bitcoin](https://bitcoin.org/bitcoin.pdf) và các loại tiền điện tử khác, [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng để mã hóa dữ liệu trong [blockchain](https://nguyentruonglong.net/blockchain-la-gi-giai-thich-chi-tiet-ve-blockchain.html) một cách hiệu quả và an toàn hơn. Nó là một cấu trúc dữ liệu toán học được tạo thành từ các giá trị hàm băm của các khối (block) dữ liệu giao dịch khác nhau. [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) tổng hợp tất cả các giao dịch trong một khối và tạo ra một dấu vân tay kỹ thuật số của toàn bộ tập hợp các hoạt động, cho phép người dùng xác minh xem nó có bao gồm một giao dịch (transaction) trong khối hay không. Nó cho phép xác minh tính nhất quán nhanh chóng và an toàn trên các bộ dữ liệu lớn. [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được triển khai bằng cách băm các cặp node lặp đi lặp lại cho đến khi chỉ còn lại một kết quả băm cuối cùng, giá trị băm này được gọi là Merkle Root hoặc Root Hash.
 
 ### Ứng dụng của cây Merkle trong Git
 
-Đối với Git, commit ID của mỗi commit là giá trị băm của commit object đó. Giá trị băm này được tính toán từ tất cả dữ liệu liên quan tạo nên commit đó bao gồm:
+Đối với [Git](https://git-scm.com), commit ID của mỗi commit là giá trị băm của commit object đó. Giá trị băm này được tính toán từ tất cả dữ liệu liên quan tạo nên commit đó bao gồm:
 
 * Những thay đổi tệp trong commit
 * Tên của các tệp trong commit
@@ -45,9 +45,12 @@ Trong Bitcoin và các loại tiền điện tử khác, [cây Merkle](https://n
 * Message mô tả commit
 * Parent commit ID
 
+[Git](https://git-scm.com) sử dụng [object database](https://en.wikipedia.org/wiki/Object_database) để tổ chức và quản lý repository system. Mỗi blob, tree và commit đều có một giá trị băm. Chính vì vậy có thể nói [Git](https://git-scm.com) là một content-addressable filesystem. Nếu chúng ta muốn tham chiếu đến một đối tượng cụ thể, chúng ta chỉ cần biết giá trị băm này. [Git](https://git-scm.com) sử dụng cơ chế này để đảm bảo các định danh luôn là duy nhất và không xảy ra xung đột. [Object database](https://en.wikipedia.org/wiki/Object_database) của [Git](https://git-scm.com) có cấu trúc là một [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html). Nói chính xác hơn là cấu trúc của một nhóm các [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) trỏ đến các [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) khác. Cấu trúc này có thể được vận hành mà không cần tốn nhiều chi phí tài nguyên và rất khó sửa đổi nội dung. Các commit nếu muốn chỉnh sửa giả mạo đòi hỏi phải thực hiện rất nhiều tính toán cập nhật. Các cập nhật mới này khi so sánh với những bản sao khác sẽ không trùng khớp và không được chấp nhận.
 
 ### Tài liệu tham khảo
 
 * <a href="https://www.investopedia.com/terms/m/merkle-tree.asp" target="_blank">https://www.investopedia.com/terms/m/merkle-tree.asp</a>
 * <a href="https://www.gemini.com/cryptopedia/merkle-tree-blockchain-merkle-root" target="_blank">https://www.gemini.com/cryptopedia/merkle-tree-blockchain-merkle-root</a>
+* <a href="https://initialcommit.com/blog/Learn-Git-Object-Database" target="_blank">https://initialcommit.com/blog/Learn-Git-Object-Database</a>
+
 
