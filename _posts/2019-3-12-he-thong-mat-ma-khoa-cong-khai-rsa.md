@@ -5,25 +5,32 @@ description: Hệ thống mật mã khóa công khai RSA được đặt tên d�
 keywords: "khóa công khai RSA, hệ thống mật mã RSA, mã hóa công khai RSA, mã hóa RSA, hệ thống mật mã khóa công khai RSA, khóa RSA"
 ---
 
-RSA được đặt tên dựa theo tên của những người phát minh ra nó là Ronald L. Rivest, Adi Shamir và Leonard M. Adleman. Những người này đã tạo ra hệ thống mật mã khóa công khai RSA khi họ còn đang làm việc tại Viện Công nghệ Massachusetts (MIT). Trong phạm vi của bài viết này, mình sẽ trình bày về ý tưởng cơ chế hoạt động của hệ thống mật mã khóa công khai RSA, các cơ sở lý thuyết toán học trong quá trình mã hóa và giải mã thông điệp cùng với ví dụ minh họa cụ thể.
+RSA được đặt tên dựa theo tên của những người phát minh ra nó là Ronald L. Rivest, Adi Shamir và Leonard M. Adleman. Những người này đã tạo ra [hệ thống mật mã khóa công khai RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) khi họ còn đang làm việc tại Viện Công nghệ Massachusetts (MIT). Trong phạm vi của bài viết này, mình sẽ trình bày về ý tưởng cơ chế hoạt động của [hệ thống mật mã khóa công khai RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html), các cơ sở lý thuyết toán học trong quá trình mã hóa và giải mã thông điệp cùng với ví dụ minh họa cụ thể.
 
 ### Cơ chế hoạt động
 
-Để mọi người có thể dễ hiểu hơn, mình sẽ dùng một ví dụ cụ thể sau đây để giải thích về cơ chế hoạt động của RSA. Giả sử Lan muốn gửi thư cho Điệp nhưng không muốn bị người khác có thể đọc được thư của mình.
+Để mọi người có thể dễ hiểu hơn, mình sẽ dùng một ví dụ cụ thể sau đây để giải thích về cơ chế hoạt động của [RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html). Giả sử Bob muốn gửi thư cho Alice nhưng không muốn bị người khác có thể đọc được thư của mình.
+
+<figure class="image">
+<center>
+  <img src="https://nguyentruonglong.net/images/RSAAlgorithmStructure.png" alt="Ảnh minh họa cho cơ chế hoạt động của hệ thống mật mã khóa công khai RSA">
+  <figcaption><i>Ảnh minh họa cho cơ chế hoạt động của hệ thống mật mã khóa công khai RSA</i></figcaption>
+</center>
+</figure>
 
 ### Cơ sở toán học
 
-**_<span style="color:black">Rất dễ để thực hiện quá trình tìm một số nguyên tố ngẫu nhiên với kích thước cho trước</span>_**
+* <span style="color:black">Rất dễ để thực hiện quá trình tìm một số nguyên tố ngẫu nhiên với kích thước cho trước</span>
 
-**_<span style="color:black">Cho 2 số $$p$$ và $$q$$, quá trình tính tích $$n = pq$$ luôn được thực hiện dễ dàng</span>_**
+* <span style="color:black">Cho 2 số $$p$$ và $$q$$, quá trình tính tích $$n = pq$$ luôn được thực hiện dễ dàng</span>
 
-**_<span style="color:black">Cho số $$n$$, quá trình tìm lại các thừa số nguyên tố $$p$$ và $$q$$ là rất khó</span>_**
+* <span style="color:black">Cho số $$n$$, quá trình tìm lại các thừa số nguyên tố $$p$$ và $$q$$ là rất khó</span>
 
-**_<span style="color:black">Cho các số $$m$$, $$n$$ và $$e$$, quá trình tính $$c = {m^e}\,\bmod \,n$$ luôn được thực hiện dễ dàng</span>_**
+* <span style="color:black">Cho các số $$m$$, $$n$$ và $$e$$, quá trình tính $$c = {m^e}\,\bmod \,n$$ luôn được thực hiện dễ dàng</span>
 
-**_<span style="color:black">Cho các số $$n, e, c$$ và các thừa số nguyên tố $$p$$ và $$q$$, quá trình tìm $$m$$ sao cho thỏa mãn $$c = {m^e}\,\bmod \,n$$ luôn được thực hiện dễ dàng</span>_**
+* <span style="color:black">Cho các số $$n, e, c$$ và các thừa số nguyên tố $$p$$ và $$q$$, quá trình tìm $$m$$ sao cho thỏa mãn $$c = {m^e}\,\bmod \,n$$ luôn được thực hiện dễ dàng</span>
 
-**_<span style="color:black">Chỉ cung cấp các số $$n, e, c$$ nhưng không cung cấp các thừa số nguyên tố $$p$$ và $$q$$, quá trình tìm $$m$$ sao cho thỏa mãn $$c = {m^e}\,\bmod \,n$$ là không dễ dàng</span>_**
+* <span style="color:black">Chỉ cung cấp các số $$n, e, c$$ nhưng không cung cấp các thừa số nguyên tố $$p$$ và $$q$$, quá trình tìm $$m$$ sao cho thỏa mãn $$c = {m^e}\,\bmod \,n$$ là không dễ dàng</span>
 
 ### Tạo cặp khóa trong RSA
 
