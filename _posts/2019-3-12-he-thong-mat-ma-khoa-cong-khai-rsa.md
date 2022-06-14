@@ -7,16 +7,25 @@ keywords: "khóa công khai RSA, hệ thống mật mã RSA, mã hóa công khai
 
 RSA được đặt tên dựa theo tên của những người phát minh ra nó là Ronald L. Rivest, Adi Shamir và Leonard M. Adleman. Những người này đã tạo ra [hệ thống mật mã khóa công khai RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) khi họ còn đang làm việc tại Viện Công nghệ Massachusetts (MIT). Trong phạm vi của bài viết này, mình sẽ trình bày về ý tưởng cơ chế hoạt động của [hệ thống mật mã khóa công khai RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html), các cơ sở lý thuyết toán học trong quá trình mã hóa và giải mã thông điệp cùng với ví dụ minh họa cụ thể.
 
+### Ý tưởng và nguyên lý
+
+RSA được xây dựng dựa trên ý tưởng cho rằng thao tác thực hiện phép tích với các thừa số có kích thước lớn cho trước là rất dễ dàng, nhưng phân tích một số cho trước có kích thước lớn thành các thừa số là rất khó khăn. Ví dụ quá trình thực hiện phép nhân 571 với 997 rất mau chóng cho ra kết quả là 569.287. Nhưng quá trình phân tích 569.287 thành các thừa số thì không dễ dàng như vậy.
+
 ### Cơ chế hoạt động
 
-Để mọi người có thể dễ hiểu hơn, mình sẽ dùng một ví dụ cụ thể sau đây để giải thích về cơ chế hoạt động của [RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html). Giả sử Bob muốn gửi thư cho Alice nhưng không muốn bị người khác có thể đọc được thư của mình.
+Để mọi người có thể dễ hiểu hơn, mình sẽ dùng một ví dụ cụ thể sau đây để giải thích về cơ chế hoạt động của [RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html). Giả sử Alice muốn gửi cho Bob một món đồ quý giá nhưng không muốn bị người khác có thể biết được. 
 
 <figure class="image">
 <center>
-  <img src="https://nguyentruonglong.net/images/RSAAlgorithmStructure.png" alt="Ảnh minh họa cho cơ chế hoạt động của hệ thống mật mã khóa công khai RSA">
+  <img src="https://nguyentruonglong.net/images/RSAEncryption.png" alt="Ảnh minh họa cho cơ chế hoạt động của hệ thống mật mã khóa công khai RSA">
   <figcaption><i>Ảnh minh họa cho cơ chế hoạt động của hệ thống mật mã khóa công khai RSA</i></figcaption>
 </center>
 </figure>
+
+* Đầu tiên Bob gửi cho Alice một ổ khóa kèm chiếc rương đã mở khóa. Bob sẽ giữ lại chìa khoá tương ứng cho ổ khoá này và không gửi nó cho bất kỳ ai.
+* Alice sau khi nhận ổ khoá kèm chiếc rương từ Bob sẽ bỏ món đồ cần gửi vào rương và bấm khoá lại. Ngay cả Alice sau khi bấm khoá cũng không thể tự mở khoá ra.
+* Alice sau đó gửi chiếc rương đã khoá lại có món đồ bên trong cho Bob.
+* Bob nhận chiếc rương này sẽ dùng chìa khoá tương ứng ban đầu để mở khoá ra và lấy món đồ trong rương.
 
 ### Cơ sở toán học
 
@@ -34,7 +43,7 @@ RSA được đặt tên dựa theo tên của những người phát minh ra n�
 
 ### Tạo cặp khóa trong RSA
 
-Một cặp **Public Key** và **Private Key** trong RSA có thể được tạo thành thông qua các bước sau đây:
+Một cặp <strong><i>public Key</i></strong> và <strong><i>private Key</i></strong> trong RSA có thể được tạo thành thông qua các bước sau đây:
 
 1. Tạo ra ngẫu nhiên một cặp số nguyên tố $p$ và $q$ có kích thước rất lớn
 2. Tính $n$ với $$n = pq$$
@@ -58,3 +67,13 @@ $$\begin{align}
 m = DECRYPT\left( c \right) = {c^d}\bmod n
 \end{align}$$
 {% endraw %}
+
+### Ứng dụng của mã hoá RSA
+
+### Mã hoá RSA trong một vài ngôn ngữ lập trình
+
+### Bẻ khoá RSA
+
+### Tài liệu tham khảo
+
+* <a href="https://www.amsi.org.au/teacher_modules/pdfs/Maths_delivers/Encryption5.pdf" target="_blank">https://www.amsi.org.au/teacher_modules/pdfs/Maths_delivers/Encryption5.pdf</a>
