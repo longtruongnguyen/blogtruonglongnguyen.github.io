@@ -27,33 +27,19 @@ RSA được xây dựng dựa trên ý tưởng cho rằng thao tác thực hi�
 * Alice sau đó gửi chiếc rương đã khoá lại có món đồ bên trong cho Bob.
 * Bob nhận chiếc rương này sẽ dùng chìa khoá tương ứng ban đầu để mở khoá ra và lấy món đồ trong rương.
 
-Ví dụ này thể hiện những ý tưởng về cơ chế hoạt động của mật mã khóa công khai, mặc dù trên thực tế có hơi khác một chút. Trong [RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html), Alice mã hóa thông điệp (message) của mình bằng <strong><i>khóa công khai (public key)</i></strong> của Bob. Thông điệp đã mã hoá bằng khoá này chỉ có thể được giải mã bằng <strong><i>khóa riêng tư (public key)</i></strong> của Bob.
+Ví dụ này thể hiện những ý tưởng về cơ chế hoạt động của mật mã khóa công khai, mặc dù trên thực tế có hơi khác một chút. Trong [RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html), Alice mã hóa thông điệp (message) của mình bằng <strong><i>khóa công khai (public key)</i></strong> của Bob. Thông điệp đã mã hoá bằng khoá này chỉ có thể được giải mã bằng <strong><i>khóa riêng tư (private key)</i></strong> của Bob.
 
 Khóa công khai được tạo bằng cách nhân hai số nguyên tố lớn $$p$$ và $$q$$ với nhau. Khóa riêng tư được tạo thông qua một quy trình khác liên quan đến $$p$$ và $$q$$. Bên cần trao đổi thông điệp sau đó có thể phân phối khóa công khai $$pq$$ của mình cho bất kỳ bên nào muốn gửi thông điệp và giữ lại khoá riêng tư. Bên gửi thông điệp sẽ mã hóa thông điệp của họ bằng khóa công khai trước khi gửi đi.
 
-### Cơ sở toán học
-
-* <span style="color:black">Rất dễ để thực hiện quá trình tìm một số nguyên tố ngẫu nhiên với kích thước cho trước</span>
-
-* <span style="color:black">Cho 2 số $$p$$ và $$q$$, quá trình tính tích $$n = pq$$ luôn được thực hiện dễ dàng</span>
-
-* <span style="color:black">Cho số $$n$$, quá trình tìm lại các thừa số nguyên tố $$p$$ và $$q$$ là rất khó</span>
-
-* <span style="color:black">Cho các số $$m$$, $$n$$ và $$e$$, quá trình tính $$c = {m^e}\,\bmod \,n$$ luôn được thực hiện dễ dàng</span>
-
-* <span style="color:black">Cho các số $$n, e, c$$ và các thừa số nguyên tố $$p$$ và $$q$$, quá trình tìm $$m$$ sao cho thỏa mãn $$c = {m^e}\,\bmod \,n$$ luôn được thực hiện dễ dàng</span>
-
-* <span style="color:black">Chỉ cung cấp các số $$n, e, c$$ nhưng không cung cấp các thừa số nguyên tố $$p$$ và $$q$$, quá trình tìm $$m$$ sao cho thỏa mãn $$c = {m^e}\,\bmod \,n$$ là không dễ dàng</span>
-
 ### Tạo cặp khóa trong RSA
 
-Một cặp <strong><i>public key</i></strong> và <strong><i>private key</i></strong> trong [mật mã RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) có thể được tạo thành thông qua các bước sau đây:
+Một cặp <strong><i>khóa công khai (public key)</i></strong> và <strong><i>khóa riêng tư (private key)</i></strong> trong [mật mã RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) có thể được tạo thành thông qua các bước sau đây:
 
-1. Tạo ra ngẫu nhiên một cặp số nguyên tố $p$ và $q$ có kích thước rất lớn
-2. Tính $n$ với $$n = pq$$
-3. Chọn ra một số mũ lẻ công khai (odd public exponent) $e$ có giá trị từ $3$ đến $n-1$ mà nguyên tố cùng nhau (coprime) với $p-1$ và $q-1$
-4. Tính toán số mũ bí mật (private exponent) $d$ từ $e, p$ và $q$ với e thỏa mãn {% raw %}$$de \equiv 1\,\,\left( {\bmod \,L} \right)$${% endraw %}, trong đó {% raw %}$$L = LCM\left( {p - 1,q - 1} \right)$${% endraw %}
-5. Gán $$public\,key = (n, e)$$ và $$private\,key = (n, d)$$
+1. Tạo ra ngẫu nhiên một cặp số nguyên tố $p$ và $q$ có kích thước rất lớn.
+2. Tính $n$ với $$n = pq$$.
+3. Chọn ra một số mũ lẻ công khai (odd public exponent) $e$ có giá trị từ $3$ đến $n-1$ mà nguyên tố cùng nhau (coprime) với $p-1$ và $q-1$.
+4. Tính toán số mũ bí mật (private exponent) $d$ từ $e, p$ và $q$ với e thỏa mãn {% raw %}$$de \equiv 1\,\,\left( {\bmod \,L} \right)$${% endraw %}, trong đó {% raw %}$$L = LCM\left( {p - 1,q - 1} \right)$${% endraw %}.
+5. Gán $$public\,key = (n, e)$$ và $$private\,key = (n, d)$$.
 
 ### Mã hóa nội dung trong RSA
 
@@ -71,6 +57,20 @@ $$\begin{align}
 m = DECRYPT\left( c \right) = {c^d}\bmod n
 \end{align}$$
 {% endraw %}
+
+### Cơ sở toán học
+
+* <span style="color:black">Rất dễ để thực hiện quá trình tìm một số nguyên tố ngẫu nhiên với kích thước cho trước.</span>
+
+* <span style="color:black">Cho 2 số $$p$$ và $$q$$, quá trình tính tích $$n = pq$$ luôn được thực hiện dễ dàng.</span>
+
+* <span style="color:black">Cho số $$n$$, quá trình tìm lại các thừa số nguyên tố $$p$$ và $$q$$ là rất khó.</span>
+
+* <span style="color:black">Cho các số $$m$$, $$n$$ và $$e$$, quá trình tính $$c = {m^e}\,\bmod \,n$$ luôn được thực hiện dễ dàng.</span>
+
+* <span style="color:black">Cho các số $$n, e, c$$ và các thừa số nguyên tố $$p$$ và $$q$$, quá trình tìm $$m$$ sao cho thỏa mãn $$c = {m^e}\,\bmod \,n$$ luôn được thực hiện dễ dàng.</span>
+
+* <span style="color:black">Chỉ cung cấp các số $$n, e, c$$ nhưng không cung cấp các thừa số nguyên tố $$p$$ và $$q$$, quá trình tìm $$m$$ sao cho thỏa mãn $$c = {m^e}\,\bmod \,n$$ là không dễ dàng.</span>
 
 ### Ứng dụng của mã hoá RSA
 
