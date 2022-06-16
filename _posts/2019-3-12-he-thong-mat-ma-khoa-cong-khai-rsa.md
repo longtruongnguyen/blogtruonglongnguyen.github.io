@@ -83,5 +83,5 @@ Nhiều giao thức bao gồm Secure Shell (SSH), OpenPGP, S/MIME và SSL/TLS đ
 * <a href="https://www.amsi.org.au/teacher_modules/pdfs/Maths_delivers/Encryption5.pdf" target="_blank">https://www.amsi.org.au/teacher_modules/pdfs/Maths_delivers/Encryption5.pdf</a>
 * <a href="https://www.techtarget.com/searchsecurity/definition/RSA" target="_blank">https://www.techtarget.com/searchsecurity/definition/RSA</a>
 * <a href="https://www.quintessencelabs.com/blog/breaking-rsa-encryption-update-state-art" target="_blank">https://www.quintessencelabs.com/blog/breaking-rsa-encryption-update-state-art</a>
-
+* <a href="https://www.section.io/engineering-education/rsa-encryption-and-decryption-in-python" target="_blank">https://www.section.io/engineering-education/rsa-encryption-and-decryption-in-python</a>
 
