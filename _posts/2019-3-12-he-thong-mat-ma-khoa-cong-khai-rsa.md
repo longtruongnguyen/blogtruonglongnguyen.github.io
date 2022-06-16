@@ -9,7 +9,7 @@ keywords: "khóa công khai RSA, hệ thống mật mã RSA, mã hóa công khai
 
 ### Ý tưởng và nguyên lý
 
-RSA được xây dựng dựa trên ý tưởng cho rằng thao tác thực hiện phép tích với các thừa số có kích thước lớn cho trước là rất dễ dàng, nhưng phân tích một số cho trước có kích thước lớn thành các thừa số là rất khó khăn. Ví dụ quá trình thực hiện phép nhân 571 với 997 rất mau chóng cho ra kết quả là 569.287. Nhưng quá trình phân tích 569.287 thành các thừa số thì không dễ dàng như vậy.
+[Thuật toán RSA (RSA algorithm)](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) được xây dựng dựa trên ý tưởng cho rằng thao tác thực hiện phép tích với các thừa số có kích thước lớn cho trước là rất dễ dàng, nhưng phân tích một số cho trước có kích thước lớn thành các thừa số là rất khó khăn. Ví dụ quá trình thực hiện phép nhân 571 với 997 rất mau chóng cho ra kết quả là 569.287. Nhưng quá trình phân tích 569.287 thành các thừa số thì không dễ dàng như vậy.
 
 ### Cơ chế hoạt động
 
