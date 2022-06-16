@@ -76,14 +76,12 @@ m = DECRYPT\left( c \right) = {c^d}\bmod n
 
 Trong [mật mã RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html), cả khóa công khai và khóa riêng tư đều có thể mã hóa nội dung. Nếu một khoá được sử dụng để mã hoá nội dung thì khoá còn lại được dùng để giải mã nội dung. Thuộc tính này là một lý do tại sao [RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) trở thành thuật toán bất đối xứng (asymmetric cryptography) được sử dụng rộng rãi nhất. Nó cung cấp phương pháp đảm bảo tính bí mật, tính toàn vẹn, tính xác thực và tính không thể chối bỏ (non-repudiation) của truyền thông điện tử.
 
-Nhiều giao thức bao gồm Secure Shell (SSH), OpenPGP, S/MIME và SSL/TLS đều dựa vào [mã hoá RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) cho các chức năng mã hóa và chữ ký số. Nó cũng được sử dụng trong các trình duyệt để lập một kết nối an toàn qua một mạng không an toàn. Xác minh chữ ký [RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) là một trong những hoạt động được thực hiện phổ biến nhất trong các hệ thống kết nối mạng.
-
-### Mã hoá RSA trong một vài ngôn ngữ lập trình
-
-### Bẻ khoá RSA
+Nhiều giao thức bao gồm Secure Shell (SSH), OpenPGP, S/MIME và SSL/TLS đều dựa vào [mã hoá RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) cho các chức năng mã hóa và chữ ký số. Nó cũng được sử dụng trong các trình duyệt để thiết lập một kết nối an toàn qua các mạng không an toàn. Xác minh chữ ký [RSA](https://nguyentruonglong.net/he-thong-mat-ma-khoa-cong-khai-rsa.html) là một trong những hoạt động được thực hiện phổ biến nhất trong các hệ thống kết nối mạng.
 
 ### Tài liệu tham khảo
 
 * <a href="https://www.amsi.org.au/teacher_modules/pdfs/Maths_delivers/Encryption5.pdf" target="_blank">https://www.amsi.org.au/teacher_modules/pdfs/Maths_delivers/Encryption5.pdf</a>
 * <a href="https://www.techtarget.com/searchsecurity/definition/RSA" target="_blank">https://www.techtarget.com/searchsecurity/definition/RSA</a>
+* <a href="https://www.quintessencelabs.com/blog/breaking-rsa-encryption-update-state-art" target="_blank">https://www.quintessencelabs.com/blog/breaking-rsa-encryption-update-state-art</a>
+
 
