@@ -26,6 +26,8 @@ Trong lập trình hướng đối tượng, thay vì kế thừa các tính nă
 
 #### Tính trừu tượng (abstraction)
 
-#### Tính bao đóng (encapsulation)
+#### Tính đóng gói (encapsulation)
+
+Đóng gói là một trong những khái niệm cơ bản trong lập trình hướng đối tượng. Tính chất này cho phép gói dữ liệu và các phương thức hoạt động trên dữ liệu trong một đơn vị. Điều này tạo ra những hạn chế nhất định trong việc truy cập trực tiếp tới các biến và phương thức, ngăn chặn việc sửa đổi dữ liệu theo cách không mong đợi. Chỉ có thể thay đổi giá trị biến của đối tượng bằng phương thức của đối tượng. Các loại biến kiểu như vậy được gọi là biến riêng tư (private variable).
 
 ### Tài liệu tham khảo
