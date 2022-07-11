@@ -13,7 +13,9 @@ Lập trình hướng đối tượng (OOP) là một mô hình lập trình tro
 
 ### Class và Object trong Python
 
-Một object là tập hợp các dữ liệu có hành vi liên quan với nhau. Class giống như một bản vẽ (blueprint) để tạo ra object. Các object được tạo từ một định nghĩa được gọi là class. Trong ngôn ngữ lập trình Python thì mã lập trình có thể xác định các thuộc tính (attributes) và phương thức (methods). Theo quy ước thì tên class phải bắt đầu bằng một chữ cái viết hoa.
+Một object là tập hợp các dữ liệu có hành vi liên quan với nhau. Class giống như một bản vẽ (blueprint) để tạo ra object. Nó là bản thiết kế mô tả chi tiết của một đối tượng. Các object riêng lẻ được tạo từ một định nghĩa chính là class. Theo thuật ngữ trong OOP thuần túy thì object là thể hiện (instance) cụ thể của class. Trong ngôn ngữ lập trình Python, mã lập trình có thể xác định các thuộc tính (attributes) và phương thức (methods). Một class trong ngôn ngữ Python chỉ đơn giản là đại diện của một loại đối tượng (type of object). Class trong Python bao gồm ba thứ là tên, thuộc tính và phương thức. Theo quy ước thì tên class phải bắt đầu bằng một chữ cái viết hoa. 
+
+Khi một định nghĩa class trong Python được khai báo thì một namespace mới được tạo ra và xem như là một phạm vi cục bộ (local scope). Cú pháp định nghĩa class có hai phần: tiêu đề class và tập hợp các định nghĩa phương thức theo sau tiêu đề class. Tiêu đề class bao gồm tên class và tên class cha. Tên class chính là một định danh trong Python (Python identifier).
 
 ### Các tính chất OOP trong Python
 
