@@ -9,11 +9,16 @@ author: Nguyễn Trường Long
 
 ### Lập trình hướng đối tượng trong Python
 
+Lập trình hướng đối tượng (OOP) là một mô hình lập trình trong đó khối xây dựng cơ bản (building block) là đối tượng phần mềm (software object). Ý tưởng chính là biểu diễn các đối tượng trong cuộc sống thực như các đối tượng phần mềm, kết hợp các đặc điểm (thuộc tính) và hành vi (phương thức).
+
 ### Class và Object trong Python
+
+Một object là tập hợp các dữ liệu có hành vi liên quan với nhau. Class giống như một bản vẽ (blueprint) để tạo ra object. Các object được tạo từ một định nghĩa được gọi là class. Trong ngôn ngữ lập trình Python thì mã lập trình có thể xác định các thuộc tính (attributes) và phương thức (methods). Theo quy ước thì tên class phải bắt đầu bằng một chữ cái viết hoa.
 
 ### Các tính chất OOP trong Python
 
 #### Tính thừa kế (inheritance)
+
 Thừa kế là mối quan hệ được biết đến nhiều nhất và được sử dụng rất nhiều trong lập trình hướng đối tượng. Chúng ta có thể hình dung thừa kế giống như một cây gia phả trong gia đình.
 
 ##### Đa thừa kế (multiple inheritance)
