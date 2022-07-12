@@ -9,7 +9,7 @@ author: Nguyễn Trường Long
 
 ### Lập trình hướng đối tượng trong Python
 
-Lập trình hướng đối tượng (OOP) là một mô hình lập trình trong đó khối xây dựng cơ bản (building block) là đối tượng phần mềm (software object). Ý tưởng chính là biểu diễn các đối tượng trong cuộc sống thực như các đối tượng phần mềm, kết hợp các đặc điểm (thuộc tính) và hành vi (phương thức).
+Lập trình hướng đối tượng (Object-oriented programming - OOP) là một mô hình lập trình trong đó khối xây dựng cơ bản (building block) là đối tượng phần mềm (software object). Trong lập trình hướng đối tượng, các chương trình phần mềm được thiết kế theo một mô hình bao gồm các đối tượng và hành vi của đối tượng chứ không phải là các chức năng và logic. Một đối tượng có thể được định nghĩa là một trường dữ liệu có các thuộc tính và hành vi duy nhất. Lập trình hướng đối tượng tập trung vào các đối tượng mà các nhà phát triển muốn thao tác. Cách tiếp cận này trong lập trình rất phù hợp cho các chương trình lớn, phức tạp cần được cập nhật hoặc bảo trì. Việc tổ chức chương trình phần mềm theo mô hình hướng đối tượng làm phương pháp này có lợi cho sự hợp tác theo nhóm trong quá trình phát triển. Các lợi ích bổ sung của lập trình hướng đối tượng bao gồm khả năng tái sử dụng mã, khả năng mở rộng và tính hiệu quả.
 
 ### Class và Object trong Python
 
@@ -21,7 +21,7 @@ Khi một định nghĩa class trong Python được khai báo thì một namesp
 
 #### Tính thừa kế (inheritance)
 
-Thừa kế là mối quan hệ được biết đến nhiều nhất và được sử dụng rất nhiều trong lập trình hướng đối tượng. Chúng ta có thể hình dung thừa kế giống như một cây gia phả trong gia đình.
+Thừa kế là mối quan hệ được biết đến nhiều nhất và được sử dụng rất nhiều trong lập trình hướng đối tượng. Chúng ta có thể hình dung thừa kế giống như một cây gia phả trong gia đình. Các thế sau thừa kế đặc điểm từ các thế hệ trước trong gia đình và cũng có những đặc điểm riêng biệt. Trong lập trình hướng đối tượng, các class có thể sử dụng lại mã nguồn từ các class khác. Tính chất này của OOP buộc phải phân tích dữ liệu kỹ lưỡng hơn, giảm thời gian phát triển và đảm bảo mức độ chính xác cao hơn.
 
 ##### Đa thừa kế (multiple inheritance)
 
@@ -30,6 +30,8 @@ Trong lập trình hướng đối tượng, thay vì kế thừa các tính nă
 ##### Method Overriding trong Python 
 
 #### Tính đa hình (polymorphism)
+
+Các đối tượng được thiết kế để chia sẻ các hành vi và chúng có thể có nhiều dạng. Chương trình sẽ xác định ý nghĩa hoặc cách sử dụng nào là cần thiết cho mỗi lần thực thi đối tượng đó từ một class cha, giảm nhu cầu sao chép mã. Tính đa hình cho phép các loại đối tượng khác nhau đi qua cùng một giao diện. Một class con kế thừa tất cả các phương thức từ class cha. Trong những trường hợp như vậy, chúng ta sẽ phải triển khai lại phương thức trong class con. Tính đa hình trong ngôn ngữ lập trình Python định nghĩa các phương thức trong class con có cùng tên với các phương thức trong class cha. Ngoài ra, có thể sửa đổi một phương thức trong một class con mà nó đã kế thừa từ class cha. Điều này chủ yếu được sử dụng trong trường hợp phương thức kế thừa từ class cha không phù hợp với class con. Quá trình thực hiện lại một phương thức trong class con này được gọi là ghi đè phương thức.
 
 #### Tính trừu tượng (abstraction)
 
