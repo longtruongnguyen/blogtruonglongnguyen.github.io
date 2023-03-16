@@ -91,6 +91,39 @@ Trong đó, class Manager được khai báo kế thừa từ cả Person và Em
 
 Tính đa thừa kế có thể giúp chúng ta dễ dàng tái sử dụng lại mã nguồn code, tuy nhiên nó cũng có thể gây ra những rắc rối về quản lý, đặc biệt là khi có nhiều class cha chia sẻ các thuộc tính và phương thức giống nhau. Do đó, việc sử dụng tính đa thừa kế cần được thận trọng và cân nhắc kỹ lưỡng.
 
+#### Tính đa hình (polymorphism)
+
+Trong lập trình hướng đối tượng (OOP), đa hình (polymorphism) là một tính chất cho phép sử dụng các phương thức (method) của một class con với các đối tượng của các class khác nhau.
+
+Trong Python, đa hình có thể được thực hiện bằng cách sử dụng phương thức có cùng tên trong các class khác nhau. Khi gọi phương thức, Python sẽ tìm kiếm phương thức có cùng tên trong class của đối tượng và thực thi phương thức đó.
+
+Ví dụ, ta có hai class Animal và Dog. Class Dog là một class con của class Animal, nghĩa là class Dog kế thừa toàn bộ các thuộc tính và phương thức của class Animal.
+
+{% highlight python %}
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        return "woof"
+        
+if __name__ == '__main__':
+    animal = Animal("Animal")
+    animal.sound()
+    dog = Dog("Dog")
+    dog.sound()
+{% endhighlight %}
+
+Ở đây, class Animal có một phương thức sound, nhưng phương thức này không được định nghĩa, nghĩa là khi ta gọi phương thức này từ một đối tượng của class Animal, Python sẽ không thực hiện bất kỳ thao tác nào.
+
+Trong class Dog, ta định nghĩa lại phương thức sound. Khi ta gọi phương thức sound từ một đối tượng của class Dog, Python sẽ thực hiện phương thức này, trả về chuỗi "woof".
+
+Như vậy, đa hình trong Python cho phép ta sử dụng các phương thức của class con với các đối tượng của các class khác nhau, tạo ra tính linh hoạt và tái sử dụng code trong lập trình hướng đối tượng. Các đối tượng được thiết kế để chia sẻ các hành vi và chúng có thể có nhiều dạng. Chương trình sẽ xác định ý nghĩa hoặc cách sử dụng nào là cần thiết cho mỗi lần thực thi đối tượng đó từ một class cha, giảm nhu cầu sao chép mã. Tính đa hình cho phép các loại đối tượng khác nhau đi qua cùng một giao diện. Một class con kế thừa tất cả các phương thức từ class cha. Trong những trường hợp như vậy, chúng ta sẽ phải triển khai lại phương thức trong class con. Tính đa hình trong ngôn ngữ lập trình Python định nghĩa các phương thức trong class con có cùng tên với các phương thức trong class cha. Ngoài ra, có thể sửa đổi một phương thức trong một class con mà nó đã kế thừa từ class cha. Điều này chủ yếu được sử dụng trong trường hợp phương thức kế thừa từ class cha không phù hợp với class con. Quá trình thực hiện lại một phương thức trong class con này được gọi là ghi đè phương thức.
+
 ##### Method Overriding trong Python 
 
 Method overriding là một tính năng của lập trình hướng đối tượng cho phép class con ghi đè lên phương thức của class cha và triển khai lại phương thức đó với cùng tên và cùng số lượng tham số. Khi đối tượng class con gọi phương thức đã được ghi đè, phương thức sẽ được triển khai từ class con chứ không phải class cha.
@@ -134,48 +167,53 @@ if __name__ == '__main__':
 
 Khi chúng ta gọi phương thức add() với một tham số sẽ phát sinh lỗi, do Python chỉ gọi đến phương thức add() được định nghĩa cuối cùng là phương thức add() với hai tham số. Phương thức add() với một tham số đã bị ghi đè bởi phương thức add() với hai tham số. Và từ đó chúng ta sẽ nhận được kết quả không như mong muốn. Vì vậy, thay vì sử dụng method overloading, chúng ta có thể tận dụng các tính năng khác của Python để đạt được mục đích tương tự.
 
-#### Tính đa hình (polymorphism)
+##### Operator Overloading trong Python
 
-Trong lập trình hướng đối tượng (OOP), đa hình (polymorphism) là một tính chất cho phép sử dụng các phương thức (method) của một class con với các đối tượng của các class khác nhau.
+Trong lập trình hướng đối tượng, nạp chồng toán tử (operator overloading) là một tính năng cho phép chúng ta định nghĩa lại hành vi của các toán tử (ví dụ như +, -, *, /) để áp dụng cho các đối tượng được tạo ra từ các class ta định nghĩa.
 
-Trong Python, đa hình có thể được thực hiện bằng cách sử dụng phương thức có cùng tên trong các class khác nhau. Khi gọi phương thức, Python sẽ tìm kiếm phương thức có cùng tên trong class của đối tượng và thực thi phương thức đó.
+Trong Python, chúng ta có thể sử dụng các phương thức đặc biệt (special methods) để nạp chồng các toán tử. Ví dụ, phương thức add() được sử dụng để nạp chồng toán tử cộng (+). Khi ta sử dụng toán tử cộng với hai đối tượng thuộc class ta định nghĩa, Python sẽ gọi đến phương thức add() để thực hiện phép cộng.
 
-Ví dụ, ta có hai class Animal và Dog. Class Dog là một class con của class Animal, nghĩa là class Dog kế thừa toàn bộ các thuộc tính và phương thức của class Animal.
+Dưới đây là một ví dụ minh họa:
 
 {% highlight python %}
-class Animal:
-    def __init__(self, name):
-        self.name = name
-    
-    def sound(self):
-        pass
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-class Dog(Animal):
-    def sound(self):
-        return "woof"
-        
+    # nạp chồng phương thức __add__() để thực hiện phép cộng hai Vector
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    # nạp chồng phương thức __str__() để in Vector dưới dạng chuỗi
+    def __str__(self):
+        return "({}, {})".format(self.x, self.y)
+
 if __name__ == '__main__':
-    animal = Animal("Animal")
-    animal.sound()
-    dog = Dog("Dog")
-    dog.sound()
+    # Tạo hai đối tượng Vector và thực hiện phép cộng
+    v1 = Vector(1, 2)
+    v2 = Vector(3, 4)
+    v3 = v1 + v2
+
+    # In kết quả
+    print(v1) # (1, 2)
+    print(v2) # (3, 4)
+    print(v3) # (4, 6)
 {% endhighlight %}
 
-Ở đây, class Animal có một phương thức sound, nhưng phương thức này không được định nghĩa, nghĩa là khi ta gọi phương thức này từ một đối tượng của class Animal, Python sẽ không thực hiện bất kỳ thao tác nào.
+Trong ví dụ này, chúng ta đã định nghĩa class Vector với hai thuộc tính x và y, và phương thức add() để thực hiện phép cộng hai Vector. Khi ta sử dụng toán tử cộng để thực hiện phép tính với hai đối tượng Vector, Python sẽ gọi đến phương thức add() của đối tượng đầu tiên và truyền đối tượng thứ hai làm đối số. Kết quả của phép cộng được trả về dưới dạng một đối tượng Vector mới.
 
-Trong class Dog, ta định nghĩa lại phương thức sound. Khi ta gọi phương thức sound từ một đối tượng của class Dog, Python sẽ thực hiện phương thức này, trả về chuỗi "woof".
-
-Như vậy, đa hình trong Python cho phép ta sử dụng các phương thức của class con với các đối tượng của các class khác nhau, tạo ra tính linh hoạt và tái sử dụng code trong lập trình hướng đối tượng. Các đối tượng được thiết kế để chia sẻ các hành vi và chúng có thể có nhiều dạng. Chương trình sẽ xác định ý nghĩa hoặc cách sử dụng nào là cần thiết cho mỗi lần thực thi đối tượng đó từ một class cha, giảm nhu cầu sao chép mã. Tính đa hình cho phép các loại đối tượng khác nhau đi qua cùng một giao diện. Một class con kế thừa tất cả các phương thức từ class cha. Trong những trường hợp như vậy, chúng ta sẽ phải triển khai lại phương thức trong class con. Tính đa hình trong ngôn ngữ lập trình Python định nghĩa các phương thức trong class con có cùng tên với các phương thức trong class cha. Ngoài ra, có thể sửa đổi một phương thức trong một class con mà nó đã kế thừa từ class cha. Điều này chủ yếu được sử dụng trong trường hợp phương thức kế thừa từ class cha không phù hợp với class con. Quá trình thực hiện lại một phương thức trong class con này được gọi là ghi đè phương thức.
+Chúng ta cũng đã định nghĩa phương thức str() để in đối tượng Vector dưới dạng chuỗi. Khi chúng ta sử dụng hàm print() để in đối tượng Vector, Python sẽ gọi đến phương thức str() để chuyển đối tượng thành chuỗi trước khi in ra màn hình.
 
 #### Tính trừu tượng (abstraction)
 
 Tính trừu tượng (abstraction) là một khái niệm quan trọng trong lập trình hướng đối tượng. Tính chất này cho phép người lập trình tập trung vào việc định nghĩa các đối tượng và thuộc tính của chúng, thay vì các chi tiết bên trong hoạt động của chúng. Nó giúp giảm sự phức tạp của các đối tượng và cho phép các đối tượng được sử dụng ở nhiều nơi trong chương trình mà không cần biết chi tiết bên trong của chúng.
 
-Tính trừu tượng có thể được thực hiện thông qua các class trừu tượng (abstract class) và phương thức trừu tượng (abstract method). Class trừu tượng là một class mà không thể tạo ra các đối tượng trực tiếp từ đó, mà chỉ được sử dụng để định nghĩa các thuộc tính và phương thức cho các lớp con của nó. Phương thức trừu tượng là một phương thức mà chỉ có định nghĩa và không có cài đặt cụ thể cho phương thức đó.
+Tính trừu tượng có thể được thực hiện thông qua các class trừu tượng (abstract class) và phương thức trừu tượng (abstract method). Class trừu tượng là một class mà không thể tạo ra các đối tượng trực tiếp từ đó, mà chỉ được sử dụng để định nghĩa các thuộc tính và phương thức cho các class con của nó. Phương thức trừu tượng là một phương thức mà chỉ có định nghĩa và không có cài đặt cụ thể cho phương thức đó.
 
-Ví dụ, giả sử chúng ta đang xây dựng một ứng dụng quản lý thư viện và chúng ta muốn định nghĩa một class trừu tượng "Đầu sách" để đại diện cho tất cả các đầu sách có sẵn trong thư viện. Class này có thể định nghĩa các thuộc tính chung cho tất cả các đầu sách, chẳng hạn như mã ISBN, tên tác giả và năm xuất bản. Các class con của "Đầu sách", chẳng hạn như "Sách giáo khoa" và "Sách văn học", có thể mở rộng lớp cha này bằng cách thêm các thuộc tính và phương thức đặc biệt của riêng chúng.
+Ví dụ, giả sử chúng ta đang xây dựng một ứng dụng quản lý thư viện và chúng ta muốn định nghĩa một class trừu tượng "Đầu sách" để đại diện cho tất cả các đầu sách có sẵn trong thư viện. Class này có thể định nghĩa các thuộc tính chung cho tất cả các đầu sách, chẳng hạn như mã ISBN, tên tác giả và năm xuất bản. Các class con của "Đầu sách", chẳng hạn như "Sách giáo khoa" và "Sách văn học", có thể mở rộng class cha này bằng cách thêm các thuộc tính và phương thức đặc biệt của riêng chúng.
 
-Ví dụ về lớp trừu tượng:
+Ví dụ về class trừu tượng:
 
 {% highlight python %}
 from abc import ABC, abstractmethod
