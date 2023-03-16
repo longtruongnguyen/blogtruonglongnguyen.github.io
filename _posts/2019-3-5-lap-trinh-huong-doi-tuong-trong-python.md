@@ -19,9 +19,9 @@ Khi một định nghĩa class trong Python được khai báo thì một namesp
 
 ### Các tính chất OOP trong Python
 
-#### Tính thừa kế (inheritance)
+#### Tính kế thừa (inheritance)
 
-Thừa kế là mối quan hệ được biết đến nhiều nhất và được sử dụng rất nhiều trong lập trình hướng đối tượng. Tính kế thừa (Inheritance) trong lập trình hướng đối tượng là một tính năng cho phép một đối tượng (object) kế thừa tất cả các thuộc tính và phương thức của đối tượng cha (parent object). Tính kế thừa cho phép xây dựng các class mới dựa trên các class đã có sẵn, giúp tái sử dụng mã nguồn và tăng tính tái sử dụng. Chúng ta có thể hình dung thừa kế giống như một cây gia phả trong gia đình. Các thế sau thừa kế đặc điểm từ các thế hệ trước trong gia đình và cũng có những đặc điểm riêng biệt. Trong lập trình hướng đối tượng, các class có thể sử dụng lại mã nguồn từ các class khác.
+Kế thừa là mối quan hệ được biết đến nhiều nhất và được sử dụng rất nhiều trong lập trình hướng đối tượng. Tính kế thừa (Inheritance) trong lập trình hướng đối tượng là một tính năng cho phép một đối tượng (object) kế thừa tất cả các thuộc tính và phương thức của đối tượng cha (parent object). Tính kế thừa cho phép xây dựng các class mới dựa trên các class đã có sẵn, giúp tái sử dụng mã nguồn và tăng tính tái sử dụng. Chúng ta có thể hình dung kế thừa giống như một cây gia phả trong gia đình. Các thế sau kế thừa đặc điểm từ các thế hệ trước trong gia đình và cũng có những đặc điểm riêng biệt. Trong lập trình hướng đối tượng, các class có thể sử dụng lại mã nguồn từ các class khác.
 
 Trong tính kế thừa, class con (subclass) được xây dựng dựa trên class cha (superclass) và sẽ có tất cả các thuộc tính và phương thức của class cha. Class con có thể mở rộng hoặc ghi đè (override) các phương thức hoặc thuộc tính của class cha và có thể thêm các phương thức hoặc thuộc tính mới.
 
@@ -60,7 +60,7 @@ class Dog(Animal):
 
 Trong ví dụ trên, class Dog kế thừa tất cả các thuộc tính và phương thức của class Animal, và có thêm các thuộc tính và phương thức riêng như breed, bark, chase và lick_owner. Bằng cách sử dụng tính kế thừa, chúng ta có thể sử dụng lại mã nguồn đã được định nghĩa trong class Animal và mở rộng hoặc ghi đè phương thức và thuộc tính để tạo ra class con mới.
 
-Tính chất này của OOP buộc phải phân tích dữ liệu kỹ lưỡng hơn, giảm thời gian phát triển và đảm bảo mức độ chính xác cao hơn.
+Tính chất này của lập trình hướng đối tượng buộc phải phân tích dữ liệu kỹ lưỡng hơn, giảm thời gian phát triển và đảm bảo mức độ chính xác cao hơn.
 
 ##### Đa thừa kế (multiple inheritance)
 
