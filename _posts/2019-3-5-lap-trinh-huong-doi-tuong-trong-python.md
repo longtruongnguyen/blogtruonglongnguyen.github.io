@@ -31,7 +31,36 @@ Trong lập trình hướng đối tượng, thay vì kế thừa các tính nă
 
 #### Tính đa hình (polymorphism)
 
-Các đối tượng được thiết kế để chia sẻ các hành vi và chúng có thể có nhiều dạng. Chương trình sẽ xác định ý nghĩa hoặc cách sử dụng nào là cần thiết cho mỗi lần thực thi đối tượng đó từ một class cha, giảm nhu cầu sao chép mã. Tính đa hình cho phép các loại đối tượng khác nhau đi qua cùng một giao diện. Một class con kế thừa tất cả các phương thức từ class cha. Trong những trường hợp như vậy, chúng ta sẽ phải triển khai lại phương thức trong class con. Tính đa hình trong ngôn ngữ lập trình Python định nghĩa các phương thức trong class con có cùng tên với các phương thức trong class cha. Ngoài ra, có thể sửa đổi một phương thức trong một class con mà nó đã kế thừa từ class cha. Điều này chủ yếu được sử dụng trong trường hợp phương thức kế thừa từ class cha không phù hợp với class con. Quá trình thực hiện lại một phương thức trong class con này được gọi là ghi đè phương thức.
+Trong lập trình hướng đối tượng (OOP), đa hình (polymorphism) là một tính chất cho phép sử dụng các phương thức (method) của một class con với các đối tượng của các class khác nhau.
+
+Trong Python, đa hình có thể được thực hiện bằng cách sử dụng phương thức có cùng tên trong các class khác nhau. Khi gọi phương thức, Python sẽ tìm kiếm phương thức có cùng tên trong class của đối tượng và thực thi phương thức đó.
+
+Ví dụ, ta có hai class Animal và Dog. Class Dog là một class con của class Animal, nghĩa là class Dog kế thừa toàn bộ các thuộc tính và phương thức của class Animal.
+
+{% highlight python %}
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        return "woof"
+        
+if __name__ == '__main__':
+    animal = Animal("Animal")
+    animal.sound()
+    dog = Dog("Dog")
+    dog.sound()
+{% endhighlight %}
+
+Ở đây, class Animal có một phương thức sound, nhưng phương thức này không được định nghĩa, nghĩa là khi ta gọi phương thức này từ một đối tượng của class Animal, Python sẽ không thực hiện bất kỳ thao tác nào.
+
+Trong class Dog, ta định nghĩa lại phương thức sound. Khi ta gọi phương thức sound từ một đối tượng của class Dog, Python sẽ thực hiện phương thức này, trả về chuỗi "woof".
+
+Như vậy, đa hình trong Python cho phép ta sử dụng các phương thức của class con với các đối tượng của các class khác nhau, tạo ra tính linh hoạt và tái sử dụng code trong lập trình hướng đối tượng. Các đối tượng được thiết kế để chia sẻ các hành vi và chúng có thể có nhiều dạng. Chương trình sẽ xác định ý nghĩa hoặc cách sử dụng nào là cần thiết cho mỗi lần thực thi đối tượng đó từ một class cha, giảm nhu cầu sao chép mã. Tính đa hình cho phép các loại đối tượng khác nhau đi qua cùng một giao diện. Một class con kế thừa tất cả các phương thức từ class cha. Trong những trường hợp như vậy, chúng ta sẽ phải triển khai lại phương thức trong class con. Tính đa hình trong ngôn ngữ lập trình Python định nghĩa các phương thức trong class con có cùng tên với các phương thức trong class cha. Ngoài ra, có thể sửa đổi một phương thức trong một class con mà nó đã kế thừa từ class cha. Điều này chủ yếu được sử dụng trong trường hợp phương thức kế thừa từ class cha không phù hợp với class con. Quá trình thực hiện lại một phương thức trong class con này được gọi là ghi đè phương thức.
 
 #### Tính trừu tượng (abstraction)
 
