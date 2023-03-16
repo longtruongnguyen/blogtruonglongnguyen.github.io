@@ -66,6 +66,57 @@ Như vậy, đa hình trong Python cho phép ta sử dụng các phương thức
 
 #### Tính đóng gói (encapsulation)
 
-Đóng gói là một trong những khái niệm cơ bản trong lập trình hướng đối tượng. Tính chất này cho phép gói dữ liệu và các phương thức hoạt động trên dữ liệu trong một đơn vị. Điều này tạo ra những hạn chế nhất định trong việc truy cập trực tiếp tới các biến và phương thức, ngăn chặn việc sửa đổi dữ liệu theo cách không mong đợi. Chỉ có thể thay đổi giá trị biến của đối tượng bằng phương thức của đối tượng. Các loại biến kiểu như vậy được gọi là biến riêng tư (private variable).
+Đóng gói là một trong những khái niệm cơ bản và là một tính chất quan trọng trong lập trình hướng đối tượng. Tính chất này giúp che dấu thông tin của đối tượng, bao gồm các thuộc tính (attributes) và phương thức (methods), để người dùng không thể truy cập và thay đổi chúng trực tiếp, ngăn chặn việc sửa đổi dữ liệu theo cách không mong đợi. Chỉ có thể thay đổi giá trị thuộc tính của đối tượng bằng phương thức của đối tượng.
+
+Trong Python, tính đóng gói cũng được thực hiện bằng cách che dấu thông tin các thuộc tính (attributes) và phương thức (methods) của một đối tượng. Có ba cấp độ của tính đóng gói trong lập trình hướng đối tượng của Python là public, protected và private.
+
+##### 1. Public
+
+Ở cấp độ public thì thuộc tính hoặc phương thức có thể truy cập từ bên ngoài đối tượng và từ bất kỳ đối tượng nào khác trong cùng module hoặc package. Trong Python, các thuộc tính và phương thức được định nghĩa mặc định là public.
+
+Ví dụ:
+
+{% highlight python %}
+class Person:
+    def __init__(self, name, age):
+        self.name = name  # public attribute
+        self.age = age    # public attribute
+        
+    def say_hello(self): # public method
+        print(f"Hello, my name is {self.name}.")
+{% endhighlight %}
+
+##### 2. Protected
+
+Ở cấp độ protected thì thuộc tính hoặc phương thức chỉ có thể truy cập từ bên trong đối tượng và từ các đối tượng con kế thừa từ đối tượng đó. Trong Python, để định nghĩa thuộc tính hoặc phương thức ở cấp độ này, chúng ta thêm dấu gạch dưới đầu tiên trước tên thuộc tính hoặc phương thức.
+
+Ví dụ:
+
+{% highlight python %}
+class Person:
+    def __init__(self, name, age):
+        self._name = name  # protected attribute
+        self._age = age    # protected attribute
+        
+    def _say_hello(self): # protected method
+        print(f"Hello, my name is {self._name}.")
+{% endhighlight %}
+
+##### 3. Private
+
+Ở cấp độ private thì thuộc tính hoặc phương thức chỉ có thể truy cập từ bên trong đối tượng, không thể truy cập từ bên ngoài đối tượng và các đối tượng con kế thừa từ đối tượng đó. Trong Python, để định nghĩa thuộc tính hoặc phương thức ở cấp độ này, chúng ta thêm hai dấu gạch dưới đầu tiên trước tên thuộc tính hoặc phương thức.
+
+Ví dụ:
+
+{% highlight python %}
+class Person:
+    def __init__(self, name, age):
+        self.__name = name  # private attribute
+        self.__age = age    # private attribute
+        
+    def __say_hello(self): # private method
+        print(f"Hello, my name is {self.__name}.")
+{% endhighlight %}
+
 
 ### Tài liệu tham khảo
