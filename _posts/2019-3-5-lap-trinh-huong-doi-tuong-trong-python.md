@@ -21,7 +21,46 @@ Khi một định nghĩa class trong Python được khai báo thì một namesp
 
 #### Tính thừa kế (inheritance)
 
-Thừa kế là mối quan hệ được biết đến nhiều nhất và được sử dụng rất nhiều trong lập trình hướng đối tượng. Chúng ta có thể hình dung thừa kế giống như một cây gia phả trong gia đình. Các thế sau thừa kế đặc điểm từ các thế hệ trước trong gia đình và cũng có những đặc điểm riêng biệt. Trong lập trình hướng đối tượng, các class có thể sử dụng lại mã nguồn từ các class khác. Tính chất này của OOP buộc phải phân tích dữ liệu kỹ lưỡng hơn, giảm thời gian phát triển và đảm bảo mức độ chính xác cao hơn.
+Thừa kế là mối quan hệ được biết đến nhiều nhất và được sử dụng rất nhiều trong lập trình hướng đối tượng. Tính kế thừa (Inheritance) trong lập trình hướng đối tượng là một tính năng cho phép một đối tượng (object) kế thừa tất cả các thuộc tính và phương thức của đối tượng cha (parent object). Tính kế thừa cho phép xây dựng các class mới dựa trên các class đã có sẵn, giúp tái sử dụng mã nguồn và tăng tính tái sử dụng. Chúng ta có thể hình dung thừa kế giống như một cây gia phả trong gia đình. Các thế sau thừa kế đặc điểm từ các thế hệ trước trong gia đình và cũng có những đặc điểm riêng biệt. Trong lập trình hướng đối tượng, các class có thể sử dụng lại mã nguồn từ các class khác.
+
+Trong tính kế thừa, class con (subclass) được xây dựng dựa trên class cha (superclass) và sẽ có tất cả các thuộc tính và phương thức của class cha. Class con có thể mở rộng hoặc ghi đè (override) các phương thức hoặc thuộc tính của class cha và có thể thêm các phương thức hoặc thuộc tính mới.
+
+Ví dụ, chúng ta có thể có class cha là class Animal (Động vật) với các thuộc tính và phương thức như tên, tuổi, cân nặng, ăn, uống và di chuyển. Chúng ta có thể tạo class con là class Dog (Chó) và kế thừa các thuộc tính và phương thức của class Animal, sau đó định nghĩa thêm các thuộc tính và phương thức mới như lúc sủa, đuổi bắt và liếm chủ.
+
+{% highlight python %}
+class Animal:
+    def __init__(self, name, age, weight):
+        self.name = name
+        self.age = age
+        self.weight = weight
+
+    def eat(self):
+        print("Animal is eating")
+
+    def drink(self):
+        print("Animal is drinking")
+
+    def move(self):
+        print("Animal is moving")
+
+class Dog(Animal):
+    def __init__(self, name, age, weight, breed):
+        super().__init__(name, age, weight)
+        self.breed = breed
+
+    def bark(self):
+        print("Dog is barking")
+
+    def chase(self):
+        print("Dog is chasing")
+
+    def lick_owner(self):
+        print("Dog is licking its owner")
+{% endhighlight %}
+
+Trong ví dụ trên, class Dog kế thừa tất cả các thuộc tính và phương thức của class Animal, và có thêm các thuộc tính và phương thức riêng như breed, bark, chase và lick_owner. Bằng cách sử dụng tính kế thừa, chúng ta có thể sử dụng lại mã nguồn đã được định nghĩa trong class Animal và mở rộng hoặc ghi đè phương thức và thuộc tính để tạo ra class con mới.
+
+Tính chất này của OOP buộc phải phân tích dữ liệu kỹ lưỡng hơn, giảm thời gian phát triển và đảm bảo mức độ chính xác cao hơn.
 
 ##### Đa thừa kế (multiple inheritance)
 
