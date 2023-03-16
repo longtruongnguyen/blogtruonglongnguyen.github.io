@@ -75,6 +75,26 @@ cat.make_sound() # output: Meow
 
 ##### Method Overloading trong Python
 
+Method overloading là một tính năng trong lập trình hướng đối tượng cho phép một lớp có nhiều phương thức cùng tên nhưng có các đối số khác nhau. Khi gọi phương thức, trình thông dịch hoặc biên dịch sẽ xác định phương thức phù hợp dựa trên số lượng và kiểu dữ liệu của các đối số được truyền vào.
+
+Tính năng này giúp cho việc định nghĩa phương thức trở nên linh hoạt hơn, tiết kiệm thời gian và giảm sự trùng lặp code. Tuy nhiên, nó không được hỗ trợ trong một số ngôn ngữ lập trình như Python chẳng hạn. Trong Python, không có hỗ trợ cho method overloading như trong một số ngôn ngữ truyền thống khác. Thay vào đó, Python hỗ trợ tính năng tương tự thông qua tính đa hình (polymorphism) và định nghĩa các tham số mặc định của phương thức. Xem xét các ví dụ sau với định nghĩa một phương thức add() với một tham số và một phương thức add() khác với hai tham số:
+
+{% highlight python %}
+class Calculator:
+    def add(self, a):
+        return a + 1
+    
+    def add(self, a, b):
+        return a + b
+
+if __name__ == '__main__':
+    c = Calculator()
+    print(c.add(1))
+    print(c.add(2, 3))
+{% endhighlight %}
+
+Khi chúng ta gọi phương thức add() với một tham số sẽ phát sinh lỗi, do Python chỉ gọi đến phương thức add() được định nghĩa cuối cùng là phương thức add() với hai tham số. Phương thức add() với một tham số đã bị ghi đè bởi phương thức add() với hai tham số. Và từ đó chúng ta sẽ nhận được kết quả không như mong muốn. Vì vậy, thay vì sử dụng method overloading, chúng ta có thể tận dụng các tính năng khác của Python để đạt được mục đích tương tự.
+
 #### Tính đa hình (polymorphism)
 
 Trong lập trình hướng đối tượng (OOP), đa hình (polymorphism) là một tính chất cho phép sử dụng các phương thức (method) của một class con với các đối tượng của các class khác nhau.
