@@ -130,6 +130,44 @@ Như vậy, đa hình trong Python cho phép ta sử dụng các phương thức
 
 #### Tính trừu tượng (abstraction)
 
+Tính trừu tượng (abstraction) là một khái niệm quan trọng trong lập trình hướng đối tượng. Tính chất này cho phép người lập trình tập trung vào việc định nghĩa các đối tượng và thuộc tính của chúng, thay vì các chi tiết bên trong hoạt động của chúng. Nó giúp giảm sự phức tạp của các đối tượng và cho phép các đối tượng được sử dụng ở nhiều nơi trong chương trình mà không cần biết chi tiết bên trong của chúng.
+
+Tính trừu tượng có thể được thực hiện thông qua các class trừu tượng (abstract class) và phương thức trừu tượng (abstract method). Class trừu tượng là một class mà không thể tạo ra các đối tượng trực tiếp từ đó, mà chỉ được sử dụng để định nghĩa các thuộc tính và phương thức cho các lớp con của nó. Phương thức trừu tượng là một phương thức mà chỉ có định nghĩa và không có cài đặt cụ thể cho phương thức đó.
+
+Ví dụ, giả sử chúng ta đang xây dựng một ứng dụng quản lý thư viện và chúng ta muốn định nghĩa một class trừu tượng "Đầu sách" để đại diện cho tất cả các đầu sách có sẵn trong thư viện. Class này có thể định nghĩa các thuộc tính chung cho tất cả các đầu sách, chẳng hạn như mã ISBN, tên tác giả và năm xuất bản. Các class con của "Đầu sách", chẳng hạn như "Sách giáo khoa" và "Sách văn học", có thể mở rộng lớp cha này bằng cách thêm các thuộc tính và phương thức đặc biệt của riêng chúng.
+
+Ví dụ về lớp trừu tượng:
+
+{% highlight python %}
+from abc import ABC, abstractmethod
+
+class Book(ABC):
+    def __init__(self, isbn, author, year):
+        self.isbn = isbn
+        self.author = author
+        self.year = year
+
+    @abstractmethod
+    def get_title(self):
+        pass
+
+class Textbook(Book):
+    def __init__(self, isbn, author, year, subject):
+        super().__init__(isbn, author, year)
+        self.subject = subject
+
+    def get_title(self):
+        return f"{self.subject} textbook"
+
+class Novel(Book):
+    def __init__(self, isbn, author, year, genre):
+        super().__init__(isbn, author, year)
+        self.genre = genre
+
+    def get_title(self):
+        return f"{self.genre} novel"
+{% endhighlight %}
+
 #### Tính đóng gói (encapsulation)
 
 Đóng gói là một trong những khái niệm cơ bản và là một tính chất quan trọng trong lập trình hướng đối tượng. Tính chất này giúp che dấu thông tin của đối tượng, bao gồm các thuộc tính (attributes) và phương thức (methods), để người dùng không thể truy cập và thay đổi chúng trực tiếp, ngăn chặn việc sửa đổi dữ liệu theo cách không mong đợi. Chỉ có thể thay đổi giá trị thuộc tính của đối tượng bằng phương thức của đối tượng.
