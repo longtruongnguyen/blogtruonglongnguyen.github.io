@@ -25,7 +25,32 @@ Thừa kế là mối quan hệ được biết đến nhiều nhất và đư�
 
 ##### Đa thừa kế (multiple inheritance)
 
-Trong lập trình hướng đối tượng, thay vì kế thừa các tính năng và phương thức từ một class duy nhất, một class có thể kế thừa các thuộc tính và phương thức từ nhiều class cha khác nhau.
+Trong lập trình hướng đối tượng, thay vì kế thừa các tính năng và phương thức từ một class duy nhất, một class có thể kế thừa các thuộc tính và phương thức từ nhiều class cha khác nhau. Ví dụ, giả sử chúng ta có 2 class cha là Employee và Person, và chúng ta muốn tạo một class con Manager kế thừa từ cả 2 class cha này. Trong Python, ta có thể định nghĩa class Manager như sau:
+
+{% highlight python %}
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Employee:
+    def __init__(self, salary):
+        self.salary = salary
+
+class Manager(Person, Employee):
+    def __init__(self, name, age, salary):
+        Person.__init__(self, name, age)
+        Employee.__init__(self, salary)
+        
+if __name__ == '__main__':
+    manager = Manager('John Doe', 35, 5000)
+    print(manager.name) # Output: John Doe
+    print(manager.salary) # Output: 5000
+{% endhighlight %}
+
+Trong đó, class Manager được khai báo kế thừa từ cả Person và Employee bằng cách đưa chúng vào trong dấu ngoặc đơn của từ khóa class. Từ đó, class Manager có thể truy cập vào các thuộc tính và phương thức của cả class Person và class Employee.
+
+Tính đa thừa kế có thể giúp chúng ta dễ dàng tái sử dụng lại mã nguồn code, tuy nhiên nó cũng có thể gây ra những rắc rối về quản lý, đặc biệt là khi có nhiều class cha chia sẻ các thuộc tính và phương thức giống nhau. Do đó, việc sử dụng tính đa thừa kế cần được thận trọng và cân nhắc kỹ lưỡng.
 
 ##### Method Overriding trong Python 
 
