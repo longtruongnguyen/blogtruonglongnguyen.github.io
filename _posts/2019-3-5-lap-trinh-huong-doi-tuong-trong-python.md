@@ -54,6 +54,27 @@ Tính đa thừa kế có thể giúp chúng ta dễ dàng tái sử dụng lạ
 
 ##### Method Overriding trong Python 
 
+Method overriding là một tính năng của lập trình hướng đối tượng cho phép class con ghi đè lên phương thức của class cha và triển khai lại phương thức đó với cùng tên và cùng số lượng tham số. Khi đối tượng class con gọi phương thức đã được ghi đè, phương thức sẽ được triển khai từ class con chứ không phải class cha.
+
+Ví dụ, ta có class cha Animal và class con Cat. Class Animal có phương thức make_sound, trong khi class Cat cũng có phương thức này, nhưng khi class con ghi đè phương thức make_sound, phương thức sẽ được triển khai từ class Cat thay vì từ class Animal.
+
+{% highlight python %}
+class Animal:
+    def make_sound(self):
+        print("Animal is making a sound...")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow")
+
+cat = Cat()
+cat.make_sound() # output: Meow
+{% endhighlight %}
+
+Ở đây, phương thức make_sound của class Cat đã ghi đè lên phương thức make_sound của class Animal. Khi gọi phương thức make_sound trên đối tượng cat, kết quả sẽ là "Meow" thay vì "Animal is making a sound...".
+
+##### Method Overloading trong Python
+
 #### Tính đa hình (polymorphism)
 
 Trong lập trình hướng đối tượng (OOP), đa hình (polymorphism) là một tính chất cho phép sử dụng các phương thức (method) của một class con với các đối tượng của các class khác nhau.
@@ -145,3 +166,4 @@ class Person:
 
 
 ### Tài liệu tham khảo
+
