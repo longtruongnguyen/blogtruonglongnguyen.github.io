@@ -7,7 +7,7 @@ keywords: mô hình ngôn ngữ, language model, xử lý ngôn ngữ tự nhiê
 author: Nguyễn Trường Long
 ---
 
-[Mô hình ngôn ngữ](https://nguyentruonglong.net/mo-hinh-ngon-ngu-language model.html) là mô hình mà tính toán phân phối xác suất của một chuỗi các token trong ngôn ngữ tự nhiên {% raw %}
+[Mô hình ngôn ngữ](https://nguyentruonglong.net/mo-hinh-ngon-ngu-language-model.html) là mô hình mà tính toán phân phối xác suất của một chuỗi các token trong ngôn ngữ tự nhiên {% raw %}
 $$P\left( {{w_1},{w_2},{w_3},...,{w_\tau }} \right)$${% endraw %}. Điều này có nghĩa là mô hình cho phép dự đoán khả năng xuất hiện của chuỗi token này trong ngôn ngữ của nó. Tùy thuộc vào cách thức mô hình được thiết kế, các token này có thể là các từ, các ký tự hoặc thậm chí là các byte. Để tính xác suất của một chuỗi các token liên tiếp, chúng ta áp dụng quy tắc xác suất dây chuyền (chain rule of probability) tổng quát để phân tách như sau:
 
 {% raw %}
@@ -41,7 +41,7 @@ Các n-gram có thể được sử dụng để xác định xác suất xuất
 
 ### Xấp xỉ Markov
 
-Xấp xỉ Markov (approximate Markov) là một kỹ thuật trong [mô hình ngôn ngữ](https://nguyentruonglong.net/mo-hinh-ngon-ngu-language model.html) để dự đoán từ tiếp theo trong một chuỗi từ với giả định rằng từ hiện tại chỉ phụ thuộc vào một số lượng nhỏ các từ trước đó. Xấp xỉ Markov thường được sử dụng để xác định xác suất của một từ tiếp theo trong một chuỗi văn bản, dựa trên từ đứng trước nó.
+Xấp xỉ Markov (approximate Markov) là một kỹ thuật trong [mô hình ngôn ngữ](https://nguyentruonglong.net/mo-hinh-ngon-ngu-language-model.html) để dự đoán từ tiếp theo trong một chuỗi từ với giả định rằng từ hiện tại chỉ phụ thuộc vào một số lượng nhỏ các từ trước đó. Xấp xỉ Markov thường được sử dụng để xác định xác suất của một từ tiếp theo trong một chuỗi văn bản, dựa trên từ đứng trước nó.
 
 Cụ thể, xấp xỉ Markov ứng dụng giả định Markov rằng xác suất của một từ xuất hiện trong một chuỗi chỉ phụ thuộc vào một số lượng nhỏ các từ trước đó. Xấp xỉ Markov sử dụng thuật toán xác định xác suất của một từ tiếp theo dựa trên các từ đã xuất hiện trước đó. Thuật toán này sử dụng một bộ từ điển để lưu trữ thông tin liên quan đến các từ đã xuất hiện trong chuỗi văn bản.
 
