@@ -4,7 +4,7 @@ title: Khái niệm Domain Model
 description: Trong công nghệ phần mềm, domain model là một bản phác thảo các thực thể cơ bản của hệ thống và các mối quan hệ giữa chúng. Domain model tạo ra một mạng lưới các đối tượng được kết nối với nhau, trong đó mỗi đối tượng đại diện cho một số cá thể có ý nghĩa như một tập đoàn hay một dòng thông tin trên đơn đặt hàng.
 excerpt: Trong công nghệ phần mềm, domain model là một bản phác thảo các thực thể cơ bản của hệ thống và các mối quan hệ giữa chúng. Domain model tạo ra một mạng lưới các đối tượng được kết nối với nhau, trong đó mỗi đối tượng đại diện cho một số cá thể có ý nghĩa như một tập đoàn hay một dòng thông tin trên đơn đặt hàng.
 thumbnail:
-keywords: khái niệm domain model, domain model, domain model là gì, mô hình miền, mô hình domain model, tìm hiểu domain model
+keywords: khái niệm domain model, domain model, domain model là gì, mô hình miền, mô hình domain model, tìm hiểu domain model, aggregate, entity
 author: Nguyễn Trường Long
 ---
 
@@ -49,6 +49,16 @@ Các đối tượng trong Aggregate liên kết chặt chẽ với nhau và th�
 Một Aggregate có thể bao gồm nhiều Entity và Value Object, và chúng liên kết với nhau theo một quy tắc cụ thể. Ví dụ trong hệ thống quản lý bán hàng, một Aggregate có thể là một đơn hàng với các Entity như sản phẩm, khách hàng, địa chỉ giao hàng, thanh toán,... Các Entity này liên kết với nhau theo một quy tắc cụ thể và đều phụ thuộc vào Aggregate Root là đơn hàng.
 
 Khi truy vấn hoặc cập nhật dữ liệu cho một Aggregate, chúng ta cần thực hiện thông qua Aggregate Root. Tất cả các thao tác này đều được thực hiện một cách an toàn và đồng bộ. Nếu ta muốn thao tác với một đối tượng riêng lẻ trong Aggregate, ta cần truy cập thông qua Aggregate Root và thực hiện thao tác theo quy tắc cụ thể của Aggregate.
+
+### Khái niệm Value Object trong [domain model](https://nguyentruonglong.net/khai-niem-domain-model.html)
+
+Trong [domain model](https://nguyentruonglong.net/khai-niem-domain-model.html), Value Object là một đối tượng không có sự định danh duy nhất và được sử dụng để đại diện cho các giá trị hay thuộc tính của một đối tượng Entity trong hệ thống phần mềm. Nó không có tính chất thay đổi trạng thái và được sử dụng để đại diện cho các giá trị hay thuộc tính của một đối tượng Entity, tạo ra giá trị mới từ các thuộc tính của nó.
+
+Value Object có giá trị chỉ được xác định bởi các thuộc tính của nó. Nó không có một ID hay khóa chính để định danh duy nhất và không được quản lý bởi một Aggregate. Thay vào đó, Value Object được sử dụng để tạo ra một giá trị mới từ các thuộc tính của nó và không có tính chất thay đổi trạng thái.
+
+Một số ví dụ về Value Object có thể bao gồm ngày tháng, giờ, địa chỉ, số điện thoại, tọa độ vị trí, số tiền,... Ví dụ, trong một hệ thống quản lý khách hàng, địa chỉ khách hàng có thể được đại diện bởi một Value Object gồm các thuộc tính như số nhà, tên đường, thành phố, quốc gia,...
+
+Một điểm quan trọng khi sử dụng Value Object là chúng không được truy cập trực tiếp bởi bên ngoài. Thay vào đó, các đối tượng Entity sẽ sử dụng chúng để thực hiện các thao tác và truy xuất dữ liệu. Sử dụng Value Object có thể giúp đơn giản hóa kiến trúc, giảm độ phức tạp và tăng tính linh hoạt của hệ thống. Nó cũng có thể giúp cho việc thực hiện các thao tác với dữ liệu dễ dàng hơn và tăng tính nhất quán của dữ liệu trong hệ thống.
 
 ### Tài liệu tham khảo
 * <a href="https://livebook.manning.com/book/functional-and-reactive-domain-modeling/chapter-1/265" target="_blank">https://livebook.manning.com/book/functional-and-reactive-domain-modeling/chapter-1/265</a>
