@@ -23,7 +23,7 @@ Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer per
 
 ### Phép tích chập (convolution operation)
 
-Để đào sâu và hiểu rõ hơn về mạng [mạng nơ-ron tích chập](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html), chúng ta cần lướt qua một chút về các kiến thức toán học có liên quan đến phép tích chập. Chúng ta có thể hình dung một cách đơn giản rằng ý nghĩa của phép tích chập giống như một hoạt động trộn thông tin lại với nhau. Phép tích chập được ứng dụng tương đối rộng rãi trong nhiều ngành khoa học và kỹ thuật khác nhau.
+Để đào sâu và hiểu rõ hơn về [mạng nơ-ron tích chập](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html), chúng ta cần lướt qua một chút về các kiến thức toán học có liên quan đến phép tích chập. Chúng ta có thể hình dung một cách đơn giản rằng ý nghĩa của phép tích chập giống như một hoạt động trộn thông tin lại với nhau. Phép tích chập được ứng dụng tương đối rộng rãi trong nhiều ngành khoa học và kỹ thuật khác nhau.
 
 Trong toán học, phép tích chập giữa hai hàm $f$ và $g$ sẽ tạo ra một hàm thứ ba biểu diễn sự biến đổi của của một hàm đối với hàm còn lại. Xét hai hàm $f$ và $g$, phép tích chập giữa hai hàm này được định nghĩa như sau:
 
@@ -33,7 +33,7 @@ $$h\left( x \right) = f \otimes g = \int\limits_{ - \infty }^\infty  {f\left( {x
 
 {% raw %}
 $$\begin{array}{l}
-{\rm{feuture map}} &= input \otimes kernel\\
+{\rm{feuture \thinspace map}} &= input \otimes kernel\\
 &= \sum\limits_{y = 0}^{columns} {\left( {\sum\limits_{x = 0}^{rows} {input\left( {x - a,y - b} \right){\rm{kernel}}\left( {x,y} \right)} } \right)} \\
 &= {F^{ - 1}}\left( {\sqrt {2\pi } F\left[ {input} \right]F\left[ {{\rm{kernel}}} \right]} \right)
 \end{array}$$
@@ -63,6 +63,14 @@ $$\left( {K * I} \right)\left( {i,j} \right) = \sum\limits_{m,n} {K\left( {m,n} 
 
 ### Convolutional Layer
 
+Convolutional layer là một trong những thành phần quan trọng của [mạng CNN](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html). Nó có chức năng thực hiện phép tính convolutional trên input và trích xuất các feature từ dữ liệu đó. Convolutional layer nhận đầu vào là một tensor 3D (đối với ảnh RGB) hoặc 2D (đối với ảnh grayscale), sau đó áp dụng một bộ lọc convolutional (còn gọi là kernel hoặc filter) trên toàn bộ ảnh.
+
+Bộ lọc này có thể được coi như một ma trận số thực kích thước nhỏ, có thể dịch chuyển trên toàn bộ ảnh để tạo ra các feature maps. Khi thực hiện phép tính convolution, các phần tử của bộ lọc nhân với các giá trị tương ứng của ảnh, và kết quả của phép nhân này được tổng hợp lại thành một giá trị duy nhất, được gọi là giá trị đầu ra của phép tính convolution tại vị trí tương ứng trên feature map.
+
+Sau khi tính toán các giá trị đầu ra của phép tính convolution cho toàn bộ ảnh, chúng ta thu được một tập hợp các feature map, mỗi feature map đại diện cho một đặc trưng cụ thể của ảnh. Các feature map này được truyền vào một hàm kích hoạt (activation function) như ReLU để giúp tăng tính phi tuyến của mô hình và giảm thiểu độ lệch (bias).
+
+Convolutional layer thường được sử dụng nhiều lần trong một [mạng CNN](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html) để trích xuất các đặc trưng phức tạp và trừu tượng hơn. Ngoài ra, các convolutional layer còn có thể được kết hợp với các lớp khác như pooling layer để giảm kích thước của đầu vào và giúp mô hình hoạt động nhanh hơn.
+
 ### Pooling Layer
 
 Chức năng chung của pooling layer là giảm kích thước không gian của đặc trưng với mục đích chính là giảm số lượng tham số và khối lượng tính toán trong network. Pooling layer hoạt động trên từng feuture map độc lập với nhau. Hướng tiếp cận phổ biến nhất được sử dụng là max pooling.
@@ -72,5 +80,4 @@ Chức năng chung của pooling layer là giảm kích thước không gian c�
   <figcaption><center><i>Ví dụ minh họa cho thấy pooling đang hoạt động trên 4 vùng không chồng chéo nhau của hình ảnh. Nguồn: UFLDL Tutorial</i></center></figcaption>
 </figure>
 
-
-(Bài viết đang trong quá trình hoàn thiện)
+### Tài liệu tham khảo
