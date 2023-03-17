@@ -49,7 +49,13 @@ Trong [Bitcoin](https://bitcoin.org/bitcoin.pdf) và các loại tiền điện 
 
 ### Ứng dụng của cây Merkle trong BitTorrent
 
-[BitTorrent](https://www.bittorrent.com) là một giao thức truyền thông (communication protocol) được sử dụng để chia sẻ tệp dữ liệu qua mạng ngang hàng (peer-to-peer network).
+[BitTorrent](https://www.bittorrent.com) là một giao thức truyền thông (communication protocol) được sử dụng để chia sẻ tệp dữ liệu qua mạng ngang hàng (peer-to-peer network). [Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng trong [BitTorrent](https://www.bittorrent.com) như một cấu trúc dữ liệu phân cấp để kiểm tra tính toàn vẹn của các phần của tập tin được chia sẻ. Các phần của tập tin được chia thành các khối dữ liệu nhỏ hơn và mỗi khối được băm (hash) bằng một thuật toán băm dữ liệu (hash function) ví dụ như SHA-1 chẳng hạn. Các giá trị băm này được sử dụng để tạo ra một [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html).
+
+[Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) được sử dụng trong BitTorrent như sau: khi một máy tính muốn tải xuống một tập tin, nó sẽ gửi yêu cầu một danh sách các khối dữ liệu được chia nhỏ từ các máy tính khác trong mạng. Các khối dữ liệu được gửi trả về theo đúng thứ tự. Mỗi khối dữ liệu được tải xuống và kiểm tra tính toàn vẹn của nó bằng cách so sánh băm của nó với các băm trên [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html).
+
+[Cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) cho phép kiểm tra tính toàn vẹn của tập tin một cách hiệu quả và nhanh chóng. Nếu một khối dữ liệu bị lỗi hoặc không chính xác, [cây Merkle](https://nguyentruonglong.net/cau-truc-du-lieu-cay-merkle-merkle-tree.html) sẽ cho phép máy tính tải xuống lại khối đó từ một máy tính khác trong mạng. Các khối được tải xuống một cách độc lập và có thể được kiểm tra tính toàn vẹn một cách hiệu quả mà không cần phải tải xuống toàn bộ tập tin.
+
+Điều này giúp cải thiện hiệu suất của giao thức [BitTorrent](https://www.bittorrent.com), giúp người dùng có thể tải xuống tập tin nhanh hơn và đáng tin cậy hơn.
 
 ### Tài liệu tham khảo
 
