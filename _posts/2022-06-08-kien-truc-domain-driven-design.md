@@ -23,7 +23,18 @@ Entity là một đối tượng trong Domain Model, được định nghĩa b�
 
 ### Value Object
 
-Value Object là một đối tượng trong Domain Model, không có định danh duy nhất và được xác định bởi các thuộc tính của nó. Value Object thường được sử dụng để biểu diễn các thuộc tính hoặc trạng thái của các Entity.
+Trong [Domain-Driven Design (DDD)](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), Value Object (đối tượng giá trị) là một đối tượng đại diện cho một giá trị không thay đổi hoặc không thể thay đổi, nhưng không phải là một định danh riêng biệt (identity) như Entity (đối tượng thực thể). Với các giá trị này thì chúng ta không phải quan tâm đến định danh, mà chỉ quan tâm đến các thuộc tính của nó.
+
+Value Object có các đặc điểm sau:
+ - Không có tính chất định danh: Value Object không được xác định bởi một định danh riêng biệt. Thay vào đó, nó được xác định bởi giá trị của các thuộc tính của nó.
+- Không có tính chất thay đổi: Value Object là không thể thay đổi, có nghĩa là giá trị của nó không thể bị thay đổi sau khi nó được tạo ra.
+- Không có tính chất tồn tại độc lập: Value Object không tồn tại độc lập. Thay vào đó, nó là một phần của một đối tượng khác, ví dụ như Entity hoặc một đối tượng giá trị lớn hơn.
+
+Value Object thường được sử dụng để biểu diễn các giá trị như địa chỉ, tiền tệ, thời gian, số lượng,... Chúng ta cần sử dụng Value Object khi giá trị được biểu diễn là không thể thay đổi và không cần phải có một định danh riêng biệt. Các đối tượng Value Object thường được sử dụng để giảm sự phức tạp của hệ thống và tăng tính rõ ràng trong thiết kế, đồng thời giúp cho các đối tượng Entity trở nên đơn giản hơn. Ngoài ra chúng cũng giúp xác định và phân loại các thuộc tính trong hệ thống theo các khái niệm thực tế.
+
+Lấy ví dụ trong một hệ thống quản lý đơn hàng, một đơn hàng có thể bao gồm các Value Object như địa chỉ giao hàng, ngày đặt hàng và phương thức thanh toán. Các Value Object này không có định danh riêng và không thể được phân biệt bởi các thuộc tính. Chúng chỉ đơn giản là các giá trị mô tả cho đơn hàng đó.
+
+Trong ví dụ khác như ở một hệ thống quản lý tài sản, một tài sản (asset) có thể bao gồm các Value Object như trạng thái hiện tại, ngày mua và giá trị tài sản. Những giá trị này cũng là các thông tin mô tả về tài sản và không có định danh riêng.
 
 ### Service
 
