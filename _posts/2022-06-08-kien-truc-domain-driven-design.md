@@ -27,7 +27,13 @@ Value Object là một đối tượng trong Domain Model, không có định da
 
 ### Service
 
-Service là một phương thức hoặc hành động trong Domain Model, không thuộc về một Entity hoặc Value Object cụ thể nào. Service thường được sử dụng để thực hiện các hành động liên quan đến nhiều Entity hoặc các hành động phức tạp mà không thể thực hiện bằng cách chỉ sử dụng một Entity.
+Trong [Domain-Driven Design (DDD)](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), Service là một khái niệm quan trọng của việc mô hình hóa và thiết kế các hệ thống. Service đại diện cho các chức năng hoặc nhiệm vụ cụ thể mà hệ thống phải thực hiện, thường liên quan đến các thao tác xử lý dữ liệu hoặc tương tác giữa các thành phần khác nhau trong hệ thống. Nó là một phương thức hoặc hành động không thuộc về một Entity hoặc Value Object cụ thể nào. Service thường được sử dụng để thực hiện các hành động liên quan đến nhiều Entity hoặc các hành động phức tạp mà không thể thực hiện bằng cách chỉ sử dụng một Entity.
+
+Một Service có thể bao gồm các thao tác CRUD (Create, Read, Update, Delete) hoặc các thao tác phức tạp hơn như xử lý giao dịch, phân tích dữ liệu, tính toán phức tạp, tương tác với các API bên ngoài và các hệ thống khác, và các nhiệm vụ khác liên quan đến logic kinh doanh của hệ thống.
+
+Service thường được triển khai dưới dạng các phương thức trong các lớp của ứng dụng hoặc được triển khai bằng các service bên ngoài (ví dụ: RESTful API, giao thức RPC, v.v.). Các Service thường được phân loại theo Bounded Context để đảm bảo tính chính xác và sự độc lập giữa các nhiệm vụ khác nhau trong hệ thống.
+
+Ví dụ về Service trong hệ thống bán lẻ có thể là "CheckoutService", "OrderService" hoặc "PaymentService", mỗi Service đóng vai trò quản lý một phần của quy trình mua hàng. Các Service này có thể tương tác với các Entity như "Product", "Customer", "Order" hoặc các Value Object như "ShippingAddress", "PaymentMethod".
 
 ### Bounded Context
 
