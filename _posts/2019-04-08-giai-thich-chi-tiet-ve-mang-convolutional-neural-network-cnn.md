@@ -73,11 +73,17 @@ Convolutional layer thường được sử dụng nhiều lần trong một [m�
 
 ### Pooling Layer
 
-Chức năng chung của pooling layer là giảm kích thước không gian của đặc trưng với mục đích chính là giảm số lượng tham số và khối lượng tính toán trong network. Pooling layer hoạt động trên từng feuture map độc lập với nhau. Hướng tiếp cận phổ biến nhất được sử dụng là max pooling.
+Chức năng chung của pooling layer là giảm kích thước không gian của đặc trưng với mục đích chính là giảm số lượng tham số và khối lượng tính toán trong network, tăng tính tổng quát và hạn chế overfitting. Pooling layer hoạt động trên từng feuture map độc lập với nhau. Cơ chế hoạt động của pooling layer là chia nhỏ đầu vào thành các khối non-overlapping và áp dụng một hàm tóm tắt (summary function) trên mỗi khối để giảm kích thước đầu ra. Hàm tóm tắt phổ biến nhất là max-pooling, trong đó giá trị lớn nhất trong mỗi khối được chọn làm giá trị đại diện cho khối đó.
 
 <figure class="image">
   <img src="https://nguyentruonglong.net/images/PoolingSchematic.gif" alt="Ví dụ minh họa cho thấy pooling đang hoạt động trên 4 vùng không chồng chéo nhau của hình ảnh">
   <figcaption><center><i>Ví dụ minh họa cho thấy pooling đang hoạt động trên 4 vùng không chồng chéo nhau của hình ảnh. Nguồn: UFLDL Tutorial</i></center></figcaption>
 </figure>
+
+Ví dụ cụ thể nếu ta có đầu vào là một ma trận kích thước 6x6, một max-pooling với kernel size là 2x2 sẽ chia ma trận thành các khối 2x2 và lấy giá trị lớn nhất trong mỗi khối để tạo ra đầu ra kích thước 3x3. Max-pooling có thể được sử dụng sau một convolutional layer để giảm kích thước đầu ra, tăng tốc độ tính toán và hạn chế overfitting. Từ đó chúng ta có thể thấy pooling layer sẽ đóng các vai trò then chốt sau trong một [mạng CNN](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html):
+
+- <i>Giảm chiều sâu (depth) của đầu vào</i>: Khi một pooling layer được áp dụng trên đầu ra của một convolutional layer, kích thước chiều sâu (depth) của đầu ra sẽ giảm đi. Điều này giúp giảm độ phức tạp của mô hình và giảm yêu cầu về tài nguyên tính toán.
+- <i>Tăng tính tổng quát của mô hình</i>: Pooling layer có thể giúp tăng tính tổng quát của mô hình bằng cách giảm thông tin chi tiết về đặc trưng, tạo ra đặc trưng trừu tượng hơn.
+- <i>Hạn chế overfitting</i>: Pooling layer có thể giúp hạn chế overfitting bằng cách loại bỏ các đặc trưng không cần thiết hoặc không quan trọng trong đầu vào, từ đó giúp mô hình dự đoán tốt hơn trên dữ liệu mới.
 
 ### Tài liệu tham khảo
