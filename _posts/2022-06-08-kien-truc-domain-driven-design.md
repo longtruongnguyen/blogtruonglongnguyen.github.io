@@ -31,7 +31,7 @@ Trong [Domain-Driven Design (DDD)](https://nguyentruonglong.net/kien-truc-domain
 
 Một Service có thể bao gồm các thao tác CRUD (Create, Read, Update, Delete) hoặc các thao tác phức tạp hơn như xử lý giao dịch, phân tích dữ liệu, tính toán phức tạp, tương tác với các API bên ngoài và các hệ thống khác, và các nhiệm vụ khác liên quan đến logic kinh doanh của hệ thống.
 
-Service thường được triển khai dưới dạng các phương thức trong các lớp của ứng dụng hoặc được triển khai bằng các service bên ngoài (ví dụ: RESTful API, giao thức RPC, v.v.). Các Service thường được phân loại theo Bounded Context để đảm bảo tính chính xác và sự độc lập giữa các nhiệm vụ khác nhau trong hệ thống.
+Service thường được triển khai dưới dạng các phương thức trong các lớp của ứng dụng hoặc được triển khai bằng các service bên ngoài (ví dụ: RESTful API, giao thức RPC,...). Các Service thường được phân loại theo Bounded Context để đảm bảo tính chính xác và sự độc lập giữa các nhiệm vụ khác nhau trong hệ thống.
 
 Ví dụ về Service trong hệ thống bán lẻ có thể là "CheckoutService", "OrderService" hoặc "PaymentService", mỗi Service đóng vai trò quản lý một phần của quy trình mua hàng. Các Service này có thể tương tác với các Entity như "Product", "Customer", "Order" hoặc các Value Object như "ShippingAddress", "PaymentMethod".
 
