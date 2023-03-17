@@ -4,7 +4,7 @@ title: Khái niệm Domain Model
 description: Trong công nghệ phần mềm, domain model là một bản phác thảo các thực thể cơ bản của hệ thống và các mối quan hệ giữa chúng. Domain model tạo ra một mạng lưới các đối tượng được kết nối với nhau, trong đó mỗi đối tượng đại diện cho một số cá thể có ý nghĩa như một tập đoàn hay một dòng thông tin trên đơn đặt hàng.
 excerpt: Trong công nghệ phần mềm, domain model là một bản phác thảo các thực thể cơ bản của hệ thống và các mối quan hệ giữa chúng. Domain model tạo ra một mạng lưới các đối tượng được kết nối với nhau, trong đó mỗi đối tượng đại diện cho một số cá thể có ý nghĩa như một tập đoàn hay một dòng thông tin trên đơn đặt hàng.
 thumbnail:
-keywords: khái niệm domain model, domain model, domain model là gì, mô hình miền, mô hình domain model, tìm hiểu domain model, aggregate, entity
+keywords: khái niệm domain model, domain model, domain model là gì, mô hình miền, mô hình domain model, tìm hiểu domain model, aggregate, entity, repository, service
 author: Nguyễn Trường Long
 ---
 
@@ -14,7 +14,7 @@ Trong công nghệ phần mềm, [domain model](https://nguyentruonglong.net/kha
 
 - <strong>Entity</strong>: Là đối tượng thực tế trong lĩnh vực, có ý nghĩa và được định danh bởi một thuộc tính duy nhất. Ví dụ: trong hệ thống quản lý khách sạn, đối tượng "khách hàng" có thể được đại diện bởi một entity với thuộc tính duy nhất là mã khách hàng.
 
-- <strong>Value object</strong>: Là đối tượng có giá trị nhưng không được định danh duy nhất trong lĩnh vực. Ví dụ: trong hệ thống bán hàng trực tuyến, một đối tượng "địa chỉ" có thể được đại diện bởi một value object gồm các thuộc tính như đường, thành phố và quốc gia.
+- <strong>Value object</strong>: Là đối tượng có giá trị nhưng không được định danh duy nhất trong lĩnh vực. Ví dụ cụ thể trong hệ thống bán hàng trực tuyến, một đối tượng "địa chỉ" có thể được đại diện bởi một value object gồm các thuộc tính như đường, thành phố và quốc gia.
 
 - <strong>Aggregate</strong>: Là một nhóm các đối tượng liên quan đến nhau, được quản lý và duy trì bởi một đối tượng root. Ví dụ: trong hệ thống quản lý đơn hàng, một aggregate có thể bao gồm các đối tượng liên quan như đơn hàng, khách hàng, sản phẩm và phiếu giao hàng, và được quản lý bởi đối tượng root là đơn hàng.
 
