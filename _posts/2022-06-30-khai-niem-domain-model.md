@@ -16,7 +16,7 @@ Trong công nghệ phần mềm, [domain model](https://nguyentruonglong.net/kha
 
 - <strong>Value object</strong>: Là đối tượng có giá trị nhưng không được định danh duy nhất trong lĩnh vực. Ví dụ cụ thể trong hệ thống bán hàng trực tuyến, một đối tượng "địa chỉ" có thể được đại diện bởi một value object gồm các thuộc tính như đường, thành phố và quốc gia.
 
-- <strong>Aggregate</strong>: Là một nhóm các đối tượng liên quan đến nhau, được quản lý và duy trì bởi một đối tượng root. Ví dụ: trong hệ thống quản lý đơn hàng, một aggregate có thể bao gồm các đối tượng liên quan như đơn hàng, khách hàng, sản phẩm và phiếu giao hàng, và được quản lý bởi đối tượng root là đơn hàng.
+- <strong>Aggregate</strong>: Là một nhóm các đối tượng liên quan đến nhau, được quản lý và duy trì bởi một đối tượng root. Lấy ví dụ trong hệ thống quản lý đơn hàng, một aggregate có thể bao gồm các đối tượng liên quan như đơn hàng, khách hàng, sản phẩm và phiếu giao hàng, và được quản lý bởi đối tượng root là đơn hàng.
 
 - <strong>Repository</strong>: Là một interface định nghĩa các phương thức để lưu trữ và truy xuất đối tượng trong [domain model](https://nguyentruonglong.net/khai-niem-domain-model.html). Repository cung cấp các phương thức như thêm, sửa, xóa và truy vấn để tương tác với cơ sở dữ liệu hoặc bất kỳ hệ thống lưu trữ nào được sử dụng trong hệ thống.
 
