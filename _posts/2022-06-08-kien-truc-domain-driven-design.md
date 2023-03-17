@@ -2,7 +2,7 @@
 layout: post
 title: Kiến trúc Domain-Driven Design
 description: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp cấp các khối lắp ghép (building blocks) chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
-keywords: Domain-Driven Design, design pattern, DDD, mô hình Domain-Driven Design, kiến trúc Domain-Driven Design, mô hình DDD, kiến trúc DDD, Anti-Corruption Layer, Domain Model
+keywords: Domain-Driven Design, design pattern, DDD, mô hình Domain-Driven Design, kiến trúc Domain-Driven Design, mô hình DDD, kiến trúc DDD, Domain Model, Entity, Value Object, Service, Bounded Context, Anti-Corruption Layer
 excerpt: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp cấp các khối lắp ghép (building blocks) chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
 author: Nguyễn Trường Long
 ---
@@ -15,11 +15,22 @@ Trong bài viết này chúng ta sẽ cùng lướt qua các khái niệm chính
 
 ### Domain Model
 
-Domain Model là một mô hình bao gồm các đối tượng (Objects), phương thức (Methods) và quan hệ giữa chúng được định nghĩa để mô tả và giải quyết vấn đề trong lĩnh vực kinh doanh (business domain). Nó được tạo ra từ việc sử dụng các ngôn ngữ bổ sung như Ubiquitous Language để phát triển một mô hình chung, đại diện cho tất cả các khía cạnh của lĩnh vực kinh doanh.
+Domain Model là một mô hình bao gồm các đối tượng (Objects), phương thức (Methods) và quan hệ giữa chúng được định nghĩa để mô tả và giải quyết vấn đề trong nghiệp vụ lĩnh vực kinh doanh (business domain). Nó được tạo ra từ việc sử dụng các ngôn ngữ bổ sung như Ubiquitous Language để phát triển một mô hình chung, đại diện cho tất cả các khía cạnh trong nghiệp vụ.
 
 ### Entity
 
-Entity là một đối tượng trong Domain Model, được định nghĩa bởi các thuộc tính riêng biệt và có một định danh (identity) duy nhất. Entity được định nghĩa để đại diện cho các đối tượng vật lý hoặc trừu tượng trong lĩnh vực kinh doanh.
+Trong [Domain-Driven Design (DDD)](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), Entity là một đối tượng trong hệ thống có tính nhất quán và có thể được định danh bằng một ID duy nhất. Điều này có nghĩa là cho dù cho các thuộc tính của Entity có thay đổi đi chăng nữa, nó vẫn được coi là một đối tượng duy nhất nếu nó có cùng ID.
+
+Một Entity có thể có nhiều thuộc tính, phương thức hay hành vi. Thông thường thì Entity sẽ có một số thuộc tính quan trọng được sử dụng để định danh nó và xác định những thuộc tính khác của nó. Khái niệm Entity trong [Domain-Driven Design (DDD)](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) mang một số đặc điểm sau:
+
+- Entity được xác định bởi một ID duy nhất.
+- Entity là một đối tượng độc lập, có thể tồn tại một mình hoặc được liên kết với các đối tượng khác.
+- Entity có thể có thuộc tính, phương thức và logic nghiệp vụ kinh doanh riêng của nó.
+- Entity có thể có một số trạng thái khác nhau trong vòng đời của nó.
+
+Ví dụ như một Entity "Order" trong hệ thống bán hàng có thể có các thuộc tính như "order number", "customer", "total amount", và "order date". Tất cả các đơn hàng đều có một mã đơn hàng duy nhất để xác định nó. Do đó đây là một ví dụ của một đối tượng được xác định bởi tính định danh của nó.
+
+Entity thường được sử dụng để đại diện cho các đối tượng trong hệ thống thực tế, chẳng hạn như đơn hàng, khách hàng, sản phẩm, các đối tượng vật lý hoặc trừu tượng trong nghiệp vụ kinh doanh. Nó cũng thường được sử dụng để lưu trữ và truy xuất dữ liệu từ cơ sở dữ liệu.
 
 ### Value Object
 
