@@ -2,7 +2,7 @@
 layout: post
 title: Kiến trúc Domain-Driven Design
 description: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp cấp các khối lắp ghép (building blocks) chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
-keywords: Domain-Driven Design, design pattern, DDD, mô hình Domain-Driven Design, kiến trúc Domain-Driven Design, mô hình DDD, kiến trúc DDD
+keywords: Domain-Driven Design, design pattern, DDD, mô hình Domain-Driven Design, kiến trúc Domain-Driven Design, mô hình DDD, kiến trúc DDD, Anti-Corruption Layer, Domain Model
 excerpt: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp cấp các khối lắp ghép (building blocks) chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
 author: Nguyễn Trường Long
 ---
@@ -35,7 +35,13 @@ Bounded Context là một giới hạn về mặt ngữ nghĩa của Domain Mode
 
 ### Anti-Corruption Layer
 
-Anti-Corruption Layer là một lớp trừu tượng trong Domain Model, giúp giảm thiểu tác động của các thành phần hệ thống bên ngoài lên Domain Model. Nó giúp đảm bảo tính độc lập và kiểm soát việc chuyển đổi dữ liệu giữa Domain Model và các hệ thống bên ngoài.
+Trong Domain-Driven Design (DDD), Anti-Corruption Layer (ACL) là một lớp được sử dụng để giữ cho các thành phần của hệ thống phần mềm không bị ảnh hưởng bởi các thành phần khác nằm bên ngoài, đặc biệt là các thành phần được thiết kế bởi các nhóm khác hoặc bên thứ ba. Các tính năng của Anti-Corruption Layer bao gồm:
+
+- Đóng gói tất cả các phần liên quan đến tương tác với các hệ thống bên ngoài vào một nơi duy nhất.
+- Tách biệt các phần tương tác với các hệ thống bên ngoài khỏi các phần khác của hệ thống, giúp giảm thiểu rủi ro khi thay đổi các hệ thống bên ngoài.
+- Đảm bảo rằng các phần khác của hệ thống của chúng ta không bị ảnh hưởng bởi các thay đổi của các hệ thống bên ngoài.
+
+Anti-Corruption Layer có thể được hiểu như một lớp trung gian đứng giữa các thành phần của hệ thống phần mềm, chịu trách nhiệm xử lý dữ liệu truyền qua giữa các thành phần sao cho đảm bảo tính toàn vẹn và độ chính xác của dữ liệu. Nó giúp đảm bảo tính độc lập và kiểm soát việc chuyển đổi dữ liệu giữa Domain Model và các hệ thống bên ngoài. Các thành phần khác nằm bên ngoài được biết đến là "Legacy Systems" hoặc "External Systems". Việc sử dụng Anti-Corruption Layer giúp cho hệ thống phần mềm không bị ảnh hưởng bởi các hệ thống khác, đặc biệt là các hệ thống cũ hoặc các hệ thống bên ngoài mà không có sự kiểm soát và quản lý.
 
 ### Tài liệu tham khảo
 
