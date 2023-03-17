@@ -9,7 +9,7 @@ author: Nguyễn Trường Long
 
 [Mạng nơ-ron tích chập (Convolutional Neural Networks - CNN)](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html) là một loại mạng neural network đã đạt được nhiều thành tựu trong các bài toán có liên quan đến hình ảnh như nhận dạng hình ảnh (image recognition) và phân lớp hình ảnh (image classification) hiện nay. Ngoài ra, [mạng CNN](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html) còn được ứng dụng trong các bài toán xử lý ngôn tự nhiên (natural language processing) như phát hiện thư rác (spam detection), phân loại văn bản (topic categorization),...
 
-Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer perceptron) chỉ được xây dựng để nhận dữ liệu đầu vào dưới dạng vector. Đối với một số loại dữ liệu, đặc biệt là dữ liệu ở dạng hình ảnh, mạng nơ-ron truyền thẳng nhiều lớp tỏ ra không hiệu quả để đáp ứng xử lý tốt. Để áp dụng mạng nơ-ron truyền thẳng nhiều lớp cho việc xử lý các dữ liệu ở dạng hình ảnh, chúng ta cần phải chuyển đổi được hình ảnh về dưới dạng vector. Điều này thường gây ra sự mất mát nhiều thông tin trong dữ liệu gốc ban đầu. [Mạng CNN](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html) được giới thiệu bởi LeCun đã lược bỏ công việc trích xuất các đặc trưng một cách thủ công.
+Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer perceptron) chỉ được xây dựng để nhận dữ liệu đầu vào dưới dạng vector. Đối với một số loại dữ liệu, đặc biệt là dữ liệu ở dạng hình ảnh, mạng nơ-ron truyền thẳng nhiều lớp tỏ ra không hiệu quả để đáp ứng xử lý tốt. Để áp dụng mạng nơ-ron truyền thẳng nhiều lớp cho việc xử lý các dữ liệu ở dạng hình ảnh, chúng ta cần phải chuyển đổi được hình ảnh về dưới dạng vector. Điều này thường gây ra sự mất mát nhiều thông tin trong dữ liệu gốc ban đầu. [Mạng CNN](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html) được giới thiệu bởi LeCun đã lược bỏ công việc trích xuất các đặc trưng một cách thủ công. [Mạng CNN](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html) là một kiến trúc mạng nơ-ron học sâu đặc biệt được thiết kế để xử lý dữ liệu hình ảnh và video, có khả năng học và trích xuất đặc trưng từ ảnh.
 
 [Mạng CNN](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html) được có kiến trúc được cấu tạo bởi một số loại layer bao gồm:
 - Convolutional layer
@@ -20,6 +20,10 @@ Các mạng nơ-ron truyền thẳng nhiều lớp nhiều lớp (multilayer per
   <img src="https://nguyentruonglong.net/images/CompleteCNNArchitecture.png" alt="Kiến trúc tổng quát của một Convolutional Neural Network">
   <figcaption><center><i>Kiến trúc tổng quát của một Convolutional Neural Network. Nguồn: Nikhil Ketkar</i></center></figcaption>
 </figure>
+
+Convolutional layer thực hiện phép tích chập giữa ảnh đầu vào và các bộ lọc để tìm ra các đặc trưng của hình ảnh. Tiếp sau đó pooling layer làm giảm kích thước của đầu ra của convolutional layer để giảm độ phức tạp tính toán và ngăn chặn overfitting. Cuối cùng fully connected layer kết hợp các đặc trưng đã được trích xuất bởi convolutional layer và pooling layer để phân loại hình ảnh hoặc thực hiện các nhiệm vụ liên quan đến xử lý hình ảnh và video.
+
+[Mạng CNN](https://nguyentruonglong.net/giai-thich-chi-tiet-ve-mang-convolutional-neural-network-cnn.html) là một loại mạng nơ-ron học sâu được sử dụng rộng rãi trong các ứng dụng liên quan đến xử lý hình ảnh và video, bao gồm nhận dạng hình ảnh, phân loại hình ảnh, xử lý video và nhận dạng khuôn mặt.
 
 ### Phép tích chập (convolution operation)
 
