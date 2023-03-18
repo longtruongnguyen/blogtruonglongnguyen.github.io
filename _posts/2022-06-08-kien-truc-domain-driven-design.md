@@ -98,6 +98,7 @@ Anti-Corruption Layer có thể được hiểu như một lớp trung gian đ�
 
 ### Tài liệu tham khảo
 
+* <a href="https://opus.ch/ddd-concepts-and-patterns-introduction-and-overview/" target="_blank">https://opus.ch/ddd-concepts-and-patterns-introduction-and-overview/</a>
 * <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design" target="_blank">https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design</a>
 * <a href="https://www.infoq.com/articles/ddd-in-practice" target="_blank">https://www.infoq.com/articles/ddd-in-practice</a>
 * <a href="https://martinfowler.com/tags/domain%20driven%20design.html" target="_blank">https://martinfowler.com/tags/domain%20driven%20design.html</a>
