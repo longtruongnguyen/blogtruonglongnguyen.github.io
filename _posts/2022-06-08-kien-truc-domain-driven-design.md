@@ -15,7 +15,7 @@ Trong bài viết này chúng ta sẽ cùng lướt qua các khái niệm chính
 
 ### Domain Model
 
-Domain Model là một mô hình bao gồm các đối tượng (Objects), phương thức (Methods) và quan hệ giữa chúng được định nghĩa để mô tả và giải quyết vấn đề trong nghiệp vụ lĩnh vực kinh doanh (business domain). Nó được tạo ra từ việc sử dụng các ngôn ngữ bổ sung như Ubiquitous Language để phát triển một mô hình chung, đại diện cho tất cả các khía cạnh trong nghiệp vụ.
+Trong [Domain-Driven Design (DDD)](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), domain model đóng vai trò rất quan trọng và là một phần không thể thiếu trong việc thiết kế và phát triển các hệ thống phức tạp. Domain model là một biểu diễn trừu tượng của các khái niệm, quy trình và quan hệ trong một lĩnh vực (domain) cụ thể. Nó được thiết kế để miêu tả các đối tượng, hành vi và quy trình trong lĩnh vực đó và được sử dụng để hỗ trợ cho các quyết định thiết kế và phát triển của hệ thống. Domain model được tạo ra từ việc sử dụng các ngôn ngữ bổ sung như Ubiquitous Language để phát triển một mô hình chung, đại diện cho tất cả các khía cạnh trong nghiệp vụ phát triển hệ thống.
 
 ### Entity
 
