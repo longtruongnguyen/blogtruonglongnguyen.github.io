@@ -3,12 +3,14 @@ layout: post
 title: Mô hình ngôn ngữ (language model)
 description: Mô hình ngôn ngữ là mô hình mà sẽ tính toán phân phối xác suất của một chuỗi các token trong các ngôn ngữ tự nhiên của con người.
 excerpt: Mô hình ngôn ngữ là mô hình mà tính toán phân phối xác suất của một chuỗi các token trong ngôn ngữ tự nhiên và có nghĩa là mô hình cho phép dự đoán khả năng xuất hiện của chuỗi token này trong ngôn ngữ của nó. Tùy thuộc vào cách thức mô hình được thiết kế, các token này có thể là các từ, các ký tự hoặc thậm chí là các byte.
-keywords: mô hình ngôn ngữ, language model, xử lý ngôn ngữ tự nhiên, mô hình ngôn ngữ n-grams, xấp xỉ Markov
+keywords: mô hình ngôn ngữ, language model, xử lý ngôn ngữ tự nhiên, mô hình ngôn ngữ n-grams, xấp xỉ Markov, học máy
 author: Nguyễn Trường Long
 ---
 
 [Mô hình ngôn ngữ](https://nguyentruonglong.net/mo-hinh-ngon-ngu-language-model.html) là mô hình mà tính toán phân phối xác suất của một chuỗi các token trong ngôn ngữ tự nhiên {% raw %}
-$$P\left( {{w_1},{w_2},{w_3},...,{w_\tau }} \right)$${% endraw %}. Điều này có nghĩa là mô hình cho phép dự đoán khả năng xuất hiện của chuỗi token này trong ngôn ngữ của nó. Tùy thuộc vào cách thức mô hình được thiết kế, các token này có thể là các từ, các ký tự hoặc thậm chí là các byte. Mô hình ngôn ngữ thường được xây dựng trên cơ sở dữ liệu văn bản lớn để học cấu trúc và quy luật của ngôn ngữ. Để tính xác suất của một chuỗi các token liên tiếp, chúng ta áp dụng quy tắc xác suất dây chuyền (chain rule of probability) tổng quát để phân tách như sau:
+$$P\left( {{w_1},{w_2},{w_3},...,{w_\tau }} \right)$${% endraw %}. [Mô hình ngôn ngữ](https://nguyentruonglong.net/mo-hinh-ngon-ngu-language-model.html) thường được xây dựng trên cơ sở dữ liệu văn bản lớn để học cấu trúc và quy luật của ngôn ngữ và sau đó sử dụng cấu trúc đó để đưa ra dự đoán cho các token trong một câu mới. Điều này có nghĩa là mô hình cho phép dự đoán khả năng xuất hiện của chuỗi token này trong ngôn ngữ của nó. Tùy thuộc vào cách thức mô hình được thiết kế, các token này có thể là các từ, các ký tự hoặc thậm chí là các byte.
+
+Để tính xác suất của một chuỗi các token liên tiếp, chúng ta áp dụng quy tắc xác suất dây chuyền (chain rule of probability) tổng quát để phân tách như sau:
 
 {% raw %}
 $$\begin{align}
@@ -18,9 +20,18 @@ $$\begin{align}
 
 Quy tắc dây chuyền này cho chúng ta thấy được mối liên hệ giữa xác suất của một chuỗi các token và xác suất của một token đối với các token đứng trước nó. Ví dụ, để tính xác suất của câu "I am happy today", ta có thể sử dụng quy tắc xác suất dây chuyền và tính như sau:
 
-P("I am happy today") = P("I") * P("am" | "I") * P("happy" | "I am") * P("today" | "I am happy")
+{% raw %}
+$$\begin{align}
+$\textrm{P("I am happy today") = P("I") * P("am" | "I") * P("happy" | "I am") * P("today" | "I am happy")}
+\end{align}$$
+{% endraw %}
 
-Nhưng trong thực tế, quy tắc dây chuyền này tỏ ra không hữu ích vì chúng ta không thể nào có thể tính hết được tất cả các xác suất của một token được cho trước bởi các chuỗi token dài liên tiếp. Do đó xác suất này có thể được xây dựng từ một mô hình ngôn ngữ sử dụng các kỹ thuật như n-grams và xấp xỉ Markov, để dự đoán xác suất của các từ và chuỗi từ trong một văn bản.
+Nhưng trong thực tế, quy tắc dây chuyền này tỏ ra không hữu ích vì chúng ta không thể nào có thể tính hết được tất cả các xác suất của một token được cho trước bởi các chuỗi token dài liên tiếp. Do đó xác suất này có thể được xây dựng từ một mô hình ngôn ngữ sử dụng một số kỹ thuật phổ biến sau:
+
+ - [N-gram Language Models](https://web.stanford.edu/~jurafsky/slp3/3.pdf): Đây là phương pháp đơn giản nhất để xây dựng một mô hình ngôn ngữ. Mô hình này đưa ra dự đoán xác suất của một token dựa trên các token đã xuất hiện trước đó trong câu, được gọi là n-gram. N-gram là một chuỗi gồm n token liên tiếp trong câu.
+- [Neural Language Models](https://towardsdatascience.com/neural-language-models-32bec14d01dc): Đây là phương pháp phổ biến và hiệu quả nhất để xây dựng mô hình ngôn ngữ. [Neural Language Models](https://towardsdatascience.com/neural-language-models-32bec14d01dc) sử dụng các mạng neural để học cấu trúc của ngôn ngữ và đưa ra dự đoán cho từ tiếp theo trong câu dựa trên các token đã xuất hiện trước đó trong câu. Một số kiến trúc mạng neural phổ biến được sử dụng để xây dựng mô hình ngôn ngữ là Recurrent Neural Networks (RNNs) và Transformers.
+- [Statistical Language Models](http://mlwiki.org/index.php/Statistical_Language_Models): Phương pháp này sử dụng các phương pháp thống kê để xây dựng mô hình ngôn ngữ. Các phương pháp này sử dụng các thuật toán như Maximum Likelihood Estimation (MLE) và Expectation-Maximization (EM) để tối đa hóa xác suất của các token trong ngôn ngữ.
+- [Rule-based Language Models]([https://www.igi-global.com/dictionary/rule-based-languages/25655](https://meta-guide.com/natural-language/nlp/statistical-nlp/rule-based-language-modeling): Phương pháp này sử dụng các luật ngữ pháp và cú pháp để xây dựng mô hình ngôn ngữ. Các luật này được thiết lập bởi các chuyên gia ngôn ngữ và được sử dụng để phân tích câu để đưa ra dự đoán cho các token trong câu tiếp theo.
 
 ### Mô hình N-grams
 
@@ -71,3 +82,7 @@ $$\begin{align}
 {% endraw %}
 
 Xấp xỉ Markov là một trong những phương pháp phổ biến nhất được sử dụng trong mô hình ngôn ngữ, nhất là khi xử lý văn bản tự nhiên. Tuy nhiên, nó còn có một số hạn chế, ví dụ như nó không xử lý được các từ mang tính phân loại hoặc không xử lý được các từ đa nghĩa.
+
+#### Ứng dụng
+
+[Mô hình ngôn ngữ](https://nguyentruonglong.net/mo-hinh-ngon-ngu-language-model.html) được sử dụng rộng rãi trong xử lý ngôn ngữ tự nhiên để thực hiện các tác vụ như dịch máy, tự động tóm tắt, phân tích cảm xúc, phân loại văn bản, gợi ý từ,...
