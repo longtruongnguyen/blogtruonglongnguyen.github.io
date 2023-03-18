@@ -20,7 +20,26 @@ Hướng tiếp cận khi xây dựng hệ thống của [Domain-Driven Design](
  - <i>Sử dụng Ubiquitous Language</i>: Ubiquitous Language là một ngôn ngữ chung được sử dụng bởi tất cả các thành viên trong dự án để truyền đạt và hiểu các khái niệm và thuật ngữ trong lĩnh vực. Dùng Ubiquitous Language giúp cho các thành viên trong dự án hiểu nhau dễ dàng hơn, giảm thiểu sự hiểu nhầm và tăng tính chính xác trong việc phát triển.
 - <i>Áp dụng các mẫu thiết kế (design patterns) và kiến trúc (architecture)</i>: [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) sử dụng các mẫu thiết kế và kiến trúc để tạo ra các hệ thống phần mềm có tính mở rộng, dễ bảo trì và đáp ứng nhu cầu của khách hàng. 
 
-Trong bài viết này chúng ta sẽ cùng lướt qua các khái niệm chính trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) như Domain Model, Entity, Value Object, Service, Bounded Context, Anti-Corruption Layer. Các tài liệu trong phạm vi bài viết này được tham khảo chủ yếu đến từ blog của tác giả Martin Fowler và sách của tác giả Eric Evans.
+Các mẫu pattern cơ bản trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) có thể được chia thành hai loại là pattern chiến thuật và pattern chiến lược. Các pattern chiến thuật được sử dụng trong khi xây dựng mô hình miền và trong mã nguồn. Các mẫu chiến lược ở mức cao hơn và được sử dụng để xây dựng hệ thống ở mức kiến trúc. Chúng ta sẽ đi vào chi tiết của từng pattern và do đó trước hết cần liệt kê tổng quát ở đây một vài pattern chính.
+
+##### Tactical Patterns
+
+- Entity
+- Value Object
+- Factory
+- Service
+- Aggregate
+- Repository
+- Module
+
+##### Strategic patterns
+
+- Bounded Context
+- Context Map
+- Model Integrity Patterns
+- Core Domain
+
+Các tài liệu trong phạm vi bài viết này được tham khảo chủ yếu đến từ blog của tác giả Martin Fowler và sách của tác giả Eric Evans.
 
 ### Domain Model
 
