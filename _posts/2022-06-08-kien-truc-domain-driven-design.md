@@ -9,9 +9,18 @@ author: Nguyễn Trường Long
 
 ### Giới thiệu về Domain-Driven Design
 
-Hôm vừa rồi tình cờ đọc được một số bài viết về [kiến trúc Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html). Thấy có hứng thú nên quyết định tìm hiểu sâu thêm về kiến trúc này mặc dù nó chưa thật sự phổ biến ở Việt Nam. Tài liệu được tham khảo chủ yếu đến từ blog của tác giả Martin Fowler và sách của tác giả Eric Evans.
+[Domain-Driven Design (DDD)](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) là một phương pháp thiết kế phần mềm được phát triển bởi Eric Evans vào năm 2003, và được đặc trưng bởi việc tập trung vào việc phân tích và thiết kế phần mềm xung quanh các domain chính của doanh nghiệp.
 
-Trong bài viết này chúng ta sẽ cùng lướt qua các khái niệm chính trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) như Domain Model, Entity, Value Object, Service, Bounded Context, Anti-Corruption Layer.
+DDD được phát triển nhằm giải quyết các vấn đề mà các nhà phát triển phần mềm thường gặp phải trong quá trình thiết kế các ứng dụng doanh nghiệp. Trong quá trình thiết kế, các nhà phát triển thường phải đối mặt với việc phân tích các yêu cầu phức tạp từ người sử dụng, đồng thời cũng phải đối mặt với các yêu cầu về tính mở rộng và bảo trì của ứng dụng. [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) tập trung vào việc hiểu và mô hình hóa lĩnh vực (domain) của hệ thống, đồng thời giải quyết các vấn đề phức tạp trong thiết kế phần mềm. [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) giúp tạo ra các hệ thống phần mềm dễ bảo trì, mở rộng, đáp ứng nhu cầu của khách hàng và linh hoạt trong việc thay đổi.
+
+Hướng tiếp cận khi xây dựng hệ thống của [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) bộc lộ những ưu điểm chính sau:
+
+- <i>Hiểu và phân tích lĩnh vực (domain) của hệ thống</i>: DDD đưa ra phương pháp phân tích và mô hình hóa lĩnh vực (domain) của hệ thống bằng cách sử dụng các phương pháp như Event Storming, User Story Mapping, Domain Modeling, Ubiquitous Language... Điều này giúp xây dựng một mô hình lĩnh vực (domain model) chính xác và đầy đủ, giúp cho việc phát triển hệ thống dễ dàng hơn.
+- <i>Tách biệt lớp domain và các lớp khác</i>: DDD giúp phân tách các lớp của hệ thống để dễ dàng bảo trì và mở rộng. Trong đó, lớp domain là trung tâm của hệ thống và được quan tâm đến nhiều nhất. Lớp domain đóng vai trò quan trọng trong việc định nghĩa các luật chung của lĩnh vực (business rules) và giúp kiểm soát và hạn chế sự phát triển của các lớp khác.
+ - <i>Sử dụng Ubiquitous Language</i>: Ubiquitous Language là một ngôn ngữ chung được sử dụng bởi tất cả các thành viên trong dự án để truyền đạt và hiểu các khái niệm và thuật ngữ trong lĩnh vực. Dùng Ubiquitous Language giúp cho các thành viên trong dự án hiểu nhau dễ dàng hơn, giảm thiểu sự hiểu nhầm và tăng tính chính xác trong việc phát triển.
+- <i>Áp dụng các mẫu thiết kế (design patterns) và kiến trúc (architecture)</i>: DDD sử dụng các mẫu thiết kế và kiến trúc để tạo ra các hệ thống phần mềm có tính mở rộng, dễ bảo trì và đáp ứng nhu cầu của khách hàng. 
+
+Trong bài viết này chúng ta sẽ cùng lướt qua các khái niệm chính trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) như Domain Model, Entity, Value Object, Service, Bounded Context, Anti-Corruption Layer. Các tài liệu trong phạm vi bài viết này được tham khảo chủ yếu đến từ blog của tác giả Martin Fowler và sách của tác giả Eric Evans.
 
 ### Domain Model
 
@@ -89,5 +98,6 @@ Anti-Corruption Layer có thể được hiểu như một lớp trung gian đ�
 
 ### Tài liệu tham khảo
 
+* <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design" target="_blank">https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design</a>
 * <a href="https://www.infoq.com/articles/ddd-in-practice" target="_blank">https://www.infoq.com/articles/ddd-in-practice</a>
 * <a href="https://martinfowler.com/tags/domain%20driven%20design.html" target="_blank">https://martinfowler.com/tags/domain%20driven%20design.html</a>
