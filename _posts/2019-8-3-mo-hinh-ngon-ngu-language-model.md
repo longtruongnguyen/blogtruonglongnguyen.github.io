@@ -22,9 +22,7 @@ Quy tắc dây chuyền này cho chúng ta thấy được mối liên hệ gi�
 
 {% raw %}
 $$\begin{align}
-\begin{document}
-	P(``I am happy today``) = P(``I``) * P("am" | "I") * P("happy" | "I am") * P("today" | "I am happy")
-\end{document}
+ \textrm{P(''I am happy today'') = P(''I'') * P(''am'' | ''I'') * P(''happy'' | ''I am'') * P(''today'' | ''I am happy'')}
 \end{align}$$
 {% endraw %}
 
