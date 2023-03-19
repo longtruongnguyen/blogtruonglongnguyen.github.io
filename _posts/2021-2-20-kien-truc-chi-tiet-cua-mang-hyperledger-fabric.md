@@ -50,7 +50,7 @@ Một số tính năng chính của Fabric ledger:
 
 ### Ứng dụng trong thực tế
 
-[Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) là một nền tảng blockchain được thiết kế để xây dựng các ứng dụng doanh nghiệp. Nó cung cấp một môi trường phát triển và triển khai các ứng dụng blockchain an toàn, đáng tin cậy và có thể mở rộng. Dưới đây là một số ứng dụng chính của (https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html):
+[Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) là một nền tảng blockchain được thiết kế để xây dựng các ứng dụng doanh nghiệp. Nó cung cấp một môi trường phát triển và triển khai các ứng dụng blockchain an toàn, đáng tin cậy và có thể mở rộng. Dưới đây là một số ứng dụng chính của [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html):
 
  - <i>Quản lý chuỗi cung ứng</i>: [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) có thể được sử dụng để giám sát và quản lý các hoạt động của chuỗi cung ứng. Với Fabric, các công ty có thể theo dõi tình trạng của các sản phẩm, từ quá trình sản xuất đến phân phối.
  - <i>Quản lý tài sản</i>: [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) cũng có thể được sử dụng để quản lý các tài sản, bao gồm cả tài sản vật chất và tài sản không vật chất. Với Fabric, các tổ chức có thể tạo ra các hợp đồng thông minh để theo dõi và quản lý tài sản của mình.
