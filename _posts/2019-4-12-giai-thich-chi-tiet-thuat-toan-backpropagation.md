@@ -23,5 +23,10 @@ Kể từ đó thì [thuật toán Backpropagation](https://nguyentruonglong.net
  - <i>Nesterov Accelerated Gradient</i>: Biến thể này cũng kết hợp giữa [thuật toán Backpropagation](https://nguyentruonglong.net/giai-thich-chi-tiet-thuat-toan-backpropagation.html) và momentum, nhưng sử dụng hệ số momentum với phương pháp Nesterov. Nó giúp cải thiện tốc độ hội tụ và giảm thiểu sự dao động của [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html).
 
 
+Ý tưởng của thuật toán Backpropagation
+
+[Thuật toán Backpropagation](https://nguyentruonglong.net/giai-thich-chi-tiet-thuat-toan-backpropagation.html) được sử dụng để tính toán đạo hàm của hàm mất mát theo các tham số trong mô hình machine learning khi áp dụng [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html). Trong mô hình machine learning thì số lượng tham số có thể là rất lớn, đôi khi lên đến hàng triệu tham số. Tính toán đạo hàm của hàm mất mát theo từng tham số bằng cách sử dụng công thức tính đạo hàm bình thường có thể rất phức tạp và tốn kém về thời gian và chi phí tính toán. [Thuật toán Backpropagation](https://nguyentruonglong.net/giai-thich-chi-tiet-thuat-toan-backpropagation.html) được thiết kế để tính toán đạo hàm của hàm mất mát theo từng tham số một cách hiệu quả hơn bằng cách sử dụng kỹ thuật lan truyền ngược (backward propagation) thông qua các lớp (layers) của mô hình. Quá trình tính toán đạo hàm này giúp [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) điều chỉnh các tham số mô hình sao cho giá trị của hàm mất mát giảm dần theo thời gian, giúp tối ưu hóa hiệu suất huấn luyện cho mô hình.
+
+
 
 
