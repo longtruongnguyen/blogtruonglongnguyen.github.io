@@ -151,7 +151,7 @@ error_i = y_i - \hat{y_i}
 \end{align}$$
 {% endraw %}
 
-Bước 3: Tính toán đạo hàm tại lớp đầu ra
+Bước 3: Tính toán đạo hàm tại lớp đầu ra (pha Backpropagation)
 
 Chúng ta cần tính đạo hàm của hàm mất mát {% raw %}$$E$${% endraw %} theo các trọng số {% raw %}$$w_{ij}$${% endraw %} tại lớp đầu ra {% raw %}$$l=3$${% endraw %}. Trong trường hợp này, hàm mất mát được định nghĩa là hàm tổng bình phương sai số giữa giá trị dự đoán và giá trị thực tế:
 
