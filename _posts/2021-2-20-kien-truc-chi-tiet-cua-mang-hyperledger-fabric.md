@@ -35,11 +35,6 @@ Một tổ chức cũng tạo ra một hoặc nhiều peer node để thay mặt
 
 ### Các thành phần của [mạng Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html)
 
-- Ledger: Một ledger (sổ cái) bao gồm 2 phần khác nhau là "blockchain" và "state database".
-
-- Smart Contract: Smart Contract là một đoạn mã được gọi bởi ứng dụng của client bên ngoài mạng blockchain - quản lý quyền truy cập và sửa đổi đối với một tập hợp các cặp khóa-giá trị ở "state database".
-- 
-
  - Peer Nodes (Node ngang hàng): Peer nodes là các nút mạng trong [mạng blockchain Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html), chứa dữ liệu và xử lý các giao dịch. Các peer nodes có thể được cấu hình để thực hiện các chức năng khác nhau, bao gồm cả nút đồng ý (endorsing node) và nút ghi (committing node). Peer là thành phần cơ bản của [mạng Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html), được sở hữu và duy trì bởi các thành viên. Đây là nơi lưu trữ các bản sao của ledger và các bản sao của smart contract. Lấy ví dụ sau, mạng N bao gồm các peer node là P1, P2 và P3. Mỗi Peer Nodes này đều chứa bản sảo của sổ cái phân tán (distributed ledger) L1. P1, P2 và P3 đều sử dụng chung chaincode S1 để truy cập vào bản sao sổ cái phân tán của nó. Các peer node có thể được tạo, dừng, cấu hình lại và xóa. Có một tập hợp các API cho phép các quản trị viên và ứng dụng tương tác với services mà họ cung cấp.
 
  - Ordering Service Nodes (Nút sắp xếp): Ordering service nodes là các node mạng đảm nhận vai trò quản lý các giao dịch trong [mạng Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html). Các nút này đảm bảo rằng các giao dịch được xử lý theo đúng thứ tự và được đồng bộ hóa giữa các peer nodes.
