@@ -86,7 +86,7 @@ a_i = \sigma(z_i)
 Trong đó:
 
  - {% raw %}$$n$${% endraw %} là số lượng neuron trong lớp đầu vào
- - {% raw %}$$w_{ij}$${% endraw %} là trọng số kết nối giữa neuron thứ % raw %}$$i$${% endraw %} của lớp ẩn và neuron thứ {% raw %}$$j$${% endraw %} của lớp đầu vào
+ - {% raw %}$$w_{ij}$${% endraw %} là trọng số kết nối giữa neuron thứ {% raw %}$$i$${% endraw %} của lớp ẩn và neuron thứ {% raw %}$$j$${% endraw %} của lớp đầu vào
  - {% raw %}$$x_j$${% endraw %} là giá trị đầu vào tại neuron thứ {% raw %}$$j$${% endraw %} của lớp đầu vào
  - {% raw %}$$b_i$${% endraw %} là giá trị bias của neuron thứ {% raw %}$$i$${% endraw %} trong lớp ẩn
  - {% raw %}$$\sigma(z_i)$${% endraw %} là hàm kích hoạt (ví dụ như hàm sigmoid, hàm tanh, hàm ReLU,...) tại neuron thứ {% raw %}$$i$${% endraw %} của lớp ẩn
