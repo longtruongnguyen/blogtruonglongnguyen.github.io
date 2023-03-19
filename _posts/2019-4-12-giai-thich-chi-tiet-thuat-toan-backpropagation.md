@@ -207,6 +207,50 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
+Bước 6: Tính đạo hàm của hàm mất mát theo trọng số {% raw %}$$w_3$${% endraw %}:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial w_3} = \frac{\partial L}{\partial \hat{y}_1} \cdot \frac{\partial \hat{y}_1}{\partial z_1} \cdot \frac{\partial z_1}{\partial w_3} = 2(\hat{y}_1 - y) \cdot f'(z_1) \cdot x_1 = 2(\hat{y}_1 - y) \cdot f'(z_1) \cdot a_0
+\end{align}$$
+{% endraw %}
+
+Bước 7: Tính đạo hàm của hàm mất mát theo trọng số {% raw %}$$w_4$${% endraw %}:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial w_4} = \frac{\partial L}{\partial \hat{y}_1} \cdot \frac{\partial \hat{y}_1}{\partial z_1} \cdot \frac{\partial z_1}{\partial w_4} = 2(\hat{y}_1 - y) \cdot f'(z_1) \cdot x_2 = 2(\hat{y}_1 - y) \cdot f'(z_1) \cdot a_1
+\end{align}$$
+{% endraw %}
+
+Bước 8: Tính đạo hàm của hàm mất mát theo trọng số {% raw %}$$w_5$${% endraw %}:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial w_5} = \frac{\partial L}{\partial \hat{y}_2} \cdot \frac{\partial \hat{y}_2}{\partial z_2} \cdot \frac{\partial z_2}{\partial w_5} = 2(\hat{y}_2 - y) \cdot f'(z_2) \cdot x_1 = 2(\hat{y}_2 - y) \cdot f'(z_2) \cdot a_0
+\end{align}$$
+{% endraw %}
+
+Bước 9: Tính đạo hàm của hàm mất mát theo trọng số {% raw %}$$w_6$${% endraw %}:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial w_6} = \frac{\partial L}{\partial \hat{y}_2} \cdot \frac{\partial \hat{y}_2}{\partial z_2} \cdot \frac{\partial z_2}{\partial w_6} = 2(\hat{y}_2 - y) \cdot f'(z_2) \cdot x_2 = 2(\hat{y}_2 - y) \cdot f'(z_2) \cdot a_1
+\end{align}$$
+{% endraw %}
+
+Bước 10: Cập nhật các trọng số theo hướng ngược lại gradient:
+
+{% raw %}
+$$\begin{align}
+w_3 \leftarrow w_3 - \eta \frac{\partial L}{\partial w_3}\\
+
+w_4 \leftarrow w_4 - \eta \frac{\partial L}{\partial w_4}\\
+
+w_5 \leftarrow w_5 - \eta \frac{\partial L}{\partial w_5}\\
+\end{align}$$
+{% endraw %}
+
 Với [thuật toán Backpropagation](https://nguyentruonglong.net/giai-thich-chi-tiet-thuat-toan-backpropagation.html) thì việc tính toán [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của hàm mất mát theo từng trọng số trong mô hình [mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) trở nên dễ dàng và hiệu quả hơn, giúp cho việc huấn luyện mô hình trở nên nhanh chóng và chính xác hơn.
 
 ### Tài liệu tham khảo
