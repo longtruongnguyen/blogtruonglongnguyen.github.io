@@ -27,7 +27,7 @@ Chứng chỉ gốc của một tổ chức được lưu trữ trên Fabric cer
 
 Một tổ chức cũng tạo ra một hoặc nhiều peer node để thay mặt thực hiện các hoạt động cho tổ chức đó. Cụ thể, một peer node xác nhận các giao dịch được đề xuất trên mạng, lưu trữ và thực thi mã hợp đồng thông minh (được gọi là chaincode trong Fabric) và lưu trữ bản sao cục bộ của sổ cái để truy cập. Fabric clients thường tương tác với peer node để đọc sổ cái, thêm chaincode mới vào mạng hoặc đề xuất một giao dịch mới. Một peer node thường chạy trên chính máy tính của nó.
 
-### [Mô hình Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html)
+### Mô hình Hyperledger Fabric
 
 - <i>Assets</i>: Có thể hiểu asset trong [mạng Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) được định nghĩa là mọi thứ có giá trị bao gồm tài sản hữu hình và tài sản vô hình (hợp đồng và tài sản trí tuệ). Hyperledger Fabric cung cấp khả năng chỉnh sửa tài sản bằng cách sử dụng các chaincode transaction. Asset được biểu diễn trong Hyperledger Fabric dưới dạng tập hợp các cặp key-value. Các trạng thái thay đổi được ghi lại dưới dạng transaction trên một Channel ledger. Asset có thể được biểu diễn dưới dạng nhị phân hoặc JSON.
 - <i>Chaincode</i>: Chaincode là phần mềm xác định asset và transaction instruction để sửa đổi asset. Nói cách khác, chain code mang bản chất business logic. Chaincode thực thi các quy tắc để chỉnh sửa key-value trong state database. Các hàm chaincode được thực thi dựa trên state database hiện tại của ledger và được khởi tạo thông qua đề xuất transaction.
