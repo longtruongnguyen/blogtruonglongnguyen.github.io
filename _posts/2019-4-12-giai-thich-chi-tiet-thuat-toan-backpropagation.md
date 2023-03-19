@@ -123,6 +123,86 @@ $$\begin{align}
 
 Sau khi tính được đạo hàm riêng này, chúng ta có thể sử dụng quy tắc chuỗi đạo hàm để tính đạo hàm của hàm mất mát {% raw %}$$E$${% endraw %} theo các trọng số {% raw %}$$w_{ij}$${% endraw %} tại lớp đầu ra.
 
+Bước 4: Tính toán đạo hàm tại lớp ẩn cuối cùng
+
+Đạo hàm tại lớp ẩn cuối cùng được tính bằng cách sử dụng quy tắc chuỗi đạo hàm:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial z_2} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z_2}$$
+
+Trong đó:
+
+$$\frac{\partial \hat{y}}{\partial z_2} = f'(z_2) = f(z_2) \cdot (1 - f(z_2))
+\end{align}$$
+{% endraw %}
+
+Với {% raw %}$$f$${% endraw %} là hàm kích hoạt của lớp ẩn, trong trường hợp này là hàm sigmoid:
+
+{% raw %}
+$$\begin{align}
+f(z) = \frac{1}{1 + e^{-z}}
+\end{align}$$
+{% endraw %}
+
+Do đó:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial \hat{y}}{\partial z_2} = f(z_2) \cdot (1 - f(z_2)) = 0.731 \cdot (1 - 0.731) = 0.196$$
+\end{align}$$
+{% endraw %}
+
+Ta có:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial z_2} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z_2} = (1.32 - 1.0) \cdot 0.196 = 0.062
+\end{align}$$
+{% endraw %}
+
+Bước 5: Tính toán đạo hàm tại các lớp ẩn khác nhau
+
+Đạo hàm tại các lớp ẩn khác nhau được tính bằng cách sử dụng quy tắc chuỗi đạo hàm:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial z_i} = \frac{\partial L}{\partial z_{i+1}} \cdot \frac{\partial z_{i+1}}{\partial z_i}
+\end{align}$$
+{% endraw %}
+
+Trong trường hợp này, ta có thể tính toán đạo hàm tại lớp ẩn đầu tiên:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial z_1} = \frac{\partial L}{\partial z_2} \cdot \frac{\partial z_2}{\partial z_1} = \frac{\partial L}{\partial z_2} \cdot \frac{\partial (w_2 f(z_1) + b_2)}{\partial z_1} = \frac{\partial L}{\partial z_2} \cdot w_2 f'(z_1)
+\end{align}$$
+{% endraw %}
+
+Với {% raw %}$$f$${% endraw %} là hàm kích hoạt của lớp ẩn đầu tiên, trong trường hợp này là hàm sigmoid:
+
+{% raw %}
+$$\begin{align}
+f(z) = \frac{1}{1 + e^{-z}}
+\end{align}$$
+{% endraw %}
+
+Do đó:
+
+{% raw %}
+$$\begin{align}
+f'(z) = f(z) \cdot (1 - f(z))
+\end{align}$$
+{% endraw %}
+
+Và:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial z_1} = \frac{\partial L}{\partial z_2} \cdot w_2 f'(z_1) = 0.062 \cdot 0.14 \cdot 0.253 = 0.0022
+\end{align}$$
+{% endraw %}
+
 Với [thuật toán Backpropagation](https://nguyentruonglong.net/giai-thich-chi-tiet-thuat-toan-backpropagation.html) thì việc tính toán [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của hàm mất mát theo từng trọng số trong mô hình [mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) trở nên dễ dàng và hiệu quả hơn, giúp cho việc huấn luyện mô hình trở nên nhanh chóng và chính xác hơn.
 
 ### Tài liệu tham khảo
