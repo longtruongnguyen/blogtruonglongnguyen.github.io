@@ -259,12 +259,12 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-Tính {% raw %}$$\frac{\partial L}{\partial y}$${% endraw %} từ bước 9: {% raw %}$$\frac{\partial L}{\partial y} = 2(y - \hat{y}) = 2(-1.14 - 0.85) = -3.98$${% endraw %}
-Tính {% raw %}$$\frac{\partial y}{\partial h^{(2)}}$${% endraw %} từ bước 8: {% raw %}$$\frac{\partial y}{\partial h^{(2)}} = w^{(2)} = 0.6$${% endraw %}
-Tính {% raw %}$$\frac{\partial h^{(2)}}{\partial a^{(2)}}$${% endraw %} từ bước 7: {% raw %}$$\frac{\partial h^{(2)}}{\partial a^{(2)}} = \sigma'(a^{(2)}) = \sigma(a^{(2)})\cdot(1-\sigma(a^{(2)})) = 0.75\cdot(1-0.75) = 0.1875$${% endraw %}
-Tính {% raw %}$$\frac{\partial a^{(2)}}{\partial h^{(1)}}$ từ bước 6: {% raw %}$$\frac{\partial a^{(2)}}{\partial h^{(1)}} = w^{(3)} = -0.5$${% endraw %}
-Tính {% raw %}$$\frac{\partial h^{(1)}}{\partial a^{(1)}}$${% endraw %} từ bước 5: {% raw %}$$\frac{\partial h^{(1)}}{\partial a^{(1)}} = \sigma'(a^{(1)}) = \sigma(a^{(1)})\cdot(1-\sigma(a^{(1)})) = 0.66\cdot(1-0.66) = 0.2244$${% endraw %}
-Tính {% raw %}$$\frac{\partial a^{(1)}}{\partial w^{(1)}}$${% endraw %} từ bước 4: {% raw %}$$\frac{\partial a^{(1)}}{\partial w^{(1)}} = x = 0.2$${% endraw %}
+ - Tính {% raw %}$$\frac{\partial L}{\partial y}$${% endraw %} từ bước 9: {% raw %}$$\frac{\partial L}{\partial y} = 2(y - \hat{y}) = 2(-1.14 - 0.85) = -3.98$${% endraw %}
+ - Tính {% raw %}$$\frac{\partial y}{\partial h^{(2)}}$${% endraw %} từ bước 8: {% raw %}$$\frac{\partial y}{\partial h^{(2)}} = w^{(2)} = 0.6$${% endraw %}
+ - Tính {% raw %}$$\frac{\partial h^{(2)}}{\partial a^{(2)}}$${% endraw %} từ bước 7: {% raw %}$$\frac{\partial h^{(2)}}{\partial a^{(2)}} = \sigma'(a^{(2)}) = \sigma(a^{(2)})\cdot(1-\sigma(a^{(2)})) = 0.75\cdot(1-0.75) = 0.1875$${% endraw %}
+ - Tính {% raw %}$$\frac{\partial a^{(2)}}{\partial h^{(1)}}$${% endraw %} từ bước 6: {% raw %}$$\frac{\partial a^{(2)}}{\partial h^{(1)}} = w^{(3)} = -0.5$${% endraw %}
+ - Tính {% raw %}$$\frac{\partial h^{(1)}}{\partial a^{(1)}}$${% endraw %} từ bước 5: {% raw %}$$\frac{\partial h^{(1)}}{\partial a^{(1)}} = \sigma'(a^{(1)}) = \sigma(a^{(1)})\cdot(1-\sigma(a^{(1)})) = 0.66\cdot(1-0.66) = 0.2244$${% endraw %}
+ - Tính {% raw %}$$\frac{\partial a^{(1)}}{\partial w^{(1)}}$${% endraw %} từ bước 4: {% raw %}$$\frac{\partial a^{(1)}}{\partial w^{(1)}} = x = 0.2$${% endraw %}
 
 Kết hợp các giá trị đã tính được ta có:
 
