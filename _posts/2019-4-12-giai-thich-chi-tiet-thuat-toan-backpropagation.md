@@ -65,7 +65,57 @@ J(w,b) = \frac{1}{2} \sum_{i=1}^{m} (y_i - \hat{y_i})^2
 \end{align}$$
 {% endraw %}
 
-Trong đó {% raw %}$$w$${% endraw %} và {% raw %}$$b$${% endraw %} lần lượt là ma trận trọng số và vector bias của mạng, {% raw %}$$m$${% endraw %} là số lượng điểm dữ liệu, {% raw %}$$y_i$${% endraw %} là giá trị thực tế của điểm dữ liệu thứ $i$ và {% raw %}$$\hat{y_i}$${% endraw %} là giá trị dự đoán của mạng với điểm dữ liệu thứ {% raw %}$$i$${% endraw %}. Để tính toán đạo hàm của hàm mất mát theo các tham số {% raw %}$$w$${% endraw %} và {% raw %}$$b$${% endraw %}, chúng ta sử dụng thuật toán Backpropagation như sau:
+Trong đó {% raw %}$$w$${% endraw %} và {% raw %}$$b$${% endraw %} lần lượt là ma trận trọng số và vector bias của mạng, {% raw %}$$m$${% endraw %} là số lượng điểm dữ liệu, {% raw %}$$y_i$${% endraw %} là giá trị thực tế của điểm dữ liệu thứ $i$ và {% raw %}$$\hat{y_i}$${% endraw %} là giá trị dự đoán của mạng với điểm dữ liệu thứ {% raw %}$$i$${% endraw %}.
+
+Công thức tính toán giá trị đầu ra tại neuron thứ {% raw %}$$i$${% endraw %} của lớp ẩn là:
+
+{% raw %}
+$$\begin{align}
+z_i = \sum_{j=1}^{n} w_{ij}x_j + b_i
+\end{align}$$
+{% endraw %}
+
+và
+
+{% raw %}
+$$\begin{align}
+a_i = \sigma(z_i)
+\end{align}$$
+{% endraw %}
+
+Trong đó:
+
+ - {% raw %}$$n$${% endraw %} là số lượng neuron trong lớp đầu vào
+ - {% raw %}$$w_{ij}$${% endraw %} là trọng số kết nối giữa neuron thứ % raw %}$$i$${% endraw %} của lớp ẩn và neuron thứ {% raw %}$$j$${% endraw %} của lớp đầu vào
+ - {% raw %}$$x_j$${% endraw %} là giá trị đầu vào tại neuron thứ {% raw %}$$j$${% endraw %} của lớp đầu vào
+ - {% raw %}$$b_i$${% endraw %} là giá trị bias của neuron thứ {% raw %}$$i$${% endraw %} trong lớp ẩn
+ - {% raw %}$$\sigma(z_i)$${% endraw %} là hàm kích hoạt (ví dụ như hàm sigmoid, hàm tanh, hàm ReLU,...) tại neuron thứ {% raw %}$$i$${% endraw %} của lớp ẩn
+
+Công thức tính toán giá trị đầu ra tại neuron của lớp đầu ra là:
+
+{% raw %}
+$$\begin{align}
+y_{hat} = \sum_{i=1}^{2} w_{i}a_i + b
+\end{align}$$
+{% endraw %}
+
+và
+
+{% raw %}
+$$\begin{align}
+L(y, y_{hat}) = \frac{1}{2}(y - y_{hat})^2
+\end{align}$$
+{% endraw %}
+
+Trong đó:
+ - {% raw %}$$w_i$${% endraw %} là trọng số kết nối giữa neuron thứ $i$ của lớp đầu ra và neuron thứ {% raw %}$$j$${% endraw %} của lớp ẩn
+ - {% raw %}$$b$${% endraw %} là giá trị bias của neuron trong lớp đầu ra
+ - {% raw %}$$y$${% endraw %} là giá trị đầu ra thực tế
+ - {% raw %}$$y_{hat}$${% endraw %} là giá trị đầu ra dự đoán
+ - {% raw %}$$L$${% endraw %} là hàm mất mát (loss function), trong ví dụ trên sử dụng hàm tổng bình phương.
+
+
+Để tính toán đạo hàm của hàm mất mát theo các tham số {% raw %}$$w$${% endraw %} và {% raw %}$$b$${% endraw %}, chúng ta sử dụng thuật toán Backpropagation như sau:
 
 Bước 1: Feedforward
 
