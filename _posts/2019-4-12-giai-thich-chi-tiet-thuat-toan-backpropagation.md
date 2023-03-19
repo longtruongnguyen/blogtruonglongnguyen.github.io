@@ -57,6 +57,72 @@ Quá trình lan truyền ngược được thực hiện như sau:
  - Lan truyền ngược giá trị [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) này từ đầu ra đến đầu vào của mô hình bằng cách sử dụng quy tắc chuỗi để tính toán giá trị [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của hàm mất mát theo từng lớp của mô hình [mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html).
  - Sử dụng giá trị [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) tính được ở bước trước để cập nhật các trọng số của mô hình bằng thuật toán [gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html).
 
+Giả sử ta có một mạng neuron đơn giản với hai lớp lần lượt là lớp đầu vào (input layer) với hai neuron và lớp đầu ra (output layer) với một neuron. Hàm mất mát được sử dụng là hàm tổng bình phương sai số (sum of squared errors) được tính bởi công thức:
+
+{% raw %}
+$$\begin{align}
+$J(w,b) = \frac{1}{2} \sum_{i=1}^{m} (y_i - \hat{y_i})^2$
+\end{align}$$
+{% endraw %}
+
+trong đó {% raw %}$$w$ và {% raw %}$$b$${% endraw %} lần lượt là ma trận trọng số và vector bias của mạng, {% raw %}$$m$${% endraw %} là số lượng điểm dữ liệu, {% raw %}$$y_i$${% endraw %} là giá trị thực tế của điểm dữ liệu thứ $i$ và {% raw %}$$\hat{y_i}$${% endraw %} là giá trị dự đoán của mạng với điểm dữ liệu thứ {% raw %}$$i$${% endraw %}. Để tính toán đạo hàm của hàm mất mát theo các tham số {% raw %}$$w$${% endraw %} và {% raw %}$$b$${% endraw %}, ta sử dụng thuật toán Backpropagation như sau:
+
+Bước 1: Feedforward
+
+Đầu tiên, ta thực hiện phép tính feedforward để tính toán giá trị đầu ra của mạng với mỗi điểm dữ liệu. Với mỗi điểm dữ liệu thứ {% raw %}$$i$${% endraw %}, ta tính toán các giá trị tại các neuron của mạng như sau:
+
+{% raw %}
+$$\begin{align}
+z_1^{(i)} = w_{11} x_1^{(i)} + w_{21} x_2^{(i)} + b_1
+
+a_1^{(i)} = g(z_1^{(i)})
+
+z_2^{(i)} = w_{12} x_1^{(i)} + w_{22} x_2^{(i)} + b_2
+
+\hat{y_i} = a_2^{(i)} = g(z_2^{(i)})
+\end{align}$$
+{% endraw %}
+
+trong đó {% raw %}$$x_1^{(i)}$ và {% raw %}$$x_2^{(i)}$${% endraw %} lần lượt là giá trị đầu vào thứ nhất và thứ hai của điểm dữ liệu thứ {% raw %}$$i$${% endraw %}, {% raw %}$$g(z)$${% endraw %} là hàm kích hoạt (activation function), ở đây ta sử dụng hàm sigmoid:
+
+{% raw %}
+$$\begin{align}
+g(z) = \frac{1}{1 + e^{-z}}
+\end{align}$$
+{% endraw %}
+
+Bước 2: Tính toán độ lỗi
+
+Sau khi tính toán được giá trị đầu ra của mạng {% raw %}$$\hat{y_i}$${% endraw %} với điểm dữ liệu thứ {% raw %}$$i$${% endraw %}, ta tính toán độ lỗi của mạng với điểm dữ liệu đó bằng cách tính sai số giữa giá trị dự đoán và giá trị thực tế:
+
+{% raw %}
+$$\begin{align}
+error_i = y_i - \hat{y_i}
+\end{align}$$
+{% endraw %}
+
+Bước 3: Tính toán đạo hàm tại lớp đầu ra
+
+Ta cần tính đạo hàm của hàm mất mát {% raw %}$$E$${% endraw %} theo các trọng số {% raw %}$$w_{ij}$${% endraw %} tại lớp đầu ra {% raw %}$$l=3$${% endraw %}. Trong trường hợp này, hàm mất mát được định nghĩa là hàm tổng bình phương sai số giữa giá trị dự đoán và giá trị thực tế:
+
+{% raw %}
+$$\begin{align}
+E = \frac{1}{2} \sum_{i=1}^{n_{l+1}} (y_i - \hat{y_i})^2
+\end{align}$$
+{% endraw %}
+
+Trong đó {% raw %}$$n_{l+1}$${% endraw %} là số nút tại lớp đầu ra và {% raw %}$$\hat{y_i}$${% endraw %} là giá trị đầu ra dự đoán của nút thứ {% raw %}$$i$${% endraw %} tại lớp đầu ra.
+
+Do {% raw %}$$\hat{y_i}$${% endraw %} phụ thuộc vào giá trị của các nút tại lớp trước đó, ta cần tính toán đạo hàm riêng của hàm mất mát {% raw %}$$E$${% endraw %} theo từng giá trị đầu ra {% raw %}$$\hat{y_i}$${% endraw %} tại lớp đầu ra. Tức là:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial E}{\partial \hat{y_i}} = y_i - \hat{y_i}
+\end{align}$$
+{% endraw %}
+
+Sau khi tính được đạo hàm riêng này, ta có thể sử dụng quy tắc chuỗi đạo hàm để tính đạo hàm của hàm mất mát $E$ theo các trọng số {% raw %}$$w_{ij}$${% endraw %} tại lớp đầu ra.
+
 Với [thuật toán Backpropagation](https://nguyentruonglong.net/giai-thich-chi-tiet-thuat-toan-backpropagation.html) thì việc tính toán [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của hàm mất mát theo từng trọng số trong mô hình [mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) trở nên dễ dàng và hiệu quả hơn, giúp cho việc huấn luyện mô hình trở nên nhanh chóng và chính xác hơn.
 
 ### Tài liệu tham khảo
