@@ -20,7 +20,7 @@ author: Nguyễn Trường Long
 </center>
 </figure>
 
-[Mạng Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) bao gồm nhiều tổ chức tương tác lẫn nhau trong mạng. Ví dụ một tổ chức có thể là một ngân hàng trong một mạng lưới bao gồm các tổ chức tài chính hoặc một đối tác vận chuyển trong một mạng lưới chuỗi cung ứng. Mỗi tổ chức có cơ quan cấp chứng chỉ Fabric và một hoặc nhiều nút ngang hàng (peer node). Một mạng Fabric cũng có một ordering service được chia sẻ bởi tất cả tổ chức trong mạng và thành phần này giúp xử lý giao dịch cho mạng lưới. Chúng ta sẽ đi vào mô tả chi tiết từng khái niệm và thành phần.
+[Mạng Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) bao gồm nhiều tổ chức tương tác lẫn nhau trong mạng. Ví dụ một tổ chức có thể là một ngân hàng trong một mạng lưới bao gồm các tổ chức tài chính hoặc một đối tác vận chuyển trong một mạng lưới chuỗi cung ứng. Mỗi tổ chức có cơ quan cấp chứng chỉ Fabric và một hoặc nhiều node ngang hàng (peer node). Một mạng Fabric cũng có một ordering service được chia sẻ bởi tất cả tổ chức trong mạng và thành phần này giúp xử lý giao dịch cho mạng lưới. Chúng ta sẽ đi vào mô tả chi tiết từng khái niệm và thành phần.
 
 Một tổ chức trong mạng được định nghĩa bởi chứng chỉ gốc (root certificate) dành cho riêng tổ chức đó. Các user và những thành phần khác cũng được định danh bằng các chứng chỉ và các chứng chỉ này đều có nguồn gốc từ chứng chỉ gốc. Điều này giúp đảm bảo các tổ chức khác trong mạng có thể liên hệ người dùng với tổ chức của họ. Các chứng chỉ này cũng chỉ định các quyền cho từng thực thể trên mạng, chẳng hạn như read-only so với full access trên một kênh.
 Chứng chỉ gốc của một tổ chức được lưu trữ trên Fabric certificate authority (CA). Fabric CA cũng cấp chứng chỉ cho người dùng trong một tổ chức và xử lý các hoạt động liên quan khác. Fabric CA cấp doanh nghiệp sử dụng nhiều thành phần khác nhau và có thể được triển khai theo nhiều cách khác nhau bằng cách sử dụng Hardware Security Module (HSM) để bảo vệ chứng chỉ gốc.
@@ -36,16 +36,29 @@ Một tổ chức cũng tạo ra một hoặc nhiều peer node để thay mặt
 ### Các thành phần của [mạng Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html)
 
 - Ledger: Một ledger (sổ cái) bao gồm 2 phần khác nhau là "blockchain" và "state database".
-- Membership Service Provider: Membership Service Provider (MSP) là một thành phần của hệ thống có nhiệm vụ cung cấp các chứng chỉ (credential) cho client và peer để họ tham gia vào [Hyperledger Fabric network](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html).
+
 - Smart Contract: Smart Contract là một đoạn mã được gọi bởi ứng dụng của client bên ngoài mạng blockchain - quản lý quyền truy cập và sửa đổi đối với một tập hợp các cặp khóa-giá trị ở "state database".
-- Peer: Peer là thành phần cơ bản của network, được sở hữu và duy trì bởi các thành viên. Đây là nơi lưu trữ các bản sao của ledger và các bản sao của smart contract. Trong ví dụ sau, mạng N bao gồm các peer node là P1, P2 và P3. Mỗi peer node này đều chứa bản sảo của sổ cái phân tán (distributed ledger) L1. P1, P2 và P3 đều sử dụng chung chaincode S1 để truy cập vào bản sao sổ cái phân tán của nó. Các peer node có thể được tạo, dừng, cấu hình lại và xóa. Có một tập hợp các API cho phép các quản trị viên và ứng dụng tương tác với services mà họ cung cấp.
-- [Mạng Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) thực hiện smart contract với công nghệ có tên gọi là chaincode. Có thể hiểu đơn giản chaincode là một đoạn code được dùng để truy cập vào sổ cái. Chaincode được viết dưới dạng một ngôn ngữ lập trình.
+- 
+
+ - Peer Nodes (Node ngang hàng): Peer nodes là các nút mạng trong [mạng blockchain Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html), chứa dữ liệu và xử lý các giao dịch. Các peer nodes có thể được cấu hình để thực hiện các chức năng khác nhau, bao gồm cả nút đồng ý (endorsing node) và nút ghi (committing node). Peer là thành phần cơ bản của [mạng Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html), được sở hữu và duy trì bởi các thành viên. Đây là nơi lưu trữ các bản sao của ledger và các bản sao của smart contract. Lấy ví dụ sau, mạng N bao gồm các peer node là P1, P2 và P3. Mỗi Peer Nodes này đều chứa bản sảo của sổ cái phân tán (distributed ledger) L1. P1, P2 và P3 đều sử dụng chung chaincode S1 để truy cập vào bản sao sổ cái phân tán của nó. Các peer node có thể được tạo, dừng, cấu hình lại và xóa. Có một tập hợp các API cho phép các quản trị viên và ứng dụng tương tác với services mà họ cung cấp.
+
+ - Ordering Service Nodes (Nút sắp xếp): Ordering service nodes là các node mạng đảm nhận vai trò quản lý các giao dịch trong [mạng Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html). Các nút này đảm bảo rằng các giao dịch được xử lý theo đúng thứ tự và được đồng bộ hóa giữa các peer nodes.
+
+ - Chaincode: Chaincode là mã lệnh (smart contract) chạy trên các Peer Nodes để thực thi các giao dịch trong [mạng Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html).[Mạng Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) thực hiện smart contract với công nghệ có tên gọi là chaincode. Có thể hiểu đơn giản chaincode là một đoạn code được dùng để truy cập vào sổ cái. Chaincode được viết dưới dạng một ngôn ngữ lập trình như Go, Java, hoặc Node.js và được triển khai trên các Peer Nodes để thực thi các hợp đồng thông minh.
+
+ - Channels (Kênh): Channels là các kênh mạng được tạo ra để giới hạn quyền truy cập vào các giao dịch trong [mạng Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html). Các kênh này được sử dụng để cô lập các giao dịch giữa các thành viên khác nhau trong [mạng Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html).
+
+ - Identity Management: Quản lý danh tính trong [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) là một phần quan trọng của mạng Fabric để đảm bảo tính bảo mật và truy cập của các thành viên trong mạng. Các thành viên phải được xác thực và cấp quyền truy cập trên mạng để tránh các cuộc tấn công và gian lận. Identity Management đảm bảo tính toàn vẹn và an ninh của dữ liệu danh tính trong mạng. Identity Management quản lý các thông tin liên quan đến danh tính của các thành viên, bao gồm các thông tin như tên, địa chỉ, chứng chỉ và vai trò của thành viên đó trong mạng.
+ 
+ - Membership Service Provider: Membership Service Provider (MSP) là một thành phần của hệ thống có nhiệm vụ cung cấp các chứng chỉ (credential) cho Client và Peer Nodes để họ tham gia vào [mạng Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html). Membership Service Provider quản lý việc cấp và phân phối chứng chỉ cho các thành viên trong mạng. Với vai trò này, Membership Service Provider đảm bảo tính bảo mật của mạng bằng cách xác minh danh tính của từng thành viên và phân quyền truy cập đối với các hoạt động khác nhau trong mạng.
+ 
+ - SDKs (Software Development Kits): [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) cung cấp các SDKs để giúp các nhà phát triển xây dựng ứng dụng blockchain trên [nền tảng Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html). Các SDKs này hỗ trợ các ngôn ngữ lập trình khác nhau như Go, Java và Node.js.
 
 Một số tính năng chính của Fabric ledger:
 -	Truy vấn và cập nhật ledger sử dụng tra cứu qua khóa, truy vấn phạm vi và truy vấn khóa tổng hợp (composite key).
 -	Transaction bao gồm phiên bản của keys/values được đọc trong chaincode (read set) và keys/values được write trong chaincode (write set).
--	Transaction bao gồm chữ ký của mọi endorsing peer và được gửi đến ordering service.
--	Các transaction được sắp xếp thành các khối và được "phân phối" từ ordering service đến các peer trong một channel.
+-	Transaction bao gồm chữ ký của mọi endorsing peer và được gửi đến Ordering Service Nodes.
+-	Các transaction được sắp xếp thành các khối và được "phân phối" từ Ordering Service Nodes đến các Peer Nodes trong một Channel.
 -	Các peer xác thực giao dịch dựa trên các chính sách chứng thực (endorsement policies) và thực thi các chính sách này.
 
 ### Ứng dụng trong thực tế
