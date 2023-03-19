@@ -129,11 +129,15 @@ Bước 4: Tính toán đạo hàm tại lớp ẩn cuối cùng
 
 {% raw %}
 $$\begin{align}
-\frac{\partial L}{\partial z_2} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z_2}$$
+\frac{\partial L}{\partial z_2} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z_2}
+\end{align}$$
+{% endraw %}
 
 Trong đó:
 
-$$\frac{\partial \hat{y}}{\partial z_2} = f'(z_2) = f(z_2) \cdot (1 - f(z_2))
+{% raw %}
+$$\begin{align}
+\frac{\partial \hat{y}}{\partial z_2} = f'(z_2) = f(z_2) \cdot (1 - f(z_2))
 \end{align}$$
 {% endraw %}
 
@@ -149,7 +153,7 @@ Do đó:
 
 {% raw %}
 $$\begin{align}
-\frac{\partial \hat{y}}{\partial z_2} = f(z_2) \cdot (1 - f(z_2)) = 0.731 \cdot (1 - 0.731) = 0.196$$
+\frac{\partial \hat{y}}{\partial z_2} = f(z_2) \cdot (1 - f(z_2)) = 0.731 \cdot (1 - 0.731) = 0.196
 \end{align}$$
 {% endraw %}
 
@@ -171,7 +175,7 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
-Trong trường hợp này, ta có thể tính toán đạo hàm tại lớp ẩn đầu tiên:
+Trong trường hợp này, chúng ta có thể tính toán đạo hàm tại lớp ẩn đầu tiên:
 
 {% raw %}
 $$\begin{align}
