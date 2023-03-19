@@ -280,7 +280,7 @@ Cập nhật trọng số {% raw %}$$w_{ij}^{(1)}$${% endraw %} theo công thứ
 
 {% raw %}
 $$\begin{align}
-    $$w_{ij}^{(1)} \leftarrow w_{ij}^{(1)} - \alpha \frac{\partial L}{\partial w_{ij}^{(1)}}$$
+    w_{ij}^{(1)} \leftarrow w_{ij}^{(1)} - \alpha \frac{\partial L}{\partial w_{ij}^{(1)}}
 \end{align}$$
 {% endraw %}
 
@@ -290,7 +290,7 @@ Cập nhật trọng số {% raw %}$$b_i^{(1)}$${% endraw %} tại node thứ {%
 
 {% raw %}
 $$\begin{align}
-    $$b_i^{(1)} \leftarrow b_i^{(1)} - \alpha \frac{\partial L}{\partial b_i^{(1)}}$$
+    b_i^{(1)} \leftarrow b_i^{(1)} - \alpha \frac{\partial L}{\partial b_i^{(1)}}
 \end{align}$$
 {% endraw %}
 
@@ -298,7 +298,7 @@ Trong đó, {% raw %}$$\frac{\partial L}{\partial b_i^{(1)}}$${% endraw %} đư�
 
 {% raw %}
 $$\begin{align}
-    $$\frac{\partial L}{\partial b_i^{(1)}} = \frac{\partial L}{\partial z_i^{(1)}} \frac{\partial z_i^{(1)}}{\partial b_i^{(1)}} = \delta_i^{(1)}$$
+    \frac{\partial L}{\partial b_i^{(1)}} = \frac{\partial L}{\partial z_i^{(1)}} \frac{\partial z_i^{(1)}}{\partial b_i^{(1)}} = \delta_i^{(1)}
 \end{align}$$
 {% endraw %}
 
@@ -306,7 +306,7 @@ Với {% raw %}$$\delta_i^{(1)}$${% endraw %} là độ lỗi của node thứ $
 
 {% raw %}
 $$\begin{align}
-    $$\delta_i^{(1)} = \sum_{k=1}^{n^{(2)}} \delta_k^{(2)} w_{ik}^{(2)} g'(z_i^{(1)})$$
+    \delta_i^{(1)} = \sum_{k=1}^{n^{(2)}} \delta_k^{(2)} w_{ik}^{(2)} g'(z_i^{(1)})
 \end{align}$$
 {% endraw %}
 
