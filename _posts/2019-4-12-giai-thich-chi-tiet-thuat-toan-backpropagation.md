@@ -57,7 +57,7 @@ Quá trình lan truyền ngược được thực hiện như sau:
  - Lan truyền ngược giá trị [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) này từ đầu ra đến đầu vào của mô hình bằng cách sử dụng quy tắc chuỗi để tính toán giá trị [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của hàm mất mát theo từng lớp của mô hình [mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html).
  - Sử dụng giá trị [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) tính được ở bước trước để cập nhật các trọng số của mô hình bằng thuật toán [gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html).
 
-Giả sử chúng ta có một mạng neuron đơn giản với hai lớp lần lượt là lớp đầu vào (input layer) với hai neuron và lớp đầu ra (output layer) với một neuron. Hàm mất mát được sử dụng là hàm tổng bình phương sai số (sum of squared errors) được tính bởi công thức:
+Giả sử chúng ta có một mạng neuron đơn giản với hai lớp lần lượt là lớp đầu vào (input layer) với hai neuron và lớp đầu ra (output layer) với một neuron. Hàm hàm chi phí (cost function) được sử dụng là hàm tổng bình phương sai số (sum of squared errors) được tính bởi công thức:
 
 {% raw %}
 $$\begin{align}
