@@ -314,7 +314,7 @@ Trong đó, {% raw %}$$n^{(2)}$${% endraw %} là số node tại lớp đầu ra
 
 {% raw %}
 $$\begin{align}
-    $$g'(z_i^{(1)}) = \frac{\partial g(z_i^{(1)})}{\partial z_i^{(1)}} = g(z_i^{(1)})(1 - g(z_i^{(1)}))$$
+    g'(z_i^{(1)}) = \frac{\partial g(z_i^{(1)})}{\partial z_i^{(1)}} = g(z_i^{(1)})(1 - g(z_i^{(1)}))
 \end{align}$$
 {% endraw %}
 
