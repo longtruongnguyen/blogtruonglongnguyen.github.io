@@ -48,6 +48,15 @@ Một số tính năng chính của Fabric ledger:
 -	Các transaction được sắp xếp thành các khối và được "phân phối" từ ordering service đến các peer trong một channel.
 -	Các peer xác thực giao dịch dựa trên các chính sách chứng thực (endorsement policies) và thực thi các chính sách này.
 
+### Ứng dụng trong thực tế
+
+[Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) là một nền tảng blockchain được thiết kế để xây dựng các ứng dụng doanh nghiệp. Nó cung cấp một môi trường phát triển và triển khai các ứng dụng blockchain an toàn, đáng tin cậy và có thể mở rộng. Dưới đây là một số ứng dụng chính của (https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html):
+
+ - <i>Quản lý chuỗi cung ứng</i>: [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) có thể được sử dụng để giám sát và quản lý các hoạt động của chuỗi cung ứng. Với Fabric, các công ty có thể theo dõi tình trạng của các sản phẩm, từ quá trình sản xuất đến phân phối.
+ - <i>Quản lý tài sản</i>: [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) cũng có thể được sử dụng để quản lý các tài sản, bao gồm cả tài sản vật chất và tài sản không vật chất. Với Fabric, các tổ chức có thể tạo ra các hợp đồng thông minh để theo dõi và quản lý tài sản của mình.
+ - <i>Quản lý hồ sơ</i>: [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) có thể được sử dụng để quản lý các hồ sơ của các tổ chức, bao gồm cả hồ sơ nhân viên và khách hàng. Với Fabric, các tổ chức có thể tạo ra các hồ sơ được mã hóa để đảm bảo tính riêng tư và an toàn.
+ - <i>Quản lý tài chính</i>: [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) cũng có thể được sử dụng để quản lý các giao dịch tài chính, bao gồm cả việc chuyển tiền và giao dịch chứng khoán. Với Fabric, các tổ chức có thể tạo ra các hợp đồng thông minh để tự động hóa các giao dịch và giảm thiểu các rủi ro.
+ - <i>Quản lý bảo hiểm</i>: [Hyperledger Fabric](https://nguyentruonglong.net/kien-truc-chi-tiet-cua-mang-hyperledger-fabric.html) cũng có thể được sử dụng để quản lý các chính sách bảo hiểm và đền bù. Với Fabric, các tổ chức có thể tạo ra các hợp đồng thông minh để tự động hóa quy trình đền bù và giảm thiểu các rủi ro.
 
 ### Tài liệu tham khảo
 
