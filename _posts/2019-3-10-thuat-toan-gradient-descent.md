@@ -74,6 +74,16 @@ Trong thời gian gần đây, các biến thể của [thuật toán gradient d
 
 ### Ứng dụng thuật toán Gradient Descent trong Machine Learning
 
+Trong machine learning, các mô hình được đào tạo bằng cách điều chỉnh các tham số sao cho chúng có thể dự đoán đầu ra tốt nhất trên tập dữ liệu huấn luyện. Hàm mất mát được sử dụng để đo lường mức độ chính xác của mô hình machine learning. Tuy nhiên, hàm mất mát thường là một hàm phi tuyến tính, khó có thể tìm ra giá trị tối thiểu của nó bằng cách tính toán đạo hàm. Do đó chúng ta sử dụng [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) để tìm giá trị tối thiểu của hàm mất mát.
+
+Các bước chính của [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) được áp dụng trong machine learning là:
+
+- Định nghĩa hàm mất mát: Đây là hàm số mà chúng ta muốn tối ưu hóa. Ví dụ hàm mất mát có thể là tổng bình phương sai số giữa các giá trị dự đoán và giá trị thực tế.
+- Khởi tạo các tham số: Các tham số của mô hình machine learning được khởi tạo với những giá trị ngẫu nhiên. Việc khởi tạo giá trị ban đầu cho các tham số của mô hình là rất quan trọng. Khởi tạo không tốt có thể dẫn đến hiện tượng vanishing gradient hoặc exploding gradient, khiến cho việc huấn luyện mô hình trở nên khó khăn và chậm chạp hơn. Một số phương pháp khởi tạo giá trị ngẫu nhiên cho các tham số của mô hình machine learning khi sử dụng thuật toán gradient descent phổ biến bao gồm khởi tạo giá trị ngẫu nhiên với phân phối chuẩn (Gaussian), sử dụng phương pháp khởi tạo số bằng không (zero initialization), sử dụng phương pháp khởi tạo He hoặc Xavier, sử dụng các phương pháp khác như khởi tạo ngẫu nhiên theo phân phối đều (uniform distribution),...
+- Tính đạo hàm: Thuật toán sẽ tính toán đạo hàm của hàm mất mát theo các tham số của mô hình. Đạo hàm này sẽ chỉ ra hướng tăng nhanh nhất của hàm mất mát.
+- Cập nhật tham số: Thuật toán sẽ cập nhật tham số mô hình theo hướng đối nghịch với đạo hàm của hàm mất mát. Cụ thể, nếu đạo hàm là dương thì chúng ta sẽ giảm giá trị của tham số để giảm thiểu giá trị của hàm mất mát. Nó tương ứng với việc dịch chuyển các giá trị của tham số một khoảng nhỏ theo hướng ngược lại của [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) để giảm thiểu giá trị của hàm mất mát.
+- Lặp lại tiếp tục: Lặp lại bước 3 và 4 cho đến khi đạt được một điều kiện dừng nhất định hoặc đạt được một số lần lặp tối đa.
+
 Trong quá trình huấn luyện các [mô hình mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html), [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) được sử dụng để xác định bộ trọng số $w$ sao cho hàm mất mát {% raw %}$$E\left( w \right)$${% endraw %} đạt cực tiểu. Trong phạm vi của bài viết này, mình sẽ trình bày những ý tưởng tổng quát về quá trình áp dụng [thuật toán gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) trong machine learning và không tập trung đi quá sâu chi tiết về mặt toán học.
 
 <figure class="image">
