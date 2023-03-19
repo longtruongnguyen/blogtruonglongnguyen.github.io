@@ -274,6 +274,53 @@ $$\begin{align}
 \end{align}$$
 {% endraw %}
 
+Chúng ta đã tính được đạo hàm của hàm mất mát theo trọng số {% raw %}$$w_{ij}^{(1)}$${% endraw %} tại lớp ẩn thứ nhất, được ký hiệu là {% raw %}$$\frac{\partial L}{\partial w_{ij}^{(1)}}$${% endraw %}. Tiếp theo, ta cần cập nhật giá trị của trọng số này bằng cách sử dụng thuật toán gradient descent. Cụ thể, ta thực hiện như sau:
+
+Cập nhật trọng số {% raw %}$$w_{ij}^{(1)}$${% endraw %} theo công thức sau:
+
+{% raw %}
+$$\begin{align}
+    $$w_{ij}^{(1)} \leftarrow w_{ij}^{(1)} - \alpha \frac{\partial L}{\partial w_{ij}^{(1)}}$$
+\end{align}$$
+{% endraw %}
+
+Trong đó, {% raw %}$$\alpha$${% endraw %} là learning rate, là một siêu tham số được đặt trước và quyết định tốc độ học của mô hình.
+
+Cập nhật trọng số {% raw %}$$b_i^{(1)}$${% endraw %} tại node thứ {% raw %}$$i$${% endraw %} của lớp ẩn thứ nhất tương tự như trọng số {% raw %}$$w_{ij}^{(1)}$${% endraw %}:
+
+{% raw %}
+$$\begin{align}
+    $$b_i^{(1)} \leftarrow b_i^{(1)} - \alpha \frac{\partial L}{\partial b_i^{(1)}}$$
+\end{align}$$
+{% endraw %}
+
+Trong đó, {% raw %}$$\frac{\partial L}{\partial b_i^{(1)}}$${% endraw %} được tính bằng công thức:
+
+{% raw %}
+$$\begin{align}
+    $$\frac{\partial L}{\partial b_i^{(1)}} = \frac{\partial L}{\partial z_i^{(1)}} \frac{\partial z_i^{(1)}}{\partial b_i^{(1)}} = \delta_i^{(1)}$$
+\end{align}$$
+{% endraw %}
+
+Với {% raw %}$$\delta_i^{(1)}$${% endraw %} là độ lỗi của node thứ $i$ trong lớp ẩn thứ nhất, được tính bằng công thức:
+
+{% raw %}
+$$\begin{align}
+    $$\delta_i^{(1)} = \sum_{k=1}^{n^{(2)}} \delta_k^{(2)} w_{ik}^{(2)} g'(z_i^{(1)})$$
+\end{align}$$
+{% endraw %}
+
+Trong đó, {% raw %}$$n^{(2)}$${% endraw %} là số node tại lớp đầu ra, {% raw %}$$w_{ik}^{(2)}$${% endraw %} là trọng số kết nối từ node thứ {% raw %}$$i$${% endraw %} tại lớp ẩn thứ nhất đến node thứ {% raw %}$$k$${% endraw %} tại lớp đầu ra, {% raw %}$$g'(z_i^{(1)})$${% endraw %} là đạo hàm của hàm kích hoạt tại node thứ {% raw %}$$i$${% endraw %} trong lớp ẩn thứ nhất và được tính bằng công thức:
+
+{% raw %}
+$$\begin{align}
+    $$g'(z_i^{(1)}) = \frac{\partial g(z_i^{(1)})}{\partial z_i^{(1)}} = g(z_i^{(1)})(1 - g(z_i^{(1)}))$$
+\end{align}$$
+{% endraw %}
+
+Các bước trên sẽ được lặp lại cho tất cả các trọng số và bias trong mạng nơ-ron để tiến hành huấn luyện mô hình.
+
+
 Với [thuật toán Backpropagation](https://nguyentruonglong.net/giai-thich-chi-tiet-thuat-toan-backpropagation.html) thì việc tính toán [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của hàm mất mát theo từng trọng số trong mô hình [mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) trở nên dễ dàng và hiệu quả hơn, giúp cho việc huấn luyện mô hình trở nên nhanh chóng và chính xác hơn.
 
 ### Tài liệu tham khảo
