@@ -128,7 +128,7 @@ Hàm {% raw %}$$J(w,b)$${% endraw %} là hàm chi phí (cost function), là mộ
 
 {% raw %}
 $$\begin{align}
-J(w,b) = \frac{1}{m} \sum_{i=1}^{m} L(y^{(i)}, y_{hat}^{(i)})$$
+J(w,b) = \frac{1}{m} \sum_{i=1}^{m} L(y^{(i)}, y_{hat}^{(i)})
 \end{align}$$
 {% endraw %}
 
@@ -138,7 +138,7 @@ Vì vậy, để tối thiểu hoá hàm chi phí {% raw %}$$J(w,b)$${% endraw %
 
 Để tính toán đạo hàm của hàm mất mát theo các tham số {% raw %}$$w$${% endraw %} và {% raw %}$$b$${% endraw %}, chúng ta sử dụng thuật toán Backpropagation như sau:
 
-Bước 1: Feedforward
+Bước 1: Pha Feedforward: Tính toán giá trị đầu ra của mạng
 
 Đầu tiên, chúng ta thực hiện phép tính feedforward để tính toán giá trị đầu ra của mạng với mỗi điểm dữ liệu. Với mỗi điểm dữ liệu thứ {% raw %}$$i$${% endraw %}, chúng ta tính toán các giá trị tại các neuron của mạng như sau:
 
@@ -172,7 +172,7 @@ error_i = y_i - \hat{y_i}
 \end{align}$$
 {% endraw %}
 
-Bước 3: Tính toán đạo hàm tại lớp đầu ra (pha Backpropagation)
+Bước 3: Pha Backpropagation: Tính toán đạo hàm tại lớp đầu ra
 
 Chúng ta cần tính đạo hàm của hàm mất mát {% raw %}$$E$${% endraw %} theo các trọng số {% raw %}$$w_{ij}$${% endraw %} tại lớp đầu ra {% raw %}$$l=3$${% endraw %}. Trong trường hợp này, hàm mất mát được định nghĩa là hàm tổng bình phương sai số giữa giá trị dự đoán và giá trị thực tế:
 
