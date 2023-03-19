@@ -114,6 +114,27 @@ Trong đó:
  - {% raw %}$$y_{hat}$${% endraw %} là giá trị đầu ra dự đoán
  - {% raw %}$$L$${% endraw %} là hàm mất mát (loss function), trong ví dụ trên sử dụng hàm tổng bình phương.
 
+Trong ví dụ đã cho, hàm {% raw %}$$L(y, y_{hat})$${% endraw %} là hàm mất mát, được sử dụng để đánh giá độ chính xác của mô hình. Hàm này tính toán sai số dự đoán giữa giá trị dự đoán {% raw %}$$y_{hat}$${% endraw %} và giá trị thực tế {% raw %}$$y$${% endraw %} cho từng điểm dữ liệu trong tập huấn luyện. Trong ví dụ này, hàm mất mát là hàm tổng bình phương sai số (sum of squared error) được tính như sau:
+
+{% raw %}
+$$\begin{align}
+L(y, y_{hat}) = \frac{1}{2} \sum_{i=1}^{m}(y_{i}-y_{hat,i})^2
+\end{align}$$
+{% endraw %}
+
+Trong đó, {% raw %}$$y_{i}$${% endraw %} là giá trị thực tế của điểm dữ liệu thứ {% raw %}$$i$${% endraw %}, {% raw %}$$y_{hat,i}$${% endraw %} là giá trị dự đoán của điểm dữ liệu thứ {% raw %}$$i$${% endraw %}, {% raw %}$$m$${% endraw %} là số lượng điểm dữ liệu trong tập huấn luyện.
+
+Hàm {% raw %}$$J(w,b)$${% endraw %} là hàm chi phí (cost function), là một hàm số mà mục đích là tối thiểu hoá hàm mất mát {% raw %}$$L(y, y_{hat})$${% endraw %} bằng cách tìm kiếm bộ trọng số {% raw %}$$w$${% endraw %} và bias {% raw %}$$b$${% endraw %} phù hợp nhất. Hàm chi phí có thể được tính như sau:
+
+{% raw %}
+$$\begin{align}
+J(w,b) = \frac{1}{m} \sum_{i=1}^{m} L(y^{(i)}, y_{hat}^{(i)})$$
+\end{align}$$
+{% endraw %}
+
+Trong đó, {% raw %}$$y^{(i)}$${% endraw %} là giá trị thực tế của điểm dữ liệu thứ {% raw %}$$i$${% endraw %}, {% raw %}$$y_{hat}^{(i)}$${% endraw %} là giá trị dự đoán của điểm dữ liệu thứ {% raw %}$$i$${% endraw %}, {% raw %}$$m$${% endraw %} là số lượng điểm dữ liệu trong tập huấn luyện.
+
+Vì vậy, để tối thiểu hoá hàm chi phí {% raw %}$$J(w,b)$${% endraw %}, ta cần tìm bộ trọng số {% raw %}$$w$${% endraw %} và bias {% raw %}$$b$${% endraw %} sao cho hàm mất mát {% raw %}$$L(y, y_{hat})$${% endraw %} đạt giá trị nhỏ nhất. Khi sử dụng thuật toán gradient descent, ta tính đạo hàm của hàm chi phí {% raw %}$$J(w,b)$${% endraw %} để cập nhật giá trị của các tham số {% raw %}$$w$${% endraw %} và {% raw %}$$b$${% endraw %} sao cho giá trị của hàm chi phí giảm dần theo từng bước lặp.
 
 Để tính toán đạo hàm của hàm mất mát theo các tham số {% raw %}$$w$${% endraw %} và {% raw %}$$b$${% endraw %}, chúng ta sử dụng thuật toán Backpropagation như sau:
 
