@@ -251,6 +251,29 @@ w_5 \leftarrow w_5 - \eta \frac{\partial L}{\partial w_5}\\
 \end{align}$$
 {% endraw %}
 
+Tính toán đạo hàm của hàm mất mát theo trọng số tại lớp ẩn thứ 1:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial w^{(1)}} = \frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial h^{(2)}} \cdot \frac{\partial h^{(2)}}{\partial a^{(2)}} \cdot \frac{\partial a^{(2)}}{\partial h^{(1)}} \cdot \frac{\partial h^{(1)}}{\partial a^{(1)}} \cdot \frac{\partial a^{(1)}}{\partial w^{(1)}}
+\end{align}$$
+{% endraw %}
+
+Tính {% raw %}$$\frac{\partial L}{\partial y}$${% endraw %} từ bước 9: {% raw %}$$\frac{\partial L}{\partial y} = 2(y - \hat{y}) = 2(-1.14 - 0.85) = -3.98$${% endraw %}
+Tính {% raw %}$$\frac{\partial y}{\partial h^{(2)}}$${% endraw %} từ bước 8: {% raw %}$$\frac{\partial y}{\partial h^{(2)}} = w^{(2)} = 0.6$${% endraw %}
+Tính {% raw %}$$\frac{\partial h^{(2)}}{\partial a^{(2)}}$${% endraw %} từ bước 7: {% raw %}$$\frac{\partial h^{(2)}}{\partial a^{(2)}} = \sigma'(a^{(2)}) = \sigma(a^{(2)})\cdot(1-\sigma(a^{(2)})) = 0.75\cdot(1-0.75) = 0.1875$${% endraw %}
+Tính {% raw %}$$\frac{\partial a^{(2)}}{\partial h^{(1)}}$ từ bước 6: {% raw %}$$\frac{\partial a^{(2)}}{\partial h^{(1)}} = w^{(3)} = -0.5$${% endraw %}
+Tính {% raw %}$$\frac{\partial h^{(1)}}{\partial a^{(1)}}$${% endraw %} từ bước 5: {% raw %}$$\frac{\partial h^{(1)}}{\partial a^{(1)}} = \sigma'(a^{(1)}) = \sigma(a^{(1)})\cdot(1-\sigma(a^{(1)})) = 0.66\cdot(1-0.66) = 0.2244$${% endraw %}
+Tính {% raw %}$$\frac{\partial a^{(1)}}{\partial w^{(1)}}$${% endraw %} từ bước 4: {% raw %}$$\frac{\partial a^{(1)}}{\partial w^{(1)}} = x = 0.2$${% endraw %}
+
+Kết hợp các giá trị đã tính được ta có:
+
+{% raw %}
+$$\begin{align}
+\frac{\partial L}{\partial w^{(1)}} = -3.98 \cdot 0.6 \cdot 0.1875 \cdot (-0.5) \cdot 0.2244 \cdot 0.2 = 0.0084
+\end{align}$$
+{% endraw %}
+
 Với [thuật toán Backpropagation](https://nguyentruonglong.net/giai-thich-chi-tiet-thuat-toan-backpropagation.html) thì việc tính toán [gradient](https://nguyentruonglong.net/thuat-toan-gradient-descent.html) của hàm mất mát theo từng trọng số trong mô hình [mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html) trở nên dễ dàng và hiệu quả hơn, giúp cho việc huấn luyện mô hình trở nên nhanh chóng và chính xác hơn.
 
 ### Tài liệu tham khảo
