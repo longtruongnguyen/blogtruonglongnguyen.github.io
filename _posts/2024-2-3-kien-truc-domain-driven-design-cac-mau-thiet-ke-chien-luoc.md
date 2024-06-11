@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kiến trúc Domain-Driven Design: Các mẫu thiết kế chiến lược
+title: Kiến trúc Domain-Driven Design - Các mẫu thiết kế chiến lược
 description: Domain-Driven Design là một phương pháp thiết kế phần mềm tập trung vào việc phân tích và cấu trúc hệ thống theo các lĩnh vực chính của doanh nghiệp. Bài viết này đi sâu vào Bounded Context, Context Map, Model Integrity Patterns và Core Domain.
 keywords: Domain-Driven Design, Bounded Context, Context Map, Model Integrity Patterns, Core Domain, kiến trúc Domain-Driven Design
 excerpt: Tìm hiểu chi tiết về các khái niệm Bounded Context, Context Map, Model Integrity Patterns và Core Domain trong Domain-Driven Design.
