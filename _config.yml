@@ -58,7 +58,7 @@ baseurl: ""
 
 permalink: /:title.html
 
-paginate: 5
+paginate: 10
 
 paginate_path: "/blog/page/:num/"
 
