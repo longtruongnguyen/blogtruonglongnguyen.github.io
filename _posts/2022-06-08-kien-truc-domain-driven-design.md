@@ -2,14 +2,14 @@
 layout: post
 title: Kiến trúc Domain-Driven Design
 description: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp các khối lắp ghép chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
-keywords: Domain-Driven Design, design pattern, DDD, mô hình Domain-Driven Design, kiến trúc Domain-Driven Design, mô hình DDD, kiến trúc DDD, Domain Model, Entity, Value Object, Service, Bounded Context, Anti-Corruption Layer
+keywords: Domain-Driven Design, design pattern, DDD, mô hình Domain-Driven Design, kiến trúc Domain-Driven Design, mô hình DDD, kiến trúc DDD, Domain Model, Entity, Value Object, Service, Factory, Aggregate, Repository, Module, Bounded Context, Anti-Corruption Layer
 excerpt: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp các khối lắp ghép chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
 author: Nguyễn Trường Long
 ---
 
 ### Giới thiệu về Domain-Driven Design
 
-[Domain-Driven Design (DDD)](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) là một phương pháp thiết kế phần mềm được phát triển bởi Eric Evans vào năm 2003, và được đặc trưng bởi việc tập trung vào phân tích và thiết kế phần mềm xung quanh các domain chính của doanh nghiệp.
+[Domain-Driven Design (DDD)](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) là một phương pháp thiết kế phần mềm được phát triển bởi Eric Evans vào năm 2003, và được đặc trưng bởi việc tập trung vào việc phân tích và thiết kế phần mềm xung quanh các domain chính của doanh nghiệp.
 
 DDD được phát triển nhằm giải quyết các vấn đề mà các nhà phát triển phần mềm thường gặp phải trong quá trình thiết kế các ứng dụng doanh nghiệp. Trong quá trình thiết kế, các nhà phát triển thường phải đối mặt với việc phân tích các yêu cầu phức tạp từ người sử dụng, đồng thời cũng phải đối mặt với các yêu cầu về tính mở rộng và bảo trì của ứng dụng. [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) tập trung vào việc hiểu và mô hình hóa lĩnh vực (domain) của hệ thống, đồng thời giải quyết các vấn đề phức tạp trong thiết kế phần mềm. [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) giúp tạo ra các hệ thống phần mềm dễ bảo trì, mở rộng, đáp ứng nhu cầu của khách hàng và linh hoạt trong việc thay đổi.
 
@@ -32,7 +32,7 @@ Các mẫu pattern cơ bản trong [Domain-Driven Design](https://nguyentruonglo
 - Repository
 - Module
 
-##### Strategic patterns
+##### Strategic Patterns
 
 - Bounded Context
 - Context Map
@@ -75,15 +75,37 @@ Lấy ví dụ trong một hệ thống quản lý đơn hàng, một đơn hàn
 
 Trong ví dụ khác như ở một hệ thống quản lý tài sản, một tài sản (asset) có thể bao gồm các Value Object như trạng thái hiện tại, ngày mua và giá trị tài sản. Những giá trị này cũng là các thông tin mô tả về tài sản và không có định danh riêng.
 
-### Service
+### Factory
 
-Trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), Service là một khái niệm quan trọng của việc mô hình hóa và thiết kế các hệ thống. Service đại diện cho các chức năng hoặc nhiệm vụ cụ thể mà hệ thống phải thực hiện, thường liên quan đến các thao tác xử lý dữ liệu hoặc tương tác giữa các thành phần khác nhau trong hệ thống. Nó là một phương thức hoặc hành động không thuộc về một Entity hoặc Value Object cụ thể nào. Service thường được sử dụng để thực hiện các hành động liên quan đến nhiều Entity hoặc các hành động phức tạp mà không thể thực hiện bằng cách chỉ sử dụng một Entity.
+Trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), Factory là một mẫu thiết kế được sử dụng để tạo ra các đối tượng phức tạp. Factory cung cấp một cách tiếp cận để tạo ra các đối tượng mà không cần phải chỉ rõ chính xác lớp của đối tượng đó. Điều này giúp tách biệt logic tạo ra các đối tượng khỏi logic sử dụng các đối tượng đó, giúp hệ thống dễ dàng mở rộng và bảo trì.
 
-Một Service có thể bao gồm các thao tác CRUD (Create, Read, Update, Delete) hoặc các thao tác phức tạp hơn như xử lý giao dịch, phân tích dữ liệu, tính toán phức tạp, tương tác với các API bên ngoài và các hệ thống khác, và các nhiệm vụ khác liên quan đến logic kinh doanh của hệ thống.
+Factory có thể được triển khai dưới dạng các phương thức hoặc lớp trong hệ thống. Nó giúp giảm thiểu sự phụ thuộc giữa các thành phần trong hệ thống và tăng tính linh hoạt của mã nguồn.
 
-Service thường được triển khai dưới dạng các phương thức trong các lớp của ứng dụng hoặc được triển khai bằng các service bên ngoài (ví dụ: RESTful API, giao thức RPC,...). Các Service thường được phân loại theo Bounded Context để đảm bảo tính chính xác và sự độc lập giữa các nhiệm vụ khác nhau trong hệ thống.
+Ví dụ trong hệ thống bán hàng, chúng ta có thể sử dụng một Factory để tạo ra các đối tượng "Order" hoặc "Product" mà không cần biết chi tiết về cách các đối tượng này được tạo ra. Điều này giúp cho việc thay đổi cách tạo ra các đối tượng này trở nên dễ dàng hơn mà không ảnh hưởng đến các phần khác của hệ thống.
 
-Ví dụ về Service trong hệ thống bán lẻ có thể là "CheckoutService", "OrderService" hoặc "PaymentService", mỗi Service đóng vai trò quản lý một phần của quy trình mua hàng. Các Service này có thể tương tác với các Entity như "Product", "Customer", "Order" hoặc các Value Object như "ShippingAddress", "PaymentMethod".
+### Aggregate
+
+Trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), Aggregate là một nhóm các đối tượng có liên quan với nhau, được xử lý như một đơn vị duy nhất trong các thao tác. Aggregate được sử dụng để đảm bảo tính nhất quán trong các thao tác liên quan đến nhiều đối tượng.
+
+Mỗi Aggregate có một "root" (gốc) được gọi là "Aggregate Root". Aggregate Root là một Entity duy nhất quản lý toàn bộ Aggregate và là điểm truy cập duy nhất cho các thao tác trên Aggregate. Các đối tượng khác trong Aggregate không thể được truy cập trực tiếp từ bên ngoài Aggregate mà chỉ thông qua Aggregate Root.
+
+Ví dụ trong hệ thống quản lý đơn hàng, một "Order" có thể là một Aggregate Root, và các "OrderItem" có thể là các đối tượng bên trong Aggregate này. Các thao tác liên quan đến "Order" và "OrderItem" sẽ được thực hiện thông qua "Order", đảm bảo tính nhất quán của toàn bộ Aggregate.
+
+### Repository
+
+Trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), Repository là một mẫu thiết kế được sử dụng để quản lý việc lưu trữ và truy xuất các đối tượng từ cơ sở dữ liệu. Repository cung cấp một giao diện để thực hiện các thao tác CRUD (Create, Read, Update, Delete) trên các đối tượng mà không cần biết chi tiết về cách các đối tượng này được lưu trữ.
+
+Repository giúp tách biệt logic lưu trữ khỏi logic nghiệp vụ, giúp hệ thống dễ dàng mở rộng và bảo trì. Nó cung cấp một cách tiếp cận nhất quán để làm việc với các đối tượng trong cơ sở dữ liệu và giảm sự phụ thuộc giữa các thành phần trong hệ thống.
+
+Ví dụ trong hệ thống bán hàng, chúng ta có thể có các Repository như "OrderRepository", "ProductRepository" để quản lý việc lưu trữ và truy xuất các đối tượng "Order" và "Product". Các Repository này cung cấp các phương thức để thêm, cập nhật, xóa và truy vấn các đối tượng từ cơ sở dữ liệu.
+
+### Module
+
+Trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), Module là một khái niệm được sử dụng để tổ chức và phân chia các thành phần của hệ thống thành các đơn vị logic. Module giúp quản lý sự phức tạp của hệ thống bằng cách nhóm các thành phần có liên quan lại với nhau, giúp hệ thống dễ hiểu và dễ bảo trì hơn.
+
+Module thường được sử dụng để nhóm các đối tượng, dịch vụ và các thành phần khác có liên quan đến một lĩnh vực cụ thể trong hệ thống. Điều này giúp tăng tính rõ ràng và tính nhất quán của mã nguồn, đồng thời giảm sự phụ thuộc giữa các thành phần trong hệ thống.
+
+Ví dụ trong hệ thống bán hàng, chúng ta có thể tổ chức các thành phần liên quan đến "Quản lý sản phẩm" vào một module, và các thành phần liên quan đến "Quản lý đơn hàng" vào một module khác. Mỗi module sẽ chứa các đối tượng, dịch vụ và các thành phần khác có liên quan đến lĩnh vực đó, giúp hệ thống dễ hiểu và dễ bảo trì hơn.
 
 ### Bounded Context
 
