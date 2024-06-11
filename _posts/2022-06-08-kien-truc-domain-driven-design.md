@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Kiến trúc Domain-Driven Design
-description: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp cấp các khối lắp ghép (building blocks) chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
+description: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp các khối lắp ghép (building blocks) chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
 keywords: Domain-Driven Design, design pattern, DDD, mô hình Domain-Driven Design, kiến trúc Domain-Driven Design, mô hình DDD, kiến trúc DDD, Domain Model, Entity, Value Object, Service, Bounded Context, Anti-Corruption Layer
-excerpt: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp cấp các khối lắp ghép (building blocks) chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
+excerpt: Domain-Driven Design là một design pattern ở cấp độ hệ thống được áp dụng cho các nghiệp vụ phức tạp. Nó cung cấp các khối lắp ghép (building blocks) chiến lược để phân tích và cấu trúc cho các vấn đề và giải pháp.
 author: Nguyễn Trường Long
 ---
 
@@ -17,8 +17,8 @@ Hướng tiếp cận khi xây dựng hệ thống của [Domain-Driven Design](
 
 - <i>Hiểu và phân tích lĩnh vực (domain) của hệ thống</i>: [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) đưa ra phương pháp phân tích và mô hình hóa lĩnh vực (domain) của hệ thống bằng cách sử dụng các phương pháp như Event Storming, User Story Mapping, Domain Modeling, Ubiquitous Language... Điều này giúp xây dựng một mô hình lĩnh vực (domain model) chính xác và đầy đủ, giúp cho việc phát triển hệ thống dễ dàng hơn.
 - <i>Tách biệt lớp domain và các lớp khác</i>: [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) giúp phân tách các lớp của hệ thống để dễ dàng bảo trì và mở rộng. Trong đó, lớp domain là trung tâm của hệ thống và được quan tâm đến nhiều nhất. Lớp domain đóng vai trò quan trọng trong việc định nghĩa các luật chung của lĩnh vực (business rules) và giúp kiểm soát và hạn chế sự phát triển của các lớp khác.
- - <i>Sử dụng Ubiquitous Language</i>: Ubiquitous Language là một ngôn ngữ chung được sử dụng bởi tất cả các thành viên trong dự án để truyền đạt và hiểu các khái niệm và thuật ngữ trong lĩnh vực. Dùng Ubiquitous Language giúp cho các thành viên trong dự án hiểu nhau dễ dàng hơn, giảm thiểu sự hiểu nhầm và tăng tính chính xác trong việc phát triển.
-- <i>Áp dụng các mẫu thiết kế (design patterns) và kiến trúc (architecture)</i>: [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) sử dụng các mẫu thiết kế và kiến trúc để tạo ra các hệ thống phần mềm có tính mở rộng, dễ bảo trì và đáp ứng nhu cầu của khách hàng. 
+- <i>Sử dụng Ubiquitous Language</i>: Ubiquitous Language là một ngôn ngữ chung được sử dụng bởi tất cả các thành viên trong dự án để truyền đạt và hiểu các khái niệm và thuật ngữ trong lĩnh vực. Dùng Ubiquitous Language giúp cho các thành viên trong dự án hiểu nhau dễ dàng hơn, giảm thiểu sự hiểu nhầm và tăng tính chính xác trong việc phát triển.
+- <i>Áp dụng các mẫu thiết kế (design patterns) và kiến trúc (architecture)</i>: [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) sử dụng các mẫu thiết kế và kiến trúc để tạo ra các hệ thống phần mềm có tính mở rộng, dễ bảo trì và đáp ứng nhu cầu của khách hàng.
 
 Các mẫu pattern cơ bản trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html) có thể được chia thành hai loại là pattern chiến thuật và pattern chiến lược. Các pattern chiến thuật được sử dụng trong khi xây dựng mô hình miền và trong mã nguồn. Các mẫu chiến lược ở mức cao hơn và được sử dụng để xây dựng hệ thống ở mức kiến trúc. Chúng ta sẽ đi vào chi tiết của từng pattern và do đó trước hết cần liệt kê tổng quát ở đây một vài pattern chính.
 
@@ -65,7 +65,7 @@ Entity thường được sử dụng để đại diện cho các đối tượ
 Trong [Domain-Driven Design](https://nguyentruonglong.net/kien-truc-domain-driven-design.html), Value Object (đối tượng giá trị) là một đối tượng đại diện cho một giá trị không thay đổi hoặc không thể thay đổi, nhưng không phải là một định danh riêng biệt (identity) như Entity (đối tượng thực thể). Với các giá trị này thì chúng ta không phải quan tâm đến định danh, mà chỉ quan tâm đến các thuộc tính của nó.
 
 Value Object có các đặc điểm sau:
- - Không có tính chất định danh: Value Object không được xác định bởi một định danh riêng biệt. Thay vào đó, nó được xác định bởi giá trị của các thuộc tính của nó.
+- Không có tính chất định danh: Value Object không được xác định bởi một định danh riêng biệt. Thay vào đó, nó được xác định bởi giá trị của các thuộc tính của nó.
 - Không có tính chất thay đổi: Value Object là không thể thay đổi, có nghĩa là giá trị của nó không thể bị thay đổi sau khi nó được tạo ra.
 - Không có tính chất tồn tại độc lập: Value Object không tồn tại độc lập. Thay vào đó, nó là một phần của một đối tượng khác, ví dụ như Entity hoặc một đối tượng giá trị lớn hơn.
 
@@ -117,7 +117,7 @@ Anti-Corruption Layer có thể được hiểu như một lớp trung gian đ�
 
 ### Tài liệu tham khảo
 
-* <a href="https://opus.ch/ddd-concepts-and-patterns-introduction-and-overview/" target="_blank">https://opus.ch/ddd-concepts-and-patterns-introduction-and-overview/</a>
-* <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design" target="_blank">https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design</a>
-* <a href="https://www.infoq.com/articles/ddd-in-practice" target="_blank">https://www.infoq.com/articles/ddd-in-practice</a>
-* <a href="https://martinfowler.com/tags/domain%20driven%20design.html" target="_blank">https://martinfowler.com/tags/domain%20driven%20design.html</a>
+* [https://opus.ch/ddd-concepts-and-patterns-introduction-and-overview/](https://opus.ch/ddd-concepts-and-patterns-introduction-and-overview/)
+* [https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design](https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design)
+* [https://www.infoq.com/articles/ddd-in-practice](https://www.infoq.com/articles/ddd-in-practice)
+* [https://martinfowler.com/tags/domain%20driven%20design.html](https://martinfowler.com/tags/domain%20driven%20design.html)
