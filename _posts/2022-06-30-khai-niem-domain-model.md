@@ -40,6 +40,14 @@ Ví dụ về Entity trong hệ thống quản lý bán hàng có thể là sả
 
 Một ví dụ khác về Entity là một tài khoản người dùng trong một hệ thống quản lý thành viên. Tài khoản người dùng có các thuộc tính như tên đăng nhập, mật khẩu, địa chỉ email và định danh người dùng (user ID). Trong hệ thống, tài khoản người dùng được coi là một Entity bởi vì nó có tính định danh (user ID) và có sự tồn tại riêng biệt. Tài khoản người dùng cũng có thể được lưu trữ trong cơ sở dữ liệu và được truy vấn để lấy thông tin hoặc cập nhật thông tin.
 
+#### Mẫu thiết kế liên quan đến Entity
+
+Một số mẫu thiết kế liên quan đến Entity bao gồm:
+
+- **Factory**: Factory được sử dụng để tạo ra các đối tượng Entity phức tạp. Nó giúp tách biệt logic tạo đối tượng khỏi logic sử dụng đối tượng, giúp hệ thống dễ dàng mở rộng và bảo trì.
+- **Repository**: Repository giúp quản lý việc lưu trữ và truy xuất các Entity từ cơ sở dữ liệu. Nó cung cấp một giao diện để thực hiện các thao tác CRUD trên các Entity.
+- **Aggregate**: Aggregate giúp nhóm các Entity có liên quan với nhau lại và quản lý chúng như một đơn vị duy nhất, đảm bảo tính nhất quán của dữ liệu.
+
 ### Khái niệm Aggregate
 
 Aggregate được coi là một phần quan trọng trong domain model. Aggregate là một nhóm các đối tượng liên quan đến nhau và được quản lý như một đơn vị truy vấn/cập nhật dữ liệu trong hệ thống phần mềm. Aggregate có thể bao gồm nhiều Entity và Value Object, và có một Aggregate Root chịu trách nhiệm quản lý các đối tượng trong Aggregate.
@@ -52,6 +60,13 @@ Một Aggregate có thể bao gồm nhiều Entity và Value Object, và chúng 
 
 Khi truy vấn hoặc cập nhật dữ liệu cho một Aggregate, chúng ta cần thực hiện thông qua Aggregate Root. Tất cả các thao tác này đều được thực hiện một cách an toàn và đồng bộ. Nếu ta muốn thao tác với một đối tượng riêng lẻ trong Aggregate, ta cần truy cập thông qua Aggregate Root và thực hiện thao tác theo quy tắc cụ thể của Aggregate.
 
+#### Mẫu thiết kế liên quan đến Aggregate
+
+Một số mẫu thiết kế liên quan đến Aggregate bao gồm:
+
+- **Repository**: Repository giúp quản lý việc lưu trữ và truy xuất các Aggregate từ cơ sở dữ liệu. Nó cung cấp một giao diện để thực hiện các thao tác CRUD trên các Aggregate.
+- **Domain Event**: Domain Event giúp thông báo các thay đổi hoặc sự kiện quan trọng xảy ra trong Aggregate đến các phần khác của hệ thống.
+
 ### Khái niệm Value Object
 
 Trong domain model, Value Object là một đối tượng không có sự định danh duy nhất và được sử dụng để đại diện cho các giá trị hay thuộc tính của một đối tượng Entity trong hệ thống phần mềm. Nó không có tính chất thay đổi trạng thái và được sử dụng để đại diện cho các giá trị hay thuộc tính của một đối tượng Entity, tạo ra giá trị mới từ các thuộc tính của nó.
@@ -61,6 +76,13 @@ Value Object có giá trị chỉ được xác định bởi các thuộc tính
 Một số ví dụ về Value Object có thể bao gồm ngày tháng, giờ, địa chỉ, số điện thoại, tọa độ vị trí, số tiền,... Ví dụ, trong một hệ thống quản lý khách hàng, địa chỉ khách hàng có thể được đại diện bởi một Value Object gồm các thuộc tính như số nhà, tên đường, thành phố, quốc gia,...
 
 Một điểm quan trọng khi sử dụng Value Object là chúng không được truy cập trực tiếp bởi bên ngoài. Thay vào đó, các đối tượng Entity sẽ sử dụng chúng để thực hiện các thao tác và truy xuất dữ liệu. Sử dụng Value Object có thể giúp đơn giản hóa kiến trúc, giảm độ phức tạp và tăng tính linh hoạt của hệ thống. Nó cũng có thể giúp cho việc thực hiện các thao tác với dữ liệu dễ dàng hơn và tăng tính nhất quán của dữ liệu trong hệ thống.
+
+#### Mẫu thiết kế liên quan đến Value Object
+
+Một số mẫu thiết kế liên quan đến Value Object bao gồm:
+
+- **Factory**: Factory giúp tạo ra các Value Object với các thuộc tính cụ thể. Nó tách biệt logic tạo đối tượng khỏi logic sử dụng đối tượng.
+- **DTO (Data Transfer Object)**: DTO được sử dụng để truyền dữ liệu giữa các lớp khác nhau của ứng dụng, thường là giữa các lớp trình bày và lớp dịch vụ.
 
 ### Khái niệm Repository
 
@@ -72,6 +94,13 @@ Một ví dụ đơn giản của Repository trong thiết kế hệ thống ph�
 
 Việc sử dụng Repository trong thiết kế hệ thống phần mềm giúp cho việc quản lý dữ liệu trở nên đơn giản và linh hoạt hơn, đồng thời giúp giảm thiểu sự phụ thuộc vào các nguồn dữ liệu cụ thể. Nó cũng giúp cho việc kiểm thử và bảo trì ứng dụng dễ dàng hơn bởi vì các logic truy vấn và xử lý dữ liệu được đóng gói và tách rời khỏi các thành phần khác trong ứng dụng của chúng ta.
 
+#### Mẫu thiết kế liên quan đến Repository
+
+Một số mẫu thiết kế liên quan đến Repository bao gồm:
+
+- **Unit of Work**: Unit of Work giúp quản lý các thay đổi trong một phiên làm việc duy nhất, đảm bảo tính toàn vẹn của dữ liệu và giảm thiểu các xung đột dữ liệu.
+- **Specification**: Specification giúp định nghĩa các tiêu chí truy vấn phức tạp mà Repository có thể sử dụng để tìm kiếm các đối tượng thỏa mãn các tiêu chí này.
+
 ### Khái niệm Service
 
 Trong domain model, Service là một phần quan trọng giúp xác định và thực hiện các chức năng và nhiệm vụ cụ thể của hệ thống, đại diện cho các hành động hoặc nghiệp vụ được thực hiện bởi hệ thống. Service tập trung vào việc cung cấp các chức năng chính cho hệ thống bao gồm như xử lý và trả về dữ liệu cho người dùng, tính toán và xử lý các dữ liệu được lưu trữ trong cơ sở dữ liệu và tương tác với các hệ thống khác.
@@ -79,6 +108,13 @@ Trong domain model, Service là một phần quan trọng giúp xác định và
 Một Service thường được tạo ra bằng cách kết hợp các đối tượng và hành động của domain model để thực hiện một tác vụ cụ thể. Service thường đóng vai trò trung gian giữa giao diện người dùng và cơ sở dữ liệu, giúp các thành phần khác của hệ thống tương tác và trao đổi thông tin.
 
 Ví dụ trong một ứng dụng quản lý đơn hàng, Service có thể được tạo ra để thực hiện các chức năng như tạo mới đơn hàng, xử lý đơn hàng, cập nhật trạng thái đơn hàng, và xóa đơn hàng. Để thực hiện các nghiệp vụ này, Service có thể sử dụng các đối tượng như Order, Customer, Payment, và Shipping, cũng như thao tác với cơ sở dữ liệu để lưu trữ và truy xuất thông tin. Service này cũng có thể đảm nhận các nhiệm vụ như xác minh thông tin đặt hàng, kiểm tra tính khả dụng của sản phẩm, tính toán tổng giá trị đơn hàng và lưu trữ thông tin đặt hàng vào cơ sở dữ liệu. Ngoài ra thì một Service có thể kết hợp với Repository để lấy dữ liệu và lưu trữ dữ liệu, cũng như với các đối tượng khác như Entity và Value Object để xử lý và định dạng dữ liệu.
+
+#### Mẫu thiết kế liên quan đến Service
+
+Một số mẫu thiết kế liên quan đến Service bao gồm:
+
+- **Application Service**: Application Service quản lý các quy trình nghiệp vụ và tác vụ ứng dụng, đóng vai trò như một lớp trung gian giữa các thành phần của hệ thống.
+- **Domain Service**: Domain Service chứa các logic nghiệp vụ phức tạp không phù hợp để đặt vào các Entity hoặc Value Object.
 
 ### Ý nghĩa và vai trò
 
@@ -88,3 +124,7 @@ Tuy nhiên thì cách tiếp cận khi phát triển một hệ thống của do
 
 ### Tài liệu tham khảo
 * [https://livebook.manning.com/book/functional-and-reactive-domain-modeling/chapter-1/265](https://livebook.manning.com/book/functional-and-reactive-domain-modeling/chapter-1/265)
+* [https://opus.ch/ddd-concepts-and-patterns-introduction-and-overview/](https://opus.ch/ddd-concepts-and-patterns-introduction-and-overview/)
+* [https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design](https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design)
+* [https://www.infoq.com/articles/ddd-in-practice](https://www.infoq.com/articles/ddd-in-practice)
+* [https://martinfowler.com/tags/domain%20driven%20design.html](https://martinfowler.com/tags/domain%20driven%20design.html)
