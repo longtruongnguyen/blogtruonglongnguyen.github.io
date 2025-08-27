@@ -14,7 +14,7 @@ author: Nguyễn Trường Long
 
 Ý tưởng đầu tiên về [thuật toán Backpropagation](https://nguyentruonglong.net/giai-thich-chi-tiet-thuat-toan-backpropagation.html) được đề xuất bởi Paul Werbos vào năm 1974 trong bài "Beyond Regression: New Tools for Prediction and Analysis in the Behavioral Sciences". Sau đó, David Rumelhart, Geoffrey Hinton và Ronald Williams phổ biến rộng rãi thông qua bài "Learning representations by back-propagating errors" (1986), biến backprop thành phương pháp trung tâm để huấn luyện [mạng nơ-ron nhân tạo](https://nguyentruonglong.net/ly-thuyet-ve-mang-no-ron-nhan-tao-artificial-neural-network-ann.html).
 
-Kể từ đó, backprop được sử dụng rộng rãi trong machine learning và deep learning. Dù vậy, mô hình sâu có thể gặp hiện tượng **vanishing/exploding gradient**, khiến huấn luyện khó khăn. Vì thế có nhiều cải tiến/biến thể và kỹ thuật hỗ trợ:
+Kể từ đó, backprop được sử dụng rộng rãi trong machine learning và deep learning. Dù vậy, mô hình có thể gặp hiện tượng **vanishing/exploding gradient**, khiến huấn luyện khó khăn. Vì thế có nhiều cải tiến/biến thể và kỹ thuật hỗ trợ:
 
  - *Weight Decay (L2 regularization)*: thêm hạng phạt vào hàm chi phí để giảm độ lớn trọng số, giúp giảm overfitting.
  - *Batch Normalization*: chuẩn hoá kích hoạt theo mini-batch, giúp huấn luyện nhanh và ổn định hơn.
@@ -26,7 +26,7 @@ Kể từ đó, backprop được sử dụng rộng rãi trong machine learning
 
 ### Ý tưởng của thuật toán Backpropagation
 
-Backprop được dùng để tính đạo hàm của hàm mất mát theo các tham số khi áp dụng [gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html). Số lượng tham số có thể rất lớn; áp dụng trực tiếp quy tắc đạo hàm sẽ không hiệu quả. Backprop dùng **quy tắc chuỗi** để lan truyền gradient từ đầu ra về đầu vào qua từng lớp, nhờ đó tính gradient **hiệu quả** cho tất cả trọng số/bias.
+Backprop được dùng để tính đạo hàm của hàm mất mát theo các tham số khi áp dụng [gradient descent](https://nguyentruonglong.net/thuat-toan-gradient-descent.html). Số lượng tham số có thể rất lớn, nếu áp dụng trực tiếp quy tắc đạo hàm sẽ không hiệu quả. Backprop dùng **quy tắc chuỗi** để lan truyền gradient từ đầu ra về đầu vào qua từng lớp, nhờ đó tính gradient **hiệu quả** cho tất cả trọng số/bias.
 
 Quy tắc chuỗi cho hàm hợp:
 
@@ -84,7 +84,7 @@ Trọng số/bias:
 W^{[1]}=
 \begin{bmatrix}
 0.10 & -0.20\\
-0.30 & \phantom{-}0.25
+0.30 & 0.25
 \end{bmatrix},\quad
 \mathbf{b}^{[1]}=
 \begin{bmatrix}
@@ -100,6 +100,32 @@ b^{[2]}=0.10.
 {% endraw %}
 
 Mục tiêu: {% raw %}$y=1.0${% endraw %}.
+
+#### Minh họa kiến trúc mạng bằng mermaid
+
+```mermaid
+graph TD
+  X1([x1=0.2]) --> H1((Hidden 1))
+  X2([x2=0.4]) --> H1
+  X1 --> H2((Hidden 2))
+  X2 --> H2
+  H1 --> Y((Output ŷ))
+  H2 --> Y
+
+  subgraph Input Layer
+    X1
+    X2
+  end
+
+  subgraph Hidden Layer [Hidden Layer (2 neurons, sigmoid)]
+    H1
+    H2
+  end
+
+  subgraph Output Layer [Output Layer (1 neuron, sigmoid)]
+    Y
+  end
+```
 
 ---
 
