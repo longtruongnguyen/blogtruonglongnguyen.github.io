@@ -80,7 +80,7 @@ $$
 Trọng số/bias:
 
 {% raw %}
-\[
+$$
 W^{[1]}=
 \begin{bmatrix}
 0.10 & -0.20\\
@@ -96,14 +96,14 @@ W^{[2]}=
 0.80 & 0.90
 \end{bmatrix},\quad
 b^{[2]}=0.10.
-\]
+$$
 {% endraw %}
 
 Mục tiêu: {% raw %}$y=1.0${% endraw %}.
 
 #### Minh họa kiến trúc mạng cho ví dụ
 
-```mermaid
+<pre class="mermaid">
 graph TD
   X1([x1=0.2]) --> H1((Hidden 1))
   X2([x2=0.4]) --> H1
@@ -125,7 +125,7 @@ graph TD
   subgraph OutputLayer
     Y
   end
-```
+</pre>
 
 ---
 
