@@ -101,7 +101,7 @@ b^{[2]}=0.10.
 
 Mục tiêu: {% raw %}$y=1.0${% endraw %}.
 
-#### Minh họa kiến trúc mạng bằng mermaid
+#### Minh họa kiến trúc mạng cho ví dụ
 
 ```mermaid
 graph TD
@@ -112,17 +112,17 @@ graph TD
   H1 --> Y((Output ŷ))
   H2 --> Y
 
-  subgraph Input Layer
+  subgraph InputLayer
     X1
     X2
   end
 
-  subgraph Hidden Layer [Hidden Layer (2 neurons, sigmoid)]
+  subgraph HiddenLayer
     H1
     H2
   end
 
-  subgraph Output Layer [Output Layer (1 neuron, sigmoid)]
+  subgraph OutputLayer
     Y
   end
 ```
