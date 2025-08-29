@@ -1,3 +1,4 @@
+---
 layout: post
 title: Kiến trúc Domain-Driven Design: Mẫu chiến lược và chiến thuật
 description: Domain-Driven Design là cách tiếp cận thiết kế phần mềm tập trung vào ngôn ngữ và mô hình nghiệp vụ. Bài viết trình bày đầy đủ các mẫu thiết kế chiến lược như Bounded Context, Context Map, Model Integrity và Core Domain, đồng thời hệ thống hóa các mẫu chiến thuật để đưa mô hình vào mã nguồn.
