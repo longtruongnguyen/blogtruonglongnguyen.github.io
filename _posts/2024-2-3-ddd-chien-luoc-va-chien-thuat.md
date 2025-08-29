@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Kiến trúc Domain-Driven Design: Mẫu chiến lược và chiến thuật
-description: Domain-Driven Design là cách tiếp cận thiết kế phần mềm tập trung vào ngôn ngữ và mô hình nghiệp vụ. Bài viết trình bày đầy đủ các mẫu thiết kế chiến lược như Bounded Context, Context Map, Model Integrity và Core Domain, đồng thời hệ thống hóa các mẫu chiến thuật để đưa mô hình vào mã nguồn.
-keywords: Domain-Driven Design, DDD, Bounded Context, Context Map, Model Integrity Patterns, Core Domain, Tactical Patterns, Entity, Value Object, Aggregate, Repository, Factory, Domain Service, Application Service, Domain Event, Anti-Corruption Layer
-excerpt: Toàn cảnh Domain-Driven Design ở cấp chiến lược và chiến thuật. Cách xác lập ranh giới Bounded Context, vẽ Context Map, bảo toàn tính toàn vẹn của mô hình và tập trung nguồn lực cho Core Domain, cùng bộ mẫu chiến thuật để hiện thực hóa mô hình trong mã nguồn.
-author: Nguyễn Trường Long
+title: "Kiến trúc Domain-Driven Design: Mẫu chiến lược và chiến thuật"
+description: "Domain-Driven Design là cách tiếp cận thiết kế phần mềm tập trung vào ngôn ngữ và mô hình nghiệp vụ. Bài viết trình bày đầy đủ các mẫu thiết kế chiến lược như Bounded Context, Context Map, Model Integrity và Core Domain, đồng thời hệ thống hóa các mẫu chiến thuật để đưa mô hình vào mã nguồn."
+keywords: "Domain-Driven Design, DDD, Bounded Context, Context Map, Model Integrity Patterns, Core Domain, Tactical Patterns, Entity, Value Object, Aggregate, Repository, Factory, Domain Service, Application Service, Domain Event, Anti-Corruption Layer"
+excerpt: "Toàn cảnh Domain-Driven Design ở cấp chiến lược và chiến thuật. Cách xác lập ranh giới Bounded Context, vẽ Context Map, bảo toàn tính toàn vẹn của mô hình và tập trung nguồn lực cho Core Domain, cùng bộ mẫu chiến thuật để hiện thực hóa mô hình trong mã nguồn."
+author: "Nguyễn Trường Long"
 ---
 
 ### Giới thiệu
